@@ -1,0 +1,1016 @@
+  
+
+
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>calabash-android/ruby-gem/lib/calabash-android/canned_steps.md at master · calabash/calabash-android</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" />
+    <link rel="logo" type="image/svg" href="http://github-media-downloads.s3.amazonaws.com/github-logo.svg" />
+    <link rel="xhr-socket" href="/_sockets">
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="8cz/RuxlIYf7teVtGchznZlv1zrdSP4afcQcUW+VwDY=" name="csrf-token" />
+
+    <link href="https://a248.e.akamai.net/assets.github.com/assets/github-3dae77b1344d5de8d1c932d28c3904033713ed8b.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://a248.e.akamai.net/assets.github.com/assets/github2-c15137b0b05c94db05fa047ecd589d7a7df41d85.css" media="all" rel="stylesheet" type="text/css" />
+    
+
+
+      <script src="https://a248.e.akamai.net/assets.github.com/assets/frameworks-010d500708696b4ecee44478b5229d626367e844.js" type="text/javascript"></script>
+      <script src="https://a248.e.akamai.net/assets.github.com/assets/github-d0f76964f2a7dfb9b87493f279d45019ffeeec05.js" type="text/javascript"></script>
+      
+      <meta http-equiv="x-pjax-version" content="6ec31f4d179a415c3a28463718737ddb">
+
+        <link data-pjax-transient rel='permalink' href='/calabash/calabash-android/blob/9eac76c2c9b26fd69a391c1db72a8580e14458f5/ruby-gem/lib/calabash-android/canned_steps.md'>
+    <meta property="og:title" content="calabash-android"/>
+    <meta property="og:type" content="githubog:gitrepository"/>
+    <meta property="og:url" content="https://github.com/calabash/calabash-android"/>
+    <meta property="og:image" content="https://secure.gravatar.com/avatar/fef457e5b22f88fd9c86fd10c91beade?s=420&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"/>
+    <meta property="og:site_name" content="GitHub"/>
+    <meta property="og:description" content="calabash-android - Automated Functional testing for Android based on cucumber"/>
+    <meta property="twitter:card" content="summary"/>
+    <meta property="twitter:site" content="@GitHub">
+    <meta property="twitter:title" content="calabash/calabash-android"/>
+
+    <meta name="description" content="calabash-android - Automated Functional testing for Android based on cucumber" />
+
+  <link href="https://github.com/calabash/calabash-android/commits/master.atom" rel="alternate" title="Recent Commits to calabash-android:master" type="application/atom+xml" />
+
+  </head>
+
+
+  <body class="logged_in page-blob macintosh vis-public env-production  ">
+    <div id="wrapper">
+
+      
+
+      
+      
+      
+
+      <div class="header header-logged-in true">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/">
+  <span class="mega-icon mega-icon-invertocat"></span>
+</a>
+
+    <div class="divider-vertical"></div>
+
+      <a href="/notifications" class="notification-indicator tooltipped downwards" title="You have no unread notifications">
+    <span class="mail-status all-read"></span>
+  </a>
+  <div class="divider-vertical"></div>
+
+
+      <div class="command-bar js-command-bar  ">
+            <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+  <a href="/search/advanced" class="advanced-search-icon tooltipped downwards command-bar-search" id="advanced_search" title="Advanced search"><span class="mini-icon mini-icon-advanced-search "></span></a>
+
+  <input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" data-username="Jashi" autocapitalize="off">
+
+  <span class="mini-icon help tooltipped downwards" title="Show command bar help">
+    <span class="mini-icon mini-icon-help"></span>
+  </span>
+
+  <input type="hidden" name="ref" value="cmdform">
+
+    <input type="hidden" class="js-repository-name-with-owner" value="calabash/calabash-android"/>
+    <input type="hidden" class="js-repository-branch" value="master"/>
+    <input type="hidden" class="js-repository-tree-sha" value="748562bb5d7137283d0e059fac09e5750f025f07"/>
+
+  <div class="divider-vertical"></div>
+</form>
+        <ul class="top-nav">
+            <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+            <li><a href="https://gist.github.com">Gist</a></li>
+            <li><a href="/blog">Blog</a></li>
+          <li><a href="http://help.github.com">Help</a></li>
+        </ul>
+      </div>
+
+    
+
+  
+
+    <ul id="user-links">
+      <li>
+        <a href="https://github.com/Jashi" class="name">
+          <img height="20" src="https://secure.gravatar.com/avatar/5035d787d105c77a5b64f6d13b8d80f6?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /> Jashi
+        </a>
+      </li>
+
+        <li>
+          <a href="/new" id="new_repo" class="tooltipped downwards" title="Create a new repo">
+            <span class="mini-icon mini-icon-create"></span>
+          </a>
+        </li>
+
+        <li>
+          <a href="/settings/profile" id="account_settings"
+            class="tooltipped downwards"
+            title="Account settings ">
+            <span class="mini-icon mini-icon-account-settings"></span>
+          </a>
+        </li>
+        <li>
+          <a class="tooltipped downwards" href="/logout" data-method="post" id="logout" title="Sign out">
+            <span class="mini-icon mini-icon-logout"></span>
+          </a>
+        </li>
+
+    </ul>
+
+
+<div class="js-new-dropdown-contents hidden">
+  <ul class="dropdown-menu">
+    <li>
+      <a href="/new"><span class="mini-icon mini-icon-create"></span> New repository</a>
+    </li>
+    <li>
+        <a href="https://github.com/calabash/calabash-android/issues/new"><span class="mini-icon mini-icon-issue-opened"></span> New issue</a>
+    </li>
+    <li>
+    </li>
+    <li>
+      <a href="/organizations/new"><span class="mini-icon mini-icon-u-list"></span> New organization</a>
+    </li>
+  </ul>
+</div>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+      
+
+
+            <div class="site hfeed" itemscope itemtype="http://schema.org/WebPage">
+      <div class="hentry">
+        
+        <div class="pagehead repohead instapaper_ignore readability-menu ">
+          <div class="container">
+            <div class="title-actions-bar">
+              
+
+
+<ul class="pagehead-actions">
+
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="/notifications/subscribe" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="8cz/RuxlIYf7teVtGchznZlv1zrdSP4afcQcUW+VwDY=" /></div>  <input id="repository_id" name="repository_id" type="hidden" value="3362065" />
+
+    <div class="select-menu js-menu-container js-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">
+          <span class="mini-icon mini-icon-watching"></span>
+          Watch
+        </span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content">
+        <div class="select-menu-modal">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notification status</span>
+            <span class="mini-icon mini-icon-remove-close js-menu-close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container">
+
+            <div class="select-menu-item js-navigation-item js-navigation-target selected">
+              <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_included" name="do" type="radio" value="included" />
+                <h4>Not watching</h4>
+                <span class="description">You only receive notifications for discussions in which you participate or are @mentioned.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="mini-icon mini-icon-watching"></span>
+                  Watch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item js-navigation-target ">
+              <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+              <div class="select-menu-item-text">
+                <input id="do_subscribed" name="do" type="radio" value="subscribed" />
+                <h4>Watching</h4>
+                <span class="description">You receive notifications for all discussions in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="mini-icon mini-icon-unwatch"></span>
+                  Unwatch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item js-navigation-target ">
+              <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" type="radio" value="ignore" />
+                <h4>Ignoring</h4>
+                <span class="description">You do not receive any notifications for discussions in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="mini-icon mini-icon-mute"></span>
+                  Stop ignoring
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+    <li class="js-toggler-container js-social-container starring-container ">
+      <a href="/calabash/calabash-android/unstar" class="minibutton js-toggler-target star-button starred upwards" title="Unstar this repo" data-remote="true" data-method="post" rel="nofollow">
+        <span class="mini-icon mini-icon-remove-star"></span>
+        <span class="text">Unstar</span>
+      </a>
+      <a href="/calabash/calabash-android/star" class="minibutton js-toggler-target star-button unstarred upwards" title="Star this repo" data-remote="true" data-method="post" rel="nofollow">
+        <span class="mini-icon mini-icon-star"></span>
+        <span class="text">Star</span>
+      </a>
+      <a class="social-count js-social-count" href="/calabash/calabash-android/stargazers">277</a>
+    </li>
+
+        <li>
+          <a href="/calabash/calabash-android/fork" class="minibutton js-toggler-target fork-button lighter upwards" title="Fork this repo" rel="nofollow" data-method="post">
+            <span class="mini-icon mini-icon-branch-create"></span>
+            <span class="text">Fork</span>
+          </a>
+          <a href="/calabash/calabash-android/network" class="social-count">135</a>
+        </li>
+
+
+</ul>
+
+              <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+                <span class="repo-label"><span>public</span></span>
+                <span class="mega-icon mega-icon-public-repo"></span>
+                <span class="author vcard">
+                  <a href="/calabash" class="url fn" itemprop="url" rel="author">
+                  <span itemprop="title">calabash</span>
+                  </a></span> /
+                <strong><a href="/calabash/calabash-android" class="js-current-repository">calabash-android</a></strong>
+              </h1>
+            </div>
+
+            
+  <ul class="tabs">
+    <li><a href="/calabash/calabash-android" class="selected" highlight="repo_source repo_downloads repo_commits repo_tags repo_branches">Code</a></li>
+    <li><a href="/calabash/calabash-android/network" highlight="repo_network">Network</a></li>
+    <li><a href="/calabash/calabash-android/pulls" highlight="repo_pulls">Pull Requests <span class='counter'>2</span></a></li>
+
+      <li><a href="/calabash/calabash-android/issues" highlight="repo_issues">Issues <span class='counter'>22</span></a></li>
+
+      <li><a href="/calabash/calabash-android/wiki" highlight="repo_wiki">Wiki</a></li>
+
+
+    <li><a href="/calabash/calabash-android/graphs" highlight="repo_graphs repo_contributors">Graphs</a></li>
+
+
+  </ul>
+  
+<div class="tabnav">
+
+  <span class="tabnav-right">
+    <ul class="tabnav-tabs">
+          <li><a href="/calabash/calabash-android/tags" class="tabnav-tab" highlight="repo_tags">Tags <span class="counter ">1</span></a></li>
+    </ul>
+    
+  </span>
+
+  <div class="tabnav-widget scope">
+
+
+    <div class="select-menu js-menu-container js-select-menu js-branch-menu">
+      <a class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-ref="master">
+        <span class="mini-icon mini-icon-branch"></span>
+        <i>branch:</i>
+        <span class="js-select-button">master</span>
+      </a>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+
+        <div class="select-menu-modal">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Switch branches/tags</span>
+            <span class="mini-icon mini-icon-remove-close js-menu-close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-filters">
+            <div class="select-menu-text-filter">
+              <input type="text" id="commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+            </div>
+            <div class="select-menu-tabs">
+              <ul>
+                <li class="select-menu-tab">
+                  <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+                </li>
+                <li class="select-menu-tab">
+                  <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+                </li>
+              </ul>
+            </div><!-- /.select-menu-tabs -->
+          </div><!-- /.select-menu-filters -->
+
+          <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket css-truncate" data-tab-filter="branches">
+
+            <div data-filterable-for="commitish-filter-field" data-filterable-type="substring">
+
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/dex_merge/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="dex_merge" rel="nofollow" title="dex_merge">dex_merge</a>
+                </div> <!-- /.select-menu-item -->
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/gemify/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="gemify" rel="nofollow" title="gemify">gemify</a>
+                </div> <!-- /.select-menu-item -->
+                <div class="select-menu-item js-navigation-item js-navigation-target selected">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/master/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" rel="nofollow" title="master">master</a>
+                </div> <!-- /.select-menu-item -->
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/multiple_devices/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="multiple_devices" rel="nofollow" title="multiple_devices">multiple_devices</a>
+                </div> <!-- /.select-menu-item -->
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/query_parser/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="query_parser" rel="nofollow" title="query_parser">query_parser</a>
+                </div> <!-- /.select-menu-item -->
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/threadsafe_webview_access/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="threadsafe_webview_access" rel="nofollow" title="threadsafe_webview_access">threadsafe_webview_access</a>
+                </div> <!-- /.select-menu-item -->
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/view_query/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="view_query" rel="nofollow" title="view_query">view_query</a>
+                </div> <!-- /.select-menu-item -->
+            </div>
+
+              <div class="select-menu-no-results">Nothing to show</div>
+          </div> <!-- /.select-menu-list -->
+
+
+          <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket css-truncate" data-tab-filter="tags">
+            <div data-filterable-for="commitish-filter-field" data-filterable-type="substring">
+
+                <div class="select-menu-item js-navigation-item js-navigation-target ">
+                  <span class="select-menu-item-icon mini-icon mini-icon-confirm"></span>
+                  <a href="/calabash/calabash-android/blob/0.4.0/ruby-gem/lib/calabash-android/canned_steps.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="0.4.0" rel="nofollow" title="0.4.0">0.4.0</a>
+                </div> <!-- /.select-menu-item -->
+            </div>
+
+            <div class="select-menu-no-results">Nothing to show</div>
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+  </div> <!-- /.scope -->
+
+  <ul class="tabnav-tabs">
+    <li><a href="/calabash/calabash-android" class="selected tabnav-tab" highlight="repo_source">Files</a></li>
+    <li><a href="/calabash/calabash-android/commits/master" class="tabnav-tab" highlight="repo_commits">Commits</a></li>
+    <li><a href="/calabash/calabash-android/branches" class="tabnav-tab" highlight="repo_branches" rel="nofollow">Branches <span class="counter ">7</span></a></li>
+  </ul>
+
+</div>
+
+  
+  
+  
+
+
+            
+          </div>
+        </div><!-- /.repohead -->
+
+        <div id="js-repo-pjax-container" class="container context-loader-container" data-pjax-container>
+          
+
+
+<!-- blob contrib key: blob_contributors:v21:ee2545af1efd904ca396284e1a92d161 -->
+<!-- blob contrib frag key: views10/v8/blob_contributors:v21:ee2545af1efd904ca396284e1a92d161 -->
+
+
+<div id="slider">
+    <div class="frame-meta">
+
+      <p title="This is a placeholder element" class="js-history-link-replace hidden"></p>
+
+        <div class="breadcrumb">
+          <span class='bold'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/calabash/calabash-android" class="js-slide-to" data-branch="master" data-direction="back" itemscope="url"><span itemprop="title">calabash-android</span></a></span></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/calabash/calabash-android/tree/master/ruby-gem" class="js-slide-to" data-branch="master" data-direction="back" itemscope="url"><span itemprop="title">ruby-gem</span></a></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/calabash/calabash-android/tree/master/ruby-gem/lib" class="js-slide-to" data-branch="master" data-direction="back" itemscope="url"><span itemprop="title">lib</span></a></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/calabash/calabash-android/tree/master/ruby-gem/lib/calabash-android" class="js-slide-to" data-branch="master" data-direction="back" itemscope="url"><span itemprop="title">calabash-android</span></a></span><span class="separator"> / </span><strong class="final-path">canned_steps.md</strong> <span class="js-zeroclipboard zeroclipboard-button" data-clipboard-text="ruby-gem/lib/calabash-android/canned_steps.md" data-copied-hint="copied!" title="copy to clipboard"><span class="mini-icon mini-icon-clipboard"></span></span>
+        </div>
+
+      <a href="/calabash/calabash-android/find/master" class="js-slide-to" data-hotkey="t" style="display:none">Show File Finder</a>
+
+
+        
+  <div class="commit file-history-tease">
+    <img class="main-avatar" height="24" src="https://secure.gravatar.com/avatar/968fba3ba6e5df2df68a458218be7104?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+    <span class="author"><a href="/jarl-dk" rel="author">jarl-dk</a></span>
+    <time class="js-relative-date" datetime="2012-12-13T13:03:03-08:00" title="2012-12-13 13:03:03">December 13, 2012</time>
+    <div class="commit-title">
+        <a href="/calabash/calabash-android/commit/f07c024ad43a7eecd29d6fafedcda32f1b123ed5" class="message">Changed ALLOW_MOCK_LOCATION to ACCESS_MOCK_LOCATION and added note on…</a>
+    </div>
+
+    <div class="participation">
+      <p class="quickstat"><a href="#blob_contributors_box" rel="facebox"><strong>7</strong> contributors</a></p>
+          <a class="avatar tooltipped downwards" title="jonasmaturana" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=jonasmaturana"><img height="20" src="https://secure.gravatar.com/avatar/865fbfff446c2a5c389c130ab2eb6101?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+    <a class="avatar tooltipped downwards" title="withoutclass" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=withoutclass"><img height="20" src="https://secure.gravatar.com/avatar/5574f25a6272bc09cde2c26014d003b2?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+    <a class="avatar tooltipped downwards" title="cayennes" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=cayennes"><img height="20" src="https://secure.gravatar.com/avatar/e56587c3fb5f8cb7ef788bf91c739d8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+    <a class="avatar tooltipped downwards" title="krukow" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=krukow"><img height="20" src="https://secure.gravatar.com/avatar/f09583885ea08836bdaef54b83739257?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+    <a class="avatar tooltipped downwards" title="jarl-dk" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=jarl-dk"><img height="20" src="https://secure.gravatar.com/avatar/968fba3ba6e5df2df68a458218be7104?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+    <a class="avatar tooltipped downwards" title="BryceCicada" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=BryceCicada"><img height="20" src="https://secure.gravatar.com/avatar/d38ba634e4b532102fe1359db815cf29?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+    <a class="avatar tooltipped downwards" title="jadznz" href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md?author=jadznz"><img height="20" src="https://secure.gravatar.com/avatar/03b7f01aeff9fb11338a67de9c8c909c?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /></a>
+
+
+    </div>
+    <div id="blob_contributors_box" style="display:none">
+      <h2>Users on GitHub who have contributed to this file</h2>
+      <ul class="facebox-user-list">
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/865fbfff446c2a5c389c130ab2eb6101?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/jonasmaturana">jonasmaturana</a>
+        </li>
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/5574f25a6272bc09cde2c26014d003b2?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/withoutclass">withoutclass</a>
+        </li>
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/e56587c3fb5f8cb7ef788bf91c739d8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/cayennes">cayennes</a>
+        </li>
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/f09583885ea08836bdaef54b83739257?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/krukow">krukow</a>
+        </li>
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/968fba3ba6e5df2df68a458218be7104?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/jarl-dk">jarl-dk</a>
+        </li>
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/d38ba634e4b532102fe1359db815cf29?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/BryceCicada">BryceCicada</a>
+        </li>
+        <li>
+          <img height="24" src="https://secure.gravatar.com/avatar/03b7f01aeff9fb11338a67de9c8c909c?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="24" />
+          <a href="/jadznz">jadznz</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+    </div><!-- ./.frame-meta -->
+
+    <div class="frames">
+      <div class="frame" data-permalink-url="/calabash/calabash-android/blob/9eac76c2c9b26fd69a391c1db72a8580e14458f5/ruby-gem/lib/calabash-android/canned_steps.md" data-title="calabash-android/ruby-gem/lib/calabash-android/canned_steps.md at master · calabash/calabash-android · GitHub" data-type="blob">
+
+        <div id="files" class="bubble">
+          <div class="file">
+            <div class="meta">
+              <div class="info">
+                <span class="icon"><b class="mini-icon mini-icon-text-file"></b></span>
+                <span class="mode" title="File Mode">file</span>
+                  <span>284 lines (174 sloc)</span>
+                <span>9.296 kb</span>
+              </div>
+              <div class="actions">
+                <div class="button-group">
+                        <a class="minibutton tooltipped leftwards"
+                           title="Clicking this button will automatically fork this project so you can edit the file"
+                           href="/calabash/calabash-android/edit/master/ruby-gem/lib/calabash-android/canned_steps.md"
+                           data-method="post" rel="nofollow">Edit</a>
+                  <a href="/calabash/calabash-android/raw/master/ruby-gem/lib/calabash-android/canned_steps.md" class="button minibutton " id="raw-url">Raw</a>
+                    <a href="/calabash/calabash-android/blame/master/ruby-gem/lib/calabash-android/canned_steps.md" class="button minibutton ">Blame</a>
+                  <a href="/calabash/calabash-android/commits/master/ruby-gem/lib/calabash-android/canned_steps.md" class="button minibutton " rel="nofollow">History</a>
+                </div><!-- /.button-group -->
+              </div><!-- /.actions -->
+
+            </div>
+              
+  <div id="readme" class="blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="canned-steps" class="anchor" href="#canned-steps"><span class="mini-icon mini-icon-link"></span></a>Canned steps</h1>
+
+<p>Calabash Android comes with the following set of predefined steps.
+You can add your own steps or change the ones you see here.</p>
+
+<h2>
+<a name="assertion-steps" class="anchor" href="#assertion-steps"><span class="mini-icon mini-icon-link"></span></a>Assertion steps</h2>
+
+<p>To assert that specified text can be found use any of the following steps.</p>
+
+<pre><code>Then /^I see the text "([^\"]*)"$/
+Then /^I see "([^\"]*)"$/
+Then /^I should see "([^\"]*)"$/
+Then /^I should see text containing "([^\"]*)"$/
+</code></pre>
+
+<p>To assert that specified text cannot be found use any of the following steps.</p>
+
+<pre><code>Then /^I should not see "([^\"]*)"$/
+Then /^I don't see the text "([^\"]*)"$/
+Then /^I don't see "([^\"]*)"$/  
+</code></pre>
+
+<h2>
+<a name="input-steps" class="anchor" href="#input-steps"><span class="mini-icon mini-icon-link"></span></a>Input steps</h2>
+
+<pre><code>Then /^I toggle checkbox number (\d+)$/ do |checkboxNumber|
+</code></pre>
+
+<p>Toggles checkout with the specified index.</p>
+
+<pre><code>Then /^I long press "([^\"]*)"$/ do |text_to_press|
+</code></pre>
+
+<p>Long presses the text if found.</p>
+
+<pre><code>Then /^I long press "([^\"]*)" and select item number "([^\"]*)"$/ do |text_to_press, index|
+</code></pre>
+
+<p>Long presses the text (if found) and select the specified number in the context menu that appear.</p>
+
+<pre><code>Then /^I long press "([^\"]*)" and select "([^\"]*)"$/ do |text_to_press, context_text|
+</code></pre>
+
+<p>Long presses the text (if found) and select the specified number in the context menu that appear. </p>
+
+<pre><code>Given /^I set the date to "(\d\d-\d\d-\d\d\d\d)" on DatePicker with index "([^\"]*)"$/ do |date, index|
+</code></pre>
+
+<p>Finds the datepicker with the specified index and changes the date.</p>
+
+<pre><code>Given /^I set the time to "(\d\d:\d\d)" on TimePicker with index "([^\"]*)"$/
+Given /^I set the "([^\"]*)" time to "(\d\d:\d\d)"$/
+</code></pre>
+
+<p>Finds the timepicker with the specified index and changes the time.</p>
+
+<pre><code>Given /^I set the "([^\"]*)" date to "(\d\d-\d\d-\d\d\d\d)"$/ do |content_description, date|
+</code></pre>
+
+<p>Find the datepicker by content description and changes the date.</p>
+
+<pre><code>Then /^I enter "([^\"]*)" into input field number (\d+)$/ do |text, number|
+</code></pre>
+
+<p>Enters the specified text into the input field with index <code>number</code>.</p>
+
+<pre><code>Then /^I enter text "([^\"]*)" into field with id "([^\"]*)"$/ do |text, view_id|
+</code></pre>
+
+<p>Enters Text into the input field with id <code>view_id</code>.</p>
+
+<pre><code>Then /^I enter "([^\"]*)" as "([^\"]*)"$/ do |text, target|
+Then /^I enter "([^\"]*)" into "([^\"]*)"$/ do |text, target|
+</code></pre>
+
+<p>Enters the specified text into the input field that has a content desciption that matches the provided target.</p>
+
+<pre><code>Then /^I clear input field number (\d+)$/ do |number|
+</code></pre>
+
+<p>Finds a input field by index and blanks its value.</p>
+
+<pre><code>Then /^I clear "([^\"]*)"$/ do |name|
+</code></pre>
+
+<p>Finds a input field with matching content description and blanks its value.</p>
+
+<pre><code>Then /^I clear input field with id "([^\"]*)"$/ do |view_id|
+</code></pre>
+
+<p>Finds the input field with id <code>view_id</code> and clears the text from it.</p>
+
+<pre><code>Then /^I select "([^\"]*)" from "([^\"]*)"$/ do |item_text, spinner_content_description|
+</code></pre>
+
+<p>Finds the Spinner by 'spinner_content_description' and selects the item with the matching 'item_text'</p>
+
+<h2>
+<a name="buttons" class="anchor" href="#buttons"><span class="mini-icon mini-icon-link"></span></a>Buttons</h2>
+
+<p>Simulates that the user pressed the back button.</p>
+
+<pre><code>Then /^I go back$/
+</code></pre>
+
+<p>Simulates that the user pressed the menu button.    </p>
+
+<pre><code>Then /^I press the menu key$/
+</code></pre>
+
+<p>Simulates that the user pressed the enter button on the keyboard.    </p>
+
+<pre><code>Then /^I press the enter button$/ do
+</code></pre>
+
+<h2>
+<a name="gestures" class="anchor" href="#gestures"><span class="mini-icon mini-icon-link"></span></a>Gestures</h2>
+
+<p>To swipe left</p>
+
+<pre><code>Then /^I swipe left$/
+</code></pre>
+
+<p>To swipe right</p>
+
+<pre><code>Then /^I swipe right$/
+</code></pre>
+
+<p>To scroll down</p>
+
+<pre><code>Then /^I scroll down$/
+</code></pre>
+
+<p>To scroll up</p>
+
+<pre><code>Then /^I scroll up$/
+</code></pre>
+
+<p>To open the menu and press the specified text</p>
+
+<pre><code>Then /^I select "([^\"]*)" from the menu$/
+</code></pre>
+
+<p>To drag from one point on the screen to another. </p>
+
+<pre><code>Then /^I drag from (\d+):(\d+) to (\d+):(\d+) moving with (\d+) steps$/ 
+</code></pre>
+
+<p>Note: x:y co-ordinates are expressed as percentages of the screen width:height</p>
+
+<h2>
+<a name="touching" class="anchor" href="#touching"><span class="mini-icon mini-icon-link"></span></a>Touching</h2>
+
+<pre><code>Given /^I press the "([^\"]*)" button$/
+</code></pre>
+
+<p>Search for a button with the provided text and press it if found.</p>
+
+<pre><code>Then /^I press button number (\d+)$/
+</code></pre>
+
+<p>Presses the button by index.</p>
+
+<pre><code>Then /^I press image button number (\d+)$/
+</code></pre>
+
+<p>Presses the image button by index.</p>
+
+<pre><code>Then /^I press view with id "([^\"]*)"$/
+</code></pre>
+
+<p>Looks for a view with the provided id. If it is found and visible tries to click it.
+Note that use the short name and not the fully quantified name. That means if your id
+is 'com.foo.R.id.bar_label' you would use 'I press view with id "bar_label"'.</p>
+
+<pre><code>Then /^I press "([^\"]*)"$/ do |identifier|
+</code></pre>
+
+<p>Will look for a view in the following order:</p>
+
+<ol>
+<li>Looks for a visible button with matching text.</li>
+<li>Look for a visible view with a matching content description.</li>
+<li>Look for a visible view with class name that matches the provided indentifier.</li>
+</ol><p>If a view is found we will try to click it.</p>
+
+<pre><code>Then /^I touch the "([^\"]*)" text$/
+</code></pre>
+
+<p>Will look for the specified text and press it if found.</p>
+
+<pre><code>Then /^I press list item number (\d+)$/
+</code></pre>
+
+<p>Will press the specified list item in the first visible list.</p>
+
+<pre><code>Then /^I long press list item number (\d+)$/
+</code></pre>
+
+<p>Will long press the specified list item in the first visible list.</p>
+
+<pre><code>Then /^I click on screen (\d+)% from the left and (\d+)% from the top$/
+</code></pre>
+
+<p>Simulates a touch on the screen at the specified location.</p>
+
+<h2>
+<a name="waiting" class="anchor" href="#waiting"><span class="mini-icon mini-icon-link"></span></a>Waiting</h2>
+
+<pre><code>Then /^I wait for progress$/ do
+</code></pre>
+
+<p>Will wait till there is no more progress bars.</p>
+
+<pre><code>Then /^I wait for dialog to close$/
+</code></pre>
+
+<p>Waits for the current dialog to close.</p>
+
+<pre><code>Then /^I wait for "([^\"]*)" to appear$/
+Then /^I wait to see "([^\"]*)"$/
+</code></pre>
+
+<p>Waits for the specified text to appear.</p>
+
+<pre><code>Then /^I wait up to (\d+) seconds for "([^\"]*)" to appear$/
+Then /^I wait up to (\d+) seconds to see "([^\"]*)"$/
+</code></pre>
+
+<p>Waits for the specified text to appear, with a custom timeout</p>
+
+<pre><code>Then /^I wait for the "([^\"]*)" button to appear$/
+</code></pre>
+
+<p>Waits for a button with the specified text to appear.</p>
+
+<pre><code>Then /^I wait for the "([^\"]*)" screen to appear$/ 
+</code></pre>
+
+<p>Waits for a particular screen (Android Activity) to appear.</p>
+
+<pre><code>Then /^I wait for the view with id "([^\"]*)" to appear$/ do |text|
+</code></pre>
+
+<p>Waits for a view view that id to appear.
+Note that use the short name and not the fully quantified name. That means if your id
+is 'com.foo.R.id.bar_label' you would use 'I press view with id "bar_label"'.</p>
+
+<pre><code>Then /^I wait up to (\d+) seconds for the "([^\"]*)" screen to appear$/ 
+Then /^I wait upto (\d+) seconds for the "([^\"]*)" screen to appear$/ 
+</code></pre>
+
+<p>Waits for a particular screen (Android Activity) to appear with a timeout.</p>
+
+<pre><code>Then /^I wait for 1 second$/
+Then /^I wait for a second$/
+</code></pre>
+
+<p>Waits for one second.</p>
+
+<pre><code>Then /^I wait$/
+</code></pre>
+
+<p>Waits for two seonds.</p>
+
+<pre><code>Then /^I wait for (\d+) seconds$/
+</code></pre>
+
+<p>Waits for a specified number of seconds.</p>
+
+<h2>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="mini-icon mini-icon-link"></span></a>Screenshots</h2>
+
+<p>To take a screenshot of the phone while running the test use any of these steps.</p>
+
+<pre><code>Then /^take picture$/
+Then /^I take a picture$/
+Then /^I take a screenshot$/
+</code></pre>
+
+<h2>
+<a name="location-steps" class="anchor" href="#location-steps"><span class="mini-icon mini-icon-link"></span></a>Location steps</h2>
+
+<p>If you allow your phone to use mocked locations (configured on your device under development settings) and your app has the <code>ACCESS_MOCK_LOCATION</code> permission you can change the perceived location of the device by using any of these steps.</p>
+
+<p>You can change the location any address or named location. This is done using the <a href="http://www.rubygeocoder.com/">geocoder gem</a>.</p>
+
+<pre><code>Then /^I am in "([^\"]*)"$/ do |location|
+Then /^I am at "([^\"]*)"$/ do |location|
+Then /^I go to "([^\"]*)"$/ do |location|
+</code></pre>
+
+<p>To use a set of concrete GPS cordinates</p>
+
+<pre><code>Then /^I am at ([-+]?[0-9]*\.?[0-9]+), ([-+]?[0-9]*\.?[0-9]+)$/ do |latitude, longitude|
+Then /^I go to ([-+]?[0-9]*\.?[0-9]+), ([-+]?[0-9]*\.?[0-9]+)$/ do |latitude, longitude|
+</code></pre>
+
+<h2>
+<a name="internationalization" class="anchor" href="#internationalization"><span class="mini-icon mini-icon-link"></span></a>Internationalization</h2>
+
+<pre><code>Then /^I press text of translated l10key (\d+)$/ 
+</code></pre>
+
+<p>Simulates that the user pressed the text of the l10nkey.    </p>
+
+<pre><code>Then /^I press button of translated l10key (\d+)$/
+</code></pre>
+
+<p>Simulates that the user pressed the button with the label text of the l10nkey.</p>
+
+<pre><code>Then /^I press menu item of translated l10key (\d+)$/
+</code></pre>
+
+<p>Simulates that the user pressed the menu item with the label text of the l10nkey.</p>
+
+<pre><code>Then /^I press toggle button of translated l10key (\d+)$/ 
+</code></pre>
+
+<p>Simulates that the user pressed the toggle button with the label text of the l10nkey.   </p>
+
+<pre><code>Then /^I wait for the translated "([^\"]*)" l10nkey to appear$/ 
+</code></pre>
+
+<p>Waits until the text of the translated l10nkey is displayed.</p>
+
+<h2>
+<a name="rotation" class="anchor" href="#rotation"><span class="mini-icon mini-icon-link"></span></a>Rotation</h2>
+
+<p>These steps do nothing if you run them locally. 
+If you run the test on <a href="https://www.lesspainful.com">LessPainful</a> they will actually rotate the physical device.</p>
+
+<pre><code>Then /^I rotate the device to landscape$/
+Then /^I rotate the device to portrait$/
+</code></pre>
+
+<h2>
+<a name="manual-steps" class="anchor" href="#manual-steps"><span class="mini-icon mini-icon-link"></span></a>Manual Steps</h2>
+
+<p>These steps are useful for allowing mixed manual and automated tests and to be documented 
+and kept together. These steps do nothing when the tests are run automatically but are still
+documented in Cucumber output formatters such as the HTML report. This allows a 
+manual tester to perform the same test case but with extra manual steps such as manual image verification.</p>
+
+<p>To manually request a manual tester to compare the screen with a reference image</p>
+
+<pre><code>Then /^I compare the current screen with the reference image "([^\"]*) manually"$/ do |name|
+
+For example:
+
+Then I compare the current screen with the reference image "features/ref1.png" manually
+</code></pre>
+
+<p>To manually perform a custom step    </p>
+
+<pre><code>Then /^I manually (.*)$/ do |action|
+
+For example:
+
+Then I manually check that the list scrolls smoothly
+</code></pre></article>
+  </div>
+
+          </div>
+        </div>
+
+        <a href="#jump-to-line" rel="facebox" data-hotkey="l" class="js-jump-to-line" style="display:none">Jump to Line</a>
+        <div id="jump-to-line" style="display:none">
+          <h2>Jump to Line</h2>
+          <form accept-charset="UTF-8" class="js-jump-to-line-form">
+            <input class="textfield js-jump-to-line-field" type="text">
+            <div class="full-button">
+              <button type="submit" class="button">Go</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<div id="js-frame-loading-template" class="frame frame-loading large-loading-area" style="display:none;">
+  <img class="js-frame-loading-spinner" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-128.gif?1347543528" height="64" width="64">
+</div>
+
+
+        </div>
+      </div>
+      <div class="context-overlay"></div>
+    </div>
+
+      <div id="footer-push"></div><!-- hack for sticky footer -->
+    </div><!-- end of wrapper - hack for sticky footer -->
+
+      <!-- footer -->
+      <div id="footer">
+  <div class="container clearfix">
+
+      <dl class="footer_nav">
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/about">About us</a></dd>
+        <dd><a href="https://github.com/blog">Blog</a></dd>
+        <dd><a href="https://github.com/contact">Contact &amp; support</a></dd>
+        <dd><a href="http://enterprise.github.com/">GitHub Enterprise</a></dd>
+        <dd><a href="http://status.github.com/">Site status</a></dd>
+      </dl>
+
+      <dl class="footer_nav">
+        <dt>Applications</dt>
+        <dd><a href="http://mac.github.com/">GitHub for Mac</a></dd>
+        <dd><a href="http://windows.github.com/">GitHub for Windows</a></dd>
+        <dd><a href="http://eclipse.github.com/">GitHub for Eclipse</a></dd>
+        <dd><a href="http://mobile.github.com/">GitHub mobile apps</a></dd>
+      </dl>
+
+      <dl class="footer_nav">
+        <dt>Services</dt>
+        <dd><a href="http://get.gaug.es/">Gauges: Web analytics</a></dd>
+        <dd><a href="http://speakerdeck.com">Speaker Deck: Presentations</a></dd>
+        <dd><a href="https://gist.github.com">Gist: Code snippets</a></dd>
+        <dd><a href="http://jobs.github.com/">Job board</a></dd>
+      </dl>
+
+      <dl class="footer_nav">
+        <dt>Documentation</dt>
+        <dd><a href="http://help.github.com/">GitHub Help</a></dd>
+        <dd><a href="http://developer.github.com/">Developer API</a></dd>
+        <dd><a href="http://github.github.com/github-flavored-markdown/">GitHub Flavored Markdown</a></dd>
+        <dd><a href="http://pages.github.com/">GitHub Pages</a></dd>
+      </dl>
+
+      <dl class="footer_nav">
+        <dt>More</dt>
+        <dd><a href="http://training.github.com/">Training</a></dd>
+        <dd><a href="https://github.com/edu">Students &amp; teachers</a></dd>
+        <dd><a href="http://shop.github.com">The Shop</a></dd>
+        <dd><a href="/plans">Plans &amp; pricing</a></dd>
+        <dd><a href="http://octodex.github.com/">The Octodex</a></dd>
+      </dl>
+
+      <hr class="footer-divider">
+
+
+    <p class="right">&copy; 2013 <span title="0.35682s from fe1.rs.github.com">GitHub</span>, Inc. All rights reserved.</p>
+    <a class="left" href="https://github.com/">
+      <span class="mega-icon mega-icon-invertocat"></span>
+    </a>
+    <ul id="legal">
+        <li><a href="https://github.com/site/terms">Terms of Service</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+    </ul>
+
+  </div><!-- /.container -->
+
+</div><!-- /.#footer -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester"
+                 data-url="/calabash/calabash-android/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" title="Exit Zen Mode">
+      <span class="mega-icon mega-icon-normalscreen"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped leftwards"
+      title="Switch themes">
+      <span class="mini-icon mini-icon-brightness"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="mini-icon mini-icon-exclamation"></span>
+      Something went wrong with that request. Please try again.
+      <a href="#" class="mini-icon mini-icon-remove-close ajax-error-dismiss"></a>
+    </div>
+
+    
+    
+    <span id='server_response_time' data-time='0.35736' data-host='fe1'></span>
+    
+  </body>
+</html>
+
