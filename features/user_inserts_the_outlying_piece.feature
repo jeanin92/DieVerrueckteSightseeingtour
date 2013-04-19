@@ -7,14 +7,15 @@ Feature: User inserts the outlying piece
 		Given there is an active game
 		And it is my turn
 		And I have a card
-		And I was able to rotate the piece
+#		And I was able to rotate the piece
+#idea:	And the piece is facing the wanted direction		
 		When I click the arrow where I want to insert the outlying piece
 		Then the piece will be inserted
 		And another piece will be discarded 
-		And a pawn is located to it
-		Then the pawn will be relocated to the inserted piece
+		And a pawn is located on it
+		Then the pawn will be relocated onto the inserted piece
 		And I see the updated board
-		And I can move my pawn
+#del:	And I can move my pawn
 		
 	Scenario: User inserts the outlying piece and no pawn is located on the discarded piece
 		Given there is an active game
