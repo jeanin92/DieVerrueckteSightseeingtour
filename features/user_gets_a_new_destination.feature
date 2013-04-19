@@ -1,12 +1,7 @@
 Feature: User gets a new destination
 	As a user
-	I want to draw a new destination
-	So that I know how to continue my turn.
-
-#	As part of his move in the game the user has to draw a card
-#	to know which destination to go to next. This only happens at the
-#	beginning of the game or if the user has reached his last destination
-#	in the previous round.
+	I want to draw a new destination when it's my turn in the game
+	So that I can continue my turn.
 	
 	Scenario: User draws a new destination card when he has none
 		Given there is an active game
