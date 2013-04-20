@@ -22,7 +22,8 @@ Funktionalität: Der Benutzer versucht sich ein neues Ziel zu nehmen.
 		Aber ich habe keine Spielkarte
 		Wenn ich versuche, die aktive Karte zu drehen
 		Dann sagt mir das System, dass ich erst eine Spielkarte ziehen muss
-		
+	
+	@karte_ziehen	
 	Szenario: Der Benutzer versucht die aktive Karte ins Spielfeld zu schieben, obwohl er keine Karte hat.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
@@ -37,3 +38,12 @@ Funktionalität: Der Benutzer versucht sich ein neues Ziel zu nehmen.
 		Aber ich habe keine Spielkarte
 		Wenn ich versuche, meine Spielfigur zu bewegen
 		Dann sagt mir das System, dass ich erst eine Spielkarte ziehen muss
+	
+	@karte_ansehen	
+	Szenario: Der Benutzer versucht eine Spielkarte zu ziehen, obwohl er eine hat.
+		Angenommen ein Spiel ist aktiv
+		Und ich bin an der Reihe
+		Und ich habe eine Spielkarte
+		Wenn ich versuche eine Spielkarte zu ziehen
+		Dann sagt mir das System, dass ich bereits eine Spielkarte habe
+		Und zeigt mir diese
