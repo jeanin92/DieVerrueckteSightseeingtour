@@ -1,0 +1,8 @@
+@tags
+	da Features nicht unbedingt den Use Cases entsprechen mŸssen, werden alle Szenarios mit den entsprechenden
+	Namen der Use Cases getaggt
+	
+	die Namen entsprechen den JPEG-Dateien des Use Cases
+	
+	wenn alle Szenarios einen gleichen Tag besitzen, kann das Feature getaggt werden
+	-> jedes Szenario kann trotzdem weiterhin Tags erhalten
