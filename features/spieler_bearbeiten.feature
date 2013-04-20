@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-# language: de
-
-@spiel_starten
-FunktionalitŠt: Der Benutzer kann einen existierenden Spieler bearbeiten.
-	Als ein Benutzer des gerŠtes, auf dem das Spiel lŠuft
-	Will ich bestehende Spieler bearbeiten können
-	So dass ich sie personalisieren und gegebenenfalls Fehleingaben korrigieren kann.
-	
-	Grundlage: 
-		Angenommen ich befinde mich auf dem Spieler-EinfŸge-Bildschirm
-		
-	@spieler_bearbeiten
-	Szenario: Ich will einen vorhandenen Spieler bearbeiten.
-		Wenn ich dem System sage, dass ich einen Spieler bearbeiten mšchte
-		Dann zeigt mir das System seine Daten
-		Wenn ich etwas Šndere
-		Und ich meine VerŠnderungen absende
-		Dann verŠndert das System die Daten des Spielers
-		Und ich befinde mich wieder auf dem Spieler-EinfŸge-Bildschirm
-		Und der Spieler wird noch als Spielteilnehmer angezeigt
-	
-	@spieler_bearbeiten	
-	Szenario: Ich habe aus Versehen Spieler bearbeiten ausgewŠhlt, mšchte dies aber gar nicht.
-		Wenn ich dem System sage, dass ich einen Spieler bearbeiten mšchte
-		Dann zeigt mir das System seine Daten
-		Wenn ich dem System sage, dass ich nichts Šndern will
-		Dann bleiben die Daten des Spielers gleich
-		Und ich befinde mich wieder auf dem Spieler-EinfŸge-Bildschirm
-		Und der Spieler wird noch als Spielteilnehmer angezeigt	
-=======
 # language: de
 
 @spiel_starten @spieler_bearbeiten
@@ -76,5 +45,4 @@ FunktionalitŠt: Der Benutzer kann Spielereinstellungen vor Beginn des Spieles be
 			| Šnderung 		| fehler 													|
 			| seinen Namen 	| dass sich unerlaubte Zeichen im Namen befinden 			|
 			| seine Figur	| dass diese Kombination Farbe-Figur bereits vergeben ist 	|
-	
->>>>>>> CHG: split spieler_erstellen feature in loeschen, erstellen and bearbeiten
+

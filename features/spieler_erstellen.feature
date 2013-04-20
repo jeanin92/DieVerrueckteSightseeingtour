@@ -1,45 +1,3 @@
-<<<<<<< HEAD
-# language: de
-
-@spiel_starten
-FunktionalitŠt: Der Benutzer kann einen neuen Spieler erstellen.
-	Als ein Benutzer des gerŠtes, auf dem das Spiel lŠuft
-	Will ich jedem Spielstein einen Namen, eine Farbe und eine Form zuweisen kšnnen und jeden Spieler anlegen kšnnen
-	So dass ich sie personalisieren und leicht auf dem Spielfeld wiederfinden kann.
-	
-	Grundlage: 
-		Angenommen ich befinde mich auf dem Spieler-EinfŸge-Bildschirm
-	
-	@spieler_erstellen
-	Szenario: Ich will einen neuen Spieler zum Spiel mit korrekten Daten hinzufŸgen.
-		Wenn ich dem System sage, dass ich einen Spieler anlegen mšchte
-		Dann zeigt mir das System den Figurwahl-Bildschirm
-		Und ich gebe die benštigten Daten ein
-		Dann komme ich wieder auf den Spieler-EinfŸge-Bildschirm
-		Und der Spieler wird als neuer Spielteilnehmer angezeigt
-		
-	@spieler_erstellen
-	Szenario: Ich will einen neuen Spieler zum Spiel hinzufŸgen, aber der Name enthŠlt unerlaubte Zeichen.
-		Beim zweiten Versuch stimmt die Eingabe.
-		Wenn ich dem System sage, dass ich einen Spieler anlegen mšchte
-		Dann zeigt mir das System den Figurwahl-Bildschirm
-		Und ich gebe die benštigten Daten ein
-		Dann sagt mir das System, dass mein Name nicht erlaubt ist
-		Und ich darf einen anderen Namen eingeben
-		Dann komme ich wieder auf den Spieler-EinfŸge-Bildschirm
-		Und der Spieler wird als neuer Spielteilnehmer angezeigt
-		
-	@spieler_erstellen
-	Szenario: Ich will einen neuen Spieler zum Spiel hinzufŸgen, aber die Kombination Farbe-Figur existiert bereits.
-		Beim zweiten Versuch stimmt die Eingabe.
-		Wenn ich dem System sage, dass ich einen Spieler anlegen mšchte
-		Dann zeigt mir das System den Figurwahl-Bildschirm
-		Und ich gebe die benštigten Daten ein
-		Dann sagt mir das System, dass meine Farb-Figur-Kombination schon vergben ist
-		Und ich darf eine andere wŠhlen
-		Dann komme ich wieder auf den Spieler-EinfŸge-Bildschirm
-		Und der Spieler wird als neuer Spielteilnehmer angezeigt	
-=======
 # language: de
 
 @spiel_starten @spieler_erstellen
@@ -85,6 +43,3 @@ FunktionalitŠt: Der Benutzer kann Spieler zum neuen Spiel hinzufŸgen.
 			| entscheidung 	| bildschirm 					|
 			| ja			| Spieler-EinfŸge-Bildschirm	|
 			| nein			| Figurwahl-Bildschirm			|
-
-	
->>>>>>> CHG: split spieler_erstellen feature in loeschen, erstellen and bearbeiten
