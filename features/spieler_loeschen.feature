@@ -1,4 +1,4 @@
-# language: de
+#language: de
 
 @spiel_starten @spieler_loeschen
 Funktionalität: Der Benutzer kann Spieler vor Beginn des Spieles löschen.

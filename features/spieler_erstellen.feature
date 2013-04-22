@@ -1,4 +1,4 @@
-# language: de
+#language: de
 
 @spiel_starten @spieler_erstellen
 Funktionalität: Der Benutzer kann Spieler zum neuen Spiel hinzufügen.

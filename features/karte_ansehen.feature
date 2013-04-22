@@ -1,4 +1,4 @@
-# language: de
+#language: de
 
 @spielzug_ausfuehren
 FunktionalitŠt: Der Benutzer kann sich sein Ziel ansehen, wenn er am Zug ist.	

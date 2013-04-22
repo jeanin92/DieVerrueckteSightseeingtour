@@ -1,4 +1,4 @@
-# language: de
+#language: de
 
 @anleitung_lesen
 FunktionalitŠt: Der Benutzer verwendet die Spielanleitung.

@@ -1,4 +1,4 @@
-# language: de
+#language: de
 
 @spiel_starten @spieler_bearbeiten
 FunktionalitŠt: Der Benutzer kann Spielereinstellungen vor Beginn des Spieles bearbeiten.
