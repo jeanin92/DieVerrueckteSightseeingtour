@@ -23,10 +23,10 @@ Funktionalität: Der Benutzer kann Spielereinstellungen vor Beginn des Spieles b
 		Und ich meine Veränderungen absende
 		Dann verändert das System die Daten des Spielers
 		Und ich befinde mich wieder auf dem Spieler-Einfüge-Bildschirm
-		Und der Spieler wird <spielereinstellung> als Spielteilnehmer angezeigt
+		Und der Spieler wird <Spielereinstellung> als Spielteilnehmer angezeigt
 		
 		Beispiele:
-			| Änderung 		| spielereinstellung 													|
+			| Änderung 		| Spielereinstellung 													|
 			| seinen Namen 	| mit dem neuen Namen	|
 			| seine Farbe	| mit dem alten Namen 	|
 	
@@ -38,11 +38,11 @@ Funktionalität: Der Benutzer kann Spielereinstellungen vor Beginn des Spieles b
 		Dann zeigt mir das System seine Daten auf dem Figurwahl-Bildschirm
 		Wenn ich <Änderung> ändere
 		Und ich meine Veränderungen absende
-		Dann weist mich das System darauf hin, <fehler>
+		Dann weist mich das System darauf hin, <Fehler>
 		Und ich befinde mich wieder auf dem Figurwahl-Bildschirm
 		
 		Beispiele:
-			| Änderung 		| fehler 													|
+			| Änderung 		| Fehler 													|
 			| seinen Namen 	| dass sich unerlaubte Zeichen im Namen befinden 			|
 			| seine Figur	| dass diese Kombination Farbe-Figur bereits vergeben ist 	|
 

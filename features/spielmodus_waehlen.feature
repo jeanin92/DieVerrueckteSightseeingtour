@@ -15,10 +15,10 @@ Funktionalität: Der Benutzer will den Spielmodus wählen.
 		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm
 		Wenn ich mich für ein Mehrspieler-Spiel entscheide
 		Dann fragt mich das System auf wie vielen Geräten ich spielen möchte
-		Wenn ich sage, ich möchte auf <anzahl> spielen
-		Dann gelange ich zum <bildschirm>
+		Wenn ich sage, ich möchte auf <Anzahl> spielen
+		Dann gelange ich zum <Bildschirm>
 		
 		Beispiele: 
-		| anzahl 			| bildschirm					|
+		| Anzahl 			| Bildschirm					|
 		| einem Gerät 		| Spieler-Einfüge-Bildschirm	|
 		| mehreren Geräten 	| Verbindungsaufbau-Bildschirm	| 

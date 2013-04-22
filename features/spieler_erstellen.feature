@@ -18,13 +18,13 @@ Funktionalität: Der Benutzer kann Spieler zum neuen Spiel hinzufügen.
 		Angenommen ich befinde mich auf dem Spieler-Einfüge-Bildschirm
 		Wenn ich dem System sage, dass ich einen Spieler anlegen möchte
 		Dann zeigt mir das System den Figurwahl-Bildschirm
-		Und ich will <eingabe>
-		Dann sagt mir das System, <nachricht>
+		Und ich will <Eingabe>
+		Dann sagt mir das System, <Nachricht>
 		Und ich befinde mich auf dem Figurwahl-Bildschirm
 		Und ich darf Name, Farbe und Form eingeben
 		
 		Beispiele: 
-			| eingabe 																	| nachricht 											|
+			| Eingabe 																	| Nachricht 											|
 			| unerlaubte Zeichen im Namen eingeben										| dass mein Name unerlaubte Zeichen enthält 			|
 			| eine Farbe-Figur-Kombination eingeben, die bereits jemand gewählt hat 	| dass meine Farb-Figur-Kombination schon vergeben ist	|
 			| einen Namen eingeben, der zu lang ist 									| wenn ich die maximale Länge erreicht habe 			|
@@ -36,10 +36,10 @@ Funktionalität: Der Benutzer kann Spieler zum neuen Spiel hinzufügen.
 		Dann zeigt mir das System den Figurwahl-Bildschirm
 		Und ich sage dem System, dass ich doch keinen neuen Spieler möchte
 		Dann fragt mich das System, ob ich mir sicher bin
-		Und ich sage <entscheidung>
-		Und ich befinde mich auf dem <bildschirm>
+		Und ich sage <Entscheidung>
+		Und ich befinde mich auf dem <Bildschirm>
 		
 		Beispiele:
-			| entscheidung 	| bildschirm 					|
+			| entscheidung 	| Bildschirm 					|
 			| ja			| Spieler-Einfüge-Bildschirm	|
 			| nein			| Figurwahl-Bildschirm			|
