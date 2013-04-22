@@ -1,5 +1,6 @@
 #language: de
 
+@spielzug_ausfuehren @spielplatte_einschieben
 Funktionalität: Der Benutzer schiebt die aktive Spielplatte ein.
 	Als Benutzer
 	möchte ich die aktive Spielplatte in eine Reihe des Spielfeldes einschieben
