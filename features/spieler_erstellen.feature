@@ -1,22 +1,22 @@
 #language: de
 
 @spiel_starten @spieler_erstellen
-Funktionalität: Der Benutzer kann Spieler zum neuen Spiel hinzufügen.
-	Als ein Benutzer des Gerätes, auf dem das Spiel läuft
-	Will ich jedem Spieler einen Namen, eine Farbe und eine Form zuweisen können
+Funktionalit√§t: Der Benutzer kann Spieler zum neuen Spiel hinzuf√ºgen.
+	Als ein Benutzer des Ger√§tes, auf dem das Spiel l√§uft
+	Will ich jedem Spieler einen Namen, eine Farbe und eine Form zuweisen k√∂nnen
 	So dass ich sie personalisieren und leicht auf dem Spielfeld wiederfinden kann.
 	
-	Szenario: Ich will einen neuen Spieler zum Spiel mit korrekten Daten hinzufügen.
-		Angenommen ich befinde mich auf dem Spieler-Einfüge-Bildschirm
-		Wenn ich dem System sage, dass ich einen Spieler anlegen möchte
+	Szenario: Ich will einen neuen Spieler zum Spiel mit korrekten Daten hinzuf√ºgen.
+		Angenommen ich befinde mich auf dem Spieler-Einf√ºge-Bildschirm
+		Wenn ich dem System sage, dass ich einen Spieler anlegen m√∂chte
 		Dann zeigt mir das System den Figurwahl-Bildschirm
-		Und ich gebe die benötigten Daten ein
-		Dann komme ich wieder auf den Spieler-Einfüge-Bildschirm
+		Und ich gebe die ben√∂tigten Daten ein
+		Dann komme ich wieder auf den Spieler-Einf√ºge-Bildschirm
 		Und der Spieler wird als neuer Spielteilnehmer angezeigt
 	
-	Szenariogrundriss: Ich will einen neuen Spieler zum Spiel hinzufügen, aber eine der Eingaben ist unzulässig.
-		Angenommen ich befinde mich auf dem Spieler-Einfüge-Bildschirm
-		Wenn ich dem System sage, dass ich einen Spieler anlegen möchte
+	Szenariogrundriss: Ich will einen neuen Spieler zum Spiel hinzuf√ºgen, aber eine der Eingaben ist unzul√§ssig.
+		Angenommen ich befinde mich auf dem Spieler-Einf√ºge-Bildschirm
+		Wenn ich dem System sage, dass ich einen Spieler anlegen m√∂chte
 		Dann zeigt mir das System den Figurwahl-Bildschirm
 		Und ich will <eingabe>
 		Dann sagt mir das System, <nachricht>
@@ -25,21 +25,21 @@ Funktionalität: Der Benutzer kann Spieler zum neuen Spiel hinzufügen.
 		
 		Beispiele: 
 			| eingabe 																	| nachricht 											|
-			| unerlaubte Zeichen im Namen eingeben										| dass mein Name unerlaubte Zeichen enthält 			|
-			| eine Farbe-Figur-Kombination eingeben, die bereits jemand gewählt hat 	| dass meine Farb-Figur-Kombination schon vergeben ist	|
-			| einen Namen eingeben, der zu lang ist 									| wenn ich die maximale Länge erreicht habe 			|
+			| unerlaubte Zeichen im Namen eingeben										| dass mein Name unerlaubte Zeichen enth√§lt 			|
+			| eine Farbe-Figur-Kombination eingeben, die bereits jemand gew√§hlt hat 	| dass meine Farb-Figur-Kombination schon vergeben ist	|
+			| einen Namen eingeben, der zu lang ist 									| wenn ich die maximale L√§nge erreicht habe 			|
 		
 		
-	Szenariogrundriss: Ich überlege mir, ob ich den neuen Spieler wirklich hinzufügen will.
-		Angenommen ich befinde mich auf dem Spieler-Einfüge-Bildschirm
-		Wenn ich dem System sage, dass ich einen Spieler anlegen möchte
+	Szenariogrundriss: Ich √ºberlege mir, ob ich den neuen Spieler wirklich hinzuf√ºgen will.
+		Angenommen ich befinde mich auf dem Spieler-Einf√ºge-Bildschirm
+		Wenn ich dem System sage, dass ich einen Spieler anlegen m√∂chte
 		Dann zeigt mir das System den Figurwahl-Bildschirm
-		Und ich sage dem System, dass ich doch keinen neuen Spieler möchte
+		Und ich sage dem System, dass ich doch keinen neuen Spieler m√∂chte
 		Dann fragt mich das System, ob ich mir sicher bin
 		Und ich sage <entscheidung>
 		Und ich befinde mich auf dem <bildschirm>
 		
 		Beispiele:
 			| entscheidung 	| bildschirm 					|
-			| ja			| Spieler-Einfüge-Bildschirm	|
+			| ja			| Spieler-Einf√ºge-Bildschirm	|
 			| nein			| Figurwahl-Bildschirm			|
