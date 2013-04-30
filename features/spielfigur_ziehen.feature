@@ -11,9 +11,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Und ich bin an der Reihe
 		Wenn ich auf eine erreichbare Spielplatte klicke
 		Und dann auf die Platte meiner Spielfigur
-		Dann bewegt sich meine Fiugur an die Stelle
-		
-		??sollte man den Fall "überprüfen ob Ziel erreicht mit reinnehmen"?
+		Dann bewegt sich meine Figur an die Stelle
 	
 	Szenario: Der Spieler will stehen bleiben.
 		Angenommen ein Spiel ist aktiv
@@ -26,12 +24,12 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 	Szenario: Der Spieler will sich auf eine Platte bewegen, auf die er nicht kommen kann.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
-		Wenn ich auf eine nicht erreichbare Spielplatte klicke	???Reihenfolge - wann ist eine Spielplatte erreichbar?
+		Wenn ich auf eine nicht erreichbare Spielplatte klicke
 		Und dann auf die Platte meiner Spielfigur
 		Dann wird mir gesagt, dass diese Platte nicht erreichbar ist
 		Und ich darf erneut eine Zielplatte anlicken
 
-	Szenario: Der Spieler ändert seine Zielplate bevor der gültige Zug ausgeführt wird.
+	Szenario: Der Spieler ändert seine Zielplatte bevor der gültige Zug ausgeführt wird.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine erreichbare Spielplatte klicke
@@ -41,7 +39,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Dann nimmt das Spiel die letztgeklickte Platte als Ziel an
 		Und meine Figur bewegt sich an die Stelle
 		
-		Szenario: Der Spieler ändert seine Zielplate bevor er einen ungültigen Zug versucht.
+	Szenario: Der Spieler ändert seine Zielplatte bevor er einen ungültigen Zug versucht.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine beliebige Spielplatte klicke
@@ -51,3 +49,11 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Dann nimmt das Spiel die letztgeklickte Platte als Ziel an
 		Und mir wird gesagt, dass diese Platte nicht erreichbar ist
 		Und ich darf erneut ein Zielplatte anklicken
+		
+	Szenario: Der Spieler erreicht sein Ziel.
+		Angenommen ein Spiel ist aktiv
+		Und ich bin an der Reihe
+		Wenn ich auf eine beliebige Spielplatte klicke
+		Und dann auf die Platte meiner Spielfigur
+		Dann bewegt sich meine Figur an die Stelle
+		Und mir wird gesagt, dass ich mein Ziel erreicht habe

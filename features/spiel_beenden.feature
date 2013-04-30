@@ -9,9 +9,7 @@ Funktionalität: Spiel beenden
 	Szenario: Der Benutzer beendet das laufende Spiel, wenn er an der Reihe ist.
 		Angenommen ein Spiel ist aktiv
 		Und ich befinde mich auf dem Spiel-Bildschirm
-		Wenn ich ????? (das Spiel irgendwie abbreche)
+		Wenn ich das Spiel beende
 		Dann wird der Spielstand gelöscht
 		Und damit auch alle Spieler
-		Und ????ein neues Spiel wird gestartet
 		Und ich gelange auf den Spielmodus-Bildschirm
-		
