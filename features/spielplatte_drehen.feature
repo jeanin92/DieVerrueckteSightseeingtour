@@ -3,14 +3,14 @@
 @spielzug_ausfuehren @spielplatte_drehen
 Funktionalität: Spielplatte drehen
 	Als Spieler
-	Will ich die Spielkarte nach Belieben drehen
+	Will ich die Spielplatte nach Belieben drehen
 	So dass ich sie mir in die bestmögliche Position vor dem Einschieben drehen kann.
 	
-	Szenario: Der Spieler dreht die Karte gar nicht. ??so gewollt??
+	Szenario: Der Spieler dreht die aktive Platte gar nicht. ??so gewollt?? passt!
 		Angenommen das Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine Spielplatte im Spielfeld klicke
-		Dann kann ich die aktive Karte nicht mehr drehen.
+		Dann kann ich die aktive Platte nicht mehr drehen.
 	
 	Szenariogrundriss: Der Spieler dreht die Karte um 90°.
 		Angenommen das Spiel ist aktiv

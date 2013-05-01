@@ -16,8 +16,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 	Szenario: Der Spieler will stehen bleiben.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
-		Wenn ich auf die Platte mit meiner Spielfigur klicke
-		Und dann auf die Platte meiner Spielfigur
+		Wenn ich zwei mal auf die Platte mit meiner Spielfigur klicke
 		Dann bleibt meine Figur stehen
 		Und mein Zug ist beendet
 	
@@ -33,7 +32,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine erreichbare Spielplatte klicke
-		Aber nicht auf die, auf der meine Figur steht
+		??Aber nicht auf die, auf der meine Figur steht?? //würde ich weg lassen
 		Und dann auf eine andere Platte, auf der meine Figur nicht steht
 		Und dann auf die Platte meiner Spielfigur
 		Dann nimmt das Spiel die letztgeklickte Platte als Ziel an
@@ -43,7 +42,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine beliebige Spielplatte klicke
-		Aber nicht auf die, auf der meine Figur steht
+		??Aber nicht auf die, auf der meine Figur steht??
 		Und dann auf eine andere nicht erreichbare Platte
 		Und dann auf die Platte meiner Spielfigur
 		Dann nimmt das Spiel die letztgeklickte Platte als Ziel an
