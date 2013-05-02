@@ -6,7 +6,7 @@ Funktionalität: Spielplatte drehen
 	Will ich die Spielplatte nach Belieben drehen
 	So dass ich sie mir in die bestmögliche Position vor dem Einschieben drehen kann.
 	
-	Szenario: Der Spieler dreht die aktive Platte gar nicht. ??so gewollt?? passt!
+	Szenario: Der Spieler dreht die aktive Platte gar nicht.
 		Angenommen das Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine Spielplatte im Spielfeld klicke

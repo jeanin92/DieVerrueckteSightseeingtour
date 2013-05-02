@@ -10,6 +10,5 @@ Funktionalität: Spiel beenden
 		Angenommen ein Spiel ist aktiv
 		Und ich befinde mich auf dem Spiel-Bildschirm
 		Wenn ich das Spiel beende
-		Dann wird der Spielstand gelöscht
-		Und damit auch alle Spieler
+		Dann wird das Spiel mit all seinen Daten gelöscht
 		Und ich gelange auf den Spielmodus-Bildschirm
