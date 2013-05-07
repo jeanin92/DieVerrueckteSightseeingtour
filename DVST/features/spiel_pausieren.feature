@@ -8,5 +8,6 @@ Funktionalit‰t: Spiel pausieren und Spielstand merken
 	
 	Szenario: Der Benutzer pausiert das laufende Spiel,in dem er die App schlieﬂt und diese im Hintergrund weiterl‰uft.
 		Angenommen ein Spiel ist aktiv
-		Wenn ich die App schlieﬂe
-		Dann wird die App im momentanen Zustand mit allen Vortschritten eingefrohren und kann zu jedem Zeitpunkt an dieser Stelle weitergespielt werden.
+		Wenn ich die App verlasse (nicht beenden)
+		Dann wird die App im momentanen Zustand mit allen Fortschritten eingefroren
+		Und kann zu jedem Zeitpunkt an dieser Stelle weitergespielt werden.
