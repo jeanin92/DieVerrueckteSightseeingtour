@@ -1,13 +1,12 @@
 # language: de
 
 @spiel_pausieren
-FunktionalitÃ¤t: Spiel pausieren und Spielstand merken
+Funktionalität: Spiel pausieren und Spielstand merken
 	Als Benutzer, der das Spiel gestartet hat
-	Will ich das laufende Spiel unterbrechen kÃ¶nnen ohne den Spielstand zu verlieren
+	Will ich das laufende Spiel unterbrechen können ohne den Spielstand zu verlieren
 	So dass ich angefangenes Spiel weiterspielen kann, nachdem ich es unterbrochen habe.
 	
-	Szenario: Der Benutzer pausiert das laufende Spiel, wenn er angerufen wird, wÃ¤hrend er an der Reihe ist.
+	Szenario: Der Benutzer pausiert das laufende Spiel,in dem er die App schließt und diese im Hintergrund weiterläuft.
 		Angenommen ein Spiel ist aktiv
-		Und ich bin an der Reihe
-		Wenn ich angerufen werde
-		Dann ???
+		Wenn ich die App schließe
+		Dann wird die App im momentanen Zustand mit allen Vortschritten eingefrohren und kann zu jedem Zeitpunkt an dieser Stelle weitergespielt werden.
