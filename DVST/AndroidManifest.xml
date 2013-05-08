@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.dhbw.dvst.StartActivity"
+            android:name="com.dhbw.dvst.activities.StartActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dhbw.dvst.ModusActivity"
+            android:name="com.dhbw.dvst.activities.ModusActivitydusActivity"
             android:label="@string/app_name" >            
         </activity>
         <activity
-            android:name="com.dhbw.dvst.GeraeteActivity"
+    		android:name="com.dhbw.dvst.activities.GeraeteActivity"
             android:label="@string/app_name" >            
         </activity>
     </application>

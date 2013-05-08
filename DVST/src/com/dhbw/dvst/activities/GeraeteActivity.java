@@ -1,4 +1,9 @@
-package com.dhbw.dvst;
+package com.dhbw.dvst.activities;
+
+import com.dhbw.dvst.R;
+import com.dhbw.dvst.R.id;
+import com.dhbw.dvst.R.layout;
+import com.dhbw.dvst.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
