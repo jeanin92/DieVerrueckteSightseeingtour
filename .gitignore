@@ -1,5 +1,7 @@
 .DS_Store
 
 DVST/.classpath
+DVST/.project
 DVST/.settings/
 DVST/bin
+DVST/test_servers/
