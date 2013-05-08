@@ -14,5 +14,6 @@
     <string name="ein_geraet">ein Gerät für alle Spieler</string>
     <string name="mehr_geraete">ein Gerät pro Spieler</string>
     <string name="OK">Okay</string>
+    <string name="anleitung">Anleitung</string>
 
 </resources>
