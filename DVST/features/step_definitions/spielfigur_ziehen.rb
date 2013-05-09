@@ -1,75 +1,79 @@
-Angenommen(/^ich befinde mich auf dem Spieler\-Einfüge\-Bildschirm$/) do
+Dann(/^ich befinde mich auf dem "(.*?)"$/) do |arg1|
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich dem System sage, dass ich einen Spieler bearbeiten möchte$/) do
+Wenn(/^ich auf eine erreichbare Spielplatte klicke$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^zeigt mir das System dessen Daten$/) do
+Wenn(/^dann auf die Platte meiner Spielfigur$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich dem System sage, dass ich nichts ändern will$/) do
+Dann(/^bewegt sich meine Figur an die Stelle$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^bleiben die Daten des Spielers gleich$/) do
+Wenn(/^ich zwei mal auf die Platte mit meiner Spielfigur klicke$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^ich befinde mich wieder auf dem Spieler\-Einfüge\-Bildschirm$/) do
+Dann(/^bleibt meine Figur stehen$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^der Spieler wird mit dem alten Namen als Spielteilnehmer angezeigt$/) do
+Dann(/^mein Zug ist beendet$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^zeigt mir das System seine Daten auf dem Figurwahl\-Bildschirm$/) do
+Wenn(/^ich auf eine nicht erreichbare Spielplatte klicke$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich seinen Namen ändere$/) do
+Dann(/^wird mir gesagt, dass diese Platte nicht erreichbar ist$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich meine Veränderungen absende$/) do
+Dann(/^ich darf erneut eine Zielplatte anlicken$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^verändert das System die Daten des Spielers$/) do
+Wenn(/^dann auf eine andere Platte, auf der meine Figur nicht steht$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^der Spieler wird mit dem neuen Namen als Spielteilnehmer angezeigt$/) do
+Dann(/^nimmt das Spiel die letztgeklickte Platte als Ziel an$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich seine Farbe ändere$/) do
+Dann(/^meine Figur bewegt sich an die Stelle$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich "(.*?)" ändere$/) do |arg1|
+Wenn(/^ich auf eine beliebige Spielplatte klicke$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^weist mich das System darauf hin, "(.*?)"$/) do |arg1|
+Wenn(/^dann auf eine andere nicht erreichbare Platte$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^ich befinde mich wieder auf dem Figurwahl\-Bildschirm$/) do
+Dann(/^mir wird gesagt, dass diese Platte nicht erreichbar ist$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^ich will "(.*?)"$/) do |arg1|
+Dann(/^ich darf erneut ein Zielplatte anklicken$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^sagt mir das System, "(.*?)"$/) do |arg1|
+Dann(/^mir wird gesagt, dass ich mein Ziel erreicht habe$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^ich sage "(.*?)"$/) do |arg1|
+Wenn(/^ich sage, ich möchte auf "(.*?)" spielen$/) do |arg1|
+    pending # express the regexp above with the code you wish you had
+end
+
+Dann(/^gelange ich zum "(.*?)"$/) do |arg1|
     pending # express the regexp above with the code you wish you had
 end
