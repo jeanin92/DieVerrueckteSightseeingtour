@@ -36,9 +36,9 @@ Funktionalität: Der Benutzer kann Spielereinstellungen vor Beginn des Spieles b
 		Angenommen ich befinde mich auf dem Spieler-Einfüge-Bildschirm
 		Wenn ich dem System sage, dass ich einen Spieler bearbeiten möchte
 		Dann zeigt mir das System seine Daten auf dem Figurwahl-Bildschirm
-		Wenn ich <Änderung> ändere
+		Wenn ich "<Änderung>" ändere
 		Und ich meine Veränderungen absende
-		Dann weist mich das System darauf hin, <Fehler>
+		Dann weist mich das System darauf hin, "<Fehler>"
 		Und ich befinde mich wieder auf dem Figurwahl-Bildschirm
 		
 		Beispiele:

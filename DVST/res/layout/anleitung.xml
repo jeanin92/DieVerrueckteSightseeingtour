@@ -9,8 +9,23 @@
     tools:context=".StartActivity" >
 
     <TextView
+        android:id="@+id/hd_anleitung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/anleitung"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_anleitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hd_anleitung"
+        android:layout_below="@+id/hd_anleitung"
+        android:layout_marginTop="50dp"
+        android:text="" />
 
 </RelativeLayout>

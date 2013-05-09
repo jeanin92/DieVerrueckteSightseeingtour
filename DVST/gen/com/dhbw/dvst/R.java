@@ -19,29 +19,33 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
+        public static final int margin_left=0x7f040003;
+        public static final int margin_top1=0x7f040002;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000a;
-        public static final int btn_anleitung=0x7f080009;
-        public static final int btn_einspieler=0x7f080005;
-        public static final int btn_mehrspieler=0x7f080006;
-        public static final int btn_ok=0x7f080004;
-        public static final int btn_start=0x7f080008;
-        public static final int hd_geraete=0x7f080000;
-        public static final int hd_start=0x7f080007;
-        public static final int rb_eins=0x7f080002;
-        public static final int rb_mehrere=0x7f080003;
-        public static final int rg_geraete=0x7f080001;
+        public static final int action_settings=0x7f08000c;
+        public static final int btn_anleitung=0x7f08000b;
+        public static final int btn_einspieler=0x7f080007;
+        public static final int btn_mehrspieler=0x7f080008;
+        public static final int btn_ok=0x7f080006;
+        public static final int btn_start=0x7f08000a;
+        public static final int hd_anleitung=0x7f080000;
+        public static final int hd_geraete=0x7f080002;
+        public static final int hd_start=0x7f080009;
+        public static final int rb_eins=0x7f080004;
+        public static final int rb_mehrere=0x7f080005;
+        public static final int rg_geraete=0x7f080003;
+        public static final int tv_anleitung=0x7f080001;
     }
     public static final class layout {
         public static final int anleitung=0x7f030000;
         public static final int geraete=0x7f030001;
         public static final int modus=0x7f030002;
         public static final int spielbildschirm=0x7f030003;
-        public static final int spieler=0x7f030004;
+        public static final int spieler_uebersicht=0x7f030004;
         public static final int spielfigur=0x7f030005;
         public static final int start=0x7f030006;
     }
@@ -51,6 +55,7 @@ public final class R {
     public static final class string {
         public static final int OK=0x7f05000c;
         public static final int action_settings=0x7f050001;
+        public static final int anleitung=0x7f05000d;
         public static final int anleitung_lesen=0x7f050005;
         public static final int app_name=0x7f050000;
         public static final int ein_geraet=0x7f05000a;

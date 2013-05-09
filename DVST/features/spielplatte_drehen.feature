@@ -15,11 +15,11 @@ Funktionalität: Spielplatte drehen
 	Szenariogrundriss: Der Spieler dreht die Karte um 90°.
 		Angenommen das Spiel ist aktiv
 		Und ich bin an der Reihe
-		Wenn ich auf den Pfeil zum <drehrichtung> klicke
-		Dann wird die aktive Spielplatte um 90° nach <richtung> gedreht
+		Wenn ich auf den Pfeil zum "<Drehrichtung>" klicke
+		Dann wird die aktive Spielplatte um 90° nach "<Richtung>" gedreht
 		Und ich kann die aktive Spielplatte weiter beliebig drehen, wenn ich will  
 		
 		Beispiele:
-		| drehrichtung	| richtung	|
+		| Drehrichtung	| Richtung	|
 		| Linksdrehen	| links		|
 		| Rechtsdrehen	| rechts	|
