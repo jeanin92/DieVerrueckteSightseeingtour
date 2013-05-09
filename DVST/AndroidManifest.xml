@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dhbw.dvst.activities.ModusActivitydusActivity"
+            android:name="com.dhbw.dvst.activities.ModusActivity"
             android:label="@string/app_name"  
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"  >        
