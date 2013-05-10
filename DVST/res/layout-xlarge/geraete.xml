@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="80dp"
         android:text="@string/geraeteanzahl"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <RadioGroup
         android:id="@+id/rg_geraete"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/hd_geraete"
         android:layout_below="@+id/hd_geraete"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="50dp" >
 
         <RadioButton
             android:id="@+id/rb_eins"
@@ -38,7 +38,7 @@
             android:id="@+id/rb_mehrere"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:enabled="false"
             android:text="@string/mehr_geraete" />
 

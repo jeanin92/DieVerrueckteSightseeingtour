@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
         android:text="@string/anleitung"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearance" />
 
     <TextView
         android:id="@+id/tv_anleitung"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/hd_anleitung"
         android:layout_below="@+id/hd_anleitung"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:text="" />
 
 </RelativeLayout>
