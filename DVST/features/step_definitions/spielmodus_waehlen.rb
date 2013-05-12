@@ -1,6 +1,7 @@
 require 'calabash-android/calabash_steps'
 
 Angenommen(/^ich befinde mich auf dem Spielmodus\-Bildschirm$/) do
+    performAction('press_button_with_text', 'Spiel starten')
     performAction('assert_text', 'Spielmodus', true)
 end
 

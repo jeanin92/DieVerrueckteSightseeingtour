@@ -8,9 +8,9 @@ Funktionalität: Der Benutzer will den Spielmodus wählen.
 
 	
 	Szenario: Der Benutzer will gegen die KI spielen.	
-#		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm
-#		Wenn ich mich für ein Einspieler-Spiel entscheide
-#		Dann gelange ich zum Figurwahl-Bildschirm
+		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm
+		Wenn ich mich für ein Einspieler-Spiel entscheide
+		Dann gelange ich zum Figurwahl-Bildschirm
 	
 	Szenariogrundriss: Der Benutzer will gegen andere Spieler spielen.
 		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm
