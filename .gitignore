@@ -6,3 +6,4 @@ DVST/.settings/
 DVST/bin
 DVST/gen
 DVST/test_servers/
+DVST/pom.xml
