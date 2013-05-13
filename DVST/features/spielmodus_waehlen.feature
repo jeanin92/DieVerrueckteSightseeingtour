@@ -20,6 +20,6 @@ Funktionalität: Der Benutzer will den Spielmodus waehlen.
 		Dann gelange ich zum "<Bildschirm>"
 		
 		Beispiele: 
-		| Anzahl 			| Bildschirm					|
-		| einem Geraet 		| Spieler-Einfuege-Bildschirm	|
+		| Anzahl 				| Bildschirm					|
+		| einem Geraet 			| Spieler-Einfuege-Bildschirm	|
 		| mehreren Geraeten 	| Verbindungsaufbau-Bildschirm	| 
