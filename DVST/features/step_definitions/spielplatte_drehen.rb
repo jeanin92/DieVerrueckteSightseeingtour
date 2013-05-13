@@ -14,7 +14,7 @@ Wenn(/^ich auf den Pfeil zum "(.*?)" klicke$/) do |arg1|
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^wird die aktive Spielplatte um (\d+)° nach "(.*?)" gedreht$/) do |arg1, arg2|
+Dann(/^wird die aktive Spielplatte um (\d+)Grad nach "(.*?)" gedreht$/) do |arg1, arg2|
     pending # express the regexp above with the code you wish you had
 end
 

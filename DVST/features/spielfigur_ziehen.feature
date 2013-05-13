@@ -4,9 +4,9 @@
 Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 	Als Spieler
 	Will ich meine Figur setzen
-	So dass ich meine nächste Sehenswürdigkeit erreiche.
+	So dass ich meine naechste Sehenswuerdigkeit erreiche.
 	
-	Szenario: Der Spieler wählt eine Zielplatte, die er erreichen kann.
+	Szenario: Der Spieler waehlt eine Zielplatte, die er erreichen kann.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine erreichbare Spielplatte klicke
@@ -28,7 +28,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Dann wird mir gesagt, dass diese Platte nicht erreichbar ist
 		Und ich darf erneut eine Zielplatte anlicken
 
-	Szenario: Der Spieler ändert seine Zielplatte bevor der gültige Zug ausgeführt wird.
+	Szenario: Der Spieler aendert seine Zielplatte bevor der gueltige Zug ausgefuehrt wird.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine erreichbare Spielplatte klicke
@@ -37,7 +37,7 @@ Funktionalität: Der Spieler kann seine Figur auf dem Spielfeld bewegen.
 		Dann nimmt das Spiel die letztgeklickte Platte als Ziel an
 		Und meine Figur bewegt sich an die Stelle
 		
-	Szenario: Der Spieler ändert seine Zielplatte bevor er einen ungültigen Zug versucht.
+	Szenario: Der Spieler aendert seine Zielplatte bevor er einen ungueltigen Zug versucht.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Wenn ich auf eine beliebige Spielplatte klicke

@@ -8,7 +8,7 @@ Funktionalität: Der Benutzer kann sich sein Ziel ansehen, wenn er am Zug ist.
 		Angenommen ein Spiel ist aktiv
 		Und ich bin an der Reihe
 		Und ich habe eine Spielkarte
-		Wenn ich dem System sage, ich möchte die Spielkarte sehen
+		Wenn ich dem System sage, ich moechte die Spielkarte sehen
 		Dann zeigt mir das System diese
 		Und ich kann mit meinem Zug fortfahren.
 		

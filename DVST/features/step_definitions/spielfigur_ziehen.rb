@@ -70,7 +70,7 @@ Dann(/^mir wird gesagt, dass ich mein Ziel erreicht habe$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Wenn(/^ich sage, ich möchte auf "(.*?)" spielen$/) do |arg1|
+Wenn(/^ich sage, ich moechte auf "(.*?)" spielen$/) do |arg1|
     pending # express the regexp above with the code you wish you had
 end
 

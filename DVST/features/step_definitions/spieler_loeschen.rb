@@ -1,4 +1,4 @@
-Wenn(/^ich dem System sage, dass ich einen Spieler löschen möchte$/) do
+Wenn(/^ich dem System sage, dass ich einen Spieler loeschen moechte$/) do
     pending # express the regexp above with the code you wish you had
 end
 
@@ -6,7 +6,7 @@ Dann(/^fragt mich das System, ob ich das wirklich will$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^löscht das System den Spieler aus dem Spiel$/) do
+Dann(/^loescht das System den Spieler aus dem Spiel$/) do
     pending # express the regexp above with the code you wish you had
 end
 

@@ -6,7 +6,7 @@ Angenommen(/^ich besitze eine Spielkarte$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Angenommen(/^die aktive Spielplatte befindet sich in der gewünschten Richtung$/) do
+Angenommen(/^die aktive Spielplatte befindet sich in der gewuenschten Richtung$/) do
     pending # express the regexp above with the code you wish you had
 end
 
@@ -26,7 +26,7 @@ Wenn(/^sich eine Figur auf der rausgeschobenen Spielplatte befindet$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dann(/^wird die Figur auf die eingefügte Spielplatte gesetzt$/) do
+Dann(/^wird die Figur auf die eingefuegte Spielplatte gesetzt$/) do
     pending # express the regexp above with the code you wish you had
 end
 
