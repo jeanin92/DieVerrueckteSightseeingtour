@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Die verrueckte Sightseeing-Tour</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="startseite">Startseite</string>
+    <string name="spiel_starten">Spiel starten</string>
+    <string name="anleitung_lesen">Anleitung lesen</string>
+    <string name="spielmodus_waehlen">Spielmodus auswaehlen</string>
+    <string name="einspieler">Einspieler</string>
+    <string name="mehrspieler">Mehrspieler</string>
+    <string name="geraeteanzahl">Geraeteanzahl</string>
+    <string name="ein_geraet">ein Geraet fuer alle Spieler</string>
+    <string name="mehr_geraete">ein Geraet pro Spieler</string>
+    <string name="OK">Okay</string>
+    <string name="anleitung">Anleitung</string>
+    <string name="spieler_uebersicht">Spielerübersicht</string>
+    <string name="neuer_spieler">Neu</string>
+    <string name="zum_spiel">Los!</string>
+    <string name="spielmodus_wechseln">Spielmodus wechseln</string>
+
+</resources>
