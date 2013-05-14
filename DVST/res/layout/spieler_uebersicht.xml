@@ -7,11 +7,46 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:id="@+id/spieler_uebersicht"
-    tools:context=".StartActivity" >
+    tools:context=".activities.SpielerUebersichtActivity" >
 
     <TextView
+        android:id="@+id/hd_spieler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/spieler_uebersicht" />
+
+    <ListView
+        android:id="@+id/lv_spieler"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/hd_spieler"
+        android:layout_below="@+id/hd_spieler"
+        android:layout_marginTop="10dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/btn_neu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lv_spieler"
+        android:layout_below="@+id/lv_spieler"
+        android:text="@string/neuer_spieler" />
+
+    <Button
+        android:id="@+id/btn_modus_wechseln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lv_spieler"
+        android:layout_toRightOf="@+id/btn_neu"
+        android:text="@string/spielmodus_wechseln" />
+
+    <Button
+        android:id="@+id/btn_zum_spiel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_modus_wechseln"
+        android:layout_alignBottom="@+id/btn_modus_wechseln"
+        android:layout_toRightOf="@+id/btn_modus_wechseln"
+        android:text="@string/zum_spiel" />
 
 </RelativeLayout>

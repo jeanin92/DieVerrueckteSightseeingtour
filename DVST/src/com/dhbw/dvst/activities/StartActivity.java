@@ -20,6 +20,7 @@ public class StartActivity extends Activity {
 		final Button btn_start = (Button) findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+//            	setContentView(R.layout.modus);
                 Intent intent_modus = new Intent(StartActivity.this, ModusActivity.class);
                 StartActivity.this.startActivity(intent_modus);
             }
@@ -28,6 +29,7 @@ public class StartActivity extends Activity {
         final Button btn_anleitung = (Button) findViewById(R.id.btn_anleitung);
         btn_anleitung.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+//            	setContentView(R.layout.anleitung);
                 Intent intent_modus = new Intent(StartActivity.this, ModusActivity.class);
                 StartActivity.this.startActivity(intent_modus);
             }

@@ -15,5 +15,9 @@
     <string name="mehr_geraete">ein Geraet pro Spieler</string>
     <string name="OK">Okay</string>
     <string name="anleitung">Anleitung</string>
+    <string name="spieler_uebersicht">Spielerübersicht</string>
+    <string name="neuer_spieler">Neu</string>
+    <string name="zum_spiel">Los!</string>
+    <string name="spielmodus_wechseln">Spielmodus wechseln</string>
 
 </resources>

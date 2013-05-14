@@ -29,7 +29,7 @@ public class GeraeteActivity extends Activity {
             	else if(rb_mehrere.isChecked()){
             		//TODO: modus setzen
             	}
-                Intent intent_spieler = new Intent(GeraeteActivity.this, ModusActivity.class);
+                Intent intent_spieler = new Intent(GeraeteActivity.this, SpielerUebersichtActivity.class);
                 GeraeteActivity.this.startActivity(intent_spieler);
             }
         });

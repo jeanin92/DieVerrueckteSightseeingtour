@@ -37,6 +37,12 @@
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name" >            
         </activity>
+        <activity
+    		android:name="com.dhbw.dvst.activities.SpielerUebersichtActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name" >            
+        </activity>
 
     </application>
 
