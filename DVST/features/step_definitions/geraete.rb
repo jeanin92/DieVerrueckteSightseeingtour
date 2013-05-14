@@ -1,5 +1,5 @@
 Dann(/^fragt mich das System auf wie vielen Geraeten ich spielen moechte$/) do
-    query("* id:'geraete' button text='Okay'")
+    #query("* id:'geraete' button text='Okay'")
     #radio buttons
     performAction('assert_text', 'Geraeteanzahl', true)
 end
