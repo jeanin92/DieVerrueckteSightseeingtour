@@ -1,8 +1,14 @@
+#Gherkin
 @tags
-	da Features nicht unbedingt den Use Cases entsprechen mŸssen, werden alle Szenarios mit den entsprechenden
+	da Features nicht unbedingt den Use Cases entsprechen müssen, werden alle Szenarios mit den entsprechenden
 	Namen der Use Cases getaggt
 	
 	die Namen entsprechen den JPEG-Dateien des Use Cases
 	
 	wenn alle Szenarios einen gleichen Tag besitzen, kann das Feature getaggt werden
 	-> jedes Szenario kann trotzdem weiterhin Tags erhalten
+
+#Emulator
+To change the landscape to portrait and vice versa
+ctrl+fn+F11 on Mac
+left-ctrl+F11 on Windows 7
