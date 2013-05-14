@@ -10,18 +10,17 @@ Angenommen(/^ich befinde mich auf dem Spielmodus\-Bildschirm$/) do
 end
 
 Dann(/^gelange ich zum Figurwahl\-Bildschirm$/) do
-    #    pending
+    query("* id:'spielfigur'")
     #performAction('assert_text', '???', true)
     #Farbe wählen
     #Figur wählen
     #Namen eingeben
 end
 
-Dann(/^gelange ich zum Spieler\-Einfuege\-Bildschirm$/) do
-    query("* id:'spieler_uebersicht'")
-    # performAction('assert_text', 'Spieler hinzufuegen', true)
-end
-
-Dann(/^gelange ich zum Verbindungsaufbau\-Bildschirm$/) do
-    #    pending #performAction('assert_text', 'Server', true)
+Dann(/^gelange ich zum "(.*?)"$/) do |arg1|
+    if @arg1 == 'Spieler-Einfüge-Bildschirm' then
+         query("* id:'spieler_uebersicht'")
+    elsif @arg1 == 'Verbindungsaufbau-Bildschirm' then
+        # query("* id:'server'")
+    end
 end
