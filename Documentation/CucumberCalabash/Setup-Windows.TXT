@@ -1,0 +1,12 @@
+C:\Ruby193\lib\ruby\gems\1.9.1\gems\calabash-android-0.4.4\lib\calabash-android\helbers.rb
+Zeile 70: Pfad zur jarsigner.exe anpassen (JAVA_HOME sollte zum bin-Ordner zeigen)
+jarsigner_path = "\"#{ENV["JAVA_HOME"]}\\jarsigner.exe\""
+
+Zeile 119: Pfad zur keytool.exe anpassen
+"\"#{ENV["JAVA_HOME"]}\\keytool.exe\""
+
+eventuell noch keystore anpassen:
+CMD: calabash-android setup
+location: C:\Users\[name]\.android\debug.keystore
+password: android
+alias: androiddebugkey
