@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/margin_left_main"
+        android:layout_marginTop="@dimen/margin_top_main"
         android:text="@string/startseite"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/hd_start"
         android:layout_below="@+id/hd_start"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_main"
         android:text="@string/spiel_starten"
         android:textAppearance="?android:attr/textAppearanceButton" />
 
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btn_start"
         android:layout_below="@+id/btn_start"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_main"
         android:text="@string/anleitung_lesen"
         android:textAppearance="?android:attr/textAppearanceButton" />
 

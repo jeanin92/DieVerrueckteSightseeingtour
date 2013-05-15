@@ -21,7 +21,7 @@
         android:layout_height="200dp"
         android:layout_alignLeft="@+id/hd_spieler"
         android:layout_below="@+id/hd_spieler"
-        android:layout_marginTop="10dp" >
+        android:layout_marginTop="@dimen/margin_top_main" >
     </ListView>
 
     <Button
