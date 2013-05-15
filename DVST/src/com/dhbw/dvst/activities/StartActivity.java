@@ -30,8 +30,8 @@ public class StartActivity extends Activity {
         btn_anleitung.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 //            	setContentView(R.layout.anleitung);
-                Intent intent_modus = new Intent(StartActivity.this, ModusActivity.class);
-                StartActivity.this.startActivity(intent_modus);
+                Intent intent_anleitung = new Intent(StartActivity.this, AnleitungActivity.class);
+                StartActivity.this.startActivity(intent_anleitung);
             }
         });
 	}
