@@ -25,7 +25,7 @@
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/btn_start"
         android:layout_below="@+id/hd_anleitung"
         android:layout_alignLeft="@+id/hd_anleitung"
         android:layout_marginTop="@dimen/margin_top_main"
@@ -42,7 +42,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"        
