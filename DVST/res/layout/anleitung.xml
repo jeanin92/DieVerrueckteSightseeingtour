@@ -1,12 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/anleitung"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="fill|right"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:id="@+id/anleitung"
+    android:visibility="visible"
     tools:context=".StartActivity" >
 
     <TextView
@@ -20,13 +22,42 @@
         android:text="@string/anleitung"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/tv_anleitung"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hd_anleitung"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignWithParentIfMissing="false"
         android:layout_below="@+id/hd_anleitung"
-        android:layout_marginTop="30dp"
-        android:text="" />
+        android:animateLayoutChanges="true"
+        android:fillViewport="true"
+        android:scrollbars="vertical" >
+        
+            <EditText
+                android:id="@+id/editText1"
+                style="android:edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/scrollView1"
+                android:inputType="textMultiLine"
+                android:text="@string/anleitung_text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:attr/color"
+                android:textColorHint="@android:color/background_dark"
+                android:textColorLink="@android:color/white" />
+
+    </ScrollView>
+
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@dimen/activity_horizontal_margin"
+        android:text="@string/spiel_starten" />
 
 </RelativeLayout>
