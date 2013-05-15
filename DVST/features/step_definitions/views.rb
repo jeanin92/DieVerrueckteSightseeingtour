@@ -17,7 +17,7 @@ Dann(/^gelange ich zum Figurwahl\-Bildschirm$/) do
 end
 
 Dann(/^gelange ich zum "(.*?)"$/) do |arg1|
-    if @arg1 == 'Spieler-Einfüge-Bildschirm' then
+    if @arg1 == 'Spieler-Einfuege-Bildschirm' then
          query("* id:'spieler_uebersicht'")
     elsif @arg1 == 'Verbindungsaufbau-Bildschirm' then
         # query("* id:'server'")
