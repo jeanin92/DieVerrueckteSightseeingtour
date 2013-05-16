@@ -11,7 +11,7 @@ import android.widget.Button;
 import com.dhbw.dvst.R;
 
 public class ModusActivity extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

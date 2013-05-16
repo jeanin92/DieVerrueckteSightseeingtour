@@ -1,6 +1,7 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,8 +9,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.model.Control;
+import com.dhbw.dvst.model.Spiel;
 
 public class SpielerUebersichtActivity extends Activity {
+	private Spiel spiel = Control.getInstance();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +23,16 @@ public class SpielerUebersichtActivity extends Activity {
 		final Button btn_neu = (Button) findViewById(R.id.btn_neu);
         btn_neu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //TODO:zur Spielererstellung
+            	Intent intent_spieler = new Intent(SpielerUebersichtActivity.this, SpielerActivity.class);
+            	SpielerUebersichtActivity.this.startActivity(intent_spieler);
             }
         });
         
         final Button btn_modus_wechseln = (Button) findViewById(R.id.btn_modus_wechseln);
         btn_modus_wechseln.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //TODO: zurück zur Modusseite
+            	Intent intent_modus = new Intent(SpielerUebersichtActivity.this, ModusActivity.class);
+            	SpielerUebersichtActivity.this.startActivity(intent_modus);
             }
         });
         

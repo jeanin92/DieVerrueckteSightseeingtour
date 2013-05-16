@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.model.Control;
+import com.dhbw.dvst.model.Spiel;
 
 public class GeraeteActivity extends Activity {
+	private Spiel spiel = Control.getInstance();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +27,13 @@ public class GeraeteActivity extends Activity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if (rb_eins.isChecked()){
-            		//TODO: modus setzen
+            		spiel.setSpielmodus(Spiel.modus_mehrspieler_client);
             	}
             	else if(rb_mehrere.isChecked()){
-            		//TODO: modus setzen
+            		spiel.setSpielmodus(Spiel.modus_mehrspieler_server);
             	}
-                Intent intent_spieler = new Intent(GeraeteActivity.this, SpielerUebersichtActivity.class);
-                GeraeteActivity.this.startActivity(intent_spieler);
+                Intent intent_spieleruebersicht = new Intent(GeraeteActivity.this, SpielerUebersichtActivity.class);
+                GeraeteActivity.this.startActivity(intent_spieleruebersicht);
             }
         });
 	}

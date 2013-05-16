@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.model.Control;
 
 public class StartActivity extends Activity {
 
@@ -20,8 +21,8 @@ public class StartActivity extends Activity {
 		final Button btn_start = (Button) findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-//            	setContentView(R.layout.modus);
                 Intent intent_modus = new Intent(StartActivity.this, ModusActivity.class);
+                Control.resetInstance();
                 StartActivity.this.startActivity(intent_modus);
             }
         });

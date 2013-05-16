@@ -2,17 +2,22 @@ package com.dhbw.dvst.model;
 
 import java.util.ArrayList;
 
-public class Spiel {
+public class Spiel{
+	/**
+	 * 
+	 */
+	public static final int modus_einspieler = 0;
+	public static final int modus_mehrspieler_server = 1;
+	public static final int modus_mehrspieler_client = 2;
 	
 	private ArrayList<Spielfigur> alleSpielfiguren;
 	private ArrayList<Spieler> alleSpieler;
-	private String spielmodus;
+	private int spielmodus;
 	
 	/**
 	 * Konstruktor
 	 */
-	public Spiel(String spielmodus) {
-		this.spielmodus = spielmodus;
+	public Spiel() {
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>();
@@ -67,7 +72,22 @@ public class Spiel {
 	 * @param spieler
 	 */
 	public void spielerLoeschen(Spieler spieler) {
-		this.alleSpielfiguren.remove(spieler.getSpielfigur());
+		spieler.getSpielfigur().setVergeben(false);
 		this.alleSpieler.remove(spieler);
 	}
+
+	/**
+	 * @return the spielmodus
+	 */
+	public int getSpielmodus() {
+		return spielmodus;
+	}
+
+	/**
+	 * @param spielmodus the spielmodus to set
+	 */
+	public void setSpielmodus(int spielmodus) {
+		this.spielmodus = spielmodus;
+	}
+
 }
