@@ -13,6 +13,9 @@ public class Spiel{
 	private ArrayList<Spielfigur> alleSpielfiguren;
 	private ArrayList<Spieler> alleSpieler;
 	private int spielmodus;
+	private Spielbrett spielbrett;
+	private Spielplatte platte_aktiv;
+	private ArrayList<Spielkarte> kartenstapel;
 	
 	/**
 	 * Konstruktor
@@ -49,23 +52,23 @@ public class Spiel{
 	public void spielerHinzufuegen(String name, Spielfigur spielfigur) {
 		Spieler neuerSpieler = new Spieler(name, spielfigur);
 		this.alleSpieler.add(neuerSpieler);
-		setFigurVergeben(neuerSpieler);
+		spielfigur.setVergeben(true);
 	}
 
 	/**
 	 * Spielfigur als bereits an einen Spieler vergeben markieren
 	 * @param neuerSpieler
 	 */
-	private void setFigurVergeben(Spieler neuerSpieler) {
-		//foreach
-		for (Spielfigur s : this.alleSpielfiguren) {
-			if(s.getFarbe().equals(neuerSpieler.getSpielfigur().getFarbe())) {
-				if(s.getForm().equals(neuerSpieler.getSpielfigur().getForm())) {
-					s.setVergeben(true);
-				}
-			}
-		}
-	}
+//	private void setFigurVergeben(Spieler neuerSpieler) {
+//		//foreach
+//		for (Spielfigur s : this.alleSpielfiguren) {
+//			if(s.getFarbe().equals(neuerSpieler.getSpielfigur().getFarbe())) {
+//				if(s.getForm().equals(neuerSpieler.getSpielfigur().getForm())) {
+//					s.setVergeben(true);
+//				}
+//			}
+//		}
+//	}
 	
 	/**
 	 * Spieler loeschen und Spielfigur wieder freigeben
@@ -75,6 +78,10 @@ public class Spiel{
 		spieler.getSpielfigur().setVergeben(false);
 		this.alleSpieler.remove(spieler);
 	}
+	
+	/*
+	 * Getter und Setter Methoden
+	 */
 
 	/**
 	 * @return the spielmodus
@@ -88,6 +95,46 @@ public class Spiel{
 	 */
 	public void setSpielmodus(int spielmodus) {
 		this.spielmodus = spielmodus;
+	}
+
+	public ArrayList<Spielfigur> getAlleSpielfiguren() {
+		return alleSpielfiguren;
+	}
+
+	public void setAlleSpielfiguren(ArrayList<Spielfigur> alleSpielfiguren) {
+		this.alleSpielfiguren = alleSpielfiguren;
+	}
+
+	public ArrayList<Spieler> getAlleSpieler() {
+		return alleSpieler;
+	}
+
+	public void setAlleSpieler(ArrayList<Spieler> alleSpieler) {
+		this.alleSpieler = alleSpieler;
+	}
+
+	public Spielbrett getSpielbrett() {
+		return spielbrett;
+	}
+
+	public void setSpielbrett(Spielbrett spielbrett) {
+		this.spielbrett = spielbrett;
+	}
+
+	public Spielplatte getPlatte_aktiv() {
+		return platte_aktiv;
+	}
+
+	public void setPlatte_aktiv(Spielplatte platte_aktiv) {
+		this.platte_aktiv = platte_aktiv;
+	}
+
+	public ArrayList<Spielkarte> getKartenstapel() {
+		return kartenstapel;
+	}
+
+	public void setKartenstapel(ArrayList<Spielkarte> kartenstapel) {
+		this.kartenstapel = kartenstapel;
 	}
 
 }
