@@ -85,14 +85,4 @@
         android:layout_marginTop="@dimen/margin_top_large"
         android:text="@string/OK" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_marginLeft="74dp"
-        android:layout_toRightOf="@+id/spin_farbe"
-        android:contentDescription="@string/figur"
-        android:src="@drawable/ic_launcher" />
-
 </RelativeLayout>

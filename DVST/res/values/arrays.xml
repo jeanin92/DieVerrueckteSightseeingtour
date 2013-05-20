@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="farben">
+        <item>rot</item>
+        <item>blau</item>
+        <item>gelb</item>
+        <item>grün</item>
+    </string-array>
+
+    <string-array name="figuren">
+        <item>auto</item>
+        <item>bus</item>
+        <item>motorrad</item>
+    </string-array>
+</resources>
