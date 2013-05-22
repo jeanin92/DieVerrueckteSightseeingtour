@@ -1,8 +1,6 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,6 +11,7 @@ import android.widget.ListView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.helper.SimpleArrayAdapter;
+import com.dhbw.dvst.helper.SimpleErrorMessage;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 
@@ -29,16 +28,7 @@ public class SpielerUebersichtActivity extends Activity {
         btn_neu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if(spiel.getAlleSpieler().size() == 6) {
-                		AlertDialog.Builder builder = new AlertDialog.Builder(SpielerUebersichtActivity.this);
-                		builder.setMessage(getString(R.string.err_max_spieleranzahl))
-                			.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
-    							@Override
-    							public void onClick(DialogInterface dialog, int which) {
-    								dialog.cancel();											
-    							}
-    						});
-                		AlertDialog alert = builder.create();
-                		alert.show();
+            		new SimpleErrorMessage(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
                 	}
             	else {
             		Intent intent_spieler = new Intent(SpielerUebersichtActivity.this, SpielerActivity.class);
