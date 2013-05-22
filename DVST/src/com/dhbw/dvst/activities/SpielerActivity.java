@@ -38,11 +38,12 @@ public class SpielerActivity extends Activity {
 		spin_form.setAdapter(adapt_figur);
 		final Button btn_neu = (Button) findViewById(R.id.btn_erstellen);
         btn_neu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {            	
+            public void onClick(View v) {      
+            	//TODO: welches ist richtig
             	if(SpielerActivity.this.et_name.getText()==null ||
             			SpielerActivity.this.et_name.getText().toString().equals("")){
             		SpielerActivity.this.et_name.setError(getString(R.string.err_eingabe_leer));
-            	}
+            	} // dürfte nicht auftreten
             	else if(SpielerActivity.this.spin_farbe.getSelectedItem()==null ||
             			SpielerActivity.this.spin_form.getSelectedItem()==null){
             		AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);

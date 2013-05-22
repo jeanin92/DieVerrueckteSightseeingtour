@@ -42,6 +42,8 @@ public class SpielerUebersichtActivity extends Activity {
                 //TODO: zum Spiel
             }
         });
+        
+        
 	}
 
 	@Override
