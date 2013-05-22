@@ -29,5 +29,6 @@
     <string name="zurueck">Zurück</string>
     <string name="err_eingabe_leer">Eingabe erforderlich</string>
     <string name="err_nichts_selektiert">Bitte wähle einen Eintrag aus</string>
+    <string name="err_vergeben">Spielfigur bereits vergeben</string>
 
 </resources>

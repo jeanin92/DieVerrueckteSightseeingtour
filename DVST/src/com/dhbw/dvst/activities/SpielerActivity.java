@@ -2,6 +2,7 @@ package com.dhbw.dvst.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -44,7 +45,7 @@ public class SpielerActivity extends Activity {
             	}
             	else if(SpielerActivity.this.spin_farbe.getSelectedItem()==null ||
             			SpielerActivity.this.spin_form.getSelectedItem()==null){
-            		AlertDialog.Builder builder = new AlertDialog.Builder(getParent());
+            		AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
             		builder.setMessage(getString(R.string.err_nichts_selektiert))
             			.setCancelable(true);
             		AlertDialog alert = builder.create();
@@ -55,9 +56,16 @@ public class SpielerActivity extends Activity {
 						if(figur.getFarbe().equals(spin_farbe.getSelectedItem().toString()) &
 								figur.getForm().equals(spin_form.getSelectedItem().toString())){
 							if(figur.isVergeben()){
-								AlertDialog.Builder builder = new AlertDialog.Builder(getParent());
-			            		builder.setMessage(getString(R.string.err_nichts_selektiert))
-			            			.setCancelable(true);
+								AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
+			            		builder.setMessage(getString(R.string.err_vergeben))
+			            			.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+										
+										@Override
+										public void onClick(DialogInterface dialog, int which) {
+											dialog.cancel();
+											
+										}
+									});
 			            		AlertDialog alert = builder.create();
 			            		alert.show();
 							}
