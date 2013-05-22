@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Spiel{
 	/**
-	 * 
+	 * Spielmodi
 	 */
 	public static final int modus_einspieler = 0;
 	public static final int modus_mehrspieler_server = 1;
