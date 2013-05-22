@@ -2,8 +2,8 @@ package com.dhbw.dvst.model;
 
 public class Spielfigur {
 
-	private String form;
-	private String farbe;
+	private Form form;
+	private Farbe farbe;
 	private String motivUrl;
 	private Spielplatte spielplatte;
 	private boolean vergeben;
@@ -14,23 +14,23 @@ public class Spielfigur {
 	 * @param String farbe
 	 * @param String motivUrl URL der Spielfigur
 	 */
-	public Spielfigur(String form, String farbe, String motivUrl) {
+	public Spielfigur(Form form, Farbe farbe, String motivUrl) {
 		this.form = form;
 		this.farbe = farbe;
 		this.motivUrl = motivUrl;
 		this.vergeben = false;
 	}
 	
-	public String getForm() {
+	public Form getForm() {
 		return form;
 	}
-	public void setForm(String form) {
+	public void setForm(Form form) {
 		this.form = form;
 	}
-	public String getFarbe() {
+	public Farbe getFarbe() {
 		return farbe;
 	}
-	public void setFarbe(String farbe) {
+	public void setFarbe(Farbe farbe) {
 		this.farbe = farbe;
 	}
 	public String getMotivUrl() {

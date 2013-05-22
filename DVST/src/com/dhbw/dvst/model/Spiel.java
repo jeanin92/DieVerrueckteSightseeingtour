@@ -33,34 +33,17 @@ public class Spiel{
 	 * Spielfiguren initialisieren
 	 */
 	public void initialisiereSpielfiguren() {
-		if(language.equals("de")){
-			this.alleSpielfiguren.add(new Spielfigur("motorrad", "rot", ""));
-			this.alleSpielfiguren.add(new Spielfigur("auto", "rot", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "rot", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorrad", "gelb", ""));
-			this.alleSpielfiguren.add(new Spielfigur("auto", "gelb", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "gelb", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorrad", "grün", ""));
-			this.alleSpielfiguren.add(new Spielfigur("auto", "grün", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "grün", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorrad", "blau", ""));
-			this.alleSpielfiguren.add(new Spielfigur("auto", "blau", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "blau", ""));
-		}
-		else{
-			this.alleSpielfiguren.add(new Spielfigur("motorbike", "red", ""));
-			this.alleSpielfiguren.add(new Spielfigur("car", "red", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "red", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorbike", "yellow", ""));
-			this.alleSpielfiguren.add(new Spielfigur("car", "yellow", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "yellow", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorbike", "green", ""));
-			this.alleSpielfiguren.add(new Spielfigur("car", "green", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "green", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorbike", "blue", ""));
-			this.alleSpielfiguren.add(new Spielfigur("car", "blue", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "blue", ""));
-		}
+		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("rot", "red"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("rot", "red"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("rot", "red"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("gelb", "yellow"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("gelb", "yellow"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("gelb", "yellow"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("grün", "green"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("grün", "green"), ""));			this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("grün", "green"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("blau", "blue"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("blau", "blue"), ""));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("blau", "blue"), ""));
 	}
 	
 	/**

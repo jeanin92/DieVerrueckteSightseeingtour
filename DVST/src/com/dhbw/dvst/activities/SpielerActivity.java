@@ -58,8 +58,8 @@ public class SpielerActivity extends Activity {
             	}
             	else{
             		for (Spielfigur figur : spiel.getAlleSpielfiguren()) {            			
-						if(figur.getFarbe().equals(spin_farbe.getSelectedItem().toString()) &
-								figur.getForm().equals(spin_form.getSelectedItem().toString())){
+						if(figur.getFarbe().compare(spin_farbe.getSelectedItem().toString()) &
+								figur.getForm().compare(spin_form.getSelectedItem().toString())){
 							if(figur.isVergeben()){
 								AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
 			            		builder.setMessage(getString(R.string.err_vergeben))
