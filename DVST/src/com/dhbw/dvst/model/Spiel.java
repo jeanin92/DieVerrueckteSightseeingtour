@@ -26,7 +26,7 @@ public class Spiel{
 		language = Locale.getDefault().getLanguage();
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
-		alleSpieler = new ArrayList<Spieler>();
+		alleSpieler = new ArrayList<Spieler>(6);
 	}
 	
 	/**
@@ -52,9 +52,9 @@ public class Spiel{
 	 * @param spielfigur
 	 */
 	public void spielerHinzufuegen(String name, Spielfigur spielfigur) {
-		Spieler neuerSpieler = new Spieler(name, spielfigur);
-		this.alleSpieler.add(neuerSpieler);
-		spielfigur.setVergeben(true);
+			Spieler neuerSpieler = new Spieler(name, spielfigur);
+			this.alleSpieler.add(neuerSpieler);
+			spielfigur.setVergeben(true);
 	}
 
 	/**
