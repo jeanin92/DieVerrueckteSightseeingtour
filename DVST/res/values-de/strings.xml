@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">The crazy sightseeing-tour</string>
+    <string name="app_name">Die verrueckte Sightseeing-Tour</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="startseite">Home</string>
-    <string name="spiel_starten">Start game</string>
-    <string name="anleitung_lesen">Read instructions</string>
-    <string name="spielmodus_waehlen">Choose gamemode</string>
-    <string name="einspieler">Singleplayer</string>
-    <string name="mehrspieler">Multiplayer</string>
-    <string name="geraeteanzahl">Count of devices</string>
-    <string name="ein_geraet">one device for all players</string>
-    <string name="mehr_geraete">one device per player</string>
+    <string name="startseite">Startseite</string>
+    <string name="spiel_starten">Spiel starten</string>
+    <string name="anleitung_lesen">Anleitung lesen</string>
+    <string name="spielmodus_waehlen">Spielmodus auswaehlen</string>
+    <string name="einspieler">Einspieler</string>
+    <string name="mehrspieler">Mehrspieler</string>
+    <string name="geraeteanzahl">Geraeteanzahl</string>
+    <string name="ein_geraet">ein Geraet fuer alle Spieler</string>
+    <string name="mehr_geraete">ein Geraet pro Spieler</string>
     <string name="OK">Okay</string>
-    <string name="anleitung">Instructions</string>
-    <string name="spieler_uebersicht">Player overview</string>
-    <string name="neuer_spieler">New</string>
-    <string name="zum_spiel">Go!</string>
-    <string name="spielmodus_wechseln">Change gamemode</string>
+    <string name="anleitung">Anleitung</string>
+    <string name="spieler_uebersicht">Spielerübersicht</string>
+    <string name="neuer_spieler">Neu</string>
+    <string name="zum_spiel">Los!</string>
+    <string name="spielmodus_wechseln">Spielmodus wechseln</string>
     <string name="anleitung_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </string>
-    <string name="spieler_erstellen">Create a player</string>
+    <string name="spieler_erstellen">Spieler erstellen</string>
     <string name="name">Name:</string>
-    <string name="figur">Form:</string>
-    <string name="farbe">Color:</string>
-    <string name="zurueck">Back</string>
-    <string name="err_eingabe_leer">Input is required</string>
-    <string name="err_nichts_selektiert">Please select an entry</string>
-    <string name="err_vergeben">pawn is already choosed</string>
-    <string name="close">close</string>
+    <string name="figur">Figur:</string>
+    <string name="farbe">Farbe:</string>
+    <string name="zurueck">Zurück</string>
+    <string name="err_eingabe_leer">Eingabe erforderlich</string>
+    <string name="err_nichts_selektiert">Bitte wähle einen Eintrag aus</string>
+    <string name="err_vergeben">Spielfigur bereits vergeben</string>
+    <string name="close">Schließen</string>
 
 </resources>

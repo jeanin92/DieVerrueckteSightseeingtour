@@ -40,9 +40,9 @@ public class Spiel{
 			this.alleSpielfiguren.add(new Spielfigur("motorrad", "gelb", ""));
 			this.alleSpielfiguren.add(new Spielfigur("auto", "gelb", ""));
 			this.alleSpielfiguren.add(new Spielfigur("bus", "gelb", ""));
-			this.alleSpielfiguren.add(new Spielfigur("motorrad", "gruen", ""));
-			this.alleSpielfiguren.add(new Spielfigur("auto", "gruen", ""));
-			this.alleSpielfiguren.add(new Spielfigur("bus", "gruen", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorrad", "grün", ""));
+			this.alleSpielfiguren.add(new Spielfigur("auto", "grün", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "grün", ""));
 			this.alleSpielfiguren.add(new Spielfigur("motorrad", "blau", ""));
 			this.alleSpielfiguren.add(new Spielfigur("auto", "blau", ""));
 			this.alleSpielfiguren.add(new Spielfigur("bus", "blau", ""));
