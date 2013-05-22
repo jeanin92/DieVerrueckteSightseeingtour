@@ -21,8 +21,12 @@ public class SpielerUebersichtActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.spieler_uebersicht);
 		final ListView listview = (ListView) findViewById(R.id.lv_spieler);
+        final SimpleArrayAdapter adapter = new SimpleArrayAdapter(this, 
+        		android.R.layout.simple_list_item_1, spiel.getAlleSpieler());
+        listview.setAdapter(adapter);
 		
 		final Button btn_neu = (Button) findViewById(R.id.btn_neu);
         btn_neu.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +55,6 @@ public class SpielerUebersichtActivity extends Activity {
                 //TODO: zum Spiel
             }
         });
-        
-        final SimpleArrayAdapter adapter = new SimpleArrayAdapter(this, 
-        		android.R.layout.simple_list_item_1, spiel.getAlleSpieler());
-        listview.setAdapter(adapter);
 	}
 
 	@Override
