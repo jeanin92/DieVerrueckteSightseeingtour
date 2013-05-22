@@ -25,3 +25,15 @@ Dann(/^gelange ich zum "(.*?)"$/) do |arg1|
         # query("* id:'server'")
     end
 end
+
+Angenommen(/^ich befinde mich auf dem Start\-Bildschirm$/) do
+  query("* id:'start'")
+end
+
+Wenn(/^ich den Spielanleitungs\-Button klicke$/) do
+  performAction('press', 'btn_anleitung')
+end
+
+Dann(/^oeffnet sich der Anleitungs\-Bildschirm$/) do
+  query("* id:'anleitung'")
+end
