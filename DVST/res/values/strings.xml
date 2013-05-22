@@ -27,9 +27,12 @@
     <string name="figur">Form:</string>
     <string name="farbe">Color:</string>
     <string name="zurueck">Back</string>
-    <string name="err_eingabe_leer">Input is required</string>
-    <string name="err_nichts_selektiert">Please select an entry</string>
-    <string name="err_vergeben">pawn is already chosen</string>
-    <string name="close">close</string>
+    <string name="err_eingabe_leer">Input is required.</string>
+    <string name="err_nichts_selektiert">Please select an entry.</string>
+    <string name="err_vergeben">Pawn is already chosen.</string>
+    <string name="err_max_spieleranzahl">Maximum number of players reached.</string>
+    <string name="close">Close</string>
+    
+    <string name="gewaehlte_figur">chosen pawn</string>
 
 </resources>

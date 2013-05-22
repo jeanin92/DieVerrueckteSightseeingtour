@@ -10,6 +10,11 @@ public class Spieler {
 		this.name = name;
 		this.spielfigur = spielfigur;
 	}
+	
+	public String toString() {
+		return this.name;
+	}
+	
 
 	public Spielfigur getSpielfigur() {
 		return spielfigur;

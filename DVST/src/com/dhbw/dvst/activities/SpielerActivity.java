@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.helper.SimpleErrorMessage;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spielfigur;
@@ -36,41 +37,25 @@ public class SpielerActivity extends Activity {
 		spin_farbe.setAdapter(adapt_farbe);
 		ArrayAdapter<CharSequence> adapt_figur = ArrayAdapter.createFromResource(this, R.array.figuren, android.R.layout.simple_spinner_item);
 		spin_form.setAdapter(adapt_figur);
+		
 		final Button btn_neu = (Button) findViewById(R.id.btn_erstellen);
         btn_neu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {            	
+            public void onClick(View v) { 
+            	//TODO: welches ist richtig
             	if(SpielerActivity.this.et_name.getText()==null ||
             			SpielerActivity.this.et_name.getText().toString().equals("")){
             		SpielerActivity.this.et_name.setError(getString(R.string.err_eingabe_leer));
-            	}
+            	} // dürfte nicht auftreten
             	else if(SpielerActivity.this.spin_farbe.getSelectedItem()==null ||
             			SpielerActivity.this.spin_form.getSelectedItem()==null){
-            		AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
-            		builder.setMessage(getString(R.string.err_nichts_selektiert))
-            			.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								dialog.cancel();											
-							}
-						});
-            		AlertDialog alert = builder.create();
-            		alert.show();
+            		new SimpleErrorMessage(SpielerActivity.this, getString(R.string.err_nichts_selektiert));
             	}
             	else{
             		for (Spielfigur figur : spiel.getAlleSpielfiguren()) {            			
 						if(figur.getFarbe().compare(spin_farbe.getSelectedItem().toString()) &
 								figur.getForm().compare(spin_form.getSelectedItem().toString())){
 							if(figur.isVergeben()){
-								AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
-			            		builder.setMessage(getString(R.string.err_vergeben))
-			            			.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(DialogInterface dialog, int which) {
-											dialog.cancel();											
-										}
-									});
-			            		AlertDialog alert = builder.create();
-			            		alert.show();
+								new SimpleErrorMessage(SpielerActivity.this, getString(R.string.err_vergeben));
 							}
 							else{
 								spiel.spielerHinzufuegen(et_name.getText().toString(), figur);
@@ -96,5 +81,4 @@ public class SpielerActivity extends Activity {
 	  // ignore orientation/keyboard change
 	  super.onConfigurationChanged(newConfig);
 	}
-
 }

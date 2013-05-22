@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.helper.SimpleArrayAdapter;
+import com.dhbw.dvst.helper.SimpleErrorMessage;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 
@@ -18,13 +21,23 @@ public class SpielerUebersichtActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.spieler_uebersicht);
+		final ListView listview = (ListView) findViewById(R.id.lv_spieler);
+        final SimpleArrayAdapter adapter = new SimpleArrayAdapter(this, 
+        		android.R.layout.simple_list_item_1, spiel.getAlleSpieler());
+        listview.setAdapter(adapter);
 		
 		final Button btn_neu = (Button) findViewById(R.id.btn_neu);
         btn_neu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Intent intent_spieler = new Intent(SpielerUebersichtActivity.this, SpielerActivity.class);
-            	SpielerUebersichtActivity.this.startActivity(intent_spieler);
+            	if(spiel.getAlleSpieler().size() == 6) {
+            		new SimpleErrorMessage(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
+                	}
+            	else {
+            		Intent intent_spieler = new Intent(SpielerUebersichtActivity.this, SpielerActivity.class);
+            		SpielerUebersichtActivity.this.startActivity(intent_spieler);
+            	}
             }
         });
         
@@ -56,5 +69,7 @@ public class SpielerUebersichtActivity extends Activity {
 	  // ignore orientation/keyboard change
 	  super.onConfigurationChanged(newConfig);
 	}
-
+	
 }
+
+
