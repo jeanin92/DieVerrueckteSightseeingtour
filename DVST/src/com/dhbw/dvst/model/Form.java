@@ -17,4 +17,8 @@ public class Form {
 			return false;
 		}
 	}
+	
+	public String toString() {
+		return text_de;
+	}
 }

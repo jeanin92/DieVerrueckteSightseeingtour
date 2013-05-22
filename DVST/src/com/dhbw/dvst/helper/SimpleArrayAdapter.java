@@ -8,6 +8,8 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,9 +17,10 @@ import android.widget.TextView;
 
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.activities.SpielerUebersichtActivity;
 import com.dhbw.dvst.model.Spieler;
 
-public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
+public class SimpleArrayAdapter extends ArrayAdapter<Spieler> implements OnItemClickListener {
 
 	/**
 	 * Speichert alle Spieler als Key und einen hochzählenden int-Wert als Value
@@ -58,11 +61,15 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
     	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    View zeilenansicht = inflater.inflate(R.layout.zeilenansicht, parent, false);  
 	    
+	    ImageView imageView = (ImageView) zeilenansicht.findViewById(R.id.img_gewaehlte_figur);
+	    String figur = this.getItem(position).getSpielfigur().getFarbe().toString();
+	    String farbe = this.getItem(position).getSpielfigur().getForm().toString();
+	    String imageName = figur + farbe;
+	    int resID = context.getResources().getIdentifier(imageName, "drawable", "com.dhbw.dvst");	    
+	    imageView.setImageResource(resID);
+	    
 	    TextView textView = (TextView) zeilenansicht.findViewById(R.id.tv_gewaehlter_name);
 	    textView.setText(getItem(position).toString());  
-	    
-	    ImageView imageView = (ImageView) zeilenansicht.findViewById(R.id.img_gewaehlte_figur);
-	    imageView.setImageResource(R.drawable.ic_launcher);
 	    
 	    Button btn_bearbeiten = (Button) zeilenansicht.findViewById(R.id.btn_spieler_bearbeiten);
 	    btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
@@ -72,6 +79,12 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
 	    
 	    return zeilenansicht;
     }
+
+	@Override
+	public void onItemClick(AdapterView parent, View v, int position, long id) {
+		// TODO Auto-generated method stub
+
+	}
 
 
 }

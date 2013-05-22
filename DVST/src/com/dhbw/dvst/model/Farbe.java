@@ -17,4 +17,8 @@ public class Farbe {
 			return false;
 		}
 	}
+	
+	public String toString() {
+		return text_de;
+	}
 }

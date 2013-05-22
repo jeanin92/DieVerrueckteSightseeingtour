@@ -42,10 +42,9 @@ public class SpielerActivity extends Activity {
         btn_neu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) { 
             	//TODO: welches ist richtig
-            	if(SpielerActivity.this.et_name.getText()==null ||
-            			SpielerActivity.this.et_name.getText().toString().equals("")){
+            	if(SpielerActivity.this.et_name.getText().toString().trim().length() == 0){
             		SpielerActivity.this.et_name.setError(getString(R.string.err_eingabe_leer));
-            	} // dürfte nicht auftreten
+            	}
             	else if(SpielerActivity.this.spin_farbe.getSelectedItem()==null ||
             			SpielerActivity.this.spin_form.getSelectedItem()==null){
             		new SimpleErrorMessage(SpielerActivity.this, getString(R.string.err_nichts_selektiert));
@@ -58,7 +57,7 @@ public class SpielerActivity extends Activity {
 								new SimpleErrorMessage(SpielerActivity.this, getString(R.string.err_vergeben));
 							}
 							else{
-								spiel.spielerHinzufuegen(et_name.getText().toString(), figur);
+								spiel.spielerHinzufuegen(et_name.getText().toString().trim(), figur);
 								Intent intent_uebersicht = new Intent(SpielerActivity.this, SpielerUebersichtActivity.class);
 			            		SpielerActivity.this.startActivity(intent_uebersicht);
 							}
