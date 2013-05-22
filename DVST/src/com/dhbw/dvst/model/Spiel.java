@@ -1,6 +1,7 @@
 package com.dhbw.dvst.model;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Spiel{
 	/**
@@ -16,11 +17,13 @@ public class Spiel{
 	private Spielbrett spielbrett;
 	private Spielplatte platte_aktiv;
 	private ArrayList<Spielkarte> kartenstapel;
+	private String language; 	
 	
 	/**
 	 * Konstruktor
 	 */
 	public Spiel() {
+		language = Locale.getDefault().getLanguage();
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>();
@@ -30,18 +33,34 @@ public class Spiel{
 	 * Spielfiguren initialisieren
 	 */
 	public void initialisiereSpielfiguren() {
-		this.alleSpielfiguren.add(new Spielfigur("motorrad", "rot", ""));
-		this.alleSpielfiguren.add(new Spielfigur("auto", "rot", ""));
-		this.alleSpielfiguren.add(new Spielfigur("bus", "rot", ""));
-		this.alleSpielfiguren.add(new Spielfigur("motorrad", "gelb", ""));
-		this.alleSpielfiguren.add(new Spielfigur("auto", "gelb", ""));
-		this.alleSpielfiguren.add(new Spielfigur("bus", "gelb", ""));
-		this.alleSpielfiguren.add(new Spielfigur("motorrad", "grün", ""));
-		this.alleSpielfiguren.add(new Spielfigur("auto", "grün", ""));
-		this.alleSpielfiguren.add(new Spielfigur("bus", "grün", ""));
-		this.alleSpielfiguren.add(new Spielfigur("motorrad", "blau", ""));
-		this.alleSpielfiguren.add(new Spielfigur("auto", "blau", ""));
-		this.alleSpielfiguren.add(new Spielfigur("bus", "blau", ""));
+		if(language.equals("de")){
+			this.alleSpielfiguren.add(new Spielfigur("motorrad", "rot", ""));
+			this.alleSpielfiguren.add(new Spielfigur("auto", "rot", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "rot", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorrad", "gelb", ""));
+			this.alleSpielfiguren.add(new Spielfigur("auto", "gelb", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "gelb", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorrad", "gruen", ""));
+			this.alleSpielfiguren.add(new Spielfigur("auto", "gruen", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "gruen", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorrad", "blau", ""));
+			this.alleSpielfiguren.add(new Spielfigur("auto", "blau", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "blau", ""));
+		}
+		else{
+			this.alleSpielfiguren.add(new Spielfigur("motorbike", "red", ""));
+			this.alleSpielfiguren.add(new Spielfigur("car", "red", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "red", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorbike", "yellow", ""));
+			this.alleSpielfiguren.add(new Spielfigur("car", "yellow", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "yellow", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorbike", "green", ""));
+			this.alleSpielfiguren.add(new Spielfigur("car", "green", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "green", ""));
+			this.alleSpielfiguren.add(new Spielfigur("motorbike", "blue", ""));
+			this.alleSpielfiguren.add(new Spielfigur("car", "blue", ""));
+			this.alleSpielfiguren.add(new Spielfigur("bus", "blue", ""));
+		}
 	}
 	
 	/**
