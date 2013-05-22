@@ -65,10 +65,10 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
 	    imageView.setImageResource(R.drawable.ic_launcher);
 	    
 	    Button btn_bearbeiten = (Button) zeilenansicht.findViewById(R.id.btn_spieler_bearbeiten);
-	    //btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
+	    btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
 	    
 	    Button btn_loeschen = (Button) zeilenansicht.findViewById(R.id.btn_spieler_loeschen);
-	    //btn_loeschen.setBackgroundResource(R.drawable.ic_launcher);
+	    btn_loeschen.setBackgroundResource(R.drawable.ic_launcher);
 	    
 	    return zeilenansicht;
     }

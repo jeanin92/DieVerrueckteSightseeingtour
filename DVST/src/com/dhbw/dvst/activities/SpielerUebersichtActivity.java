@@ -71,11 +71,6 @@ public class SpielerUebersichtActivity extends Activity {
 	  super.onConfigurationChanged(newConfig);
 	}
 	
-//	@Override
-//	public void onListItemClick() {
-		
-//	}
-	
 }
 
 
