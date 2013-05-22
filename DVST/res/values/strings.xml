@@ -32,5 +32,7 @@
     <string name="err_vergeben">Pawn is already chosen.</string>
     <string name="err_max_spieleranzahl">Maximum number of players reached.</string>
     <string name="close">Close</string>
+    
+    <string name="gewaehlte_figur">chosen pawn</string>
 
 </resources>

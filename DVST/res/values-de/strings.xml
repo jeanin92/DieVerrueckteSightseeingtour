@@ -32,5 +32,7 @@
     <string name="err_vergeben">Spielfigur bereits vergeben</string>
     <string name="err_max_spieleranzahl">Maximale Spieleranzahl erreicht</string>
     <string name="close">Schließen</string>
+    
+    <string name="gewaehlte_figur">gewaehlte Spielfigur</string>
 
 </resources>
