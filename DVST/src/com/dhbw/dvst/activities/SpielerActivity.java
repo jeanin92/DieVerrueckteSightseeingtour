@@ -47,7 +47,12 @@ public class SpielerActivity extends Activity {
             			SpielerActivity.this.spin_form.getSelectedItem()==null){
             		AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
             		builder.setMessage(getString(R.string.err_nichts_selektiert))
-            			.setCancelable(true);
+            			.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								dialog.cancel();											
+							}
+						});
             		AlertDialog alert = builder.create();
             		alert.show();
             	}
@@ -58,12 +63,10 @@ public class SpielerActivity extends Activity {
 							if(figur.isVergeben()){
 								AlertDialog.Builder builder = new AlertDialog.Builder(SpielerActivity.this);
 			            		builder.setMessage(getString(R.string.err_vergeben))
-			            			.setNegativeButton("Close", new DialogInterface.OnClickListener() {
-										
+			            			.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
 										@Override
 										public void onClick(DialogInterface dialog, int which) {
-											dialog.cancel();
-											
+											dialog.cancel();											
 										}
 									});
 			            		AlertDialog alert = builder.create();
