@@ -1,6 +1,7 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class SpielerUebersichtActivity extends Activity {
 		setContentView(R.layout.spieler_uebersicht);
 		final ListView listview = (ListView) findViewById(R.id.lv_spieler);
         final SimpleArrayAdapter adapter = new SimpleArrayAdapter(this, 
-        		android.R.layout.simple_list_item_1, spiel.getAlleSpieler());
+        		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spiel.getAlleSpieler());
         listview.setAdapter(adapter);
 		
 		final Button btn_neu = (Button) findViewById(R.id.btn_neu);
@@ -69,6 +70,11 @@ public class SpielerUebersichtActivity extends Activity {
 	  // ignore orientation/keyboard change
 	  super.onConfigurationChanged(newConfig);
 	}
+	
+//	@Override
+//	public void onListItemClick() {
+		
+//	}
 	
 }
 

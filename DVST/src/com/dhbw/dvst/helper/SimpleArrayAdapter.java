@@ -3,16 +3,18 @@ package com.dhbw.dvst.helper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import android.R;
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.dhbw.dvst.R;
 import com.dhbw.dvst.model.Spieler;
 
 public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
@@ -20,11 +22,20 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
 	/**
 	 * Speichert alle Spieler als Key und einen hochzählenden int-Wert als Value
 	 */
-    HashMap<Spieler, Integer> mIdMap = new HashMap<Spieler, Integer>();
+    private HashMap<Spieler, Integer> mIdMap = new HashMap<Spieler, Integer>();
+    private Context context;
 
-    public SimpleArrayAdapter(Context context, int textViewResourceId,
+    /**
+     * 
+     * @param context momentaner Kontext
+     * @param resourceId ID der Layout-Datei
+     * @param textViewId ID des Textviews in der Layout-Datei
+     * @param alleSpieler Listenobjekte
+     */
+    public SimpleArrayAdapter(Context context, int resourceId, int textViewId,
         ArrayList<Spieler> alleSpieler) {
-      super(context, textViewResourceId, alleSpieler);
+      super(context, resourceId, textViewId, alleSpieler);
+      this.context = context;
       for (int i = 0; i < alleSpieler.size(); ++i) {
         mIdMap.put(alleSpieler.get(i), i);
       }
@@ -41,6 +52,26 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler> {
       return true;
     }
 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+    	LayoutInflater inflater = (LayoutInflater) context
+    	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	    View zeilenansicht = inflater.inflate(R.layout.zeilenansicht, parent, false);  
+	    
+	    TextView textView = (TextView) zeilenansicht.findViewById(R.id.tv_gewaehlter_name);
+	    textView.setText(getItem(position).toString());  
+	    
+	    ImageView imageView = (ImageView) zeilenansicht.findViewById(R.id.img_gewaehlte_figur);
+	    imageView.setImageResource(R.drawable.ic_launcher);
+	    
+	    Button btn_bearbeiten = (Button) zeilenansicht.findViewById(R.id.btn_spieler_bearbeiten);
+	    //btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
+	    
+	    Button btn_loeschen = (Button) zeilenansicht.findViewById(R.id.btn_spieler_loeschen);
+	    //btn_loeschen.setBackgroundResource(R.drawable.ic_launcher);
+	    
+	    return zeilenansicht;
+    }
 
 
 }

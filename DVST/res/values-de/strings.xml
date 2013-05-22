@@ -33,6 +33,8 @@
     <string name="err_max_spieleranzahl">Maximale Spieleranzahl erreicht</string>
     <string name="close">Schließen</string>
     
-    <string name="gewaehlte_figur">gewaehlte Spielfigur</string>
-
+    <!-- Zeilenansicht.xml -->
+    <string name="gewaehlte_figur">Gewählte Spielfigur</string>
+    <string name="spieler_editieren">Spieler editieren</string>
+    <string name="spieler_loeschen">Spieler löschen</string>
 </resources>

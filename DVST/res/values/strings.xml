@@ -33,6 +33,8 @@
     <string name="err_max_spieleranzahl">Maximum number of players reached.</string>
     <string name="close">Close</string>
     
-    <string name="gewaehlte_figur">chosen pawn</string>
-
+    <!-- Zeilenansicht.xml -->
+    <string name="gewaehlte_figur">Chosen pawn</string>
+    <string name="spieler_editieren">Edit player</string>
+    <string name="spieler_loeschen">Delete player</string>
 </resources>
