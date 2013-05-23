@@ -23,6 +23,7 @@
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </string>
     <string name="spieler_erstellen">Spieler erstellen</string>
+    <string name="spieler_bearbeiten">Spieler bearbeiten</string>
     <string name="name">Name:</string>
     <string name="figur">Figur:</string>
     <string name="farbe">Farbe:</string>
@@ -37,4 +38,11 @@
     <string name="gewaehlte_figur">Gewählte Spielfigur</string>
     <string name="spieler_editieren">Spieler editieren</string>
     <string name="spieler_loeschen">Spieler löschen</string>
+    
+    <!-- SimpleArrayAdapter.java -->
+    <string name="wirklich_loeschen">Wirklich löschen</string>
+    
+    <!-- DeleteDialogue.java -->
+    <string name="ja">Ja</string>
+    <string name="nein">Nein</string>
 </resources>

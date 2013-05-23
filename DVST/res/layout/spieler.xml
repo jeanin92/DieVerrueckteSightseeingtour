@@ -10,15 +10,6 @@
     tools:context=".activities.SpielerActivity" >
 
     <TextView
-        android:id="@+id/hd_spieler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_left_main"
-        android:layout_marginTop="@dimen/margin_top_main"
-        android:text="@string/spieler_erstellen"
-        android:textAppearance="?android:attr/textAppearance" />
-
-    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
