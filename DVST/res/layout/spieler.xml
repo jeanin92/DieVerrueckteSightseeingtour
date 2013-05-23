@@ -8,7 +8,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activities.SpielerActivity" >
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -75,5 +74,5 @@
         android:layout_below="@+id/textView3"
         android:layout_marginTop="@dimen/margin_top_large"
         android:text="@string/OK" />
-
+ 
 </RelativeLayout>
