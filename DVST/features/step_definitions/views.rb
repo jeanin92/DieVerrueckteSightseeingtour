@@ -1,13 +1,12 @@
 Angenommen(/^ich befinde mich auf dem Spielmodus\-Bildschirm$/) do
     query("* id:'start'")
-    query("* id:'start' button text:'Spiel starten' isEnabled:true")
-    query("* id:'start'button text:'Anleitung lesen' isEnabled:true")
-    performAction('assert_text', 'Startseite', true)
-    performAction('press_button_with_text', 'Spiel starten')
+    query("* id:'start' button text:'Start game' isEnabled:true")
+    query("* id:'start'button text:'Read instructions' isEnabled:true")
+    performAction('press_button_with_text', 'Start game')
     query("* id:'modus'")
-    query("* id:'modus' button text:'Einspieler' isEnabled:false")
-    query("* id:'modus' button text:'button text:'Mehrspieler' isEnabled:true")
-    performAction('assert_text', 'Spielmodus auswaehlen', true)
+    query("* id:'modus' button text:'Singleplayer' isEnabled:false")
+    query("* id:'modus' button text:'button text:'Multiplayer' isEnabled:true")
+    performAction('assert_text', 'Choose gamemode', true)
 end
 
 Dann(/^gelange ich zum Figurwahl\-Bildschirm$/) do
