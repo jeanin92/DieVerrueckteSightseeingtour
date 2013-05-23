@@ -23,7 +23,7 @@
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </string>
     <string name="spieler_erstellen">Create a player</string>
-        <string name="spieler_bearbeiten">Edit player</string>
+    <string name="spieler_bearbeiten">Edit player</string>
     <string name="name">Name:</string>
     <string name="figur">Form:</string>
     <string name="farbe">Color:</string>
@@ -36,8 +36,6 @@
     
     <!-- Zeilenansicht.xml -->
     <string name="gewaehlte_figur">Chosen pawn</string>
-    <string name="spieler_editieren">Edit player</string>
-    <string name="spieler_loeschen">Delete player</string>
     
     <!-- SimpleArrayAdapter.java -->
     <string name="wirklich_loeschen">Delete permanently</string>

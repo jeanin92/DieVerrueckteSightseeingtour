@@ -36,8 +36,6 @@
     
     <!-- Zeilenansicht.xml -->
     <string name="gewaehlte_figur">Gewählte Spielfigur</string>
-    <string name="spieler_editieren">Spieler editieren</string>
-    <string name="spieler_loeschen">Spieler löschen</string>
     
     <!-- SimpleArrayAdapter.java -->
     <string name="wirklich_loeschen">Wirklich löschen</string>
