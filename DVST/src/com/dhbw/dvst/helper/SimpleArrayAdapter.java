@@ -50,7 +50,6 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-    	this.position = position;
     	LayoutInflater inflater = (LayoutInflater) activity
     	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    View zeilenansicht = inflater.inflate(R.layout.zeilenansicht, parent, false);  
@@ -65,25 +64,27 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
 	    textView.setText(getItem(position).toString());  
 	    
 	    Button btn_bearbeiten = (Button) zeilenansicht.findViewById(R.id.btn_spieler_bearbeiten);
+	    btn_bearbeiten.setTag(position);
 	    //TODO: bearbeitungsicon
 	    btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
 	    btn_bearbeiten.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            public void onClick(View v) {     
             	Intent intent_edit_spieler = new Intent(activity,SpielerBearbeitenActivity.class)
-					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
+					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            	intent_edit_spieler.putExtra("spieler_index", (Integer)v.getTag());
             	activity.startActivity(intent_edit_spieler);
             }
 	    });
 	    
 	    Button btn_loeschen = (Button) zeilenansicht.findViewById(R.id.btn_spieler_loeschen);
+	    btn_loeschen.setTag(getItem(position));
 	    //TODO: löschicon
 	    btn_loeschen.setBackgroundResource(R.drawable.ic_launcher);
 	    btn_loeschen.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Spieler spieler = getItem(SimpleArrayAdapter.this.position);
-				DeleteDialogue loeschen = new DeleteDialogue(activity, activity.getString(R.string.wirklich_loeschen), spieler);
+				DeleteDialogue loeschen = new DeleteDialogue(activity, activity.getString(R.string.wirklich_loeschen), (Spieler)v.getTag());
 				
 			}
 	    });

@@ -28,12 +28,12 @@ public class StartActivityTest extends
 		button_id = com.dhbw.dvst.R.id.btn_start;
 		assertNotNull(mActivity.findViewById(button_id));
 		Button view = (Button) mActivity.findViewById(button_id);
-		assertEquals("falscher Text für Startbutton", mActivity.getString(com.dhbw.dvst.R.string.spiel_starten), view.getText());
+		assertEquals("falscher Text fÃ¼r Startbutton", mActivity.getString(com.dhbw.dvst.R.string.spiel_starten), view.getText());
 		
 		button_id = com.dhbw.dvst.R.id.btn_anleitung;
 		assertNotNull(mActivity.findViewById(button_id));
 		view = (Button) mActivity.findViewById(button_id);
-		assertEquals("falscher Text für Anleitungsbutton", mActivity.getString(com.dhbw.dvst.R.string.anleitung_lesen), view.getText());
+		assertEquals("falscher Text fÃ¼r Anleitungsbutton", mActivity.getString(com.dhbw.dvst.R.string.anleitung_lesen), view.getText());
 	}
 	
 	public void testIntentViaOnClick(){
