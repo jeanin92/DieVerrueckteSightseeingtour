@@ -10,26 +10,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".StartActivity" >
 
-    <Button
-        android:id="@+id/btn_start"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_anleitung"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="126dp"
-        android:text="@string/spiel_starten"
-        android:textAppearance="?android:attr/textAppearanceButton" />
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+        
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="120dp"
+            android:text="@string/spiel_starten"
+            android:textAppearance="?android:attr/textAppearanceButton" />
 
-    <Button
-        android:id="@+id/btn_anleitung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="39dp"
-        android:layout_toRightOf="@+id/btn_start"
-        android:text="@string/anleitung_lesen"
-        android:textAppearance="?android:attr/textAppearanceButton" />
+        <Button
+            android:id="@+id/btn_anleitung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="100dp"
+            android:text="@string/anleitung_lesen"
+            android:textAppearance="?android:attr/textAppearanceButton" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>
