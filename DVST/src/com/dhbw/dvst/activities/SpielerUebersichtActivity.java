@@ -19,10 +19,6 @@ import com.dhbw.dvst.model.Spiel;
 public class SpielerUebersichtActivity extends Activity {
 	private Spiel spiel = Control.getInstance();
 
-	public Spiel getSpiel() {
-		return spiel;
-	}
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
