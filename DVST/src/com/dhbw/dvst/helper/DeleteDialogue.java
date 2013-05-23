@@ -1,24 +1,27 @@
 package com.dhbw.dvst.helper;
 
-import java.util.HashMap;
-
-import com.dhbw.dvst.R;
-import com.dhbw.dvst.model.Spieler;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
-public class DeleteDialogue {
+import com.dhbw.dvst.R;
+import com.dhbw.dvst.model.Control;
+import com.dhbw.dvst.model.Spiel;
+import com.dhbw.dvst.model.Spieler;
 
-	public DeleteDialogue(Activity activity, String fehler) {
+public class DeleteDialogue {
+	private Spiel spiel = Control.getInstance();
+	private Spieler spieler;
+
+	public DeleteDialogue(Activity activity, String fehler, Spieler spieler) {
+		this.spieler = spieler;
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		builder.setMessage(fehler)
 			.setPositiveButton(R.string.ja, new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					
+					spiel.spielerLoeschen(DeleteDialogue.this.spieler);
 				}
 			})
 			.setNegativeButton(R.string.nein, new DialogInterface.OnClickListener() {

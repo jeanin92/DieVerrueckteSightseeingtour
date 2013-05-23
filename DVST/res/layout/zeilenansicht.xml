@@ -4,12 +4,13 @@
 	android:layout_height="wrap_content"
 	android:orientation="horizontal">
 	
-<ImageView 
+<ImageView
     android:id="@+id/img_gewaehlte_figur"
-    android:contentDescription="@string/gewaehlte_figur"
-    android:layout_width="100dp"
+    android:layout_width="@dimen/width_icon_figur"
     android:layout_height="wrap_content"
-/>
+    android:layout_gravity="top"
+    android:contentDescription="@string/gewaehlte_figur"
+    android:gravity="top" />
 
 <TextView
     android:id="@+id/tv_gewaehlter_name"

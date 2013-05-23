@@ -1,8 +1,8 @@
 package com.dhbw.dvst.model;
 
 public class Farbe {
-	String text_de;
-	String text_en;
+	private String text_de;
+	private String text_en;
 	
 	public Farbe(String text_de, String text_en) {
 		this.text_de = text_de;
@@ -18,7 +18,7 @@ public class Farbe {
 		}
 	}
 	
-	public String toString() {
+	public String getText_de() {
 		return text_de;
 	}
 }

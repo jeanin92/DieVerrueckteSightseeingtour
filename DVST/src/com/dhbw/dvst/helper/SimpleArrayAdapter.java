@@ -6,24 +6,16 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.activities.ModusActivity;
-import com.dhbw.dvst.activities.SpielerActivity;
 import com.dhbw.dvst.activities.SpielerBearbeitenActivity;
-import com.dhbw.dvst.activities.SpielerUebersichtActivity;
 import com.dhbw.dvst.model.Spieler;
 
 public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
@@ -31,8 +23,9 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
 	/**
 	 * Speichert alle Spieler als Key und einen hochzählenden int-Wert als Value
 	 */
-    private HashMap<Spieler, Integer> mIdMap = new HashMap<Spieler, Integer>();
+    private HashMap<Integer, Spieler> mIdMap = new HashMap<Integer, Spieler>();
     private Activity activity;
+    private int position;
 
     /**
      * 
@@ -46,14 +39,8 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
     	super(activity, resourceId, textViewId, alleSpieler);
     	this.activity = activity;
     	for (int i = 0; i < alleSpieler.size(); ++i) {
-    		mIdMap.put(alleSpieler.get(i), i);
+    		mIdMap.put(i, alleSpieler.get(i));
     	}
-    }
-
-    @Override
-    public long getItemId(int position) {
-      Spieler item = getItem(position);
-      return mIdMap.get(item);
     }
 
     @Override
@@ -63,14 +50,14 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+    	this.position = position;
     	LayoutInflater inflater = (LayoutInflater) activity
     	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    View zeilenansicht = inflater.inflate(R.layout.zeilenansicht, parent, false);  
-	    
 	    ImageView imageView = (ImageView) zeilenansicht.findViewById(R.id.img_gewaehlte_figur);
-	    String figur = this.getItem(position).getSpielfigur().getFarbe().toString();
-	    String farbe = this.getItem(position).getSpielfigur().getForm().toString();
-	    String imageName = figur + farbe;
+	    String figur = this.getItem(position).getSpielfigur().getForm().getText_de();
+	    String farbe = this.getItem(position).getSpielfigur().getFarbe().getText_de();
+	    String imageName = figur +"_"+ farbe;
 	    int resID = activity.getResources().getIdentifier(imageName, "drawable", "com.dhbw.dvst");	    
 	    imageView.setImageResource(resID);
 	    
@@ -78,6 +65,7 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
 	    textView.setText(getItem(position).toString());  
 	    
 	    Button btn_bearbeiten = (Button) zeilenansicht.findViewById(R.id.btn_spieler_bearbeiten);
+	    //TODO: bearbeitungsicon
 	    btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
 	    btn_bearbeiten.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -88,12 +76,14 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
 	    });
 	    
 	    Button btn_loeschen = (Button) zeilenansicht.findViewById(R.id.btn_spieler_loeschen);
+	    //TODO: löschicon
 	    btn_loeschen.setBackgroundResource(R.drawable.ic_launcher);
 	    btn_loeschen.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				DeleteDialogue loeschen = new DeleteDialogue(activity, activity.getString(R.string.wirklich_loeschen));
+				Spieler spieler = getItem(SimpleArrayAdapter.this.position);
+				DeleteDialogue loeschen = new DeleteDialogue(activity, activity.getString(R.string.wirklich_loeschen), spieler);
 				
 			}
 	    });
