@@ -1,7 +1,7 @@
 Wenn(/^ich mich fuer ein Einspieler\-Spiel entscheide$/) do
-    performAction('press_button_with_text', 'Singleplayer')
+    touch("* id:'modus' button id:'btn_einspieler'")
 end
 
 Wenn(/^ich mich fuer ein Mehrspieler\-Spiel entscheide$/) do
-    performAction('press_button_with_text', 'Multiplayer')
+    touch("* id:'modus' button id:'btn_mehrspieler'")
 end

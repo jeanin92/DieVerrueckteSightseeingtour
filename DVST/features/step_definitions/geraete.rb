@@ -1,14 +1,15 @@
 Dann(/^fragt mich das System auf wie vielen Geraeten ich spielen moechte$/) do
-    query("* id:'geraete' button text:'Okay' isEnabled:true")
-    performAction('assert_text', 'Geraeteanzahl', true)
+    query("* id:'geraete' button id:'Okay'")
+    query("* id:'geraete' id:'rb_eins'")
+    query("* id:'geraete' id:'rb_zwei'")
 end
 
 Wenn(/^ich sage, ich moechte auf "(.*?)" spielen$/) do |arg1|
     if @arg1 == 'einem Geraet' then
         choose('rb_eins')
-        performAction('press_button_with_text', 'Okay')
+        touch("* id:'btn_ok'")
     elsif @arg1 == 'mehreren Geraeten' then
-        #pending #radio button mehrere Geraete ausgewaehlt
-        performAction('press_button_with_text', 'Okay')
+        #pending choose('rb_mehrere')
+        touch("* id:'btn_ok'")
     end
 end
