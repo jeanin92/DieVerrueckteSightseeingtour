@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.activities.SpielerActivity;
+import com.dhbw.dvst.activities.SpielerUebersichtActivity;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spieler;
