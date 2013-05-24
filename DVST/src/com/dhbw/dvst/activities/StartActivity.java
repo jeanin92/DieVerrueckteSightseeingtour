@@ -19,22 +19,10 @@ public class StartActivity extends Activity {
 		setContentView(R.layout.start);
 		
 		final Button btn_start = (Button) findViewById(R.id.btn_start);
-        btn_start.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent_modus = new Intent(StartActivity.this, ModusActivity.class);
-                Control.resetInstance();
-                StartActivity.this.startActivity(intent_modus);
-            }
-        });
+        setStartButtonListener(btn_start);
         
         final Button btn_anleitung = (Button) findViewById(R.id.btn_anleitung);
-        btn_anleitung.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-//            	setContentView(R.layout.anleitung);
-                Intent intent_anleitung = new Intent(StartActivity.this, AnleitungActivity.class);
-                StartActivity.this.startActivity(intent_anleitung);
-            }
-        });
+        setAnleitungButtonListener(btn_anleitung);
 	}
 
 	@Override
@@ -45,7 +33,28 @@ public class StartActivity extends Activity {
 	
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
-	  // ignore orientation/keyboard change
 	  super.onConfigurationChanged(newConfig);
+	}
+	
+	protected void setAnleitungButtonListener(final Button btn_anleitung) {
+		btn_anleitung.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	navigierenZu(AnleitungActivity.class);
+            }
+        });
+	}
+
+	protected void setStartButtonListener(final Button btn_start) {
+		btn_start.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	Control.resetInstance();
+                navigierenZu(ModusActivity.class);
+            }
+        });
+	}
+
+	protected void navigierenZu(Class ziel) {
+		Intent intent = new Intent(this, ziel);                
+		StartActivity.this.startActivity(intent);
 	}
 }
