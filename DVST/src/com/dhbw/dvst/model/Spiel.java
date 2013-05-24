@@ -17,13 +17,12 @@ public class Spiel{
 	private Spielbrett spielbrett;
 	private Spielplatte platte_aktiv;
 	private ArrayList<Spielkarte> kartenstapel;
-	private String language; 	
 	
 	/**
 	 * Konstruktor
 	 */
 	public Spiel() {
-		language = Locale.getDefault().getLanguage();
+//		language = Locale.getDefault().getLanguage();
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>(6);
@@ -56,21 +55,6 @@ public class Spiel{
 			this.alleSpieler.add(neuerSpieler);
 			spielfigur.setVergeben(true);
 	}
-
-	/**
-	 * Spielfigur als bereits an einen Spieler vergeben markieren
-	 * @param neuerSpieler
-	 */
-//	private void setFigurVergeben(Spieler neuerSpieler) {
-//		//foreach
-//		for (Spielfigur s : this.alleSpielfiguren) {
-//			if(s.getFarbe().equals(neuerSpieler.getSpielfigur().getFarbe())) {
-//				if(s.getForm().equals(neuerSpieler.getSpielfigur().getForm())) {
-//					s.setVergeben(true);
-//				}
-//			}
-//		}
-//	}
 	
 	/**
 	 * Spieler loeschen und Spielfigur wieder freigeben
