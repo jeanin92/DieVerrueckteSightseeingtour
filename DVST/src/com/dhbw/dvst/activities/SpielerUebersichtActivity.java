@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.helper.SimpleArrayAdapter;
+import com.dhbw.dvst.helper.PlayerArrayAdapter;
 import com.dhbw.dvst.helper.SimpleErrorMessage;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
@@ -24,7 +24,7 @@ public class SpielerUebersichtActivity extends Activity {
 		
 		setContentView(R.layout.spieler_uebersicht);
 		final ListView listview = (ListView) findViewById(R.id.lv_spieler);
-        final SimpleArrayAdapter adapter = new SimpleArrayAdapter(this, 
+        final PlayerArrayAdapter adapter = new PlayerArrayAdapter(this, 
         		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spiel.getAlleSpieler());
         listview.setAdapter(adapter);
 		
