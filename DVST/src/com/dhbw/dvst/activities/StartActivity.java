@@ -25,17 +25,6 @@ public class StartActivity extends Activity {
         final Button btn_anleitung = (Button) findViewById(R.id.btn_anleitung);
         setAnleitungButtonListener(btn_anleitung);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		boolean result = super.onCreateOptionsMenu(menu);
-		return result;
-	}
-	
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-	  super.onConfigurationChanged(newConfig);
-	}
 	
 	protected void setAnleitungButtonListener(final Button btn_anleitung) {
 		btn_anleitung.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +41,16 @@ public class StartActivity extends Activity {
                 kommunikation.navigieren(StartActivity.this, ModusActivity.class);
             }
         });
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		boolean result = super.onCreateOptionsMenu(menu);
+		return result;
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	  super.onConfigurationChanged(newConfig);
 	}
 }

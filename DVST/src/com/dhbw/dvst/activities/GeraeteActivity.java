@@ -29,18 +29,18 @@ public class GeraeteActivity extends Activity {
 	}
 
 	protected void setOkButtonListener(final Button btn_ok,
-			final RadioButton rb_eins, final RadioButton rb_mehrere) {
-				btn_ok.setOnClickListener(new View.OnClickListener() {
-						public void onClick(View v) {
-								if (rb_eins.isChecked()){
-									spiel.setSpielmodus(Spiel.modus_mehrspieler_client);
-								}
-								else if(rb_mehrere.isChecked()){
-									spiel.setSpielmodus(Spiel.modus_mehrspieler_server);
-								}
-								kommunikation.navigieren(GeraeteActivity.this, SpielerUebersichtActivity.class);
-						}
-				});
+		final RadioButton rb_eins, final RadioButton rb_mehrere) {
+			btn_ok.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					if (rb_eins.isChecked()){
+						spiel.setSpielmodus(Spiel.modus_mehrspieler_client);
+					}
+					else if(rb_mehrere.isChecked()){
+						spiel.setSpielmodus(Spiel.modus_mehrspieler_server);
+					}
+					kommunikation.navigieren(GeraeteActivity.this, SpielerUebersichtActivity.class);
+				}
+			});
 	}
 
 	@Override
