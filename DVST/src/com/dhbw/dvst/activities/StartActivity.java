@@ -1,7 +1,6 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.helper.KommunikationActivities;
 import com.dhbw.dvst.model.Control;
 
 public class StartActivity extends Activity {
+	private KommunikationActivities kommunikation = new KommunikationActivities();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class StartActivity extends Activity {
 	protected void setAnleitungButtonListener(final Button btn_anleitung) {
 		btn_anleitung.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	navigierenZu(AnleitungActivity.class);
+            	kommunikation.navigieren(StartActivity.this, AnleitungActivity.class);
             }
         });
 	}
@@ -48,13 +49,8 @@ public class StartActivity extends Activity {
 		btn_start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Control.resetInstance();
-                navigierenZu(ModusActivity.class);
+                kommunikation.navigieren(StartActivity.this, ModusActivity.class);
             }
         });
-	}
-
-	protected void navigierenZu(Class ziel) {
-		Intent intent = new Intent(this, ziel);                
-		StartActivity.this.startActivity(intent);
 	}
 }

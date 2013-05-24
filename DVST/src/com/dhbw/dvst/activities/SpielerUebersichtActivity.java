@@ -1,7 +1,6 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.helper.KommunikationActivities;
 import com.dhbw.dvst.helper.PlayerArrayAdapter;
 import com.dhbw.dvst.helper.SimpleErrorMessage;
 import com.dhbw.dvst.model.Control;
@@ -17,6 +17,7 @@ import com.dhbw.dvst.model.Spiel;
 
 public class SpielerUebersichtActivity extends Activity {
 	private Spiel spiel = Control.getInstance();
+	private KommunikationActivities kommunikation = new KommunikationActivities();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,35 +25,49 @@ public class SpielerUebersichtActivity extends Activity {
 		
 		setContentView(R.layout.spieler_uebersicht);
 		final ListView listview = (ListView) findViewById(R.id.lv_spieler);
-        final PlayerArrayAdapter adapter = new PlayerArrayAdapter(this, 
-        		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spiel.getAlleSpieler());
-        listview.setAdapter(adapter);
+        setSpielerliste(listview);
 		
 		final Button btn_neu = (Button) findViewById(R.id.btn_neu);
-        btn_neu.setOnClickListener(new View.OnClickListener() {
+        setNeuButtonListener(btn_neu);
+        
+        final Button btn_modus_wechseln = (Button) findViewById(R.id.btn_modus_wechseln);
+        setModuswechselListener(btn_modus_wechseln);
+        
+        final Button btn_zum_spiel = (Button) findViewById(R.id.btn_zum_spiel);
+        setZumSpielListener(btn_zum_spiel);
+	}
+
+	protected void setSpielerliste(final ListView listview) {
+		final PlayerArrayAdapter adapter = new PlayerArrayAdapter(this, 
+        		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spiel.getAlleSpieler());
+        listview.setAdapter(adapter);
+	}
+
+	protected void setZumSpielListener(final Button btn_zum_spiel) {
+		btn_zum_spiel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO: zum Spiel
+            }
+        });
+	}
+
+	protected void setModuswechselListener(final Button btn_modus_wechseln) {
+		btn_modus_wechseln.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	kommunikation.navigieren(SpielerUebersichtActivity.this, ModusActivity.class);
+            }
+        });
+	}
+
+	protected void setNeuButtonListener(final Button btn_neu) {
+		btn_neu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if(spiel.getAlleSpieler().size() == 6) {
             		new SimpleErrorMessage(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
                 	}
             	else {
-            		Intent intent_spieler = new Intent(SpielerUebersichtActivity.this, SpielerActivity.class);
-            		SpielerUebersichtActivity.this.startActivity(intent_spieler);
+            		kommunikation.navigieren(SpielerUebersichtActivity.this, SpielerActivity.class);
             	}
-            }
-        });
-        
-        final Button btn_modus_wechseln = (Button) findViewById(R.id.btn_modus_wechseln);
-        btn_modus_wechseln.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	Intent intent_modus = new Intent(SpielerUebersichtActivity.this, ModusActivity.class);
-            	SpielerUebersichtActivity.this.startActivity(intent_modus);
-            }
-        });
-        
-        final Button btn_zum_spiel = (Button) findViewById(R.id.btn_zum_spiel);
-        btn_zum_spiel.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO: zum Spiel
             }
         });
 	}
