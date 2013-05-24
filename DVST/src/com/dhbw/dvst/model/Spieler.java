@@ -15,13 +15,13 @@ public class Spieler {
 		return this.name;
 	}
 	
-
 	public Spielfigur getSpielfigur() {
 		return spielfigur;
 	}
 
 	public void setSpielfigur(Spielfigur spielfigur) {
 		this.spielfigur = spielfigur;
+		this.spielfigur.setVergeben(true);
 	}
 	
 	public String getName() {

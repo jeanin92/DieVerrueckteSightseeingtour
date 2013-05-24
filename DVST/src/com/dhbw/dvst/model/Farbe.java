@@ -10,15 +10,15 @@ public class Farbe {
 	}
 	
 	public boolean compare(String farbe){
-		if(text_de.equals(farbe) || text_en.equals(farbe)){
+		if(text_de.equals(farbe) || text_en.equals(farbe)) {
 			return true;
 		}
-		else{
+		else {
 			return false;
 		}
 	}
 	
-	public String getText_de() {
-		return text_de;
+	public String getText_en() {
+		return text_en;
 	}
 }

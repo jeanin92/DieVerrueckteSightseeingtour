@@ -1,7 +1,6 @@
 package com.dhbw.dvst.model;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Spiel{
 	/**
@@ -56,29 +55,15 @@ public class Spiel{
 			spielfigur.setVergeben(true);
 	}
 	
-	/**
-	 * Spieler loeschen und Spielfigur wieder freigeben
-	 * @param spieler
-	 */
 	public void spielerLoeschen(Spieler spieler) {
 		spieler.getSpielfigur().setVergeben(false);
 		this.alleSpieler.remove(spieler);
 	}
 	
-	/*
-	 * Getter und Setter Methoden
-	 */
-
-	/**
-	 * @return the spielmodus
-	 */
 	public int getSpielmodus() {
 		return spielmodus;
 	}
 
-	/**
-	 * @param spielmodus the spielmodus to set
-	 */
 	public void setSpielmodus(int spielmodus) {
 		this.spielmodus = spielmodus;
 	}

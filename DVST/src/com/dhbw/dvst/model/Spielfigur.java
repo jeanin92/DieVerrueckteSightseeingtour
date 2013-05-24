@@ -8,12 +8,6 @@ public class Spielfigur {
 	private Spielplatte spielplatte;
 	private boolean vergeben;
 	
-	/**
-	 * Konstruktor
-	 * @param String form
-	 * @param String farbe
-	 * @param String motivUrl URL der Spielfigur
-	 */
 	public Spielfigur(Form form, Farbe farbe, String motivUrl) {
 		this.form = form;
 		this.farbe = farbe;

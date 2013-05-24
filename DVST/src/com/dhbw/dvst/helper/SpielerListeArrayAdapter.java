@@ -1,11 +1,10 @@
 package com.dhbw.dvst.helper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +22,8 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler>{
 	/**
 	 * Speichert alle Spieler als Values und einen hochzählenden int-Wert als Key
 	 */
-    private HashMap<Integer, Spieler> mIdMap = new HashMap<Integer, Spieler>();
+   // private HashMap<Integer, Spieler> mIdMap = HashMap<Integer, Spieler>();
+	SparseArray<Spieler> mIdMap = new SparseArray<Spieler>();
     private Activity activity;
 	private int position;
 	private View zeilenansicht;
@@ -74,8 +74,8 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler>{
 	}
 
 	private String baueBildNamen() {
-		String form = this.getItem(this.position).getSpielfigur().getForm().getText_de();
-	    String farbe = this.getItem(this.position).getSpielfigur().getFarbe().getText_de();
+		String form = this.getItem(this.position).getSpielfigur().getForm().getText_en();
+	    String farbe = this.getItem(this.position).getSpielfigur().getFarbe().getText_en();
 	    String bildName = form +"_"+ farbe;
 		return bildName;
 	}
@@ -116,8 +116,8 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler>{
 		btn_loeschen.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				LoeschDialog loeschen = new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), (Spieler)v.getTag());
-				
+				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), (Spieler)v.getTag());
+				SpielerListeArrayAdapter.this.remove(SpielerListeArrayAdapter.this.mIdMap.get(position));
 			}
 	    });
 	}

@@ -38,7 +38,7 @@ public class SpielerBearbeitenActivity extends Activity{
 		
 		final Button btn_neu = (Button) findViewById(R.id.btn_erstellen);
         btn_neu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {        
+            public void onClick(View v) {
             	if(SpielerBearbeitenActivity.this.et_name.getText().toString().trim().length() == 0){
             		SpielerBearbeitenActivity.this.et_name.setError(getString(R.string.err_eingabe_leer));
             	}
@@ -92,6 +92,7 @@ public class SpielerBearbeitenActivity extends Activity{
 	}
 
 	protected void figurPrüfen() {
+		this.spieler.getSpielfigur().setVergeben(false);
 		for (Spielfigur figur : spiel.getAlleSpielfiguren()) {            			
 			if(figur.getFarbe().compare(this.spin_farbe.getSelectedItem().toString()) &
 					figur.getForm().compare(this.spin_form.getSelectedItem().toString())){
@@ -100,6 +101,7 @@ public class SpielerBearbeitenActivity extends Activity{
 				}
 				else{
 					this.spieler.setName(et_name.getText().toString().trim());
+					this.spieler.getSpielfigur().setVergeben(false);
 					this.spieler.setSpielfigur(figur);
 					this.kommunikation.navigieren(SpielerBearbeitenActivity.this, SpielerUebersichtActivity.class);
 				}

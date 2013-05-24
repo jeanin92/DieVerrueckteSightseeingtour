@@ -10,7 +10,7 @@ public class Form {
 	}
 	
 	public boolean compare(String form){
-		if(text_de.equals(form) || text_en.equals(form)){
+		if(text_de.equals(form) || text_en.equals(form)) {
 			return true;
 		}
 		else{
@@ -18,7 +18,7 @@ public class Form {
 		}
 	}
 	
-	public String getText_de() {
-		return text_de;
+	public String getText_en() {
+		return text_en;
 	}
 }

@@ -51,5 +51,6 @@ public abstract class PopupService {
 			});
 	}
 
-	protected void klickePositivenButton() {}
+	protected void klickePositivenButton() {
+	}
 }

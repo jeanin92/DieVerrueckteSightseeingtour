@@ -85,6 +85,11 @@ public class SpielerUebersichtActivity extends Activity {
 	  super.onConfigurationChanged(newConfig);
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+	
 }
 
 

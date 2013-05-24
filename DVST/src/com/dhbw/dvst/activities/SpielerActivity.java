@@ -59,18 +59,7 @@ public class SpielerActivity extends Activity {
             }
         });
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
 	
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-	  super.onConfigurationChanged(newConfig);
-	}
-
 	protected void figurPrüfen() {
 		for (Spielfigur figur : this.spiel.getAlleSpielfiguren()) {            			
 			if(figur.getFarbe().compare(this.spin_farbe.getSelectedItem().toString()) &
@@ -84,5 +73,16 @@ public class SpielerActivity extends Activity {
 				}
 			}
 		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	  super.onConfigurationChanged(newConfig);
 	}
 }
