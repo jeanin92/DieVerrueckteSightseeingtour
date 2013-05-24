@@ -18,7 +18,7 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.activities.SpielerBearbeitenActivity;
 import com.dhbw.dvst.model.Spieler;
 
-public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
+public class PlayerArrayAdapter extends ArrayAdapter<Spieler>{
 
 	/**
 	 * Speichert alle Spieler als Key und einen hochzählenden int-Wert als Value
@@ -34,7 +34,7 @@ public class SimpleArrayAdapter extends ArrayAdapter<Spieler>{
      * @param textViewId ID des Textviews in der Layout-Datei
      * @param alleSpieler Listenobjekte
      */
-    public SimpleArrayAdapter(Activity activity, int resourceId, int textViewId,
+    public PlayerArrayAdapter(Activity activity, int resourceId, int textViewId,
         ArrayList<Spieler> alleSpieler) {
     	super(activity, resourceId, textViewId, alleSpieler);
     	this.activity = activity;
