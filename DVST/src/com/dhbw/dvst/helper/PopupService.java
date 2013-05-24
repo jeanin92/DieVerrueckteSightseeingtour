@@ -9,6 +9,7 @@ import com.dhbw.dvst.model.Spieler;
 
 public abstract class PopupService {
 
+	//Fehlermeldung
 	public PopupService(Activity activity, String fehler) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		setzeNegativenButton(fehler, builder);
@@ -16,6 +17,7 @@ public abstract class PopupService {
 		alert.show();
 	}
 	
+	//Loeschdialog
 	public PopupService(Activity activity, String fehler, Spieler spieler) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		setzeZweiButtons(fehler, builder);
@@ -36,7 +38,6 @@ public abstract class PopupService {
 	private void setzeZweiButtons(String fehler, AlertDialog.Builder builder) {
 		builder.setMessage(fehler)
 			.setPositiveButton(R.string.ja, new DialogInterface.OnClickListener() {
-				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					klickePositivenButton();

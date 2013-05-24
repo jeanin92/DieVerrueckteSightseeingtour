@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.helper.KommunikationActivities;
 import com.dhbw.dvst.helper.SpielerListeArrayAdapter;
-import com.dhbw.dvst.helper.SimpleErrorMessage;
+import com.dhbw.dvst.helper.Fehlermeldung;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 
@@ -63,7 +63,7 @@ public class SpielerUebersichtActivity extends Activity {
 		btn_neu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if(spiel.getAlleSpieler().size() == 6) {
-            		new SimpleErrorMessage(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
+            		new Fehlermeldung(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
                 	}
             	else {
             		kommunikation.navigieren(SpielerUebersichtActivity.this, SpielerActivity.class);

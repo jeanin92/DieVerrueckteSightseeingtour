@@ -5,14 +5,14 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.helper.KommunikationActivities;
-import com.dhbw.dvst.helper.SimpleErrorMessage;
+import com.dhbw.dvst.helper.Fehlermeldung;
+import com.dhbw.dvst.helper.SpinnerBuilder;
 import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spielfigur;
@@ -29,16 +29,18 @@ public class SpielerActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.spieler_einfuegen);
 		
-		et_name = (EditText) findViewById(R.id.et_name);
-		spin_farbe = (Spinner) findViewById(R.id.spin_farbe);
-		spin_form = (Spinner) findViewById(R.id.spin_figur);
-		ArrayAdapter<CharSequence> adapt_farbe = ArrayAdapter.createFromResource(this, R.array.farben, android.R.layout.simple_spinner_item);
-		spin_farbe.setAdapter(adapt_farbe);
-		ArrayAdapter<CharSequence> adapt_figur = ArrayAdapter.createFromResource(this, R.array.figuren, android.R.layout.simple_spinner_item);
-		spin_form.setAdapter(adapt_figur);
+		setSpielerListItem();
 		
 		final Button btn_erstellen = (Button) findViewById(R.id.btn_erstellen);
         setErstellenListener(btn_erstellen);
+	}
+
+	private void setSpielerListItem() {
+		this.et_name = (EditText) findViewById(R.id.et_name);
+		
+		SpinnerBuilder spinbuild = new SpinnerBuilder();
+		this.spin_farbe = spinbuild.initFarbspinner(this);
+		this.spin_form = spinbuild.initFormspinner(this);
 	}
 
 	protected void setErstellenListener(final Button btn_erstellen) {
@@ -49,7 +51,7 @@ public class SpielerActivity extends Activity {
             	}
             	else if(SpielerActivity.this.spin_farbe.getSelectedItem()==null ||
             			SpielerActivity.this.spin_form.getSelectedItem()==null){
-            		new SimpleErrorMessage(SpielerActivity.this, getString(R.string.err_nichts_selektiert));
+            		new Fehlermeldung(SpielerActivity.this, getString(R.string.err_nichts_selektiert));
             	}
             	else{
             		figurPrüfen();            		
@@ -70,15 +72,15 @@ public class SpielerActivity extends Activity {
 	}
 
 	protected void figurPrüfen() {
-		for (Spielfigur figur : spiel.getAlleSpielfiguren()) {            			
-			if(figur.getFarbe().compare(spin_farbe.getSelectedItem().toString()) &
-					figur.getForm().compare(spin_form.getSelectedItem().toString())){
+		for (Spielfigur figur : this.spiel.getAlleSpielfiguren()) {            			
+			if(figur.getFarbe().compare(this.spin_farbe.getSelectedItem().toString()) &
+					figur.getForm().compare(this.spin_form.getSelectedItem().toString())){
 				if(figur.isVergeben()){
-					new SimpleErrorMessage(SpielerActivity.this, getString(R.string.err_vergeben));
+					new Fehlermeldung(SpielerActivity.this, getString(R.string.err_vergeben));
 				}
 				else{
-					spiel.spielerHinzufuegen(et_name.getText().toString().trim(), figur);
-					kommunikation.navigieren(SpielerActivity.this, SpielerUebersichtActivity.class);
+					this.spiel.spielerHinzufuegen(this.et_name.getText().toString().trim(), figur);
+					this.kommunikation.navigieren(SpielerActivity.this, SpielerUebersichtActivity.class);
 				}
 			}
 		}

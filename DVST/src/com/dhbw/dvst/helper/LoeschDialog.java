@@ -6,17 +6,16 @@ import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spieler;
 
-public class DeleteDialogue extends PopupService {
+public class LoeschDialog extends PopupService {
 	private Spiel spiel = Control.getInstance();
 	private Spieler spieler;
 
-	public DeleteDialogue(Activity activity, String fehler, Spieler spieler) {
+	public LoeschDialog(Activity activity, String fehler, Spieler spieler) {
 		super(activity, fehler, spieler);
 		this.spieler = spieler;
 	}
 	
 	protected void klickePositivenButton() {
-		spiel.spielerLoeschen(DeleteDialogue.this.spieler);
+		spiel.spielerLoeschen(LoeschDialog.this.spieler);
 	}
-	
 }
