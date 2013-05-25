@@ -21,5 +21,4 @@ public class SpinnerBuilder {
 		spin_farbe.setAdapter(adapt_farbe);
 		return spin_farbe;
 	}
-	
 }

@@ -51,13 +51,19 @@
             android:label="@string/app_name" >            
         </activity>
         <activity
-    		android:name="com.dhbw.dvst.activities.SpielerActivity"
+    		android:name="com.dhbw.dvst.activities.SpielerAnlegenActivity"
             android:screenOrientation="landscape"
             android:configChanges="orientation"
             android:label="@string/app_name" >            
         </activity>
         <activity
     		android:name="com.dhbw.dvst.activities.SpielerBearbeitenActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation"
+            android:label="@string/app_name" >            
+        </activity>
+                <activity
+    		android:name="com.dhbw.dvst.activities.SpielerActivity"
             android:screenOrientation="landscape"
             android:configChanges="orientation"
             android:label="@string/app_name" >            

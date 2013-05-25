@@ -66,7 +66,7 @@ public class SpielerUebersichtActivity extends Activity {
             		new Fehlermeldung(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
                 	}
             	else {
-            		kommunikation.navigieren(SpielerUebersichtActivity.this, SpielerActivity.class);
+            		kommunikation.navigieren(SpielerUebersichtActivity.this, SpielerAnlegenActivity.class);
             	}
             }
         });
