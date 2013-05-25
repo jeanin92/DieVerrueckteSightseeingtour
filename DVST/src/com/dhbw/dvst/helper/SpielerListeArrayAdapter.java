@@ -123,7 +123,7 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 				OnClickListener spielerLoeschen = new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						SpielerListeArrayAdapter.this.remove(SpielerListeArrayAdapter.this.mIdMap.get(position));
+						SpielerListeArrayAdapter.this.remove((Spieler)v.getTag());
 						Spiel spiel = Control.getInstance();
 						spiel.spielerLoeschen((Spieler)v.getTag());
 					}
