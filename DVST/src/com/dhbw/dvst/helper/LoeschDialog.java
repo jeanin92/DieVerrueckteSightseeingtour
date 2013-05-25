@@ -6,9 +6,6 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.model.Control;
-import com.dhbw.dvst.model.Spiel;
-import com.dhbw.dvst.model.Spieler;
 
 public class LoeschDialog {
 
