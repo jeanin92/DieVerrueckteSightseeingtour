@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="com.dhbw.dvst.helper.SpielerListeArrayAdapter" x="-125" y="388">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Farbe"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Form"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.SpielerBearbeitenActivity"
+        x="404" y="325">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spieler"
+            endpointName="spieler" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spiel"
+            endpointName="spiel" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.helper.SpinnerBuilder"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spielfigur"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Form"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Farbe"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Control"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spiel"/>
+        <Communication destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spieler"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.GeraeteActivity" x="692" y="165">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spiel"
+            endpointName="spiel" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Control"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.SpielerUebersichtActivity"
+        x="690" y="239">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spiel"
+            endpointName="spiel" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Control"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spiel"/>
+    </Class>
+    <Class name="com.dhbw.dvst.model.Spielfigur" x="424" y="828">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Farbe"
+            endpointName="farbe" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Form"
+            endpointName="form" kind="Simple"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.AnleitungActivity" x="380" y="1">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+    </Class>
+    <Class name="com.dhbw.dvst.model.Form" x="583" y="873">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.ModusActivity" x="692" y="88">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.SpielerActivity" x="802" y="316">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spiel"
+            endpointName="spiel" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.helper.SpinnerBuilder"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spielfigur"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Form"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Farbe"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Control"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spiel"/>
+        <Communication destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"/>
+    </Class>
+    <Class name="com.dhbw.dvst.activities.StartActivity" x="675" y="1">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.KommunikationActivities"
+            endpointName="kommunikation" kind="Simple"/>
+    </Class>
+    <Class name="com.dhbw.dvst.model.Spiel" x="405" y="618">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.model.Spielfigur"
+            endpointName="alleSpielfiguren" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spieler"
+            endpointName="alleSpieler" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spielfigur"/>
+    </Class>
+    <Class name="com.dhbw.dvst.helper.KommunikationActivities" x="37" y="193">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.dhbw.dvst.helper.LoeschDialog" x="-2" y="316">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.dhbw.dvst.helper.PopupService"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spieler"
+            endpointName="spieler" kind="Simple"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.helper.SpielerListeArrayAdapter"
+            endpointName="adapter" kind="Simple"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spiel"
+            endpointName="spiel" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Control"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spiel"/>
+    </Class>
+    <Class name="com.dhbw.dvst.helper.PopupService" x="-80" y="196">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.dhbw.dvst.helper.SpinnerBuilder" x="-91" y="72">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.dhbw.dvst.helper.Fehlermeldung" x="-116" y="316">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.dhbw.dvst.helper.PopupService"/>
+    </Class>
+    <Class name="com.dhbw.dvst.model.Farbe" x="584" y="785">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.dhbw.dvst.model.Control" x="691" y="614">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="com.dhbw.dvst.model.Spiel"
+            endpointName="spiel" kind="Simple"/>
+    </Class>
+    <Class name="com.dhbw.dvst.model.Spieler" x="230" y="631">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.dhbw.dvst.model.Spielfigur"
+            endpointName="spielfigur" kind="Simple"/>
+        <Communication destinationClassName="com.dhbw.dvst.model.Spielfigur"/>
+    </Class>
+</ClassDiagram>
