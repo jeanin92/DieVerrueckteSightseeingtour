@@ -116,8 +116,8 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler>{
 		btn_loeschen.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), (Spieler)v.getTag());
-				SpielerListeArrayAdapter.this.remove(SpielerListeArrayAdapter.this.mIdMap.get(position));
+				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), (Spieler)v.getTag(), SpielerListeArrayAdapter.this);
+//				SpielerListeArrayAdapter.this.remove(SpielerListeArrayAdapter.this.mIdMap.get(position));
 			}
 	    });
 	}

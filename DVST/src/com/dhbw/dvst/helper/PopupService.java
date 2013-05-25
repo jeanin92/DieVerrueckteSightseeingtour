@@ -25,7 +25,7 @@ public abstract class PopupService {
 		alert.show();
 	}
 	
-	private void setzeNegativenButton(String fehler, AlertDialog.Builder builder) {
+	protected void setzeNegativenButton(String fehler, AlertDialog.Builder builder) {
 		builder.setMessage(fehler)
 			.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
 				@Override
@@ -35,7 +35,7 @@ public abstract class PopupService {
 			});
 	}
 
-	private void setzeZweiButtons(String fehler, AlertDialog.Builder builder) {
+	protected void setzeZweiButtons(String fehler, AlertDialog.Builder builder) {
 		builder.setMessage(fehler)
 			.setPositiveButton(R.string.ja, new DialogInterface.OnClickListener() {
 				@Override

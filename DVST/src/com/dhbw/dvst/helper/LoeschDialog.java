@@ -9,13 +9,16 @@ import com.dhbw.dvst.model.Spieler;
 public class LoeschDialog extends PopupService {
 	private Spiel spiel = Control.getInstance();
 	private Spieler spieler;
+	private SpielerListeArrayAdapter adapter;
 
-	public LoeschDialog(Activity activity, String fehler, Spieler spieler) {
+	public LoeschDialog(Activity activity, String fehler, Spieler spieler, SpielerListeArrayAdapter adapter) {
 		super(activity, fehler, spieler);
 		this.spieler = spieler;
+		this.adapter = adapter;
 	}
 	
 	protected void klickePositivenButton() {
 		spiel.spielerLoeschen(LoeschDialog.this.spieler);
+		adapter.remove(spieler);
 	}
 }
