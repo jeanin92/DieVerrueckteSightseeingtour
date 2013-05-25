@@ -3,7 +3,9 @@ package com.dhbw.dvst.helper;
 import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.DialogInterface.OnClickListener;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +17,11 @@ import android.widget.TextView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.activities.SpielerBearbeitenActivity;
+import com.dhbw.dvst.model.Control;
+import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spieler;
 
-public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler>{
+public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 
 	/**
 	 * Speichert alle Spieler als Values und einen hochzählenden int-Wert als Key
@@ -115,9 +119,16 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler>{
 	protected void setLoeschenListener(Button btn_loeschen) {
 		btn_loeschen.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) {
-				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), (Spieler)v.getTag());
-				SpielerListeArrayAdapter.this.remove(SpielerListeArrayAdapter.this.mIdMap.get(position));
+			public void onClick(final View v) {
+				OnClickListener spielerLoeschen = new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						SpielerListeArrayAdapter.this.remove(SpielerListeArrayAdapter.this.mIdMap.get(position));
+						Spiel spiel = Control.getInstance();
+						spiel.spielerLoeschen((Spieler)v.getTag());
+					}
+				};
+				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), spielerLoeschen);
 			}
 	    });
 	}

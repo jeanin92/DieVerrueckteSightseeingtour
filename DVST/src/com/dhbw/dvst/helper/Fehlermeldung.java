@@ -1,10 +1,26 @@
 package com.dhbw.dvst.helper;
 
-import android.app.Activity;
+import com.dhbw.dvst.R;
 
-public class Fehlermeldung extends PopupService{
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
+public class Fehlermeldung {
+
+	protected boolean gedrueckterButton = false;
 
 	public Fehlermeldung(Activity activity, String fehler) {
-		super(activity, fehler);
+		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		builder.setMessage(fehler);
+		builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Fehlermeldung.this.gedrueckterButton  = false;
+				dialog.cancel();											
+			}
+		});
+		AlertDialog alert = builder.create();
+		alert.show();
 	}
 }
