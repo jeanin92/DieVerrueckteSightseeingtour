@@ -120,6 +120,11 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 		btn_loeschen.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View v) {
+				OnClickListener spielerLoeschen = spielerLoeschenListener(v);
+				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), spielerLoeschen);
+			}
+
+			protected OnClickListener spielerLoeschenListener(final View v) {
 				OnClickListener spielerLoeschen = new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -128,7 +133,7 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 						spiel.spielerLoeschen((Spieler)v.getTag());
 					}
 				};
-				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), spielerLoeschen);
+				return spielerLoeschen;
 			}
 	    });
 	}
