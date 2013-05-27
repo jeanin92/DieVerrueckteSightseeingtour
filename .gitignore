@@ -10,3 +10,4 @@ DVST/pom.xml
 DVST/.calabash_settings
 DVST_TestTest/bin/
 DVST_TestTest/.classpath
+DVST_TestTest/gen/
