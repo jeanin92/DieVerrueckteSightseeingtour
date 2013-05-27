@@ -1,4 +1,4 @@
-package com.dhbw.dvst.test;
+package com.dhbw.dvst.functionaltests;
 
 import android.app.Activity;
 import android.content.Intent;
