@@ -21,7 +21,7 @@ import com.dhbw.dvst.model.Control;
 import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spieler;
 
-public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
+public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 
 	/**
 	 * Speichert alle Spieler als Values und einen hochzählenden int-Wert als Key
@@ -39,7 +39,7 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
      * @param textViewId ID des Textviews in der Layout-Datei
      * @param alleSpieler Listenobjekte
      */
-    public SpielerListeArrayAdapter(Activity activity, int resourceId, int textViewId,
+    public PlayerListArrayAdapter(Activity activity, int resourceId, int textViewId,
         ArrayList<Spieler> alleSpieler) {
     	super(activity, resourceId, textViewId, alleSpieler);
     	this.activity = activity;
@@ -60,10 +60,10 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 	    View zeilenansicht = inflater.inflate(R.layout.zeilenansicht, parent, false);  
 	    this.zeilenansicht = zeilenansicht;
     	this.position = position;
-	    return fuelleListViewItem();
+	    return fillListViewItem();
     }
 
-	private View fuelleListViewItem() {
+	private View fillListViewItem() {
 		setFigurIcon();
 	    setSpielerName();  
 	    initBearbeitenButton();
@@ -73,15 +73,15 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 
 	private void setFigurIcon() {
 		ImageView imageView = (ImageView) this.zeilenansicht.findViewById(R.id.img_gewaehlte_figur);
-	    int resID = activity.getResources().getIdentifier(baueBildNamen(), "drawable", "com.dhbw.dvst");	    
+	    int resID = activity.getResources().getIdentifier(buildIconName(), "drawable", "com.dhbw.dvst");	    
 	    imageView.setImageResource(resID);
 	}
 
-	private String baueBildNamen() {
+	private String buildIconName() {
 		String form = this.getItem(this.position).getSpielfigur().getForm().getText_en();
 	    String farbe = this.getItem(this.position).getSpielfigur().getFarbe().getText_en();
-	    String bildName = form +"_"+ farbe;
-		return bildName;
+	    String iconName = form +"_"+ farbe;
+		return iconName;
 	}
 	
 	private void setSpielerName() {
@@ -128,7 +128,7 @@ public class SpielerListeArrayAdapter extends ArrayAdapter<Spieler> {
 				OnClickListener spielerLoeschen = new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						SpielerListeArrayAdapter.this.remove((Spieler)v.getTag());
+						PlayerListArrayAdapter.this.remove((Spieler)v.getTag());
 						Spiel spiel = Control.getInstance();
 						spiel.spielerLoeschen((Spieler)v.getTag());
 					}

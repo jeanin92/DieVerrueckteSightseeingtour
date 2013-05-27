@@ -9,9 +9,9 @@ import com.dhbw.dvst.R;
 
 public class LoeschDialog {
 
-	public LoeschDialog(Activity activity, String fehler, OnClickListener posListener) {
+	public LoeschDialog(Activity activity, String message, OnClickListener posListener) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		builder.setMessage(fehler);
+		builder.setMessage(message);
 		builder.setPositiveButton(R.string.ja, posListener);
 		builder.setNegativeButton(R.string.nein, new DialogInterface.OnClickListener() {
 				@Override
