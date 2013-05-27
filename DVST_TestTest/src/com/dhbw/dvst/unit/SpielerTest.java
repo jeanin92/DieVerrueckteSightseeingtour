@@ -4,10 +4,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.dhbw.dvst.model.Farbe;
-import com.dhbw.dvst.model.Form;
-import com.dhbw.dvst.model.Spieler;
-import com.dhbw.dvst.model.Spielfigur;
+import com.dhbw.dvst.models.Farbe;
+import com.dhbw.dvst.models.Form;
+import com.dhbw.dvst.models.Spieler;
+import com.dhbw.dvst.models.Spielfigur;
 
 import junit.framework.TestCase;
 

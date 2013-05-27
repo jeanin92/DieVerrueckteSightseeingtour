@@ -3,7 +3,7 @@ package com.dhbw.dvst.activities;
 import android.os.Bundle;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.model.Spielfigur;
+import com.dhbw.dvst.models.Spielfigur;
 
 public class SpielerAnlegenActivity extends SpielerActivity {
 

@@ -13,19 +13,19 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.helper.Fehlermeldung;
-import com.dhbw.dvst.helper.KommunikationActivities;
-import com.dhbw.dvst.helper.SpinnerBuilder;
-import com.dhbw.dvst.model.Control;
-import com.dhbw.dvst.model.Spiel;
-import com.dhbw.dvst.model.Spielfigur;
+import com.dhbw.dvst.models.Control;
+import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.models.Spielfigur;
+import com.dhbw.dvst.utilities.ActivityInteraction;
+import com.dhbw.dvst.utilities.Fehlermeldung;
+import com.dhbw.dvst.utilities.SpinnerBuilder;
 
 public abstract class SpielerActivity extends Activity {
 	protected Spiel spiel = Control.getInstance();
 	protected EditText et_name;
 	protected Spinner spin_farbe;
 	protected Spinner spin_form;
-	protected KommunikationActivities kommunikation = new KommunikationActivities();
+	protected ActivityInteraction kommunikation = new ActivityInteraction();
 
 	
 	protected void buildPlayerSettingsDialogue() {
