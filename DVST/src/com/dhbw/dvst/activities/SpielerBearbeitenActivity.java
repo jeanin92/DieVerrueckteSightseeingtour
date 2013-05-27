@@ -1,10 +1,8 @@
 package com.dhbw.dvst.activities;
 
 import android.os.Bundle;
+
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.helper.KommunikationActivities;
-import com.dhbw.dvst.model.Control;
-import com.dhbw.dvst.model.Spiel;
 import com.dhbw.dvst.model.Spieler;
 import com.dhbw.dvst.model.Spielfigur;
 
@@ -22,7 +20,8 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 
 		buildPlayerSettingsDialogue();
 		
-		this.et_name.setText(spieler.getName());	
+		this.et_name.setText(spieler.getName());
+		
 		setFarbspinner();
 		setFormspinner();
 		setSaveButton();
