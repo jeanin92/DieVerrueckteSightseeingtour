@@ -56,6 +56,4 @@
         android:textAppearance="?android:attr/textAppearanceButton" />
     
     </RelativeLayout>
-
-	</RelativeLayout>
 </com.dhbw.dvst.views.ModusView>
