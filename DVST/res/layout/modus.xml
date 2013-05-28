@@ -12,7 +12,7 @@
     tools:context=".ModusActivity" >
     
     <RelativeLayout
-        android:id="@+id/modus"
+        android:id="@+id/modus_center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btn_mehrspieler"
-        android:layout_below="@+id/hd_geraete"
+        android:layout_below="@+id/hd_modus"
         android:layout_marginTop="@dimen/margin_top_main"
         android:enabled="false"
         android:text="@string/einspieler"
@@ -54,6 +54,8 @@
         android:layout_marginTop="@dimen/margin_top_main"
         android:text="@string/mehrspieler"
         android:textAppearance="?android:attr/textAppearanceButton" />
+    
+    </RelativeLayout>
 
 	</RelativeLayout>
 </com.dhbw.dvst.views.ModusView>
