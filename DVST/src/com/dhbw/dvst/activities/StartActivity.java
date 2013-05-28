@@ -15,7 +15,6 @@ public class StartActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.start);
 		
 		view = (StartView)View.inflate(this, R.layout.start, null);
 		view.setViewListener(viewListener);

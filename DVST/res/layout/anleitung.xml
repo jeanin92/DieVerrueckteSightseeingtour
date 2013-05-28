@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.dhbw.dvst.views.AnleitungView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/anleitung"
     android:gravity="fill|right"
@@ -34,7 +35,7 @@
         android:scrollbars="vertical" >
 
   		<TextView
-  		    android:id="@+id/textView1"
+  		    android:id="@+id/tv_anleitung"
   		    android:layout_width="match_parent"
   		    android:layout_height="wrap_content"
   		    android:text="@string/anleitung_text" />
@@ -50,4 +51,4 @@
         android:layout_toLeftOf="@dimen/activity_horizontal_margin"
         android:text="@string/spiel_starten" />
 
-</RelativeLayout>
+</com.dhbw.dvst.views.AnleitungView>
