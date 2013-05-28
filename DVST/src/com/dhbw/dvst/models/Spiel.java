@@ -16,6 +16,18 @@ public class Spiel{
 	private Spielbrett spielbrett;
 	private Spielplatte platte_aktiv;
 	private ArrayList<Spielkarte> kartenstapel;
+	private static Spiel spiel = null;
+	
+	public static Spiel getInstance(){
+		if(spiel==null){
+			spiel = new Spiel();
+		}
+		return spiel;
+	}
+	
+	public static void resetInstance(){
+		spiel = new Spiel();
+	}
 	
 	/**
 	 * Konstruktor

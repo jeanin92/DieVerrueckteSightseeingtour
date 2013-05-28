@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.models.Control;
+import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 
 public class AnleitungActivity extends Activity {
@@ -22,7 +22,7 @@ public class AnleitungActivity extends Activity {
 		final Button btn_start = (Button) findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Control.resetInstance();
+            	Spiel.resetInstance();
             	kommunikation.navigieren(AnleitungActivity.this, ModusActivity.class);
             }
         });

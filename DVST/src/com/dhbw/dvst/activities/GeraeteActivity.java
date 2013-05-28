@@ -9,12 +9,11 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.models.Control;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 
 public class GeraeteActivity extends Activity {
-	private Spiel spiel = Control.getInstance();
+	private Spiel spiel = Spiel.getInstance();
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 
 	@Override

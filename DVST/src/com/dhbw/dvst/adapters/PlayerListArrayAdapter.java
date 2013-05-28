@@ -1,11 +1,12 @@
 package com.dhbw.dvst.adapters;
 
 import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,6 @@ import android.widget.TextView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.activities.SpielerBearbeitenActivity;
-import com.dhbw.dvst.models.Control;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.utilities.LoeschDialog;
@@ -130,7 +130,7 @@ public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						PlayerListArrayAdapter.this.remove((Spieler)v.getTag());
-						Spiel spiel = Control.getInstance();
+						Spiel spiel = Spiel.getInstance();
 						spiel.spielerLoeschen((Spieler)v.getTag());
 					}
 				};

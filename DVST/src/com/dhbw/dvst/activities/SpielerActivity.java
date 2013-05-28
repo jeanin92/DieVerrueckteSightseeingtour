@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.models.Control;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielfigur;
 import com.dhbw.dvst.utilities.ActivityInteraction;
@@ -21,7 +20,7 @@ import com.dhbw.dvst.utilities.Fehlermeldung;
 import com.dhbw.dvst.utilities.SpinnerBuilder;
 
 public abstract class SpielerActivity extends Activity {
-	protected Spiel spiel = Control.getInstance();
+	protected Spiel spiel = Spiel.getInstance();
 	protected EditText et_name;
 	protected Spinner spin_farbe;
 	protected Spinner spin_form;
