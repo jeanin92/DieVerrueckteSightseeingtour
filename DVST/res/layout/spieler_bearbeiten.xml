@@ -3,6 +3,7 @@
     android:id="@+id/spieler_bearbeiten"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightblue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,8 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_left_main"
         android:layout_marginTop="@dimen/margin_top_main"
+        android:textColor="@color/black"
         android:text="@string/spieler_bearbeiten"
-        android:textAppearance="?android:attr/textAppearance" />
+        android:textAppearance="?android:attr/textAppearance"/>
 
     <include
         layout="@layout/spieler" />

@@ -10,13 +10,12 @@ import android.widget.ListView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.adapters.PlayerListArrayAdapter;
-import com.dhbw.dvst.models.Control;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.utilities.Fehlermeldung;
 
 public class SpielerUebersichtActivity extends Activity {
-	private Spiel spiel = Control.getInstance();
+	private Spiel spiel = Spiel.getInstance();
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 
 	@Override

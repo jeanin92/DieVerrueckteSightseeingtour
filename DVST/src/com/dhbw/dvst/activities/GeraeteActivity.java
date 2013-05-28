@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.models.Control;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.views.GeraeteView;
 
 public class GeraeteActivity extends Activity {
-	private Spiel spiel = Control.getInstance();
+	private Spiel spiel = Spiel.getInstance();
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 	private GeraeteView view;
 
