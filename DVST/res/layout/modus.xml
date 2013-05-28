@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.dhbw.dvst.views.ModusView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/modus"
     android:layout_width="match_parent"
@@ -22,7 +23,7 @@
         tools:context=".ModusActivity" >
     
     <TextView
-        android:id="@+id/hd_geraete"
+        android:id="@+id/hd_modus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -48,11 +49,10 @@
         android:id="@+id/btn_mehrspieler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hd_geraete"
+        android:layout_alignLeft="@+id/hd_modus"
         android:layout_below="@+id/btn_einspieler"
         android:layout_marginTop="@dimen/margin_top_main"
         android:text="@string/mehrspieler"
         android:textAppearance="?android:attr/textAppearanceButton" />
 
-    </RelativeLayout>
-</RelativeLayout>
+</com.dhbw.dvst.views.ModusView>

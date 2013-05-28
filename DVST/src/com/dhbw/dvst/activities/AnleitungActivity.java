@@ -20,14 +20,6 @@ public class AnleitungActivity extends Activity {
 		view = (AnleitungView)View.inflate(this, R.layout.anleitung, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
-		
-		final Button btn_start = (Button) findViewById(R.id.btn_start);
-        btn_start.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	Spiel.resetInstance();
-            	kommunikation.navigieren(AnleitungActivity.this, ModusActivity.class);
-            }
-        });
 	}
 	
 	/**
