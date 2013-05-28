@@ -1,34 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spieler_uebersicht"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightblue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:id="@+id/spieler_uebersicht"
     tools:context=".activities.SpielerUebersichtActivity" >
 
+    <RelativeLayout
+        android:id="@+id/spieler_uebersicht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/lightblue"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".activities.SpielerUebersichtActivity" >
+    
     <TextView
         android:id="@+id/hd_spieler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/spieler_uebersicht" />
-
-    <ListView
-        android:id="@+id/lv_spieler"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignLeft="@+id/hd_spieler"
-        android:layout_below="@+id/hd_spieler"
-        android:layout_marginTop="@dimen/margin_top_main" >
-    </ListView>
+        android:text="@string/spieler_uebersicht"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/btn_neu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/lv_spieler"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/lv_spieler"
         android:text="@string/neuer_spieler" />
 
@@ -36,6 +41,7 @@
         android:id="@+id/btn_modus_wechseln"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/lv_spieler"
         android:layout_toRightOf="@+id/btn_neu"
         android:text="@string/spielmodus_wechseln" />
@@ -49,4 +55,16 @@
         android:layout_toRightOf="@+id/btn_modus_wechseln"
         android:text="@string/zum_spiel" />
 
+    <ListView
+        android:id="@+id/lv_spieler"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/hd_spieler"
+        android:layout_below="@+id/hd_spieler"
+        android:cacheColorHint="@color/lightblue" >
+
+    </ListView>
+
+    </RelativeLayout>
+    
 </RelativeLayout>
