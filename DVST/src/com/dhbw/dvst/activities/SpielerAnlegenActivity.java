@@ -1,12 +1,9 @@
 package com.dhbw.dvst.activities;
 
 import android.os.Bundle;
-import android.widget.EditText;
+
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.helper.KommunikationActivities;
-import com.dhbw.dvst.model.Control;
-import com.dhbw.dvst.model.Spiel;
-import com.dhbw.dvst.model.Spielfigur;
+import com.dhbw.dvst.models.Spielfigur;
 
 public class SpielerAnlegenActivity extends SpielerActivity {
 

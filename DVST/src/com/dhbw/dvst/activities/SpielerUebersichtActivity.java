@@ -9,15 +9,15 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.helper.KommunikationActivities;
-import com.dhbw.dvst.helper.SpielerListeArrayAdapter;
-import com.dhbw.dvst.helper.Fehlermeldung;
-import com.dhbw.dvst.model.Control;
-import com.dhbw.dvst.model.Spiel;
+import com.dhbw.dvst.adapters.PlayerListArrayAdapter;
+import com.dhbw.dvst.models.Control;
+import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.utilities.ActivityInteraction;
+import com.dhbw.dvst.utilities.Fehlermeldung;
 
 public class SpielerUebersichtActivity extends Activity {
 	private Spiel spiel = Control.getInstance();
-	private KommunikationActivities kommunikation = new KommunikationActivities();
+	private ActivityInteraction kommunikation = new ActivityInteraction();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class SpielerUebersichtActivity extends Activity {
 	}
 
 	protected void setSpielerliste(final ListView listview) {
-		final SpielerListeArrayAdapter adapter = new SpielerListeArrayAdapter(this, 
+		final PlayerListArrayAdapter adapter = new PlayerListArrayAdapter(this, 
         		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spiel.getAlleSpieler());
         listview.setAdapter(adapter);
 	}

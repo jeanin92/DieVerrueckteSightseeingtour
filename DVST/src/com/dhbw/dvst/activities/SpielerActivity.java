@@ -1,32 +1,47 @@
 package com.dhbw.dvst.activities;
 
-import com.dhbw.dvst.R;
-import com.dhbw.dvst.helper.Fehlermeldung;
-import com.dhbw.dvst.helper.KommunikationActivities;
-import com.dhbw.dvst.helper.SpinnerBuilder;
-import com.dhbw.dvst.model.Control;
-import com.dhbw.dvst.model.Spiel;
-import com.dhbw.dvst.model.Spieler;
-import com.dhbw.dvst.model.Spielfigur;
-
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnKeyListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.dhbw.dvst.R;
+import com.dhbw.dvst.models.Control;
+import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.models.Spielfigur;
+import com.dhbw.dvst.utilities.ActivityInteraction;
+import com.dhbw.dvst.utilities.Fehlermeldung;
+import com.dhbw.dvst.utilities.SpinnerBuilder;
 
 public abstract class SpielerActivity extends Activity {
 	protected Spiel spiel = Control.getInstance();
 	protected EditText et_name;
 	protected Spinner spin_farbe;
 	protected Spinner spin_form;
-	protected KommunikationActivities kommunikation = new KommunikationActivities();
+	protected ActivityInteraction kommunikation = new ActivityInteraction();
 
 	
 	protected void buildPlayerSettingsDialogue() {
 		this.et_name = (EditText) findViewById(R.id.et_name);
+		et_name.setOnKeyListener(new OnKeyListener() {
+		    public boolean onKey(View v, int keyCode, KeyEvent event) {
+		        if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+		            (keyCode == KeyEvent.KEYCODE_ENTER)) {
+		    	  InputMethodManager inputmethod = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		          inputmethod.hideSoftInputFromWindow(et_name.getWindowToken(), 0);
+		          return true;
+		        }
+		        return false;
+		    }
+		});
+
 		SpinnerBuilder spinbuilder = new SpinnerBuilder();
 		this.spin_farbe = spinbuilder.initFarbspinner(this);
 		this.spin_form = spinbuilder.initFormspinner(this);

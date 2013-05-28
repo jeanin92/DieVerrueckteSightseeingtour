@@ -43,4 +43,5 @@
     <!-- DeleteDialogue.java -->
     <string name="ja">Yes</string>
     <string name="nein">No</string>
+    <string name="beenden">Beenden</string>
 </resources>
