@@ -28,7 +28,6 @@
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_start"
         android:layout_below="@+id/hd_anleitung"
         android:layout_alignLeft="@+id/hd_anleitung"
         android:layout_marginTop="@dimen/margin_top_main"
@@ -48,10 +47,10 @@
     <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"        
+        android:layout_height="wrap_content"    
+        android:layout_below="@+id/scrollView1"   
         android:layout_alignLeft="@+id/hd_anleitung"
-        android:layout_toLeftOf="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/margin_top_main"
         android:text="@string/spiel_starten" />
 
 </com.dhbw.dvst.views.AnleitungView>
