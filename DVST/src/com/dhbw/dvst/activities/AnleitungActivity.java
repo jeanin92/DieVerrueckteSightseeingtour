@@ -3,7 +3,6 @@ package com.dhbw.dvst.activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spiel;

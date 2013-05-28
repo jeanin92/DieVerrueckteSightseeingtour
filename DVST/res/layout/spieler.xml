@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.dhbw.dvst.views.SpielerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/spielfigur"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
     tools:context=".activities.SpielerActivity" >
     
     <RelativeLayout
-        android:id="@+id/spielfigur"
+        android:id="@+id/spielersettings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -19,6 +20,15 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".activities.SpielerActivity" >
+        
+    <TextView
+        android:id="@+id/hd_spieler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_main"
+        android:layout_marginTop="@dimen/margin_top_main"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@color/black" />
     
     <TextView
         android:id="@+id/textView1"
@@ -93,4 +103,4 @@
  
     </RelativeLayout>
     
-</RelativeLayout>
+</com.dhbw.dvst.views.SpielerView>

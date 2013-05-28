@@ -1,32 +1,40 @@
 package com.dhbw.dvst.activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielfigur;
+import com.dhbw.dvst.views.SpielerView;
 
 public class SpielerBearbeitenActivity extends SpielerActivity{
 	private int spieler_index;
 	private Spieler spieler;
+	private SpielerView view;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.spieler_bearbeiten);
+
+		view = (SpielerView)View.inflate(this, R.layout.spieler, null);
+		view.setViewListener(viewListener);
+		setContentView(view);
 		
 		this.spieler_index = getIntent().getIntExtra("spieler_index", 0);
 		this.spieler = spiel.getAlleSpieler().get(spieler_index);
 
-		buildPlayerSettingsDialogue();
+		makeSpinners();
+		
+		//TODO: here oder in View?
+		TextView spielerSettingsHeading = (TextView) findViewById(R.id.hd_spieler);
+		spielerSettingsHeading.setText(R.string.spieler_erstellen);
 		
 		this.et_name.setText(spieler.getName());
-		
 		setFarbspinner();
 		setFormspinner();
-		setSaveButton();
 	}
-
 
 	protected void setFormspinner() {
 		String[] formen = getResources().getStringArray(R.array.figuren);

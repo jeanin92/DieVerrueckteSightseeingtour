@@ -55,4 +55,5 @@
         android:text="@string/mehrspieler"
         android:textAppearance="?android:attr/textAppearanceButton" />
 
+	</RelativeLayout>
 </com.dhbw.dvst.views.ModusView>
