@@ -9,5 +9,10 @@
     <dimen name="margin_left_large">80dp</dimen>
     <dimen name="width_icon_figur">50dp</dimen>
     <dimen name="height_list">150dp</dimen>
+    <dimen name="height_icon_figur">50dp</dimen>
+    <dimen name="height_button_icon">40dp</dimen>
+    <dimen name="width_button_icon">40dp</dimen>
+    <dimen name="margin_left_icon">13dp</dimen>
+    
 
 </resources>
