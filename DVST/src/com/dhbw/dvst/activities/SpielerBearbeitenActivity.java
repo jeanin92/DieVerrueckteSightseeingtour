@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spieler;
@@ -18,6 +17,8 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 	private int spieler_index;
 	private Spieler spieler;
 	private SpielerBearbeitenView view;
+	private Object selectedFarbe;
+	private Object selectedForm;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,9 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 		this.spieler = spiel.getAlleSpieler().get(spieler_index);
 
 		makeSpinners();
-		
-		this.et_name.setText(spieler.getName());
+	
+		this.et_name = view.getEt_name();
+		et_name.setText(spieler.getName());
 		setFarbspinner();
 		setFormspinner();
 	}
@@ -67,8 +69,6 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
         	}   
 		}
 	};
-	private Object selectedFarbe;
-	private Object selectedForm;
 
 	protected void setFormspinner() {
 		String[] formen = getResources().getStringArray(R.array.figuren);
@@ -109,5 +109,4 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 		this.spieler.setSpielfigur(figur);
 		this.kommunikation.navigieren(SpielerBearbeitenActivity.this, SpielerUebersichtActivity.class);
 	}
-
 }

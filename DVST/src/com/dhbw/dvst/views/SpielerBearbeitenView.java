@@ -27,9 +27,18 @@ public class SpielerBearbeitenView extends RelativeLayout{
 	 */
 	private ViewListener viewListener;
 	private EditText et_name;
+	public EditText getEt_name() {
+		return et_name;
+	}
+
+	public void setEt_name(EditText et_name) {
+		this.et_name = et_name;
+	}
+
 	private Button btn_speichern;
 	private Spinner spin_farbe;
 	private Spinner spin_form;
+	
 	public void setViewListener(ViewListener viewListener) {
 		this.viewListener = viewListener;
 	}
@@ -52,7 +61,7 @@ public class SpielerBearbeitenView extends RelativeLayout{
 		btn_speichern = (Button) findViewById(R.id.btn_erstellen);
 		
 		TextView spielerSettingsHeading = (TextView) findViewById(R.id.hd_spieler);
-		spielerSettingsHeading.setText(R.string.spieler_erstellen);
+		spielerSettingsHeading.setText(R.string.spieler_bearbeiten);
 		
 		spin_farbe = (Spinner) findViewById(R.id.spin_farbe);
 		spin_form = (Spinner) findViewById(R.id.spin_figur);
