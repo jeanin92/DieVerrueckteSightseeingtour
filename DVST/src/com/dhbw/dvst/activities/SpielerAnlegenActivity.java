@@ -20,7 +20,7 @@ public class SpielerAnlegenActivity extends SpielerActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		view = (SpielerView)View.inflate(this, R.layout.spieler_anlegen, null);
+		view = (SpielerView)View.inflate(this, R.layout.spieler, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
 		

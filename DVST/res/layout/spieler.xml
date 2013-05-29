@@ -27,7 +27,7 @@
         android:textAppearance="?android:attr/textAppearance" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/hd_spieler"
@@ -41,18 +41,18 @@
         android:id="@+id/et_name" 
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content" 
-        android:layout_toRightOf="@+id/textView1" 
-        android:layout_alignBaseline="@+id/textView1"
+        android:layout_toRightOf="@+id/textView_name" 
+        android:layout_alignBaseline="@+id/textView_name"
         android:layout_marginLeft="@dimen/margin_left_main"
         android:ems="10" 
         android:inputType="none"/>
     
     <TextView
-        android:id="@+id/TextView2"
+        android:id="@+id/TextView_farbe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/textView_name"
+        android:layout_below="@+id/textView_name"
         android:layout_marginTop="@dimen/margin_top_large"
         android:text="@string/farbe"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -63,15 +63,15 @@
         android:layout_height="wrap_content" 
         android:layout_alignLeft="@+id/et_name" 
         android:layout_alignRight="@+id/et_name" 
-        android:layout_alignTop="@+id/TextView2"
+        android:layout_alignTop="@+id/TextView_farbe"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView_form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView2"
-        android:layout_below="@+id/TextView2"
+        android:layout_alignLeft="@+id/TextView_farbe"
+        android:layout_below="@+id/TextView_farbe"
         android:layout_marginTop="@dimen/margin_top_large"
         android:text="@string/figur"
         android:textColor="@color/black" />
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content" 
         android:layout_alignLeft="@+id/et_name" 
         android:layout_alignRight="@+id/et_name"
-        android:layout_alignTop="@+id/textView3" 
+        android:layout_alignTop="@+id/textView_form" 
         android:keepScreenOn="true" 
         android:textAlignment="center"/>
     
@@ -90,8 +90,8 @@
         android:id="@+id/btn_erstellen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView_form"
+        android:layout_below="@+id/textView_form"
         android:layout_marginTop="@dimen/margin_top_large"
         android:text="@string/OK" />   
 

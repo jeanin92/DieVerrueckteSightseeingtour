@@ -24,7 +24,7 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		view = (SpielerView) View.inflate(this, R.layout.spieler_bearbeiten, null);
+		view = (SpielerView) View.inflate(this, R.layout.spieler, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
 		
@@ -35,6 +35,8 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 
 		this.et_name = view.getEt_name();
 		et_name.setText(spieler.getName());
+		
+		view.getSpielerSettingsHeading().setText(R.string.spieler_bearbeiten);
 		setFarbspinner();
 		setFormspinner();
 	}
