@@ -11,12 +11,12 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielfigur;
 import com.dhbw.dvst.utilities.Fehlermeldung;
-import com.dhbw.dvst.views.SpielerBearbeitenView;
+import com.dhbw.dvst.views.SpielerView;
 
 public class SpielerBearbeitenActivity extends SpielerActivity{
 	private int spieler_index;
 	private Spieler spieler;
-	private SpielerBearbeitenView view;
+	private SpielerView view;
 	private Object selectedFarbe;
 	private Object selectedForm;
 	
@@ -24,7 +24,7 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		view = (SpielerBearbeitenView) View.inflate(this, R.layout.spieler_bearbeiten, null);
+		view = (SpielerView) View.inflate(this, R.layout.spieler_bearbeiten, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
 		
@@ -32,14 +32,14 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 		this.spieler = spiel.getAlleSpieler().get(spieler_index);
 
 		makeSpinners();
-	
+
 		this.et_name = view.getEt_name();
 		et_name.setText(spieler.getName());
 		setFarbspinner();
 		setFormspinner();
 	}
 	
-	protected SpielerBearbeitenView.ViewListener viewListener = new SpielerBearbeitenView.ViewListener() {
+	protected SpielerView.ViewListener viewListener = new SpielerView.ViewListener() {
 		@Override
 		public boolean onTastaturVerstecken(int keyCode, KeyEvent event) {
 			if ((event.getAction() == KeyEvent.ACTION_DOWN) &&

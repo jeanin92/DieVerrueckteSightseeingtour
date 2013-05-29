@@ -9,10 +9,10 @@ import android.widget.EditText;
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spielfigur;
 import com.dhbw.dvst.utilities.Fehlermeldung;
-import com.dhbw.dvst.views.SpielerAnlegenView;
+import com.dhbw.dvst.views.SpielerView;
 
 public class SpielerAnlegenActivity extends SpielerActivity {
-	private SpielerAnlegenView view;
+	private SpielerView view;
 	private Object selectedFarbe;
 	protected Object selectedForm;
 
@@ -20,14 +20,14 @@ public class SpielerAnlegenActivity extends SpielerActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		view = (SpielerAnlegenView)View.inflate(this, R.layout.spieler_anlegen, null);
+		view = (SpielerView)View.inflate(this, R.layout.spieler_anlegen, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
 		
 		makeSpinners();
 	}	
 	
-	protected SpielerAnlegenView.ViewListener viewListener = new SpielerAnlegenView.ViewListener() {
+	protected SpielerView.ViewListener viewListener = new SpielerView.ViewListener() {
 		@Override
 		public boolean onTastaturVerstecken(int keyCode, KeyEvent event) {
 			if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
