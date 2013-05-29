@@ -93,8 +93,7 @@ public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 	protected void initBearbeitenButton() {
 		Button btn_bearbeiten = (Button) this.zeilenansicht.findViewById(R.id.btn_spieler_bearbeiten);
 	    btn_bearbeiten.setTag(this.position);
-	    //TODO: bearbeitungsicon
-	    btn_bearbeiten.setBackgroundResource(R.drawable.ic_launcher);
+	    btn_bearbeiten.setBackgroundResource(R.drawable.pencil);
 	    setBearbeitenListener(btn_bearbeiten);
 	}
     
@@ -112,8 +111,7 @@ public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 	protected void initLoeschenButton() {
 		Button btn_loeschen = (Button) this.zeilenansicht.findViewById(R.id.btn_spieler_loeschen);
 	    btn_loeschen.setTag(getItem(this.position));
-	    //TODO: löschicon
-	    btn_loeschen.setBackgroundResource(R.drawable.ic_launcher);
+	    btn_loeschen.setBackgroundResource(R.drawable.loeschen);
 	    setLoeschenListener(btn_loeschen);
 	}
 
