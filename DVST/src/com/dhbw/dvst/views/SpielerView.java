@@ -18,7 +18,7 @@ public class SpielerView extends RelativeLayout{
 	 * The interface to send events from the view to the controller
 	 */
 	public static interface ViewListener {
-		public boolean onTastaturVerstecken(int keyCode, KeyEvent event);
+		public boolean onTastaturVerstecken(int keyCode, KeyEvent event, EditText et_name);
 		public void onSpielerSpeichern(EditText et_name, Object selectedColour, Object selectedForm);
 	}
 
@@ -68,7 +68,7 @@ public class SpielerView extends RelativeLayout{
 		
 		et_name.setOnKeyListener(new OnKeyListener() {
 		    public boolean onKey(View v, int keyCode, KeyEvent event) {
-		        return viewListener.onTastaturVerstecken(keyCode, event);
+		        return viewListener.onTastaturVerstecken(keyCode, event, et_name);
 		    }
 		});
 		

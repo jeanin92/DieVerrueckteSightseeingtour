@@ -29,7 +29,7 @@ public class SpielerAnlegenActivity extends SpielerActivity {
 	
 	protected SpielerView.ViewListener viewListener = new SpielerView.ViewListener() {
 		@Override
-		public boolean onTastaturVerstecken(int keyCode, KeyEvent event) {
+		public boolean onTastaturVerstecken(int keyCode, KeyEvent event, EditText et_name) {
 			if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
 		            (keyCode == KeyEvent.KEYCODE_ENTER)) {
 		    	  InputMethodManager inputmethod = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
