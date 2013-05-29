@@ -12,10 +12,12 @@ import com.dhbw.dvst.views.AnleitungView;
 public class AnleitungActivity extends Activity {
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 	private AnleitungView view;
+	public Boolean imSpiel;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		imSpiel = getIntent().getBooleanExtra("imSpiel", false);
 		view = (AnleitungView)View.inflate(this, R.layout.anleitung, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
@@ -32,6 +34,11 @@ public class AnleitungActivity extends Activity {
 		public void onStart() {
         	Spiel.resetInstance();
             kommunikation.navigieren(AnleitungActivity.this, ModusActivity.class);
+		}
+		
+		@Override
+		public void onBack() {
+			kommunikation.navigieren(AnleitungActivity.this, SpielActivity.class);			
 		}
 	};
 }

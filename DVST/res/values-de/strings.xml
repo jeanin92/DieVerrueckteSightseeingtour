@@ -10,8 +10,8 @@
     <string name="spielmodus_waehlen">Spielmodus auswaehlen</string>
     <string name="einspieler">Einspieler</string>
     <string name="mehrspieler">Mehrspieler</string>
-    <string name="geraeteanzahl">Geraeteanzahl</string>
-    <string name="ein_geraet">ein Geraet fuer alle Spieler</string>
+    <string name="geraeteanzahl">Geräteanzahl</string>
+    <string name="ein_geraet">ein Gerät für alle Spieler</string>
     <string name="mehr_geraete">ein Geraet pro Spieler</string>
     <string name="OK">Okay</string>
     <string name="anleitung">Anleitung</string>
@@ -33,6 +33,7 @@
     <string name="err_vergeben">Spielfigur bereits vergeben</string>
     <string name="err_max_spieleranzahl">Maximale Spieleranzahl erreicht</string>
     <string name="close">Schließen</string>
+    <string name="err_falsche_Spieleranzahl">Nicht genügend Spieler registriert</string>
     
     <!-- Zeilenansicht.xml -->
     <string name="gewaehlte_figur">Gewählte Spielfigur</string>

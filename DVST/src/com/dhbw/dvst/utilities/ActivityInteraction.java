@@ -9,5 +9,11 @@ public class ActivityInteraction{
 		Intent intent = new Intent(quelle, ziel);                
 		quelle.startActivity(intent);
 	}
+	
+	public void navigieren(Activity quelle, Class ziel, Boolean imSpiel) {
+		Intent intent = new Intent(quelle, ziel);  
+		intent.putExtra("imSpiel", imSpiel);
+		quelle.startActivity(intent);
+	}
 
 }

@@ -66,8 +66,11 @@ public class SpielerUebersichtActivity extends Activity {
 		
 		@Override
 		public void onSpielStarten() {
+			if(spiel.getAlleSpieler().size()<2){
+				new Fehlermeldung(SpielerUebersichtActivity.this, getString(R.string.err_falsche_Spieleranzahl));
+				return;
+			}
 			kommunikation.navigieren(SpielerUebersichtActivity.this, SpielActivity.class);
-			
 		}
 	};
 }

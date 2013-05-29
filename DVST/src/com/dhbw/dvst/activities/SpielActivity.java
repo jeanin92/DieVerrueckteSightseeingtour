@@ -1,11 +1,15 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.View;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.utilities.ActivityInteraction;
+import com.dhbw.dvst.utilities.BeendenDialog;
 import com.dhbw.dvst.views.SpielView;
 
 public class SpielActivity extends Activity{
@@ -30,13 +34,19 @@ public class SpielActivity extends Activity{
 		
 		@Override
 		public void onBeenden() {
-			// TODO Auto-generated method stub
-			
+			OnClickListener positiv_listener = new OnClickListener() {				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					Spiel.resetInstance();
+					kommunikation.navigieren(SpielActivity.this, ModusActivity.class);					
+				}
+			};
+			new BeendenDialog(SpielActivity.this, getString(R.string.err_beenden), positiv_listener);			
 		}
 
 		@Override
 		public void onReadManual() {
-			kommunikation.navigieren(SpielActivity.this, AnleitungActivity.class);
+			kommunikation.navigieren(SpielActivity.this, AnleitungActivity.class, true);
 		}
 	};
 }

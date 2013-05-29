@@ -33,6 +33,7 @@
     <string name="err_vergeben">Pawn is already chosen.</string>
     <string name="err_max_spieleranzahl">Maximum number of players reached.</string>
     <string name="close">Close</string>
+    <string name="err_falsche_Spieleranzahl">Not enough players registered</string>
     
     <!-- Zeilenansicht.xml -->
     <string name="gewaehlte_figur">Chosen pawn</string>
@@ -44,4 +45,5 @@
     <string name="ja">Yes</string>
     <string name="nein">No</string>
     <string name="beenden">Beenden</string>
+    <string name="err_beenden">Do you really want to leave the game?</string>
 </resources>

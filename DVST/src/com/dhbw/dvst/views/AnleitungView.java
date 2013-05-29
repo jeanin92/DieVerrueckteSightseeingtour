@@ -1,5 +1,6 @@
 package com.dhbw.dvst.views;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.activities.AnleitungActivity;
 
 public class AnleitungView extends RelativeLayout {
 
@@ -17,15 +19,17 @@ public class AnleitungView extends RelativeLayout {
 	 */
 	public static interface ViewListener {
 		public void onStart();
+		public void onBack();
 	}
 	
 	/**
 	 * The listener reference for sending events
 	 */
 	private ViewListener viewListener;
-	private Button btn_start;
+	private Button btn_weiter;
 	private TextView hd_anleitung;
 	private TextView tv_text;
+	private AnleitungActivity context;
 	
 	public void setViewListener(ViewListener viewListener) {
 		this.viewListener = viewListener;
@@ -44,15 +48,27 @@ public class AnleitungView extends RelativeLayout {
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-		btn_start = (Button)findViewById(R.id.btn_start);
+		btn_weiter = (Button)findViewById(R.id.btn_start);
 		tv_text = (TextView)findViewById(R.id.tv_anleitung);
 		hd_anleitung = (TextView)findViewById(R.id.hd_anleitung);
 		
-		btn_start.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				viewListener.onStart();
-			}
-		});
+		context = (AnleitungActivity)getContext();
+		if(context.imSpiel){
+			btn_weiter.setText(R.string.zurueck);
+			btn_weiter.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					viewListener.onBack();
+				}
+			});
+		}
+		else{
+			btn_weiter.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					viewListener.onStart();
+				}
+			});
+		}		
 	}
 }
