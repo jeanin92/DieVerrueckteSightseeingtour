@@ -33,7 +33,7 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 
 		makeSpinners();
 
-		view.getSpielerSettingsHeading().setText(R.string.spieler_bearbeiten);
+		view.getTextviewById(R.id.hd_spieler).setText(R.string.spieler_bearbeiten);
 		view.getEt_name().setText(spieler.getName());
 		setFarbspinner();
 		setFormspinner();

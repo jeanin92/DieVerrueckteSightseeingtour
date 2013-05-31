@@ -24,6 +24,7 @@ public class SpielerAnlegenActivity extends SpielerActivity {
 		view.setViewListener(viewListener);
 		setContentView(view);
 		
+		view.getTextviewById(R.id.hd_spieler).setText(R.string.spieler_erstellen);
 		makeSpinners();
 	}	
 	
