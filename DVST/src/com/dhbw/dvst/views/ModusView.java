@@ -5,8 +5,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-
 import com.dhbw.dvst.R;
 
 public class ModusView extends RelativeLayout {
@@ -25,7 +23,6 @@ public class ModusView extends RelativeLayout {
 	 * The listener reference for sending events
 	 */
 	private ViewListener viewListener;
-	private TextView hd_modus;
 	private Button btn_einspieler;
 	private Button btn_mehrspieler;
 	
@@ -46,7 +43,6 @@ public class ModusView extends RelativeLayout {
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-		hd_modus = (TextView)findViewById(R.id.hd_modus);
 		btn_einspieler = (Button)findViewById(R.id.btn_einspieler);
 		btn_mehrspieler = (Button)findViewById(R.id.btn_mehrspieler);
 		

@@ -1,12 +1,10 @@
 package com.dhbw.dvst.views;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.activities.AnleitungActivity;
@@ -27,8 +25,6 @@ public class AnleitungView extends RelativeLayout {
 	 */
 	private ViewListener viewListener;
 	private Button btn_weiter;
-	private TextView hd_anleitung;
-	private TextView tv_text;
 	private AnleitungActivity context;
 	
 	public void setViewListener(ViewListener viewListener) {
@@ -49,8 +45,6 @@ public class AnleitungView extends RelativeLayout {
 	protected void onFinishInflate() {
 		super.onFinishInflate();
 		btn_weiter = (Button)findViewById(R.id.btn_start);
-		tv_text = (TextView)findViewById(R.id.tv_anleitung);
-		hd_anleitung = (TextView)findViewById(R.id.hd_anleitung);
 		
 		context = (AnleitungActivity)getContext();
 		if(context.imSpiel){
