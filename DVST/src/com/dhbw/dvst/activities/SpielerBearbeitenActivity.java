@@ -1,33 +1,19 @@
 package com.dhbw.dvst.activities;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielfigur;
-import com.dhbw.dvst.utilities.Fehlermeldung;
-import com.dhbw.dvst.views.SpielerView;
 
 public class SpielerBearbeitenActivity extends SpielerActivity{
 	private int spieler_index;
 	private Spieler spieler;
-	private SpielerView view;
-	private Object selectedFarbe;
-	private Object selectedForm;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		view = (SpielerView) View.inflate(this, R.layout.spieler, null);
-		view.setViewListener(viewListener);
-		setContentView(view);
-		
+		setSpielerView();
 		this.spieler_index = getIntent().getIntExtra("spieler_index", 0);
 		this.spieler = spiel.getAlleSpieler().get(spieler_index);
 
@@ -38,37 +24,6 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 		setFarbspinner();
 		setFormspinner();
 	}
-	
-	protected SpielerView.ViewListener viewListener = new SpielerView.ViewListener() {
-		@Override
-		public boolean onTastaturVerstecken(int keyCode, KeyEvent event, EditText et_name) {
-			if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-		            (keyCode == KeyEvent.KEYCODE_ENTER)) {
-		    	  InputMethodManager inputmethod = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-		          inputmethod.hideSoftInputFromWindow(et_name.getWindowToken(), 0);
-		          return true;
-		        }
-			return false;
-		}
-
-		@Override
-		public void onSpielerSpeichern(EditText et_name, Object selectedFarbe,
-				Object selectedForm) {
-			SpielerBearbeitenActivity.this.et_name = et_name;
-			SpielerBearbeitenActivity.this.selectedFarbe = selectedFarbe;
-			SpielerBearbeitenActivity.this.selectedForm = selectedForm;
-			if(SpielerBearbeitenActivity.this.et_name.getText().toString().trim().length() == 0){
-				SpielerBearbeitenActivity.this.et_name.setError(getString(R.string.err_eingabe_leer));
-        	}
-        	else if(SpielerBearbeitenActivity.this.spin_farbe.getSelectedItem()==null ||
-        			SpielerBearbeitenActivity.this.spin_form.getSelectedItem()==null){
-        		new Fehlermeldung(SpielerBearbeitenActivity.this, getString(R.string.err_nichts_selektiert));
-        	}
-        	else{
-        		checkInputAndSave();            		
-        	}   
-		}
-	};
 
 	protected void setFormspinner() {
 		String[] formen = getResources().getStringArray(R.array.figuren);
