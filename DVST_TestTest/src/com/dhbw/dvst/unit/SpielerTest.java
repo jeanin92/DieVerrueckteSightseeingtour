@@ -1,9 +1,5 @@
 package com.dhbw.dvst.unit;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.dhbw.dvst.models.Farbe;
 import com.dhbw.dvst.models.Form;
 import com.dhbw.dvst.models.Spieler;
@@ -20,13 +16,11 @@ public class SpielerTest extends TestCase {
 		super(name);
 	}
 	
-	@Test
 	public void testObSpielfigurAlsVergebenMarkiertIst() {
 		this.spieler.setSpielfigur(figur);
 		assertTrue(this.spieler.getSpielfigur().isVergeben());
 	}
 	
-	@Before
 	protected void setUp() throws Exception {
 		super.setUp();
 		Form form = new Form("auto", "car");
@@ -35,7 +29,6 @@ public class SpielerTest extends TestCase {
 		this.spieler = new Spieler("Ich", figur);
 	}
 
-	@After
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
