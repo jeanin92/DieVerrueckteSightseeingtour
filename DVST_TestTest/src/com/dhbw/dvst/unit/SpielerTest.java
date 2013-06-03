@@ -12,8 +12,8 @@ public class SpielerTest extends TestCase {
 	private Spieler spieler;
 	private Spielfigur figur;
 	
-	public SpielerTest(String name) {
-		super(name);
+	public SpielerTest() {
+		super();
 	}
 	
 	public void testObSpielfigurAlsVergebenMarkiertIst() {
