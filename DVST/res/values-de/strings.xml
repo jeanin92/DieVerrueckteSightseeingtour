@@ -34,6 +34,8 @@
     <string name="err_max_spieleranzahl">Maximale Spieleranzahl erreicht</string>
     <string name="close">Schließen</string>
     <string name="err_falsche_Spieleranzahl">Nicht genügend Spieler registriert</string>
+    <string name="beenden">Beenden</string>
+    <string name="err_beenden">Wollen Sie das Spiel wirklich beenden?</string>
     
     <!-- Zeilenansicht.xml -->
     <string name="gewaehlte_figur">Gewählte Spielfigur</string>

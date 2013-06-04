@@ -44,6 +44,6 @@
     <!-- DeleteDialogue.java -->
     <string name="ja">Yes</string>
     <string name="nein">No</string>
-    <string name="beenden">Beenden</string>
+    <string name="beenden">Finish</string>
     <string name="err_beenden">Do you really want to leave the game?</string>
 </resources>
