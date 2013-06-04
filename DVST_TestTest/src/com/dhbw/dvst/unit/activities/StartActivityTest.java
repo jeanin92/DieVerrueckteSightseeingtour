@@ -42,7 +42,7 @@ public class StartActivityTest extends
 	
 	public void testObFigurenInitialisiert(){
 		btn_start.performClick();
-		assertTrue("Spielfiguren wurden nicht initialisiert", Spiel.getInstance().getAlleSpielfiguren().size()==0);
+		assertTrue("Spielfiguren wurden nicht initialisiert", Spiel.getInstance().getAlleSpielfiguren().size() == 12);
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
-package com.dhbw.dvst.unit;
+package com.dhbw.dvst.unit.model;
 
 import com.dhbw.dvst.models.Form;
 
