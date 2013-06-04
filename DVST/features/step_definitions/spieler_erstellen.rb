@@ -33,7 +33,7 @@ end
 Dann(/^sagt mir das System, "(.*?)"$/) do |arg1|
     
     
-    if @arg1 = 'dass meine Farb-Figur-Kombination schon vergeben ist' then
+    if @arg1 == 'dass meine Farb-Figur-Kombination schon vergeben ist' then
         # evtl. einfach nachsehen, auf welchem view man ist
         query("textview")
 end

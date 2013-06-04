@@ -54,3 +54,27 @@ Dann(/^komme ich wieder auf den Spieler\-Einfuege\-Bildschirm$/) do
     query("* id:'spieler_einfuegen'")
     query("* id:'spieler_einfuegen' textview id:'hd_spieler'")
 end
+
+#spiel_beenden
+Angenommen(/^ein Spiel ist aktiv und ich befinde mich auf dem Spiel\-Bildschirm$/) do
+    query("* id:'start'")
+    touch("* button id:'btn_start'")
+    query("* id:'modus'")
+    touch("* button id:'btn_mehrspieler'")
+    query("* id:'geraete'")
+    choose('rb_eins')
+    touch("* button id:'btn_ok'")
+    query("* id:'spieler_uebersicht'")
+	touch("* button id'btn_neu'")
+	performAction('enter_text_into_id_field', 'Ich', 'et_name')
+    performAction('select_item_from_named_spinner', 'spin_farbe', 'red')
+    performAction('select_item_from_named_spinner', 'spin_form', 'car')
+    touch("* button id:'btn_erstellen'")
+    touch("* button id:'btn_neu'")
+    performAction('enter_text_into_id_field', 'Du', 'et_name')
+    performAction('select_item_from_named_spinner', 'spin_farbe', 'blue')
+    performAction('select_item_from_named_spinner', 'spin_form', 'bus')
+    touch("* button id:'btn_erstellen'")
+    touch("* button id'btn_zum_spiel'")	
+	query("* id:'spielbildschirm'")
+end
