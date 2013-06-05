@@ -26,4 +26,20 @@ public class Spielplatte {
 		this.untenOffen = this.linksOffen;
 		this.linksOffen = tempOben;
 	}
+
+	public boolean isObenOffen() {
+		return obenOffen;
+	}
+
+	public boolean isRechtsOffen() {
+		return rechtsOffen;
+	}
+
+	public boolean isUntenOffen() {
+		return untenOffen;
+	}
+
+	public boolean isLinksOffen() {
+		return linksOffen;
+	}
 }
