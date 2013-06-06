@@ -4,6 +4,11 @@ import java.util.Random;
 
 
 public class Spielplatte {
+	
+private boolean obenOffen;
+private boolean rechtsOffen;
+private boolean untenOffen;
+private boolean linksOffen;
 
 	protected Ausrichtung ausrichtung;
 	protected Ausrichtung[] ausrichtungsArray;
