@@ -1,6 +1,11 @@
 package com.dhbw.dvst.models;
 
 public class Spielplatte {
+	
+private boolean obenOffen;
+private boolean rechtsOffen;
+private boolean untenOffen;
+private boolean linksOffen;
 
 	private boolean obenOffen, rechtsOffen, untenOffen, linksOffen;
 	
