@@ -10,8 +10,11 @@ public class Spiel{
 	public static final int modus_mehrspieler_server = 1;
 	public static final int modus_mehrspieler_client = 2;
 	
+
+	
 	private ArrayList<Spielfigur> alleSpielfiguren;
 	private ArrayList<Spieler> alleSpieler;
+	private ArrayList<Spielplatte> alleSpielplatten;
 	private int spielmodus;
 	private Spielbrett spielbrett;
 	private Spielplatte platte_aktiv;
@@ -37,6 +40,8 @@ public class Spiel{
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>(6);
+		alleSpielplatten = new ArrayList<Spielplatte>();
+		spielbrett = new Spielbrett(alleSpielplatten);
 	}
 	
 	/**
@@ -56,11 +61,6 @@ public class Spiel{
 		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("blau", "blue"), ""));
 	}
 	
-	/**
-	 * Spieler zum Spiel hinzufuegen
-	 * @param name
-	 * @param spielfigur
-	 */
 	public void spielerHinzufuegen(String name, Spielfigur spielfigur) {
 			Spieler neuerSpieler = new Spieler(name, spielfigur);
 			this.alleSpieler.add(neuerSpieler);

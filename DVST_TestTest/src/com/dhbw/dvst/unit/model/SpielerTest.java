@@ -16,17 +16,17 @@ public class SpielerTest extends TestCase {
 		super(name);
 	}
 	
-	public void testObSpielfigurAlsVergebenMarkiertIst() {
-		this.spieler.setSpielfigur(figur);
-		assertTrue(this.spieler.getSpielfigur().isVergeben());
-	}
-	
 	protected void setUp() throws Exception {
 		super.setUp();
 		Form form = new Form("auto", "car");
 		Farbe farbe = new Farbe("blau", "blue");
 		this.figur = new Spielfigur(form, farbe, "");
 		this.spieler = new Spieler("Ich", figur);
+	}
+	
+	public void testObSpielfigurAlsVergebenMarkiertIst() {
+		this.spieler.setSpielfigur(figur);
+		assertTrue(this.spieler.getSpielfigur().isVergeben());
 	}
 
 	protected void tearDown() throws Exception {
