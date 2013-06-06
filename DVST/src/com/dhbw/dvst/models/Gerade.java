@@ -2,17 +2,15 @@ package com.dhbw.dvst.models;
 
 public class Gerade extends Spielplatte{
 	
-	public Gerade(Ausrichtung ausrichtung) {
-		this.ausrichtung = ausrichtung;
-	}
-	
 	public Gerade() {
-		this.ausrichtungsArray[0] = Ausrichtung.GERADESENKRECHT;
-		this.ausrichtungsArray[1] = Ausrichtung.GERADEWAAGERECHT;
-		this.ausrichtung = randomizeAusrichtung();
+		super();
 	}
 	
-	protected void dreheSpielplatteNachRechts(Ausrichtung ausrichtung) {
+	public Gerade(Ausrichtung ausrichtung) {
+		super(ausrichtung);
+	}
+	
+	public void dreheSpielplatteNachRechts() {
 		if(ausrichtung == Ausrichtung.GERADESENKRECHT) {
 			this.ausrichtung = Ausrichtung.GERADEWAAGERECHT;
 		} else {
@@ -20,8 +18,15 @@ public class Gerade extends Spielplatte{
 		}
 	}
 	
-	protected void dreheSpielplatteNachLinks(Ausrichtung ausrichtung) {
-		dreheSpielplatteNachRechts(ausrichtung);
+	public void dreheSpielplatteNachLinks() {
+		dreheSpielplatteNachRechts();
+	}
+
+	@Override
+	protected void fuelleAusrichtungsArray() {
+		this.ausrichtungsArray = new Ausrichtung[2];
+		this.ausrichtungsArray[0] = Ausrichtung.GERADESENKRECHT;
+		this.ausrichtungsArray[1] = Ausrichtung.GERADEWAAGERECHT;
 	}
 
 }

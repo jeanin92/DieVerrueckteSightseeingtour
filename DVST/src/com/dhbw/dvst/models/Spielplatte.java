@@ -3,23 +3,24 @@ package com.dhbw.dvst.models;
 import java.util.Random;
 
 
-public class Spielplatte {
-	
-private boolean obenOffen;
-private boolean rechtsOffen;
-private boolean untenOffen;
-private boolean linksOffen;
+public abstract class Spielplatte {
 
 	protected Ausrichtung ausrichtung;
 	protected Ausrichtung[] ausrichtungsArray;
 	protected int randomIndex;
+
+	
+	public Spielplatte() {
+		fuelleAusrichtungsArray();
+		this.ausrichtung = randomizeAusrichtung();
+	}
 	
 	public Spielplatte(Ausrichtung ausrichtung) {
+		fuelleAusrichtungsArray();
 		this.ausrichtung = ausrichtung;
 	}
 	
-	public Spielplatte() {
-	}
+	protected abstract void fuelleAusrichtungsArray();
 	
 	protected Ausrichtung randomizeAusrichtung() {
 		Random randomizer = new Random();
@@ -27,5 +28,11 @@ private boolean linksOffen;
 		return this.ausrichtungsArray[randomIndex];
 	}
 	
-	protected Ausrichtung dreheSpielplatteNachRechts();
+	public Ausrichtung getAusrichtung() {
+		return ausrichtung;
+	}
+	
+	public Ausrichtung[] getAusrichtungsArray() {
+		return ausrichtungsArray;
+	}
 }

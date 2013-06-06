@@ -5,22 +5,21 @@ import java.util.Random;
 
 public class Spielbrett {
 	
-	public static final int kurve = 0;
-	public static final int gerade = 1;
-	public static final int kreuzung = 2;
+	public static final Integer kurve = 0;
+	public static final Integer gerade = 1;
+	public static final Integer kreuzung = 2;
 	
-	private ArrayList<Spielplatte> alleSpielplatten;
+	private ArrayList<Spielplatte> alleSpielplatten = new ArrayList<Spielplatte>();
 	private ArrayList<Integer> unsortiertesIntPlattenArray = new ArrayList<Integer>();
 	private Random plattenRandomizer = new Random();
 
-	public Spielbrett(ArrayList<Spielplatte> alleSpielplatten) {
-		this.alleSpielplatten = alleSpielplatten;
+	public Spielbrett() {
+		baueIntArrayMitAnzahlVerschiedenerPlatten();
 		fuelleLosesSpielplattenArray();
 		fuegeStatischePlattenEin();
 	}
 
 	protected void fuelleLosesSpielplattenArray() {
-		unsortiertesIntPlattenArray = baueIntArrayMitAnzahlVerschiedenerPlatten();
 		int randomElementIndex;
 		int randomElementWert;
 		
@@ -42,19 +41,17 @@ public class Spielbrett {
 		}
 	}
 	
-	protected ArrayList<Integer> baueIntArrayMitAnzahlVerschiedenerPlatten() {
-		unsortiertesIntPlattenArray = new ArrayList<Integer>();
+	protected void baueIntArrayMitAnzahlVerschiedenerPlatten() {
 		
-		for(int kurve = 0; kurve < 15; kurve++) {
-			unsortiertesIntPlattenArray.add(0);
+		for(int ku = 0; ku < 15; ku++) {
+			this.unsortiertesIntPlattenArray.add(kurve);
 		}
-		for(int gerade = 0; gerade < 13; gerade++) {
-			unsortiertesIntPlattenArray.add(1);
+		for(int ge = 0; ge < 13; ge++) {
+			this.unsortiertesIntPlattenArray.add(gerade);
 		}
-		for(int kreuzung = 0; kreuzung < 6; kreuzung++) {
-			unsortiertesIntPlattenArray.add(2);
+		for(int kr = 0; kr < 6; kr++) {
+			this.unsortiertesIntPlattenArray.add(kreuzung);
 		}
-		return unsortiertesIntPlattenArray;
 	}
 	
 	protected void fuegeStatischePlattenEin() {
@@ -82,5 +79,13 @@ public class Spielbrett {
 		alleSpielplatten.add(44, new Kreuzung(Ausrichtung.KREUZUNGOBEN));
 		alleSpielplatten.add(46, new Kreuzung(Ausrichtung.KREUZUNGOBEN));
 		alleSpielplatten.add(48, new Kurve(Ausrichtung.KURVEOBENLINKS));
+	}
+	
+	public ArrayList<Spielplatte> getAlleSpielplatten() {
+		return alleSpielplatten;
+	}
+
+	public ArrayList<Integer> getUnsortiertesIntPlattenArray() {
+		return unsortiertesIntPlattenArray;
 	}
 }

@@ -14,7 +14,6 @@ public class Spiel{
 	
 	private ArrayList<Spielfigur> alleSpielfiguren;
 	private ArrayList<Spieler> alleSpieler;
-	private ArrayList<Spielplatte> alleSpielplatten;
 	private int spielmodus;
 	private Spielbrett spielbrett;
 	private Spielplatte platte_aktiv;
@@ -40,8 +39,7 @@ public class Spiel{
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>(6);
-		alleSpielplatten = new ArrayList<Spielplatte>();
-		spielbrett = new Spielbrett(alleSpielplatten);
+		spielbrett = new Spielbrett();
 	}
 	
 	/**

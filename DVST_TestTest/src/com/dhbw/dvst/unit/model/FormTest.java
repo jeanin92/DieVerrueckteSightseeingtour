@@ -8,8 +8,8 @@ public class FormTest extends TestCase {
 
 	private Form form;
 
-	public FormTest() {
-		super();
+	public FormTest(String name) {
+		super(name);
 	}
 	
 	protected void setUp() throws Exception {
