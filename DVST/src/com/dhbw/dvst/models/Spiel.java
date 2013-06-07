@@ -16,7 +16,6 @@ public class Spiel{
 	private ArrayList<Spieler> alleSpieler;
 	private int spielmodus;
 	private Spielbrett spielbrett;
-	private Spielplatte platte_aktiv;
 	private ArrayList<Spielkarte> kartenstapel;
 	private static Spiel spiel = null;
 	
@@ -100,14 +99,6 @@ public class Spiel{
 
 	public void setSpielbrett(Spielbrett spielbrett) {
 		this.spielbrett = spielbrett;
-	}
-
-	public Spielplatte getPlatte_aktiv() {
-		return platte_aktiv;
-	}
-
-	public void setPlatte_aktiv(Spielplatte platte_aktiv) {
-		this.platte_aktiv = platte_aktiv;
 	}
 
 	public ArrayList<Spielkarte> getKartenstapel() {
