@@ -27,24 +27,25 @@ public class SpielActivityTest extends
 		
 	}
 	
-	public void testObBeendenListenerDefiniert(){
-		assertTrue("kein Listener für Startbutton definiert", btn_beenden.performClick());
-	}
-	
-	public void testObSpielerGeloeschtNachBeenden(){	
-		btn_beenden.performClick();
-		assertTrue("Spieler wurden nicht neu gesetzt", Spiel.getInstance().getAlleSpieler().size()==0);		
-	}
-	
-	public void testObSpielkartenGeloeschtNachBeenden(){
-		btn_beenden.performClick();
-		assertNull("Kartenstapel wurde nicht gelöscht", Spiel.getInstance().getKartenstapel());
-	}
-	
-	public void testObSpielbrettGeloeschtNachBeenden(){
-		btn_beenden.performClick();
-		assertNull("Spielbrett wurde nicht gelöscht", Spiel.getInstance().getSpielbrett());
-	}
+//	public void testObBeendenListenerDefiniert(){
+//		assertTrue("kein Listener für Startbutton definiert", btn_beenden.performClick());
+//		
+//	}
+//	
+//	public void testObSpielerGeloeschtNachBeenden(){	
+//		btn_beenden.performClick();
+//		assertTrue("Spieler wurden nicht gelöscht", Spiel.getInstance().getAlleSpieler().size()==0);		
+//	}
+//	
+//	public void testObSpielkartenGeloeschtNachBeenden(){
+//		btn_beenden.performClick();
+//		assertNull("Kartenstapel wurde nicht gelöscht", Spiel.getInstance().getKartenstapel());
+//	}
+//	
+//	public void testObSpielbrettGeloeschtNachBeenden(){
+//		btn_beenden.performClick();
+//		assertNull("Spielbrett wurde nicht gelöscht", Spiel.getInstance().getSpielbrett());
+//	}
 	
 	@Override
 	protected void tearDown() throws Exception {
