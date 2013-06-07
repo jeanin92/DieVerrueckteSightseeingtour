@@ -14,12 +14,9 @@ public class Spielbrett {
 	private Random plattenRandomizer = new Random();
 
 	public Spielbrett() {
-		baueIntArrayMitAnzahlVerschiedenerPlatten();
-		fuelleLosesSpielplattenArray();
-		fuegeStatischePlattenEin();
 	}
 
-	protected void fuelleLosesSpielplattenArray() {
+	public void fuelleLosesSpielplattenArray() {
 		int randomElementIndex;
 		int randomElementWert;
 		
@@ -41,8 +38,7 @@ public class Spielbrett {
 		}
 	}
 	
-	protected void baueIntArrayMitAnzahlVerschiedenerPlatten() {
-		
+	public void baueIntArrayMitAnzahlVerschiedenerPlatten() {
 		for(int ku = 0; ku < 15; ku++) {
 			this.unsortiertesIntPlattenArray.add(kurve);
 		}
@@ -54,7 +50,7 @@ public class Spielbrett {
 		}
 	}
 	
-	protected void fuegeStatischePlattenEin() {
+	public void fuegeStatischePlattenEin() {
 		
 		//Reihe 1
 		alleSpielplatten.add(0, new Kurve(Ausrichtung.KURVEUNTENRECHTS));

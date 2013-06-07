@@ -70,6 +70,7 @@ public class SpielerUebersichtActivity extends Activity {
 				new Fehlermeldung(SpielerUebersichtActivity.this, getString(R.string.err_falsche_Spieleranzahl));
 				return;
 			}
+			spiel.initialisiereSpielbrett();
 			kommunikation.navigieren(SpielerUebersichtActivity.this, SpielActivity.class);
 		}
 	};

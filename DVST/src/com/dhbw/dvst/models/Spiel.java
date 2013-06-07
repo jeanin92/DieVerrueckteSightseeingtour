@@ -38,7 +38,13 @@ public class Spiel{
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>(6);
+	}
+
+	public void initialisiereSpielbrett() {
 		spielbrett = new Spielbrett();
+		spielbrett.baueIntArrayMitAnzahlVerschiedenerPlatten();
+		spielbrett.fuelleLosesSpielplattenArray();
+		spielbrett.fuegeStatischePlattenEin();
 	}
 	
 	/**
