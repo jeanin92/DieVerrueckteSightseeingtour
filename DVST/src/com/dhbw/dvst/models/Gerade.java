@@ -4,10 +4,12 @@ public class Gerade extends Spielplatte{
 	
 	public Gerade() {
 		super();
+		this.motivURL = "gerade";
 	}
 	
 	public Gerade(Ausrichtung ausrichtung) {
 		super(ausrichtung);
+		this.motivURL = "gerade";
 	}
 	
 	public void dreheSpielplatteNachRechts() {
