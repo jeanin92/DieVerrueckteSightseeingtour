@@ -3,7 +3,6 @@
 
     <string name="app_name">The crazy sightseeing-tour</string>
     <string name="action_settings">Settings</string>
-    <string name="startseite">Home</string>
     <string name="spiel_starten">Start game</string>
     <string name="anleitung_lesen">Read instructions</string>
     <string name="spielmodus_waehlen">Choose gamemode</string>
@@ -45,4 +44,7 @@
     <string name="nein">No</string>
     <string name="beenden">Finish</string>
     <string name="err_beenden">Do you really want to leave the game?</string>
+    
+    <!-- SpielBildschirm.xml -->
+    <string name="button_zum_links_drehen">Rotate left</string>
 </resources>

@@ -9,7 +9,6 @@ public abstract class Spielplatte {
 	protected Ausrichtung[] ausrichtungsArray;
 	protected int randomIndex;
 	protected String motivURL;
-
 	
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
@@ -37,6 +36,9 @@ public abstract class Spielplatte {
 		return ausrichtungsArray;
 	}
 	
+	public abstract void dreheSpielplatteNachLinks();
+	public abstract void dreheSpielplatteNachRechts();
+
 	public String getMotivURL() {
 		return motivURL;
 	}

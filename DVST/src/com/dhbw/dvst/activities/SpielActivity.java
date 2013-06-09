@@ -18,6 +18,7 @@ import com.dhbw.dvst.utilities.BeendenDialog;
 import com.dhbw.dvst.views.SpielView;
 
 public class SpielActivity extends Activity{
+	private Spiel spiel = Spiel.getInstance();
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 	private SpielView view;
 
@@ -36,11 +37,6 @@ public class SpielActivity extends Activity{
         grid_spielbrett.setAdapter(adapter);
 	}
 	
-	/**
-	 * This is how we receive events from the view.(Funktionen, die im View im Template aufgerufen werden)
-	 * The view takes user actions
-	 * The controller/activity responds to user actions
-	 */
 	private SpielView.ViewListener viewListener = new SpielView.ViewListener() {
 		
 		@Override
@@ -58,6 +54,18 @@ public class SpielActivity extends Activity{
 		@Override
 		public void onReadManual() {
 			kommunikation.navigieren(SpielActivity.this, AnleitungActivity.class, true);
+		}
+
+		@Override
+		public void onNachLinksDrehen() {
+			Spielplatte aktiv = spiel.getSpielbrett().getAlleSpielplatten().get(49);
+			aktiv.dreheSpielplatteNachLinks();
+		}
+
+		@Override
+		public void onNachRechtsDrehen() {
+			Spielplatte aktiv = spiel.getSpielbrett().getAlleSpielplatten().get(49);
+			aktiv.dreheSpielplatteNachRechts();
 		}
 	};
 }

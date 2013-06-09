@@ -12,6 +12,7 @@ public class Kurve extends Spielplatte{
 		this.motivURL = "kurve";
 	}
 
+	@Override
 	public void dreheSpielplatteNachRechts() {
 		if(ausrichtung == Ausrichtung.KURVEOBENLINKS) {
 			this.ausrichtung = Ausrichtung.KURVEOBENRECHTS;
@@ -24,6 +25,7 @@ public class Kurve extends Spielplatte{
 		}
 	}
 	
+	@Override
 	public void dreheSpielplatteNachLinks() {
 		if(ausrichtung == Ausrichtung.KURVEOBENLINKS) {
 			this.ausrichtung = Ausrichtung.KURVEUNTENLINKS;

@@ -13,8 +13,7 @@ public class Spielbrett {
 	private ArrayList<Integer> unsortiertesIntPlattenArray = new ArrayList<Integer>();
 	private Random plattenRandomizer = new Random();
 
-	public Spielbrett() {
-	}
+	public Spielbrett() {}
 
 	public void fuelleLosesSpielplattenArray() {
 		int randomElementIndex;

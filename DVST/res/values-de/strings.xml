@@ -3,7 +3,6 @@
 
     <string name="app_name">Die verrueckte Sightseeing-Tour</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="startseite">Startseite</string>
     <string name="spiel_starten">Spiel starten</string>
     <string name="anleitung_lesen">Anleitung lesen</string>
@@ -46,4 +45,7 @@
     <!-- DeleteDialogue.java -->
     <string name="ja">Ja</string>
     <string name="nein">Nein</string>
+    
+        <!-- SpielBildschirm.xml -->
+    <string name="button_zum_links_drehen">Nach links drehen</string>
 </resources>
