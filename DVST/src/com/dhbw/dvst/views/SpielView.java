@@ -3,16 +3,11 @@ package com.dhbw.dvst.views;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.GridView;
 import android.widget.LinearLayout;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.adapters.PlayerListArrayAdapter;
-import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 
@@ -32,8 +27,8 @@ public class SpielView extends LinearLayout {
 	private ViewListener viewListener;
 	private Button btn_beenden;
 	private Button btn_anleitung;
-	private ImageButton btn_rechts_drehen;
-	private ImageButton btn_links_drehen;
+	private Button btn_rechts_drehen;
+	private Button btn_links_drehen;
 	private ImageView img_aktive_platte;
 	
 	public void setViewListener(ViewListener viewListener) {
@@ -49,9 +44,9 @@ public class SpielView extends LinearLayout {
 		super.onFinishInflate();
 		btn_beenden = (Button)findViewById(R.id.btn_beenden);
 		btn_anleitung = (Button)findViewById(R.id.btn_anleitung);
-		btn_rechts_drehen = (ImageButton)findViewById(R.id.btn_rechts_drehen);
-		btn_links_drehen = (ImageButton)findViewById(R.id.btn_links_drehen);
-		img_aktive_platte = (ImageView) findViewById(R.id.img_aktive_platte);
+		btn_rechts_drehen = (Button)findViewById(R.id.btn_rechts_drehen);
+		btn_links_drehen = (Button)findViewById(R.id.btn_links_drehen);
+		img_aktive_platte = (ImageView)findViewById(R.id.img_aktive_platte);
 		
 		btn_beenden.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -72,7 +67,7 @@ public class SpielView extends LinearLayout {
 			@Override
 			public void onClick(View v) {
 				viewListener.onNachRechtsDrehen();
-				rotateAktivePlatte(v);				
+				rotateAktivePlatte();				
 			}
 		});
 		
@@ -81,14 +76,13 @@ public class SpielView extends LinearLayout {
 			@Override
 			public void onClick(View v) {
 				viewListener.onNachLinksDrehen();	
-				rotateAktivePlatte(v);	
+				rotateAktivePlatte();	
 			}
 		});
-//		img_aktive_platte.setBackground();
 	}
 	
-	protected void rotateAktivePlatte(View v){
+	protected void rotateAktivePlatte(){
 		Spielplatte aktivePlatte = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
-		v.setRotation(aktivePlatte.getAusrichtung().getRotation());
+		img_aktive_platte.setRotation(aktivePlatte.getAusrichtung().getRotation());
 	}
 }

@@ -1,4 +1,5 @@
-<com.dhbw.dvst.views.SpielView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.dhbw.dvst.views.SpielView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/spielbildschirm"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activities.SpielActivity" >
+    tools:context=".SpielActivity" >
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -31,22 +32,29 @@
             
         <Button 
             android:id="@+id/btn_links_drehen"
+            style="?android:attr/buttonStyleSmall"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:layout_marginTop="@dimen/margin_top_main" 
-        	android:text="@string/links_drehen" />
+        	android:layout_alignBaseline="@+id/img_aktive_platte" 
+        	android:text="@string/links_drehen"/>
         
 		<ImageView
-    		android:id="@+id/img_aktive_platte"
-    		android:layout_gravity="top"
-    		android:gravity="center_vertical" 
-    		android:contentDescription="aktive Spielplatte"/>
+		    android:id="@+id/img_aktive_platte"
+		    android:layout_width="@dimen/dim_platte"
+		    android:layout_height="@dimen/dim_platte"
+		    android:layout_alignParentTop="true"
+		    android:layout_centerHorizontal="true"
+		    android:layout_toRightOf="@+id/btn_links_drehen"
+		    android:src="@drawable/ic_launcher"
+		    android:contentDescription="aktive Spielplatte" />
         
         <Button 
             android:id="@+id/btn_rechts_drehen"
+            style="?android:attr/buttonStyleSmall"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:layout_marginTop="@dimen/margin_top_main"
+        	android:layout_toRightOf="@+id/img_aktive_platte"
+        	android:layout_alignBaseline="@+id/img_aktive_platte"
         	android:text="@string/rechts_drehen" />
         
         <Button
@@ -55,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:text="@string/beenden"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
