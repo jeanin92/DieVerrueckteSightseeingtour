@@ -1,5 +1,7 @@
 package com.dhbw.dvst.unit.model;
 
+import org.junit.Test;
+
 import com.dhbw.dvst.models.Ausrichtung;
 import com.dhbw.dvst.models.Kreuzung;
 import com.dhbw.dvst.models.Kurve;

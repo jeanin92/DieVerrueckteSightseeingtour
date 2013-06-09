@@ -8,7 +8,7 @@ public abstract class Spielplatte {
 	protected Ausrichtung ausrichtung;
 	protected Ausrichtung[] ausrichtungsArray;
 	protected int randomIndex;
-
+	
 	
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
@@ -35,4 +35,7 @@ public abstract class Spielplatte {
 	public Ausrichtung[] getAusrichtungsArray() {
 		return ausrichtungsArray;
 	}
+	
+	public abstract void dreheSpielplatteNachLinks();
+	public abstract void dreheSpielplatteNachRechts();
 }
