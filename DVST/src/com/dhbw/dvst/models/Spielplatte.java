@@ -8,11 +8,11 @@ public abstract class Spielplatte {
 	protected Ausrichtung ausrichtung;
 	protected Ausrichtung[] ausrichtungsArray;
 	protected int randomIndex;
-	
+	protected String motivURL;
 	
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
-		this.ausrichtung = randomizeAusrichtung();
+		this.ausrichtung = randomizeAusrichtung();		
 	}
 	
 	public Spielplatte(Ausrichtung ausrichtung) {
@@ -38,4 +38,8 @@ public abstract class Spielplatte {
 	
 	public abstract void dreheSpielplatteNachLinks();
 	public abstract void dreheSpielplatteNachRechts();
+
+	public String getMotivURL() {
+		return motivURL;
+	}
 }

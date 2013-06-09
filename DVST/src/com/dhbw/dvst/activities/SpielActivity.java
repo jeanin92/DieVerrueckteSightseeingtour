@@ -1,12 +1,16 @@
 package com.dhbw.dvst.activities;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridView;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
@@ -25,6 +29,12 @@ public class SpielActivity extends Activity{
 		view = (SpielView)View.inflate(this, R.layout.spielbildschirm, null);
 		view.setViewListener(viewListener);
 		setContentView(view);
+		final GridView grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
+		ArrayList<Spielplatte> spielfeldArray = Spiel.getInstance().getSpielbrett().getAlleSpielplatten();
+		spielfeldArray.remove(49);
+		final SpielbrettAdapter adapter = new SpielbrettAdapter(this, 
+        		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spielfeldArray);
+        grid_spielbrett.setAdapter(adapter);
 	}
 	
 	private SpielView.ViewListener viewListener = new SpielView.ViewListener() {

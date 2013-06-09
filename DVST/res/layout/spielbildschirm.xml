@@ -16,10 +16,10 @@
         android:layout_weight="0.75">
 
         <GridView
-            android:id="@+id/gridView1"
+            android:id="@+id/grid_spielbrett"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="3" >
+            android:numColumns="7">
         </GridView>
     </RelativeLayout>
 

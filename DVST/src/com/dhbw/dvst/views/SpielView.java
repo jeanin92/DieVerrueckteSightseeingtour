@@ -7,9 +7,13 @@ import android.view.ViewPropertyAnimator;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.adapters.PlayerListArrayAdapter;
+import com.dhbw.dvst.adapters.SpielbrettAdapter;
+import com.dhbw.dvst.models.Spiel;
 
 public class SpielView extends LinearLayout {
 

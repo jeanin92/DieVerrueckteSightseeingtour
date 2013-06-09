@@ -4,10 +4,12 @@ public class Kreuzung extends Spielplatte{
 
 	public Kreuzung() {
 		super();
+		this.motivURL = "kreuzung";
 	}
 	
 	public Kreuzung(Ausrichtung ausrichtung) {
 		super(ausrichtung);
+		this.motivURL = "kreuzung";
 	}
 	
 	@Override

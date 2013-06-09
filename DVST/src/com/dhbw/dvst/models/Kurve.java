@@ -4,10 +4,12 @@ public class Kurve extends Spielplatte{
 	
 	public Kurve(Ausrichtung ausrichtung) {
 		super(ausrichtung);
+		this.motivURL = "kurve";
 	}
 	
 	public Kurve() {
 		super();
+		this.motivURL = "kurve";
 	}
 
 	@Override
