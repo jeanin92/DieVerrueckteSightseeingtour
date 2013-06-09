@@ -34,19 +34,20 @@
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
         	android:layout_marginTop="@dimen/margin_top_main" 
-        	android:text="@string/nach_links" />
+        	android:text="@string/links_drehen" />
         
 		<ImageView
     		android:id="@+id/img_aktive_platte"
     		android:layout_gravity="top"
-    		android:gravity="center_vertical" />
+    		android:gravity="center_vertical" 
+    		android:contentDescription="aktive Spielplatte"/>
         
         <Button 
             android:id="@+id/btn_rechts_drehen"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
         	android:layout_marginTop="@dimen/margin_top_main"
-        	android:text="@string/nach_rechts" />
+        	android:text="@string/rechts_drehen" />
         
         <Button
             android:id="@+id/btn_beenden"

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 
 import com.dhbw.dvst.models.Spielplatte;
 
@@ -44,8 +45,9 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
     }
 
 	private View fillGridViewItem(){
-		RelativeLayout platte = new RelativeLayout(activity);
+		RelativeLayout platte = new RelativeLayout(activity);		
 		platte.addView(buildPlattenMotiv());
+		platte.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	    return platte;
 	}
 	
@@ -53,6 +55,7 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		ImageView motiv = new ImageView(activity);
 		int resID = activity.getResources().getIdentifier(this.getItem(this.position).getMotivURL(), "drawable", "com.dhbw.dvst");
 		motiv.setImageResource(resID);
+//		motiv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 //		Achtung: erst ab API11 möglich!!!
 		motiv.setRotation(this.getItem(this.position).getAusrichtung().getRotation());
 		return motiv;

@@ -14,6 +14,7 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.adapters.PlayerListArrayAdapter;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.models.Spielplatte;
 
 public class SpielView extends LinearLayout {
 
@@ -71,6 +72,7 @@ public class SpielView extends LinearLayout {
 			@Override
 			public void onClick(View v) {
 				viewListener.onNachRechtsDrehen();
+				rotateAktivePlatte(v);				
 			}
 		});
 		
@@ -79,9 +81,14 @@ public class SpielView extends LinearLayout {
 			@Override
 			public void onClick(View v) {
 				viewListener.onNachLinksDrehen();	
+				rotateAktivePlatte(v);	
 			}
 		});
-		
-		img_aktive_platte.setBackground();
+//		img_aktive_platte.setBackground();
+	}
+	
+	protected void rotateAktivePlatte(View v){
+		Spielplatte aktivePlatte = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
+		v.setRotation(aktivePlatte.getAusrichtung().getRotation());
 	}
 }

@@ -46,5 +46,6 @@
     <string name="err_beenden">Do you really want to leave the game?</string>
     
     <!-- SpielBildschirm.xml -->
-    <string name="button_zum_links_drehen">Rotate left</string>
+    <string name="links_drehen">Rotate left</string>
+    <string name="rechts_drehen">Rotate right</string>
 </resources>
