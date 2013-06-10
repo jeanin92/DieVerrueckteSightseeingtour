@@ -20,8 +20,8 @@ public class SpielView extends LinearLayout {
 	public static interface ViewListener {
 		public void onBeenden();
 		public void onReadManual();
-		public void onNachLinksDrehen();
-		public void onNachRechtsDrehen();
+		public void onNachLinksDrehen(ImageView img_aktive_platte);
+		public void onNachRechtsDrehen(ImageView img_aktive_platte);
 	}
 
 	private ViewListener viewListener;
@@ -45,7 +45,7 @@ public class SpielView extends LinearLayout {
 		btn_beenden = (Button)findViewById(R.id.btn_beenden);
 		btn_anleitung = (Button)findViewById(R.id.btn_anleitung);
 		btn_rechts_drehen = (Button)findViewById(R.id.btn_rechts_drehen);
-		btn_links_drehen = (Button)findViewById(R.id.btn_links_drehen);
+		btn_links_drehen = (Button)findViewById(R.id.btn_links_drehen);	
 		img_aktive_platte = (ImageView)findViewById(R.id.img_aktive_platte);
 		
 		btn_beenden.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +66,7 @@ public class SpielView extends LinearLayout {
 			
 			@Override
 			public void onClick(View v) {
-				viewListener.onNachRechtsDrehen();
-				rotateAktivePlatte();				
+				viewListener.onNachRechtsDrehen(img_aktive_platte);				
 			}
 		});
 		
@@ -75,14 +74,8 @@ public class SpielView extends LinearLayout {
 			
 			@Override
 			public void onClick(View v) {
-				viewListener.onNachLinksDrehen();	
-				rotateAktivePlatte();	
+				viewListener.onNachLinksDrehen(img_aktive_platte);	
 			}
 		});
-	}
-	
-	protected void rotateAktivePlatte(){
-		Spielplatte aktivePlatte = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
-		img_aktive_platte.setRotation(aktivePlatte.getAusrichtung().getRotation());
-	}
+	}	
 }

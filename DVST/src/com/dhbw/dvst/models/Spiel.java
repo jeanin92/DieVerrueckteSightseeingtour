@@ -45,6 +45,7 @@ public class Spiel{
 		spielbrett.baueIntArrayMitAnzahlVerschiedenerPlatten();
 		spielbrett.fuelleLosesSpielplattenArray();
 		spielbrett.fuegeStatischePlattenEin();
+		spielbrett.verteileSpielfiguren(alleSpieler);
 	}
 	
 	/**

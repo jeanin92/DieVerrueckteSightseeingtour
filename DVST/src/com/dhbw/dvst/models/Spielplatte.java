@@ -9,6 +9,7 @@ public abstract class Spielplatte {
 	protected Ausrichtung[] ausrichtungsArray;
 	protected int randomIndex;
 	protected String motivURL;
+	protected Spielfigur figur;
 	
 	public Spielplatte() {
 		fuelleAusrichtungsArray();

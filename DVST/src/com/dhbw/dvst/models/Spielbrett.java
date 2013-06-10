@@ -83,4 +83,19 @@ public class Spielbrett {
 	public ArrayList<Integer> getUnsortiertesIntPlattenArray() {
 		return unsortiertesIntPlattenArray;
 	}
+	
+	public void verteileSpielfiguren(ArrayList<Spieler> alleSpieler){
+		int i = 0;
+		int randomElementIndex;
+		while (i < alleSpieler.size()) {
+			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size()-1);
+			Spielplatte platte = alleSpielplatten.get(randomElementIndex);
+			Spielfigur figur = alleSpieler.get(i).getSpielfigur();
+			if(platte.figur==null){
+				platte.figur = figur;
+				figur.setSpielplatte(platte);
+				i++;
+			}
+		}
+	}
 }
