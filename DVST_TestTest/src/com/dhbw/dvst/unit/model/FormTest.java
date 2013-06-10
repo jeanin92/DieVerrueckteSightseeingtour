@@ -32,6 +32,11 @@ public class FormTest extends TestCase {
 		assertEquals(actual, false);
 	}
 	
+	public void testObGetTextDenEnglischenTextZurueckgibt() {
+		String text = this.form.getText_en();
+		assertEquals(text, "car");
+	}
+	
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}

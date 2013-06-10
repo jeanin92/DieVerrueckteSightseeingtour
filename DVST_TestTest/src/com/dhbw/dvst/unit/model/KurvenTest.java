@@ -39,10 +39,33 @@ public class KurvenTest extends TestCase {
 		assertEquals(this.kurve.getAusrichtung(), Ausrichtung.KURVEUNTENLINKS);
 	}
 	
+	public void testObSechsmalRechtsDrehenFunktioniert() {
+		this.kurve.dreheSpielplatteNachRechts();
+		this.kurve.dreheSpielplatteNachRechts();
+		this.kurve.dreheSpielplatteNachRechts();
+		this.kurve.dreheSpielplatteNachRechts();
+		this.kurve.dreheSpielplatteNachRechts();
+		this.kurve.dreheSpielplatteNachRechts();
+		assertEquals(this.kurve.getAusrichtung(), Ausrichtung.KURVEOBENLINKS);
+	}
+	
 	public void testObZweimalLinksDrehenFunktioniert() {
 		this.kurve.dreheSpielplatteNachLinks();
 		this.kurve.dreheSpielplatteNachLinks();
 		assertEquals(this.kurve.getAusrichtung(), Ausrichtung.KURVEOBENLINKS);
+	}
+	
+	public void testObViermalLinksDrehenFunktioniert() {
+		this.kurve.dreheSpielplatteNachLinks();
+		this.kurve.dreheSpielplatteNachLinks();
+		this.kurve.dreheSpielplatteNachLinks();
+		this.kurve.dreheSpielplatteNachLinks();
+		assertEquals(this.kurve.getAusrichtung(), Ausrichtung.KURVEUNTENRECHTS);
+	}
+	
+	public void testObgetMotivUrlKorrekteUrlZurueckgibt() {
+		String actual = this.kurve.getMotivURL();
+		assertEquals("kurve", actual);
 	}
 	
 	protected void tearDown() throws Exception {

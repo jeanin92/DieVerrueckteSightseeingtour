@@ -7,7 +7,8 @@ import junit.framework.TestCase;
 
 public class KreuzungsTest extends TestCase {
 
-	private Kreuzung kreuzung;
+	private Kreuzung kreuzungL;
+	private Kreuzung kreuzungO;
 	private Kreuzung randomKreuzung;
 	public KreuzungsTest(String name) {
 		super(name);
@@ -15,7 +16,8 @@ public class KreuzungsTest extends TestCase {
 	
 	protected void setUp() throws Exception {
 		super.setUp();
-		this.kreuzung = new Kreuzung(Ausrichtung.KREUZUNGLINKS);
+		this.kreuzungL = new Kreuzung(Ausrichtung.KREUZUNGLINKS);
+		this.kreuzungO = new Kreuzung(Ausrichtung.KREUZUNGOBEN);
 		this.randomKreuzung = new Kreuzung();
 	}
 	
@@ -31,19 +33,35 @@ public class KreuzungsTest extends TestCase {
 	}
 	
 	public void testObRandomArrayVierElementeHat() {
-		assertEquals(this.kreuzung.getAusrichtungsArray().length, 4);
+		assertEquals(this.kreuzungL.getAusrichtungsArray().length, 4);
 	}
 	
-	public void testObEinmalRechtsDrehenFunktioniert() {
-		this.kreuzung.dreheSpielplatteNachRechts();
-		assertEquals(this.kreuzung.getAusrichtung(), Ausrichtung.KREUZUNGOBEN);
+	public void testObEinmalRechtsDrehenBeiKreuzungLinksFunktioniert() {
+		this.kreuzungL.dreheSpielplatteNachRechts();
+		assertEquals(this.kreuzungL.getAusrichtung(), Ausrichtung.KREUZUNGOBEN);
 	}
 	
-	public void testObDreimalLinksDrehenFunktioniert() {
-		this.kreuzung.dreheSpielplatteNachLinks();
-		this.kreuzung.dreheSpielplatteNachLinks();
-		this.kreuzung.dreheSpielplatteNachLinks();
-		assertEquals(this.kreuzung.getAusrichtung(), Ausrichtung.KREUZUNGOBEN);
+	public void testObFuenfmalRechtsDrehenBeiKreuzungObenFunktioniert() {
+		this.kreuzungO.dreheSpielplatteNachRechts();
+		this.kreuzungO.dreheSpielplatteNachRechts();
+		this.kreuzungO.dreheSpielplatteNachRechts();
+		this.kreuzungO.dreheSpielplatteNachRechts();
+		this.kreuzungO.dreheSpielplatteNachRechts();
+		assertEquals(this.kreuzungO.getAusrichtung(), Ausrichtung.KREUZUNGRECHTS);
+	}
+	
+	public void testObFuenfmalLinksDrehenFunktioniert() {
+		this.kreuzungL.dreheSpielplatteNachLinks();
+		this.kreuzungL.dreheSpielplatteNachLinks();
+		this.kreuzungL.dreheSpielplatteNachLinks();
+		this.kreuzungL.dreheSpielplatteNachLinks();
+		this.kreuzungL.dreheSpielplatteNachLinks();
+		assertEquals(this.kreuzungL.getAusrichtung(), Ausrichtung.KREUZUNGUNTEN);
+	}
+	
+	public void testObgetMotivUrlKorrekteUrlZurueckgibt() {
+		String actual = this.kreuzungL.getMotivURL();
+		assertEquals("kreuzung", actual);
 	}
 	
 	protected void tearDown() throws Exception {
