@@ -20,7 +20,7 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.activities.SpielerBearbeitenActivity;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spieler;
-import com.dhbw.dvst.utilities.LoeschDialog;
+import com.dhbw.dvst.utilities.SpielDialog;
 
 public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 
@@ -120,7 +120,7 @@ public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 			@Override
 			public void onClick(final View v) {
 				OnClickListener spielerLoeschen = spielerLoeschenListener(v);
-				new LoeschDialog(activity, activity.getString(R.string.wirklich_loeschen), spielerLoeschen);
+				new SpielDialog(activity, activity.getString(R.string.wirklich_loeschen), spielerLoeschen);
 			}
 
 			protected OnClickListener spielerLoeschenListener(final View v) {
