@@ -1,6 +1,7 @@
 package com.dhbw.dvst.models;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Spiel{
 	/**
@@ -10,13 +11,12 @@ public class Spiel{
 	public static final int modus_mehrspieler_server = 1;
 	public static final int modus_mehrspieler_client = 2;
 	
-
 	
 	private ArrayList<Spielfigur> alleSpielfiguren;
 	private ArrayList<Spieler> alleSpieler;
 	private int spielmodus;
 	private Spielbrett spielbrett;
-	private ArrayList<Spielkarte> kartenstapel;
+	private Stack<Sehenswuerdigkeit> kartenstapel;
 	private static Spiel spiel = null;
 	
 	public static Spiel getInstance(){
@@ -42,10 +42,11 @@ public class Spiel{
 
 	public void initialisiereSpielbrett() {
 		spielbrett = new Spielbrett();
-		spielbrett.baueIntArrayMitAnzahlVerschiedenerPlatten();
 		spielbrett.fuelleLosesSpielplattenArray();
 		spielbrett.fuegeStatischePlattenEin();
+		spielbrett.setSchiebbarePlatten();
 		spielbrett.verteileSpielfiguren(alleSpieler);
+		spielbrett.mischeKartenstapel(kartenstapel);
 	}
 	
 	/**
@@ -108,11 +109,11 @@ public class Spiel{
 		this.spielbrett = spielbrett;
 	}
 
-	public ArrayList<Spielkarte> getKartenstapel() {
+	public Stack<Sehenswuerdigkeit> getKartenstapel() {
 		return kartenstapel;
 	}
 
-	public void setKartenstapel(ArrayList<Spielkarte> kartenstapel) {
+	public void setKartenstapel(Stack<Sehenswuerdigkeit> kartenstapel) {
 		this.kartenstapel = kartenstapel;
 	}
 

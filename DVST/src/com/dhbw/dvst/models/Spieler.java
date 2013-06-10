@@ -4,7 +4,7 @@ public class Spieler {
 
 	private String name;
 	private Spielfigur spielfigur;
-	private Spielkarte spielkarte;
+	private Sehenswuerdigkeit ziel;
 	
 	public Spieler(String name, Spielfigur spielfigur) {
 		this.name = name;
@@ -29,13 +29,5 @@ public class Spieler {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Spielkarte getSpielkarte() {
-		return spielkarte;
-	}
-
-	public void setSpielkarte(Spielkarte spielkarte) {
-		this.spielkarte = spielkarte;
 	}
 }

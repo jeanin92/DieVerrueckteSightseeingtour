@@ -1,7 +1,10 @@
 package com.dhbw.dvst.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
+import java.util.Stack;
 
 public class Spielbrett {
 	
@@ -13,41 +16,24 @@ public class Spielbrett {
 	private ArrayList<Integer> unsortiertesIntPlattenArray = new ArrayList<Integer>();
 	private Random plattenRandomizer = new Random();
 
-	public Spielbrett() {}
+	public Spielbrett() {
+	}
 
 	public void fuelleLosesSpielplattenArray() {
-		int randomElementIndex;
-		int randomElementWert;
-		
-		while(!unsortiertesIntPlattenArray.isEmpty()) {
-			randomElementIndex = plattenRandomizer.nextInt(unsortiertesIntPlattenArray.size());
-			randomElementWert = unsortiertesIntPlattenArray.get(randomElementIndex);
-			try {			
-				if(randomElementWert == 0) {
-					alleSpielplatten.add(new Kurve());
-				} else if(randomElementWert == 1) {
-					alleSpielplatten.add(new Gerade());
-				} else if(randomElementWert == 2) {
-					alleSpielplatten.add(new Kreuzung());
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			unsortiertesIntPlattenArray.remove(randomElementIndex);
-		}
-	}
-	
-	public void baueIntArrayMitAnzahlVerschiedenerPlatten() {
 		for(int ku = 0; ku < 15; ku++) {
-			this.unsortiertesIntPlattenArray.add(kurve);
+			alleSpielplatten.add(new Kurve());
 		}
+			
 		for(int ge = 0; ge < 13; ge++) {
-			this.unsortiertesIntPlattenArray.add(gerade);
-		}
+			alleSpielplatten.add(new Gerade());
+			}
+		
 		for(int kr = 0; kr < 6; kr++) {
-			this.unsortiertesIntPlattenArray.add(kreuzung);
+				alleSpielplatten.add(new Kreuzung());
 		}
+		Collections.shuffle(alleSpielplatten);	
 	}
+
 	
 	public void fuegeStatischePlattenEin() {
 		
@@ -97,5 +83,21 @@ public class Spielbrett {
 				i++;
 			}
 		}
+	}
+	
+	public void mischeKartenstapel(Stack<Sehenswuerdigkeit> kartenstapel){
+		kartenstapel.addAll(Arrays.asList(Sehenswuerdigkeit.values()));
+		Collections.shuffle(kartenstapel);
+	}
+	
+	public void setSchiebbarePlatten(){
+		//TODO: Spielinitialisierung: alle schiebbaren Platten am Rand setzen
+	}
+	
+	public void aktualisiereSchiebbarePlatten(){
+		//TODO: beim Einschieben: 
+		// aktive Platte bleibt schiebbar
+		// zwei müssen geändert werden
+		// während des Spielzugs
 	}
 }

@@ -7,13 +7,14 @@ public abstract class Spielplatte {
 
 	protected Ausrichtung ausrichtung;
 	protected Ausrichtung[] ausrichtungsArray;
-	protected int randomIndex;
 	protected String motivURL;
 	protected Spielfigur figur;
+	protected boolean schiebbar;
 	
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
-		this.ausrichtung = randomizeAusrichtung();		
+		this.ausrichtung = randomizeAusrichtung();
+		this.schiebbar = false;
 	}
 	
 	public Spielplatte(Ausrichtung ausrichtung) {
@@ -25,7 +26,7 @@ public abstract class Spielplatte {
 	
 	protected Ausrichtung randomizeAusrichtung() {
 		Random randomizer = new Random();
-		randomIndex = randomizer.nextInt(ausrichtungsArray.length);
+		int randomIndex = randomizer.nextInt(ausrichtungsArray.length);
 		return this.ausrichtungsArray[randomIndex];
 	}
 	
