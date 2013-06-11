@@ -74,15 +74,8 @@ public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 
 	private void setFigurIcon() {
 		ImageView imageView = (ImageView) this.zeilenansicht.findViewById(R.id.img_gewaehlte_figur);
-	    int resID = activity.getResources().getIdentifier(buildIconName(), "drawable", "com.dhbw.dvst");	    
+	    int resID = activity.getResources().getIdentifier(this.getItem(this.position).getSpielfigur().getMotivUrl(), "drawable", "com.dhbw.dvst");	    
 	    imageView.setImageResource(resID);
-	}
-
-	private String buildIconName() {
-		String form = this.getItem(this.position).getSpielfigur().getForm().getText_en();
-	    String farbe = this.getItem(this.position).getSpielfigur().getFarbe().getText_en();
-	    String iconName = form +"_"+ farbe;
-		return iconName;
 	}
 	
 	private void setSpielerName() {

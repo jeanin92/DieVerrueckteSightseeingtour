@@ -46,6 +46,6 @@
     <string name="nein">Nein</string>
     
         <!-- SpielBildschirm.xml -->
-    <string name="links_drehen">Nach links drehen</string>
-    <string name="rechts_drehen">Nach rechts drehen</string>
+    <string name="links_drehen">links</string>
+    <string name="rechts_drehen">rechts</string>
 </resources>
