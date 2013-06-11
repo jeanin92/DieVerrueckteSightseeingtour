@@ -13,7 +13,6 @@ public class Spielbrett {
 	public static final Integer kreuzung = 2;
 	
 	private ArrayList<Spielplatte> alleSpielplatten = new ArrayList<Spielplatte>();
-	private ArrayList<Integer> unsortiertesIntPlattenArray = new ArrayList<Integer>();
 	private Random plattenRandomizer = new Random();
 
 	public Spielbrett() {
@@ -65,10 +64,6 @@ public class Spielbrett {
 	public ArrayList<Spielplatte> getAlleSpielplatten() {
 		return alleSpielplatten;
 	}
-
-	public ArrayList<Integer> getUnsortiertesIntPlattenArray() {
-		return unsortiertesIntPlattenArray;
-	}
 	
 	public void verteileSpielfiguren(ArrayList<Spieler> alleSpieler){
 		int i = 0;
@@ -77,9 +72,22 @@ public class Spielbrett {
 			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size()-1);
 			Spielplatte platte = alleSpielplatten.get(randomElementIndex);
 			Spielfigur figur = alleSpieler.get(i).getSpielfigur();
-			if(platte.figur==null){
-				platte.figur = figur;
+			if(platte.getFigur()==null){
+				platte.setFigur(figur);
 				figur.setSpielplatte(platte);
+				i++;
+			}
+		}
+	}
+	
+	public void verteileSehenswuerdigkeiten(Stack<Sehenswuerdigkeit> stapel){
+		int i = 0;
+		int randomElementIndex;
+		while (i < stapel.size()) {
+			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size()-1);
+			Spielplatte platte = alleSpielplatten.get(randomElementIndex);
+			if(platte.getFigur()==null && platte.getZiel()==null){
+				platte.ziel = stapel.get(i);
 				i++;
 			}
 		}

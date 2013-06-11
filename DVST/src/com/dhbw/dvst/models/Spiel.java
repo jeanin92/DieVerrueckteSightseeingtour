@@ -38,6 +38,7 @@ public class Spiel{
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>(6);
+		kartenstapel = new Stack<Sehenswuerdigkeit>();
 	}
 
 	public void initialisiereSpielbrett() {
@@ -47,6 +48,7 @@ public class Spiel{
 		spielbrett.setSchiebbarePlatten();
 		spielbrett.verteileSpielfiguren(alleSpieler);
 		spielbrett.mischeKartenstapel(kartenstapel);
+		spielbrett.verteileSehenswuerdigkeiten(kartenstapel);
 	}
 	
 	/**

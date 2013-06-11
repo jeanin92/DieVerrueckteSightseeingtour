@@ -9,6 +9,7 @@ public abstract class Spielplatte {
 	protected Ausrichtung[] ausrichtungsArray;
 	protected String motivURL;
 	protected Spielfigur figur;
+	protected Sehenswuerdigkeit ziel;
 	protected boolean schiebbar;
 	
 	public Spielplatte() {
@@ -43,5 +44,21 @@ public abstract class Spielplatte {
 
 	public String getMotivURL() {
 		return motivURL;
+	}
+	
+	public Spielfigur getFigur() {
+		return figur;
+	}
+	
+	public void setFigur(Spielfigur figur) {
+		this.figur = figur;
+	}
+	
+	public Sehenswuerdigkeit getZiel() {
+		return ziel;
+	}
+	
+	public void setZiel(Sehenswuerdigkeit ziel) {
+		this.ziel = ziel;
 	}
 }
