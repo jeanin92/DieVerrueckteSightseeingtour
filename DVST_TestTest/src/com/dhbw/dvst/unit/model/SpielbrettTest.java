@@ -1,6 +1,7 @@
 package com.dhbw.dvst.unit.model;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import junit.framework.TestCase;
 
@@ -9,6 +10,7 @@ import com.dhbw.dvst.models.Farbe;
 import com.dhbw.dvst.models.Form;
 import com.dhbw.dvst.models.Kreuzung;
 import com.dhbw.dvst.models.Kurve;
+import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spielbrett;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielfigur;
@@ -60,6 +62,10 @@ public class SpielbrettTest extends TestCase{
 		testBrett.verteileSpielfiguren(testSpieler);
 		assertNotNull(testSpieler.get(0).getSpielfigur().getSpielplatte());
 		assertNotNull(testSpieler.get(1).getSpielfigur().getSpielplatte());
+	}
+	
+	public void testObMischekartenstapelKorrekteLaengeDesKartenStapelsAufbaut() {
+		testBrett.mischeKartenstapel(new Stack<Sehenswuerdigkeit>());
 	}
 	
 	protected void tearDown() throws Exception {

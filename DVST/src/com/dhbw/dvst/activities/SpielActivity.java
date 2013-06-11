@@ -15,7 +15,7 @@ import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
-import com.dhbw.dvst.utilities.BeendenDialog;
+import com.dhbw.dvst.utilities.SpielDialog;
 import com.dhbw.dvst.views.SpielView;
 
 public class SpielActivity extends Activity{
@@ -61,7 +61,7 @@ public class SpielActivity extends Activity{
 					kommunikation.navigieren(SpielActivity.this, ModusActivity.class);					
 				}
 			};
-			new BeendenDialog(SpielActivity.this, getString(R.string.err_beenden), positiv_listener);			
+			new SpielDialog(SpielActivity.this, getString(R.string.err_beenden), positiv_listener);			
 		}
 
 		@Override

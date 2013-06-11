@@ -7,9 +7,9 @@ import android.content.DialogInterface.OnClickListener;
 
 import com.dhbw.dvst.R;
 
-public class LoeschDialog {
+public class SpielDialog {
 
-	public LoeschDialog(Activity activity, String message, OnClickListener posListener) {
+	public SpielDialog(Activity activity, String message, OnClickListener posListener) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		builder.setMessage(message);
 		builder.setPositiveButton(R.string.ja, posListener);

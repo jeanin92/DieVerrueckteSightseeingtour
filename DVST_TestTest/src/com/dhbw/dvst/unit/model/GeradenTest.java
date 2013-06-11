@@ -45,6 +45,11 @@ public class GeradenTest extends TestCase {
 		assertEquals(gerade.getAusrichtung(), Ausrichtung.GERADESENKRECHT);
 	}
 	
+	public void testObgetMotivUrlKorrekteUrlZurueckgibt() {
+		String actual = this.gerade.getMotivURL();
+		assertEquals("gerade", actual);
+	}
+	
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}

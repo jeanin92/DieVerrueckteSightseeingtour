@@ -32,6 +32,11 @@ public class FarbeTest extends TestCase {
 		assertEquals(actual, false);
 	}
 	
+	public void testObGetTextDenEnglischenTextZurueckgibt() {
+		String text = this.colour.getText_en();
+		assertEquals(text, "green");
+	}
+	
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
