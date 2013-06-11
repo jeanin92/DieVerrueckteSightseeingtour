@@ -6,10 +6,10 @@ Funktionalität: Der Benutzer will den Spielmodus waehlen.
 	Will ich entscheiden, ob ich gegen den Computer oder andere Spieler spielen moechte und
 	ob ich auf einem oder mehreren Geraeten spielen will.
 	
-#	Szenario: Der Benutzer will gegen die KI spielen.	
-#		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm
-#		Wenn ich mich fuer ein Einspieler-Spiel entscheide
-#		Dann gelange ich zum Figurwahl-Bildschirm
+	Szenario: Der Benutzer will gegen die KI spielen.	
+		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm
+		Wenn ich mich fuer ein Einspieler-Spiel entscheide
+		Dann gelange ich zum Figurwahl-Bildschirm
 	
 	Szenariogrundriss: Der Benutzer will gegen andere Spieler spielen.
 		Angenommen ich befinde mich auf dem Spielmodus-Bildschirm

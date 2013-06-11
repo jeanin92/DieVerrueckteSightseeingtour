@@ -12,11 +12,11 @@ Funktionalität: Der Benutzer verwendet die Spielanleitung.
 		Dann oeffnet sich der Anleitungs-Bildschirm
 		Und ich kann von dort zum Spielmodus-Bildschirm navigieren
 	
-#	Szenario: Der Benutzer liest die Spielanleitung waehrend er im Spiel an der Reihe ist. 
-#		Angenommen ein Spiel ist aktiv
-#		Und ich befinde mich auf dem Spiel-Bildschirm
-#		Und ich bin an der Reihe
-#		Wenn ich den Spielanleitungs-Button klicke
-#		Dann oeffnet sich der Anleitungs-Bildschirm
-#		Und ich kann von dort zurueck zum Spiel-Bildschirm navigieren
-#		Und ich kann da weiter machen, wo ich aufgehoert habe
+	Szenario: Der Benutzer liest die Spielanleitung waehrend er im Spiel an der Reihe ist. 
+		Angenommen ein Spiel ist aktiv
+		Und ich befinde mich auf dem Spiel-Bildschirm
+		Und ich bin an der Reihe
+		Wenn ich den Spielanleitungs-Button klicke
+		Dann oeffnet sich der Anleitungs-Bildschirm
+		Und ich kann von dort zurueck zum Spiel-Bildschirm navigieren
+		Und ich kann da weiter machen, wo ich aufgehoert habe
