@@ -1,0 +1,30 @@
+20-30 min
+
+ich will mein Projekt vorstellen - "verkaufen"
+
+Projektauftrag vorstellen (Idee vorstellen, Umsetzung in UseCases, Scope)
+
+wie machen wir Project estimation (function points)
+unsere Komm-Struktur mit Kunden --> in verbindung mit Prozess (wie weiß Kunde, was wir falsch machen)
+welchen Prozess: RUP mit Scrum (Phasen zeigen, nicht ganzes MS-Project)
+
+wie planen wir, wie machen wir RiskManagement
+
+Kompetenz zeigen:
+    Demonstration des Projekts
+    Softwarearchitektur, die verwendet wird (was, wenn ich auch auf iOS will --> was ist austauschbar)
+
+Qualität:
+    Metriktool zeigen --> Funktionalität
+    Test-Umgebung zeigen --> was testen wir
+
+HAs = 10%
+Präsentation = 20%
+Abgabe = 70% (bis 30. Juni)
+
+sie ins Projekt reinnehmen
+
+#Abgabe: als ZIP
+Dokumentation-Ordner
+Code-Ordner
+README.pdf
