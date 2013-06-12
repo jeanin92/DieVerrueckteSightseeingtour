@@ -36,12 +36,6 @@ public class SpielbrettTest extends TestCase{
 		assertEquals(34, testBrett.getAlleSpielplatten().size());
 	}
 	
-	public void testObAlleSpielplattenArrayWiederLeerIst() {
-		testBrett.fuelleLosesSpielplattenArray();
-		testBrett.fuegeStatischePlattenEin();
-		assertEquals(0, this.testBrett.getUnsortiertesIntPlattenArray().size());
-	}
-	
 	public void testObSpielplattenArrayKorrekteLaengeHat() {
 		testBrett.fuelleLosesSpielplattenArray();
 		testBrett.fuegeStatischePlattenEin();

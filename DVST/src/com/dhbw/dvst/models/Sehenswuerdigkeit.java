@@ -17,4 +17,7 @@ public enum Sehenswuerdigkeit {
 		this.motivURL = this.name().toLowerCase();
 	}
 	
+	public String getMotivURL() {
+		return motivURL;
+	}
 }
