@@ -46,7 +46,7 @@
 		    android:layout_centerHorizontal="true"
 		    android:layout_toRightOf="@+id/btn_links_drehen"
 		    android:src="@drawable/ic_launcher"
-		    android:contentDescription="aktive Spielplatte" />
+		    android:contentDescription="@string/aktive_spielplatte" />
         
         <Button 
             android:id="@+id/btn_rechts_drehen"
