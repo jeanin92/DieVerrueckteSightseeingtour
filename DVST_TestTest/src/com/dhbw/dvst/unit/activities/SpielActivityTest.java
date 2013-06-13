@@ -24,9 +24,9 @@ public class SpielActivityTest extends
 		startActivity(intent, null, null);
 		mActivity = getActivity();		
 		btn_beenden = (Button)mActivity.findViewById(com.dhbw.dvst.R.id.btn_beenden);
-		
 	}
 	
+//	nicht zu testen, da Löschdialog als Popup verwendet wird
 //	public void testObBeendenListenerDefiniert(){
 //		assertTrue("kein Listener für Startbutton definiert", btn_beenden.performClick());
 //		
