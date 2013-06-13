@@ -33,7 +33,7 @@ public class Spiel{
 	/**
 	 * Konstruktor
 	 */
-	public Spiel() {
+	private Spiel() {
 //		language = Locale.getDefault().getLanguage();
 		alleSpielfiguren = new ArrayList<Spielfigur>();
 		initialisiereSpielfiguren();

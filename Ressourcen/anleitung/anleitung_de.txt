@@ -1,0 +1,15 @@
+Ziel des Spiels
+In dem Spiel die Verrückte Sightseeingtour gehen die Spieler auf eine Entdeckungsreise in der ganzen Welt. Dabei gilt es bestimmte Sehenswürdigkeiten zu erreichen. 
+Jeder Spieler versucht durch geschicktes Verschieben der Labyrinth Gänge seine Sehenswürdigkeiten zu erreichen. Wer zuerst alle seine Sehenswürdigkeiten erreicht hat, hat gewonnen.
+Spielregeln
+Der erste Spieler in der Liste beginnt das Spiel, danach erfolgt die Reihenfolge in der Nennung der Spielerliste. Der erste Spieler sieht geheim seine erste Sehenswürdigkeit die er erreichen muss.
+Um zu diesem Ziel zu gelangen, muss der Spieler nacheinander das Labyrinth durch Einschieben einer Spielplatte verändern und dann mit seiner Spielfigur ziehen.
+Verschieben des Labyrinths
+Der Spieler Schiebt die sich oben rechts befindliche Spielplatte durch klicken auf eine Spielkarte an dieser Stelle in das Labyrinth. Die Karte wird, wie in der oben angezeigten Orientierung in das Spielfeld eingeschoben.  Die herausgeschobene Spielplatte wird nun oben angezeigt und darf an jeder Stelle, außer an dieser wo sie hinausgeschoben wurde, wieder eingeschoben werden.
+Spielfiguren die sich auf der herausgeschobenen Spielkarte befinden werden auf die neu eingeschobene Spielplatte versetzt.
+Auch wenn das Ziel ohne Verschieben einer Spielplatte erreichbar ist muss trotzdem eine Spielplatte eingeschoben werden. 
+Spielfigur ziehen
+Im Anschluss an das Verschieben der Spielplatten zieht der Spieler seine Spielfigur. Für das Ziehen der Spielfigur wird zuerst die gewünscht Zielplatte und dann die Spielfigur zum Bestätigen angeklickt. Die Zielplatte kann durch klicken auf eine andere Platte aktualisiert werden. Ein Spielzug kann beliebig lang sein.
+Es besteht kein Zugzwang. Klickt man direkt auf seine Spielfigur bleibt die Figur stehen. 
+Ende des Spiels
+Das Spiel ist beendet, sobald ein Spieler all seine Sehenswürdigkeiten erreicht hat. Dieser Spieler ist auch der Gewinner

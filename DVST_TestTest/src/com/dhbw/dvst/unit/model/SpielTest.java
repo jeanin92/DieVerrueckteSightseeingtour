@@ -18,7 +18,7 @@ public class SpielTest extends TestCase{
 	
 	protected void setUp() throws Exception {
 		super.setUp();
-		spiel = new Spiel();
+		spiel = Spiel.getInstance();
 	}
 	
 	public void testObSpielerHinzufuegenNeuenSpielerAnlegt() {
