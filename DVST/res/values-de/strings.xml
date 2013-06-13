@@ -17,9 +17,18 @@
     <string name="neuer_spieler">Neu</string>
     <string name="zum_spiel">Los!</string>
     <string name="spielmodus_wechseln">Spielmodus wechseln</string>
-    <string name="anleitung_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </string>
+    <string name="anleitung_text">Ziel des Spiels \nIm Spiel "Die Verrückte Sightseeingtour" gehen die Spieler auf eine Entdeckungsreise in der ganzen Welt. Dabei gilt es bestimmte Sehenswürdigkeiten zu erreichen. 
+Jeder Spieler versucht durch geschicktes Verschieben der Labyrinthgänge seine Sehenswürdigkeiten zu erreichen. Wer zuerst alle seine Sehenswürdigkeiten erreicht hat, hat gewonnen.\n
+\nSpielregeln \nDer erste Spieler in der Liste beginnt das Spiel. Die weitere Reihenfolge entspricht der Nennung in der Spielerliste. Der erste Spieler sieht geheim seine erste Sehenswürdigkeit, die er erreichen muss.
+Um zu diesem Ziel zu gelangen, muss der Spieler das Labyrinth durch Einschieben einer Spielplatte verändern und dann mit seiner Spielfigur ziehen.\n
+\nVerschieben des Labyrinths \nDer Spieler schiebt die sich oben rechts befindliche Spielplatte durch Klicken auf eine bewegliche Spielkarte am Spielfeldrand an dieser Stelle in das Labyrinth. Die Karte wird, wie in der oben angezeigten Orientierung, in das Spielfeld eingeschoben.  Die herausgeschobene Spielplatte wird nun neben dem Spielfeld angezeigt und darf an jeder Stelle, außer da wo sie hinausgeschoben wurde, wieder eingeschoben werden.
+Spielfiguren, die sich auf der herausgeschobenen Spielkarte befinden, werden auf die neu eingeschobene Spielplatte versetzt.
+Auch wenn das Ziel ohne Verschieben einer Spielplatte erreichbar ist, muss trotzdem eine Spielplatte eingeschoben werden.\n
+
+\nSpielfigur ziehen \nIm Anschluss an das Verschieben der Spielplatten zieht der Spieler seine Spielfigur. Für das Ziehen der Spielfigur wird zuerst die gewünschte Zielplatte und dann die Spielfigur zum Bestätigen angeklickt. Die Zielplatte kann durch Klicken auf eine andere Platte geändert werden. Ein Spielzug kann beliebig lang sein.
+Es besteht kein Zugzwang. Klickt man direkt auf seine Spielfigur, bleibt die Figur stehen. \n
+
+\nEnde des Spiels \nDas Spiel ist beendet, sobald ein Spieler all seine Sehenswürdigkeiten erreicht hat. Dieser Spieler gewinnt.</string>
     <string name="spieler_erstellen">Spieler erstellen</string>
     <string name="spieler_bearbeiten">Spieler bearbeiten</string>
     <string name="name">Name:</string>
