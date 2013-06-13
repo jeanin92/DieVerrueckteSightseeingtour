@@ -4,12 +4,11 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.models.Spiel;
-import com.dhbw.dvst.models.Spielplatte;
 
 public class SpielView extends LinearLayout {
 
@@ -30,6 +29,7 @@ public class SpielView extends LinearLayout {
 	private Button btn_rechts_drehen;
 	private Button btn_links_drehen;
 	private ImageView img_aktive_platte;
+	private GridView spielbrett;
 	
 	public void setViewListener(ViewListener viewListener) {
 		this.viewListener = viewListener;
@@ -47,6 +47,8 @@ public class SpielView extends LinearLayout {
 		btn_rechts_drehen = (Button)findViewById(R.id.btn_rechts_drehen);
 		btn_links_drehen = (Button)findViewById(R.id.btn_links_drehen);	
 		img_aktive_platte = (ImageView)findViewById(R.id.img_aktive_platte);
+		spielbrett = (GridView) findViewById(R.id.grid_spielbrett);
+		spielbrett.setVerticalScrollBarEnabled(false);
 		
 		btn_beenden.setOnClickListener(new View.OnClickListener() {
 			@Override

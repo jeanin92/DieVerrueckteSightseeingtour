@@ -61,9 +61,9 @@ public class Spiel{
 		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("gelb", "yellow"), "motorbike_yellow"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("gelb", "yellow"), "car_yellow"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("gelb", "yellow"), "bus_yellow"));
-		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("gr�n", "green"), "motorbike_green"));
-		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("gr�n", "green"), "car_green"));
-		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("gr�n", "green"), "bus_green"));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("grün", "green"), "motorbike_green"));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("grün", "green"), "car_green"));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("grün", "green"), "bus_green"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("blau", "blue"), "mototrbike_blue"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("blau", "blue"), "car_blue"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("blau", "blue"), "bus_blue"));

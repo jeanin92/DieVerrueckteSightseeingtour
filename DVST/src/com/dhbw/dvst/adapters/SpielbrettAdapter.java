@@ -3,7 +3,7 @@ package com.dhbw.dvst.adapters;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.view.Gravity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,6 +17,7 @@ import com.dhbw.dvst.models.Spielplatte;
 public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
     private Activity activity;
 	private int position;
+	private int plattenHoehe;
 
     /**
      * 
@@ -29,6 +30,8 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
         ArrayList<Spielplatte> spielbrett) {
     	super(activity, resourceId, textViewId, spielbrett);
     	this.activity = activity;
+    	DisplayMetrics metrics = activity.getResources().getDisplayMetrics(); 
+		this.plattenHoehe = Math.round(metrics.heightPixels/7);
     }
 
     @Override
@@ -51,8 +54,9 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		if(this.getItem(this.position).getFigur()!=null){
 			platte.addView(buildFigur());
 		}	
-		platte.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		platte.setLayoutParams(new LayoutParams(this.plattenHoehe, this.plattenHoehe));
 	    platte.setPadding(0, 0, 0, 0);
+	    centerChildren(platte);
 		return platte;
 	}
 	
@@ -60,8 +64,7 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		ImageView motiv = new ImageView(activity);
 		int resID = activity.getResources().getIdentifier(this.getItem(this.position).getMotivURL(), "drawable", "com.dhbw.dvst");
 		motiv.setImageResource(resID);
-		int dimens = activity.getResources().getDimensionPixelOffset(R.dimen.dim_platte);
-		motiv.setLayoutParams(new LayoutParams(dimens, dimens));
+		motiv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 //		Achtung: erst ab API11 möglich!!!
 		motiv.setRotation(this.getItem(this.position).getAusrichtung().getRotation());
 		return motiv;
@@ -79,10 +82,19 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 	private View buildSehenswuerdigkeit(){
 		ImageView motiv = new ImageView(activity);
 		int resID = activity.getResources().getIdentifier(this.getItem(this.position).getZiel().getMotivURL(), "drawable", "com.dhbw.dvst");
-		motiv.setImageResource(resID);
+		motiv.setImageResource(resID);		
 		int dimens = activity.getResources().getDimensionPixelOffset(R.dimen.dim_sight);
 		motiv.setLayoutParams(new LayoutParams(dimens, dimens));
 		return motiv;
+	}
+	
+	private void centerChildren(RelativeLayout platte){
+		for (int i = 0; i < platte.getChildCount(); i++) {
+		    View view = platte.getChildAt(i);
+		    LayoutParams layout = (LayoutParams)view.getLayoutParams();
+			layout.addRule(RelativeLayout.CENTER_IN_PARENT);
+			view.setLayoutParams(layout);
+		}
 	}
 
 }

@@ -14,11 +14,11 @@ public class FarbeTest extends TestCase {
 	
 	protected void setUp() throws Exception {
 		super.setUp();
-		this.colour = new Farbe("gruen", "green");
+		this.colour = new Farbe("grün", "green");
 	}
 	
 	public void testObFarbvergleichBeiGleichemDeutschenTextTrueZurueckgibt() {
-		boolean actual = this.colour.compare("gruen");
+		boolean actual = this.colour.compare("grün");
 		assertEquals(actual, true);
 	}
 	
