@@ -4,6 +4,7 @@ import com.dhbw.dvst.unit.model.FormTest;
 import com.dhbw.dvst.unit.model.GeradenTest;
 import com.dhbw.dvst.unit.model.KreuzungsTest;
 import com.dhbw.dvst.unit.model.KurvenTest;
+import com.dhbw.dvst.unit.model.SpielTest;
 import com.dhbw.dvst.unit.model.SpielbrettTest;
 import com.dhbw.dvst.unit.model.SpielerTest;
 import junit.framework.*;
@@ -19,6 +20,8 @@ public class AllModelTests {
 		suite.addTestSuite(KreuzungsTest.class);
 		suite.addTestSuite(KurvenTest.class);
 		suite.addTestSuite(SpielbrettTest.class);
+		suite.addTestSuite(SpielerTest.class);
+		suite.addTestSuite(SpielTest.class);
 		
 		suite.addTestSuite(StartActivityTest.class);
 		return suite;
