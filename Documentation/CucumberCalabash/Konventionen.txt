@@ -12,3 +12,7 @@
 To change the landscape to portrait and vice versa
 ctrl+fn+F11 on Mac
 left-ctrl+F11 on Windows 7
+
+#FAncy output als HTML
+
+calabash-android run bin/DVST.apk --format html --out reports.html

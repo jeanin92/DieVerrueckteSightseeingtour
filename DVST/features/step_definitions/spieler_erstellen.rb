@@ -15,27 +15,27 @@ Dann(/^der Spieler wird als neuer Spielteilnehmer angezeigt$/) do
 end
 
 Dann(/^ich will "(.*?)"$/) do |arg1|
-    if @arg1 == 'unerlaubte Zeichen im Namen eingeben' then
-        #performAction('enter_text_into_id_field', '.', 'et_name')
-    else if @arg1 == 'eine Farbe-Figur-Kombination eingeben, die bereits jemand gewaehlt hat' then
-        performAction('enter_text_into_id_field', 'Ich', 'et_name')
-        performAction('select_item_from_named_spinner', 'spin_farbe', 'red')
-        performAction('select_item_from_named_spinner', 'spin_form', 'car')
-        touch("* button id:'btn_erstellen'")
-        touch("* button id:'btn_neu'")
-        performAction('enter_text_into_id_field', 'Du', 'et_name')
+    #if @arg1 == 'unerlaubte Zeichen im Namen eingeben' then
+    #   performAction('enter_text_into_id_field', '.', 'et_name')
+    #if @arg1 == 'eine Farbe-Figur-Kombination eingeben, die bereits jemand gewaehlt hat' then
+    #   performAction('enter_text_into_id_field', 'Ich', 'et_name')
+        #performAction('select_item_from_named_spinner', 'spin_farbe', 'red')
+        #performAction('select_item_from_named_spinner', 'spin_form', 'car')
+        #touch("* button id:'btn_erstellen'")
+        #touch("* button id:'btn_neu'")
+        #performAction('enter_text_into_id_field', 'Du', 'et_name')
         #  performAction('select_item_from_named_spinner', spinner_content_description, item_text)
-        performAction('select_item_from_named_spinner', 'spin_farbe', 'red')
-        performAction('select_item_from_named_spinner', 'spin_form', 'car')
-        touch("* button id:'btn_erstellen'")
+        #performAction('select_item_from_named_spinner', 'spin_farbe', 'red')
+        #performAction('select_item_from_named_spinner', 'spin_form', 'car')
+        #touch("* button id:'btn_erstellen'")
 end
 
 Dann(/^sagt mir das System, "(.*?)"$/) do |arg1|
     
     
-    if @arg1 == 'dass meine Farb-Figur-Kombination schon vergeben ist' then
+    #if @arg1 == 'dass meine Farb-Figur-Kombination schon vergeben ist' then
         # evtl. einfach nachsehen, auf welchem view man ist
-        query("textview")
+        #query("textview")
 end
 
 Dann(/^ich befinde mich auf dem Figurwahl\-Bildschirm$/) do
