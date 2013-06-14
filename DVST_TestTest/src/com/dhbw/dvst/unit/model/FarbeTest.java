@@ -28,8 +28,8 @@ public class FarbeTest extends TestCase {
 	}
 	
 	public void testObFarbvergleichBeiAnderemTextFalseZurueckgibt() {
-		boolean actual = this.colour.compare("grün");
-		assertEquals(actual, false);
+		boolean actual = this.colour.compare("gruen");
+		assertEquals(false, actual);
 	}
 	
 	public void testObGetTextDenEnglischenTextZurueckgibt() {

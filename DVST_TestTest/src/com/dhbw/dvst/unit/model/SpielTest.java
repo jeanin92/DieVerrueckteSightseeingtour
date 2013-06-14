@@ -9,8 +9,7 @@ import com.dhbw.dvst.models.Spielfigur;
 import junit.framework.TestCase;
 
 public class SpielTest extends TestCase{
-
-	private Spiel spiel;
+	private Spieler hannah;
 
 	public SpielTest(String name) {
 		super(name);
@@ -18,38 +17,34 @@ public class SpielTest extends TestCase{
 	
 	protected void setUp() throws Exception {
 		super.setUp();
-		spiel = Spiel.getInstance();
+		hannah = new Spieler("HANNAH", new Spielfigur(
+				new Form("bus", "bus"), new Farbe("blue", "blau"), "bus_blue"));
+		Spiel.getInstance().spielerHinzufuegen(hannah);
+	}
+	
+	public void testObSpielerHinzufuegenGenauEinenNeuenSpielerAnlegt() {
+		assertEquals(1, Spiel.getInstance().getAlleSpieler().size());
 	}
 	
 	public void testObSpielerHinzufuegenNeuenSpielerAnlegt() {
-		Spieler hannah = new Spieler("HANNAH", new Spielfigur(
-				new Form("bus", "bus"), new Farbe("blue", "blau"), "bus_blue"));
-		spiel.spielerHinzufuegen(hannah);
-		assertEquals(hannah, spiel.getAlleSpieler().get(0));
+		assertEquals(hannah, Spiel.getInstance().getAlleSpieler().get(0));
 	}
 	
 	public void testObSpielerHinzufuegenSpielfigurMitMotivSetzt() {
-		Spieler hannah = new Spieler("HANNAH", new Spielfigur(
-				new Form("bus", "bus"), new Farbe("blue", "blau"), "bus_blue"));
-		spiel.spielerHinzufuegen(hannah);
-		assertEquals("bus_blue", spiel.getAlleSpieler().get(0).getSpielfigur().getMotivUrl());
+		assertEquals("bus_blue", Spiel.getInstance().getAlleSpieler().get(0).getSpielfigur().getMotivUrl());
 	}
 	
 	public void testObSpielerHinzufuegenSpielfigurMitMotivAufVergebenSetzt() {
-		Spieler hannah = new Spieler("HANNAH", new Spielfigur(
-				new Form("bus", "bus"), new Farbe("blue", "blau"), "bus_blue"));
-		spiel.spielerHinzufuegen(hannah);
-		assertEquals(true, spiel.getAlleSpieler().get(0).getSpielfigur().isVergeben());
+		assertEquals(true, Spiel.getInstance().getAlleSpieler().get(0).getSpielfigur().isVergeben());
 	}
 	
 	public void testObSpielerLoeschenEinzigenSpielerLoescht() {
-		Spieler hannah = new Spieler("HANNAH", new Spielfigur(
-				new Form("bus", "bus"), new Farbe("blue", "blau"), "bus_blue"));
-		spiel.spielerLoeschen(hannah);
-		assertEquals(true, spiel.getAlleSpieler().isEmpty());
+		Spiel.getInstance().spielerLoeschen(hannah);
+		assertEquals(true, Spiel.getInstance().getAlleSpieler().isEmpty());
 	}
 	
 	protected void tearDown() throws Exception {
 		super.tearDown();
+		Spiel.resetInstance();
 	}
 }
