@@ -32,8 +32,6 @@ public class Spielbrett {
 				alleSpielplatten.add(new Kreuzung());
 		}
 		Collections.shuffle(alleSpielplatten);
-		
-		//TODO: Janina fragen ob OK
 		this.aktivePlatte = alleSpielplatten.get(alleSpielplatten.size()-1);
 		alleSpielplatten.remove(alleSpielplatten.size()-1);
 	}
@@ -136,8 +134,6 @@ public class Spielbrett {
 		} else if (index == 43 || index == 45 || index == 47) {
 			spielplatteUntenEinschieben(index);
 			figurUmsetzen(index);
-		} else {
-			//TODO: Fehlermeldung
 		}
 	}
 

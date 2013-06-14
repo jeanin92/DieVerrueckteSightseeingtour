@@ -58,4 +58,7 @@ Es besteht kein Zugzwang. Klickt man direkt auf seine Spielfigur, bleibt die Fig
     <string name="links_drehen">links</string>
     <string name="rechts_drehen">rechts</string>
     <string name="aktive_spielplatte">aktive Spielplatte</string>
+    
+        <!-- SpielActivity -->
+    <string name="err_platte_nicht_schiebbar">Hier darfst du nicht schieben.</string>
 </resources>

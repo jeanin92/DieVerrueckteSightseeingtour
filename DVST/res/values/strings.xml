@@ -49,4 +49,7 @@
     <string name="links_drehen">left</string>
     <string name="rechts_drehen">right</string>
     <string name="aktive_spielplatte">active</string>
+    
+    <!-- SpielActivity -->
+    <string name="err_platte_nicht_schiebbar">You cannot move this tile.</string>
 </resources>

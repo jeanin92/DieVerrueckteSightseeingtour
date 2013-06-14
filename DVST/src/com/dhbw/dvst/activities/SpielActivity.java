@@ -14,6 +14,7 @@ import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
+import com.dhbw.dvst.utilities.Fehlermeldung;
 import com.dhbw.dvst.utilities.SpielDialog;
 import com.dhbw.dvst.views.SpielView;
 
@@ -92,10 +93,14 @@ public class SpielActivity extends Activity{
 		@Override
 		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
 			Spielplatte angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
-			spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
-			brettAdapter.notifyDataSetChanged();
-			spielbrett.invalidateViews();
-			setBildAktivePlatte();
+			if(angeklicktePlatte.isSchiebbar()) {
+				spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
+				brettAdapter.notifyDataSetChanged();
+				spielbrett.invalidateViews();
+				setBildAktivePlatte();
+			} else {
+				new Fehlermeldung(SpielActivity.this, getString(R.string.err_platte_nicht_schiebbar));
+			}
 		}
 	};
 }
