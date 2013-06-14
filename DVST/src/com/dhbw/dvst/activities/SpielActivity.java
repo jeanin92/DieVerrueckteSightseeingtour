@@ -96,8 +96,6 @@ public class SpielActivity extends Activity{
 		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
 			Spielplatte angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
 			spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
-			
-			//TODO: set clickable im Layout
 			brettAdapter.notifyDataSetChanged();
 			spielbrett.invalidateViews();
 			setBildAktivePlatte();
