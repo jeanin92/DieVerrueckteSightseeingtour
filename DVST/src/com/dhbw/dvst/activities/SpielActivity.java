@@ -19,9 +19,9 @@ import com.dhbw.dvst.utilities.SpielDialog;
 import com.dhbw.dvst.views.SpielView;
 
 public class SpielActivity extends Activity{
-	private Spiel spiel = Spiel.getInstance();
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 	private SpielView view;
+	private SpielbrettAdapter brettAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +38,13 @@ public class SpielActivity extends Activity{
 		final GridView grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
 		ArrayList<Spielplatte> spielfeldArray = new ArrayList<Spielplatte>();
 		spielfeldArray.addAll(Spiel.getInstance().getSpielbrett().getAlleSpielplatten());
-		spielfeldArray.remove(49);
-		final SpielbrettAdapter adapter = new SpielbrettAdapter(this, 
-        		R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spielfeldArray);
-        grid_spielbrett.setAdapter(adapter);
+		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spielfeldArray);
+        grid_spielbrett.setAdapter(brettAdapter);
 	}
 	
 	protected void setBildAktivePlatte(){
-		final ImageView motiv = (ImageView)findViewById(R.id.img_aktive_platte);
-		int resID = getResources().getIdentifier(spiel.getSpielbrett().getAlleSpielplatten().get(49).getMotivURL(), "drawable", "com.dhbw.dvst");
+		final ImageView motiv = (ImageView)findViewById(R.id.img_aktive_platte);		
+		int resID = getResources().getIdentifier(Spiel.getInstance().getSpielbrett().getAktivePlatte().getMotivURL(), "drawable", "com.dhbw.dvst");
 		motiv.setImageResource(resID);
 	}
 	
@@ -71,16 +69,25 @@ public class SpielActivity extends Activity{
 
 		@Override
 		public void onNachLinksDrehen(ImageView img_aktive_platte) {
-			Spielplatte aktiv = spiel.getSpielbrett().getAlleSpielplatten().get(49);
+			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
 			aktiv.dreheSpielplatteNachLinks();
 			img_aktive_platte.setRotation(aktiv.getAusrichtung().getRotation());
 		}
 
 		@Override
 		public void onNachRechtsDrehen(ImageView img_aktive_platte) {
-			Spielplatte aktiv = spiel.getSpielbrett().getAlleSpielplatten().get(49);
+			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
 			aktiv.dreheSpielplatteNachRechts();
 			img_aktive_platte.setRotation(aktiv.getAusrichtung().getRotation());
+		}
+
+		@Override
+		public void onSpielplatteAnklicken(int position) {
+			Spielplatte angeklicktePlatte = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(position);
+			Spiel.getInstance().getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
+			
+			//TODO: set clickable im Layout
+			brettAdapter.notifyDataSetChanged();
 		}
 	};
 }

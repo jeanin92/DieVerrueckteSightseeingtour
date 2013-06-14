@@ -45,7 +45,7 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 	    return fillGridViewItem();
     }
 
-	private View fillGridViewItem(){
+	private View fillGridViewItem() {
 		RelativeLayout platte = new RelativeLayout(activity);		
 		platte.addView(buildPlatte());
 		if(this.getItem(this.position).getZiel()!=null){
@@ -57,6 +57,7 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		platte.setLayoutParams(new LayoutParams(this.plattenHoehe, this.plattenHoehe));
 	    platte.setPadding(0, 0, 0, 0);
 	    centerChildren(platte);
+	    platte.setClickable(false);
 		return platte;
 	}
 	
@@ -96,5 +97,4 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 			view.setLayoutParams(layout);
 		}
 	}
-
 }

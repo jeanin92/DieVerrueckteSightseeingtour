@@ -10,10 +10,11 @@ public class Spielbrett {
 	
 	public static final Integer kurve = 0;
 	public static final Integer gerade = 1;
-	public static final Integer kreuzung = 2;
+	public static final Integer kreuzung = 2; 
 	
 	private ArrayList<Spielplatte> alleSpielplatten = new ArrayList<Spielplatte>();
 	private Random plattenRandomizer = new Random();
+	private Spielplatte aktivePlatte;
 
 	public Spielbrett() {
 	}
@@ -30,7 +31,11 @@ public class Spielbrett {
 		for(int kr = 0; kr < 6; kr++) {
 				alleSpielplatten.add(new Kreuzung());
 		}
-		Collections.shuffle(alleSpielplatten);	
+		Collections.shuffle(alleSpielplatten);
+		
+		//TODO: Janina fragen ob OK
+		this.aktivePlatte = alleSpielplatten.get(alleSpielplatten.size()-1);
+		alleSpielplatten.remove(alleSpielplatten.size()-1);
 	}
 
 	
@@ -69,7 +74,7 @@ public class Spielbrett {
 		int i = 0;
 		int randomElementIndex;
 		while (i < alleSpieler.size()) {
-			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size()-1);
+			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size());
 			Spielplatte platte = alleSpielplatten.get(randomElementIndex);
 			Spielfigur figur = alleSpieler.get(i).getSpielfigur();
 			if(platte.getFigur()==null){
@@ -84,7 +89,7 @@ public class Spielbrett {
 		int i = 0;
 		int randomElementIndex;
 		while (i < stapel.size()) {
-			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size()-1);
+			randomElementIndex = plattenRandomizer.nextInt(alleSpielplatten.size());
 			Spielplatte platte = alleSpielplatten.get(randomElementIndex);
 			if(platte.getFigur()==null && platte.getZiel()==null){
 				platte.ziel = stapel.get(i);
@@ -99,13 +104,115 @@ public class Spielbrett {
 	}
 	
 	public void setSchiebbarePlatten(){
-		//TODO: Spielinitialisierung: alle schiebbaren Platten am Rand setzen
+		alleSpielplatten.get(1).setSchiebbar(true);
+		alleSpielplatten.get(3).setSchiebbar(true);
+		alleSpielplatten.get(5).setSchiebbar(true);
+		alleSpielplatten.get(7).setSchiebbar(true);
+		alleSpielplatten.get(13).setSchiebbar(true);
+		alleSpielplatten.get(21).setSchiebbar(true);
+		alleSpielplatten.get(27).setSchiebbar(true);
+		alleSpielplatten.get(35).setSchiebbar(true);
+		alleSpielplatten.get(41).setSchiebbar(true);
+		alleSpielplatten.get(43).setSchiebbar(true);
+		alleSpielplatten.get(45).setSchiebbar(true);
+		alleSpielplatten.get(47).setSchiebbar(true);
 	}
 	
-	public void aktualisiereSchiebbarePlatten(){
-		//TODO: beim Einschieben: 
-		// aktive Platte bleibt schiebbar
-		// zwei müssen geändert werden
-		// während des Spielzugs
+	public void spielplatteEinschieben(Spielplatte platte) {
+		int index = alleSpielplatten.indexOf(platte);
+		
+		if(index == 7 || index == 21 || index == 35) {
+			spielplatteLinksEinschieben(index);
+			figurUmsetzen(index);
+			
+		} else if (index == 13 || index == 27 || index == 41) {
+			spielplatteRechtsEinschieben(index);
+			figurUmsetzen(index);
+			
+		} else if (index == 1 || index == 3 || index == 5) {
+			spielplatteObenEinschieben(index);
+			figurUmsetzen(index);
+		
+		} else if (index == 43 || index == 45 || index == 47) {
+			spielplatteUntenEinschieben(index);
+			figurUmsetzen(index);
+		} else {
+			//TODO: Fehlermeldung
+		}
+	}
+
+	public void spielplatteLinksEinschieben(int index) {
+		int indexPlatteRaus = index+6;
+		int neuerIndexGeklicktePlatte = index+1;
+		Spielplatte neueAktivePlatte = alleSpielplatten.get(indexPlatteRaus);
+		alleSpielplatten.remove(indexPlatteRaus);
+		
+		aktualisiereAktivePlatte(index, neueAktivePlatte);
+		aktualisiereSchiebbarePlatten(indexPlatteRaus, neuerIndexGeklicktePlatte);
+	}
+	
+	public void spielplatteRechtsEinschieben(int index) {
+		int indexPlatteRaus = index-6;
+		int neuerIndexGeklicktePlatte = index+1;
+		Spielplatte neueAktivePlatte = alleSpielplatten.get(indexPlatteRaus);
+		alleSpielplatten.remove(indexPlatteRaus);
+		
+		aktualisiereAktivePlatte(index, neueAktivePlatte);
+		aktualisiereSchiebbarePlatten(indexPlatteRaus, neuerIndexGeklicktePlatte);
+	}
+	
+	public void spielplatteObenEinschieben(int index) {
+		int indexPlatteRaus = index+42;
+		int neuerIndexGeklicktePlatte = index+7;
+		Spielplatte neueAktivePlatte = alleSpielplatten.get(indexPlatteRaus);
+		for(int i = indexPlatteRaus; i > index; i=i-7) {
+			alleSpielplatten.remove(i);
+			alleSpielplatten.add(i, alleSpielplatten.get(i-7));
+		}
+		alleSpielplatten.remove(index);
+		
+		aktualisiereAktivePlatte(index, neueAktivePlatte);
+		aktualisiereSchiebbarePlatten(indexPlatteRaus, neuerIndexGeklicktePlatte);
+	}
+	
+	public void spielplatteUntenEinschieben(int index) {
+		int indexPlatteRaus = index-42;
+		int neuerIndexGeklicktePlatte = index-7;
+		Spielplatte neueAktivePlatte = alleSpielplatten.get(indexPlatteRaus);
+		for(int i = indexPlatteRaus; i < index; i=i+7) {
+			alleSpielplatten.remove(i);
+			alleSpielplatten.add(i, alleSpielplatten.get(i+6));
+		}
+		alleSpielplatten.remove(index);
+		
+		aktualisiereAktivePlatte(index, neueAktivePlatte);
+		aktualisiereSchiebbarePlatten(indexPlatteRaus, neuerIndexGeklicktePlatte);
+	}
+
+	public void aktualisiereAktivePlatte(int index,
+			Spielplatte neueAktivePlatte) {
+		alleSpielplatten.add(index, getAktivePlatte());
+		setAktivePlatte(neueAktivePlatte);
+	}
+
+	public void aktualisiereSchiebbarePlatten(int indexPlatteRaus,
+			int neuerIndexGeklicktePlatte) {
+		alleSpielplatten.get(neuerIndexGeklicktePlatte).setSchiebbar(false);
+		alleSpielplatten.get(indexPlatteRaus).setSchiebbar(true);
+	}
+
+	public void figurUmsetzen(int index) {
+		if(getAktivePlatte().getFigur() != null) {
+			alleSpielplatten.get(index).setFigur(getAktivePlatte().getFigur());
+			getAktivePlatte().setFigur(null);
+		}
+	}
+
+	public Spielplatte getAktivePlatte() {
+		return aktivePlatte;
+	}
+
+	public void setAktivePlatte(Spielplatte aktivePlatte) {
+		this.aktivePlatte = aktivePlatte;
 	}
 }

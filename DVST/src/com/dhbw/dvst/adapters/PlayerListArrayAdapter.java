@@ -121,8 +121,7 @@ public class PlayerListArrayAdapter extends ArrayAdapter<Spieler> {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						PlayerListArrayAdapter.this.remove((Spieler)v.getTag());
-						Spiel spiel = Spiel.getInstance();
-						spiel.spielerLoeschen((Spieler)v.getTag());
+						Spiel.getInstance().spielerLoeschen((Spieler)v.getTag());
 					}
 				};
 				return spielerLoeschen;

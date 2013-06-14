@@ -3,6 +3,7 @@ package com.dhbw.dvst.views;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -21,6 +22,7 @@ public class SpielView extends LinearLayout {
 		public void onReadManual();
 		public void onNachLinksDrehen(ImageView img_aktive_platte);
 		public void onNachRechtsDrehen(ImageView img_aktive_platte);
+		public void onSpielplatteAnklicken(int position);
 	}
 
 	private ViewListener viewListener;
@@ -77,6 +79,15 @@ public class SpielView extends LinearLayout {
 			@Override
 			public void onClick(View v) {
 				viewListener.onNachLinksDrehen(img_aktive_platte);	
+			}
+		});
+		
+		spielbrett.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				viewListener.onSpielplatteAnklicken(position);
 			}
 		});
 	}	

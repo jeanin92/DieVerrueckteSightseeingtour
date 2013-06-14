@@ -11,7 +11,6 @@ import com.dhbw.dvst.models.Spiel;
 public class SpielActivityTest extends
 		ActivityUnitTestCase<SpielActivity> {
 	private Activity mActivity;
-	private Button btn_beenden;
 
 	public SpielActivityTest() {
 		super(SpielActivity.class);
@@ -23,7 +22,6 @@ public class SpielActivityTest extends
 		Intent intent = new Intent(getInstrumentation().getTargetContext(), SpielActivity.class);
 		startActivity(intent, null, null);
 		mActivity = getActivity();		
-		btn_beenden = (Button)mActivity.findViewById(com.dhbw.dvst.R.id.btn_beenden);
 	}
 	
 //	nicht zu testen, da Löschdialog als Popup verwendet wird

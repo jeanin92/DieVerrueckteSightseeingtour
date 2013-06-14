@@ -11,16 +11,19 @@ public abstract class Spielplatte {
 	protected Spielfigur figur;
 	protected Sehenswuerdigkeit ziel;
 	protected boolean schiebbar;
-	
+
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
 		this.ausrichtung = randomizeAusrichtung();
 		this.schiebbar = false;
+		this.figur = null;
 	}
 	
 	public Spielplatte(Ausrichtung ausrichtung) {
 		fuelleAusrichtungsArray();
 		this.ausrichtung = ausrichtung;
+		this.schiebbar = false;
+		this.figur = null;
 	}
 	
 	protected abstract void fuelleAusrichtungsArray();
@@ -60,5 +63,13 @@ public abstract class Spielplatte {
 	
 	public void setZiel(Sehenswuerdigkeit ziel) {
 		this.ziel = ziel;
+	}
+	
+	public void setSchiebbar(boolean schiebbar) {
+		this.schiebbar = schiebbar;
+	}
+	
+	public boolean isSchiebbar() {
+		return schiebbar;
 	}
 }

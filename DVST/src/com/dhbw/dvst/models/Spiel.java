@@ -69,6 +69,9 @@ public class Spiel{
 		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("blau", "blue"), "bus_blue"));
 	}
 	
+	public void spielZugAusfuehren() {
+	}
+	
 	public void spielerHinzufuegen(Spieler spieler) {
 			this.alleSpieler.add(spieler);
 			spieler.getSpielfigur().setVergeben(true);
