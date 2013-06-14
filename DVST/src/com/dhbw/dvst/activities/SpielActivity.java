@@ -49,10 +49,13 @@ public class SpielActivity extends Activity{
 		platte.setRotation(spiel.getSpielbrett().getAktivePlatte().getAusrichtung().getRotation());
 		
 		Sehenswuerdigkeit ziel = spiel.getSpielbrett().getAktivePlatte().getZiel();
-		if(ziel != null){
-			final ImageView sehenswuerdigkeit = (ImageView)findViewById(R.id.img_sehenswuerdigkeit);
+		final ImageView sehenswuerdigkeit = (ImageView)findViewById(R.id.img_sehenswuerdigkeit);
+		if(ziel != null){			
 			resID = getResources().getIdentifier(ziel.getMotivURL(), "drawable", "com.dhbw.dvst");
 			sehenswuerdigkeit.setImageResource(resID);
+		}
+		else{
+			sehenswuerdigkeit.setImageResource(android.R.color.transparent);
 		}
 		
 	}

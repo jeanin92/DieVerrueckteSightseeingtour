@@ -50,11 +50,16 @@
             <ImageView
 		    	android:id="@+id/img_aktive_platte"
 		    	android:layout_centerInParent="true"
+		    	android:layout_width="@dimen/dim_platte"
+		    	android:layout_height="@dimen/dim_platte"
 		    	android:contentDescription="@string/aktive_spielplatte" />
             
             <ImageView
 		    	android:id="@+id/img_sehenswuerdigkeit"
 		    	android:layout_centerInParent="true"
+		    	android:layout_width="@dimen/dim_sight"
+		    	android:layout_height="@dimen/dim_sight"
+		    	android:background="@android:color/transparent"
 		    	android:contentDescription="@string/aktive_spielplatte" />
         </RelativeLayout>
 		
