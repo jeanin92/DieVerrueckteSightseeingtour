@@ -52,4 +52,5 @@
     
     <!-- SpielActivity -->
     <string name="err_platte_nicht_schiebbar">You cannot move this tile.</string>
+    <string name="err_kein_gueltiger_weg">You cannot go there.</string>
 </resources>

@@ -24,25 +24,56 @@ public class Kreuzung extends Spielplatte{
 	public void dreheSpielplatteNachRechts() {
 		if(ausrichtung == Ausrichtung.KREUZUNGLINKS) {
 			this.ausrichtung = Ausrichtung.KREUZUNGOBEN;
+			setzeOffeneSeiten(ausrichtung);
 		} else if(ausrichtung == Ausrichtung.KREUZUNGOBEN) {
 			this.ausrichtung = Ausrichtung.KREUZUNGRECHTS;
+			setzeOffeneSeiten(ausrichtung);
 		} else if(ausrichtung == Ausrichtung.KREUZUNGRECHTS) {
 			this.ausrichtung = Ausrichtung.KREUZUNGUNTEN;
+			setzeOffeneSeiten(ausrichtung);
 		} else {
 			this.ausrichtung = Ausrichtung.KREUZUNGLINKS;
+			setzeOffeneSeiten(ausrichtung);
 		}
 	}
 	
 	public void dreheSpielplatteNachLinks() {
 		if(ausrichtung == Ausrichtung.KREUZUNGLINKS) {
 			this.ausrichtung = Ausrichtung.KREUZUNGUNTEN;
+			setzeOffeneSeiten(ausrichtung);
 		} else if(ausrichtung == Ausrichtung.KREUZUNGUNTEN) {
 			this.ausrichtung = Ausrichtung.KREUZUNGRECHTS;
+			setzeOffeneSeiten(ausrichtung);
 		} else if(ausrichtung == Ausrichtung.KREUZUNGRECHTS) {
 			this.ausrichtung = Ausrichtung.KREUZUNGOBEN;
+			setzeOffeneSeiten(ausrichtung);
 		} else {
 			this.ausrichtung = Ausrichtung.KREUZUNGLINKS;
+			setzeOffeneSeiten(ausrichtung);
 		}
 	}
 
+	protected void setzeOffeneSeiten(Ausrichtung ausrichtung) {
+		if(ausrichtung == Ausrichtung.KREUZUNGLINKS) {
+			setObenOffen(true);
+			setUntenOffen(true);
+			setLinksOffen(true);
+			setRechtsOffen(false);
+		} else if (ausrichtung == Ausrichtung.KREUZUNGOBEN){
+			setLinksOffen(true);
+			setRechtsOffen(true);
+			setObenOffen(true);
+			setUntenOffen(false);
+		} else if (ausrichtung == Ausrichtung.KREUZUNGRECHTS) {
+			setLinksOffen(false);
+			setRechtsOffen(true);
+			setObenOffen(true);
+			setUntenOffen(true);
+		} else {
+			setLinksOffen(true);
+			setRechtsOffen(true);
+			setObenOffen(false);
+			setUntenOffen(true);
+		}
+	}
 }

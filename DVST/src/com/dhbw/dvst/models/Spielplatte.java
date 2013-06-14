@@ -11,6 +11,10 @@ public abstract class Spielplatte {
 	protected Spielfigur figur;
 	protected Sehenswuerdigkeit ziel;
 	protected boolean schiebbar;
+	protected boolean obenOffen;
+	protected boolean rechtsOffen;
+	protected boolean untenOffen;
+	protected boolean linksOffen;
 
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
@@ -71,5 +75,37 @@ public abstract class Spielplatte {
 	
 	public boolean isSchiebbar() {
 		return schiebbar;
+	}
+
+	public boolean isObenOffen() {
+		return obenOffen;
+	}
+
+	public void setObenOffen(boolean obenOffen) {
+		this.obenOffen = obenOffen;
+	}
+
+	public boolean isRechtsOffen() {
+		return rechtsOffen;
+	}
+
+	public void setRechtsOffen(boolean rechtsOffen) {
+		this.rechtsOffen = rechtsOffen;
+	}
+
+	public boolean isUntenOffen() {
+		return untenOffen;
+	}
+
+	public void setUntenOffen(boolean untenOffen) {
+		this.untenOffen = untenOffen;
+	}
+
+	public boolean isLinksOffen() {
+		return linksOffen;
+	}
+
+	public void setLinksOffen(boolean linksOffen) {
+		this.linksOffen = linksOffen;
 	}
 }

@@ -61,4 +61,5 @@ Es besteht kein Zugzwang. Klickt man direkt auf seine Spielfigur, bleibt die Fig
     
         <!-- SpielActivity -->
     <string name="err_platte_nicht_schiebbar">Hier darfst du nicht schieben.</string>
+    <string name="err_kein_gueltiger_weg">Da kannst du nicht hin.</string>
 </resources>

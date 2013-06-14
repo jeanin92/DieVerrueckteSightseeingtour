@@ -12,6 +12,7 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.utilities.Fehlermeldung;
@@ -23,6 +24,8 @@ public class SpielActivity extends Activity{
 	private SpielView view;
 	private SpielbrettAdapter brettAdapter;
 	private Spiel spiel = Spiel.getInstance();
+	private Spielplatte angeklicktePlatte;
+	private Spieler aktiverSpieler;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +98,26 @@ public class SpielActivity extends Activity{
 
 		@Override
 		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
-			Spielplatte angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
+			angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
+			//TODO: unterscheiden, ob Platte eingeschoben wird oder Figur gesetzt werden soll
+			
+			
+			//Figur setzen
+			OnClickListener positiv_listener = new OnClickListener() {				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					if(spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
+						new Fehlermeldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
+					} else if (spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
+						spiel.getSpielbrett().figurSetzen(angeklicktePlatte, aktiverSpieler,
+								aktiverSpieler.getSpielfigur().getSpielplatte());
+					}
+				}
+			};
+			new SpielDialog(SpielActivity.this, "Willst du wirklich hierhin?", positiv_listener);
+			
+			
+			//Platte einschieben
 			if(angeklicktePlatte.isSchiebbar()) {
 				spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
 				brettAdapter.notifyDataSetChanged();

@@ -5,10 +5,12 @@ public class Spieler {
 	private String name;
 	private Spielfigur spielfigur;
 	private Sehenswuerdigkeit ziel;
-	
+	private boolean anDerReihe;
+
 	public Spieler(String name, Spielfigur spielfigur) {
 		this.name = name;
 		this.spielfigur = spielfigur;
+		this.anDerReihe = false;
 	}
 	
 	public String toString() {
@@ -29,5 +31,13 @@ public class Spieler {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public boolean isAnDerReihe() {
+		return anDerReihe;
+	}
+
+	public void setAnDerReihe(boolean anDerReihe) {
+		this.anDerReihe = anDerReihe;
 	}
 }
