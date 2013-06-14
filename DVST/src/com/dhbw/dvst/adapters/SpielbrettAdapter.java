@@ -57,7 +57,13 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		platte.setLayoutParams(new LayoutParams(this.plattenHoehe, this.plattenHoehe));
 	    platte.setPadding(0, 0, 0, 0);
 	    centerChildren(platte);
-	    platte.setClickable(false);
+	    if(this.getItem(this.position).isSchiebbar()==false){
+	    	platte.setClickable(true);
+	    }
+	    else{
+	    	platte.setClickable(false);
+	    }
+	    
 		return platte;
 	}
 	

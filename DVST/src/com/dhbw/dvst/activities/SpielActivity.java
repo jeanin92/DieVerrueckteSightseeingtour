@@ -82,12 +82,13 @@ public class SpielActivity extends Activity{
 		}
 
 		@Override
-		public void onSpielplatteAnklicken(int position) {
+		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
 			Spielplatte angeklicktePlatte = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(position);
 			Spiel.getInstance().getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
 			
 			//TODO: set clickable im Layout
 			brettAdapter.notifyDataSetChanged();
+			spielbrett.setAdapter(brettAdapter);
 		}
 	};
 }

@@ -153,7 +153,7 @@ public class Spielbrett {
 	
 	public void spielplatteRechtsEinschieben(int index) {
 		int indexPlatteRaus = index-6;
-		int neuerIndexGeklicktePlatte = index+1;
+		int neuerIndexGeklicktePlatte = index-1;
 		Spielplatte neueAktivePlatte = alleSpielplatten.get(indexPlatteRaus);
 		alleSpielplatten.remove(indexPlatteRaus);
 		
