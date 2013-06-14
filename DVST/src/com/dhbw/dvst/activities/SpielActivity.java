@@ -69,14 +69,14 @@ public class SpielActivity extends Activity{
 
 		@Override
 		public void onNachLinksDrehen(ImageView img_aktive_platte) {
-			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
+			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAktivePlatte();
 			aktiv.dreheSpielplatteNachLinks();
 			img_aktive_platte.setRotation(aktiv.getAusrichtung().getRotation());
 		}
 
 		@Override
 		public void onNachRechtsDrehen(ImageView img_aktive_platte) {
-			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(49);
+			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAktivePlatte();
 			aktiv.dreheSpielplatteNachRechts();
 			img_aktive_platte.setRotation(aktiv.getAusrichtung().getRotation());
 		}
