@@ -1,7 +1,5 @@
 package com.dhbw.dvst.activities;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -12,6 +10,7 @@ import android.widget.ImageView;
 
 import com.dhbw.dvst.R;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
+import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
@@ -22,6 +21,7 @@ public class SpielActivity extends Activity{
 	private ActivityInteraction kommunikation = new ActivityInteraction();
 	private SpielView view;
 	private SpielbrettAdapter brettAdapter;
+	private Spiel spiel = Spiel.getInstance();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +36,24 @@ public class SpielActivity extends Activity{
 
 	protected void setSpielbrettAdapter() {
 		final GridView grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
-		ArrayList<Spielplatte> spielfeldArray = new ArrayList<Spielplatte>();
-		spielfeldArray.addAll(Spiel.getInstance().getSpielbrett().getAlleSpielplatten());
-		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht, R.id.tv_gewaehlter_name, spielfeldArray);
+		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht, R.id.tv_gewaehlter_name, 
+				spiel.getSpielbrett().getAlleSpielplatten());
         grid_spielbrett.setAdapter(brettAdapter);
 	}
 	
 	protected void setBildAktivePlatte(){
-		final ImageView motiv = (ImageView)findViewById(R.id.img_aktive_platte);		
-		int resID = getResources().getIdentifier(Spiel.getInstance().getSpielbrett().getAktivePlatte().getMotivURL(), "drawable", "com.dhbw.dvst");
-		motiv.setImageResource(resID);
+		final ImageView platte = (ImageView)findViewById(R.id.img_aktive_platte);		
+		int resID = getResources().getIdentifier(spiel.getSpielbrett().getAktivePlatte().getMotivURL(), "drawable", "com.dhbw.dvst");
+		platte.setImageResource(resID);
+		platte.setRotation(spiel.getSpielbrett().getAktivePlatte().getAusrichtung().getRotation());
+		
+		Sehenswuerdigkeit ziel = spiel.getSpielbrett().getAktivePlatte().getZiel();
+		if(ziel != null){
+			final ImageView sehenswuerdigkeit = (ImageView)findViewById(R.id.img_sehenswuerdigkeit);
+			resID = getResources().getIdentifier(ziel.getMotivURL(), "drawable", "com.dhbw.dvst");
+			sehenswuerdigkeit.setImageResource(resID);
+		}
+		
 	}
 	
 	private SpielView.ViewListener viewListener = new SpielView.ViewListener() {
@@ -69,26 +77,27 @@ public class SpielActivity extends Activity{
 
 		@Override
 		public void onNachLinksDrehen(ImageView img_aktive_platte) {
-			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAktivePlatte();
+			Spielplatte aktiv = spiel.getSpielbrett().getAktivePlatte();
 			aktiv.dreheSpielplatteNachLinks();
 			img_aktive_platte.setRotation(aktiv.getAusrichtung().getRotation());
 		}
 
 		@Override
 		public void onNachRechtsDrehen(ImageView img_aktive_platte) {
-			Spielplatte aktiv = Spiel.getInstance().getSpielbrett().getAktivePlatte();
+			Spielplatte aktiv = spiel.getSpielbrett().getAktivePlatte();
 			aktiv.dreheSpielplatteNachRechts();
 			img_aktive_platte.setRotation(aktiv.getAusrichtung().getRotation());
 		}
 
 		@Override
 		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
-			Spielplatte angeklicktePlatte = Spiel.getInstance().getSpielbrett().getAlleSpielplatten().get(position);
-			Spiel.getInstance().getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
+			Spielplatte angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
+			spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
 			
 			//TODO: set clickable im Layout
 			brettAdapter.notifyDataSetChanged();
-			spielbrett.setAdapter(brettAdapter);
+			spielbrett.invalidateViews();
+			setBildAktivePlatte();
 		}
 	};
 }

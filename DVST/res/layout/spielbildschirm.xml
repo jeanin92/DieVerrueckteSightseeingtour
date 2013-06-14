@@ -30,32 +30,43 @@
     	android:paddingRight="@dimen/activity_horizontal_margin"
    	 	android:paddingTop="@dimen/activity_vertical_margin" >
             
-        <Button 
+        <ImageButton 
             android:id="@+id/btn_links_drehen"
-            style="?android:attr/buttonStyleSmall"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:layout_alignBaseline="@+id/img_aktive_platte" 
-        	android:text="@string/links_drehen"/>
+        	android:layout_alignBaseline="@+id/aktive_platte" 
+        	android:contentDescription="@string/links_drehen"
+        	android:src="@drawable/pfeil"
+        	android:rotation="180"/>
         
-		<ImageView
-		    android:id="@+id/img_aktive_platte"
-		    android:layout_width="@dimen/dim_platte"
-		    android:layout_height="@dimen/dim_platte"
+        <RelativeLayout 
+            android:id="@+id/aktive_platte"
+            android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
 		    android:layout_alignParentTop="true"
 		    android:layout_centerHorizontal="true"
-		    android:layout_toRightOf="@+id/btn_links_drehen"
-		    android:src="@drawable/ic_launcher"
-		    android:contentDescription="@string/aktive_spielplatte" />
+		    android:layout_toRightOf="@+id/btn_links_drehen">
+            
+            <ImageView
+		    	android:id="@+id/img_aktive_platte"
+		    	android:layout_centerInParent="true"
+		    	android:contentDescription="@string/aktive_spielplatte" />
+            
+            <ImageView
+		    	android:id="@+id/img_sehenswuerdigkeit"
+		    	android:layout_centerInParent="true"
+		    	android:contentDescription="@string/aktive_spielplatte" />
+        </RelativeLayout>
+		
         
-        <Button 
+        <ImageButton 
             android:id="@+id/btn_rechts_drehen"
-            style="?android:attr/buttonStyleSmall"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:layout_toRightOf="@+id/img_aktive_platte"
-        	android:layout_alignBaseline="@+id/img_aktive_platte"
-        	android:text="@string/rechts_drehen" />
+        	android:layout_toRightOf="@+id/aktive_platte"
+        	android:layout_alignBaseline="@+id/aktive_platte"
+        	android:contentDescription="@string/rechts_drehen"
+        	android:src="@drawable/pfeil"/>
         
         <Button
             android:id="@+id/btn_beenden"

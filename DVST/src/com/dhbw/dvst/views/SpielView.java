@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -28,8 +29,8 @@ public class SpielView extends LinearLayout {
 	private ViewListener viewListener;
 	private Button btn_beenden;
 	private Button btn_anleitung;
-	private Button btn_rechts_drehen;
-	private Button btn_links_drehen;
+	private ImageButton btn_rechts_drehen;
+	private ImageButton btn_links_drehen;
 	private ImageView img_aktive_platte;
 	private GridView spielbrett;
 	
@@ -46,8 +47,8 @@ public class SpielView extends LinearLayout {
 		super.onFinishInflate();
 		btn_beenden = (Button)findViewById(R.id.btn_beenden);
 		btn_anleitung = (Button)findViewById(R.id.btn_anleitung);
-		btn_rechts_drehen = (Button)findViewById(R.id.btn_rechts_drehen);
-		btn_links_drehen = (Button)findViewById(R.id.btn_links_drehen);	
+		btn_rechts_drehen = (ImageButton)findViewById(R.id.btn_rechts_drehen);
+		btn_links_drehen = (ImageButton)findViewById(R.id.btn_links_drehen);	
 		img_aktive_platte = (ImageView)findViewById(R.id.img_aktive_platte);
 		spielbrett = (GridView) findViewById(R.id.grid_spielbrett);
 		spielbrett.setVerticalScrollBarEnabled(false);
