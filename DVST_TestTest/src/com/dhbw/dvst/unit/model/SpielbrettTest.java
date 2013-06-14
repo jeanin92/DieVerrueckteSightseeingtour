@@ -213,7 +213,7 @@ public class SpielbrettTest extends TestCase{
 		assertEquals(altePlattePos24, testBrett.getAlleSpielplatten().get(17));
 	}
 	
-	public void testObSpielplatteEinschiebenFehlerWirftWennPlatteNichtZumEinschiebenIst() {
+	public void testObSpielplatteEinschiebenFehlerWirftWennStelleNichtZumEinschiebenIst() {
 		testBrett.fuegeStatischePlattenEin();
 		Spielplatte altePlattePos24 = testBrett.getAlleSpielplatten().get(24);
 		this.testBrett.spielplatteEinschieben(testBrett.getAlleSpielplatten().get(28));
