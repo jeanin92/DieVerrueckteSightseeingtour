@@ -9,6 +9,7 @@ public class GeradenTest extends TestCase {
 
 	private Gerade gerade;
 	private Gerade randomGerade;
+	private Gerade geradeW;
 	
 	public GeradenTest(String name) {
 		super(name);
@@ -17,6 +18,7 @@ public class GeradenTest extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		this.gerade = new Gerade(Ausrichtung.GERADESENKRECHT);
+		this.geradeW = new Gerade(Ausrichtung.GERADEWAAGERECHT);
 		this.randomGerade = new Gerade();
 	}
 	
@@ -26,8 +28,7 @@ public class GeradenTest extends TestCase {
 	
 	public void testObrandomKonstruktorAusrichtungAufGueltigenWertSetzt() {
 		assertTrue(this.randomGerade.getAusrichtung() == Ausrichtung.GERADESENKRECHT
-				|| this.randomGerade.getAusrichtung() == Ausrichtung.GERADEWAAGERECHT);
-		
+				|| this.randomGerade.getAusrichtung() == Ausrichtung.GERADEWAAGERECHT);	
 	}
 	
 	public void testObRandomArrayZweiElementeHat() {
@@ -48,6 +49,21 @@ public class GeradenTest extends TestCase {
 	public void testObgetMotivUrlKorrekteUrlZurueckgibt() {
 		String actual = this.gerade.getMotivURL();
 		assertEquals("gerade", actual);
+	}
+	
+	public void testObSetzeOffeneSeitebeiWaagerechterAusrichtungLinksOffenSetzt() {
+		geradeW.setzeOffeneSeiten();
+		assertEquals(true, geradeW.isLinksOffen());
+	}
+	
+	public void testObSetzeOffeneSeitebeiWaagerechterAusrichtungObenGeschlossenSetzt() {
+		geradeW.setzeOffeneSeiten();
+		assertEquals(false, geradeW.isObenOffen());
+	}
+	
+	public void testObdDreheSenkrechteSpielplatteNachLinksRechtsOffenSetzt() {
+		gerade.dreheSpielplatteNachLinks();
+		assertEquals(true, gerade.isRechtsOffen());
 	}
 	
 	protected void tearDown() throws Exception {

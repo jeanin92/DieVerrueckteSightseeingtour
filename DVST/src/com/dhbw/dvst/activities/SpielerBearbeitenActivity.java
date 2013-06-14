@@ -25,7 +25,7 @@ public class SpielerBearbeitenActivity extends SpielerActivity{
 		setFormspinner();
 	}
 
-	protected void setFormspinner() {
+	public void setFormspinner() {
 		String[] formen = getResources().getStringArray(R.array.figuren);
 		this.spin_form.setSelection(getFormIndex(formen));
 	}

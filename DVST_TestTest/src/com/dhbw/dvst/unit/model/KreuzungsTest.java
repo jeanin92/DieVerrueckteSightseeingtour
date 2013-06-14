@@ -64,6 +64,21 @@ public class KreuzungsTest extends TestCase {
 		assertEquals("kreuzung", actual);
 	}
 	
+	public void testObSetzeOffeneSeitebeiKreuzungLinksAusrichtungLinksOffenSetzt() {
+		kreuzungL.setzeOffeneSeiten();
+		assertEquals(true, kreuzungL.isLinksOffen());
+	}
+	
+	public void testObSetzeOffeneSeitebeiKreuzungObenAusrichtungObenOffenSetzt() {
+		kreuzungO.setzeOffeneSeiten();
+		assertEquals(true, kreuzungO.isObenOffen());
+	}
+	
+	public void testObdDreheKreuzungLinksNachRechtsSpielplatteNachUntenGeschlossenSetzt() {
+		kreuzungL.dreheSpielplatteNachRechts();
+		assertEquals(false, kreuzungL.isUntenOffen());
+	}
+	
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}

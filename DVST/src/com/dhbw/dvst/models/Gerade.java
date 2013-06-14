@@ -15,10 +15,10 @@ public class Gerade extends Spielplatte{
 	public void dreheSpielplatteNachRechts() {
 		if(ausrichtung == Ausrichtung.GERADESENKRECHT) {
 			this.ausrichtung = Ausrichtung.GERADEWAAGERECHT;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else {
 			this.ausrichtung = Ausrichtung.GERADESENKRECHT;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		}
 	}
 	
@@ -33,7 +33,7 @@ public class Gerade extends Spielplatte{
 		this.ausrichtungsArray[1] = Ausrichtung.GERADEWAAGERECHT;
 	}
 	
-	protected void setzeOffeneSeiten(Ausrichtung ausrichtung) {
+	public void setzeOffeneSeiten() {
 		if(ausrichtung == Ausrichtung.GERADESENKRECHT) {
 			setObenOffen(true);
 			setUntenOffen(true);

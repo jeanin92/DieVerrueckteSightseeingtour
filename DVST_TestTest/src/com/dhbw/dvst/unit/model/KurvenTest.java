@@ -68,6 +68,21 @@ public class KurvenTest extends TestCase {
 		assertEquals("kurve", actual);
 	}
 	
+	public void testObSetzeOffeneSeitebeiKurveUntenRechtsAusrichtungUntenOffenSetzt() {
+		kurve.setzeOffeneSeiten();
+		assertEquals(true, kurve.isUntenOffen());
+	}
+	
+	public void testObSetzeOffeneSeitebeiKurveUntenRechtsAusrichtungObenGeschlossenenSetzt() {
+		kurve.setzeOffeneSeiten();
+		assertEquals(false, kurve.isObenOffen());
+	}
+	
+	public void testObdDreheKurveNachLinksSpielplatteNachRechtsGeschlossenSetzt() {
+		kurve.dreheSpielplatteNachRechts();
+		assertEquals(false, kurve.isRechtsOffen());
+	}
+	
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}

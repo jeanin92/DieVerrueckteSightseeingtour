@@ -16,16 +16,16 @@ public class Kurve extends Spielplatte{
 	public void dreheSpielplatteNachRechts() {
 		if(ausrichtung == Ausrichtung.KURVEOBENLINKS) {
 			this.ausrichtung = Ausrichtung.KURVEOBENRECHTS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else if(ausrichtung == Ausrichtung.KURVEOBENRECHTS) {
 			this.ausrichtung = Ausrichtung.KURVEUNTENRECHTS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else if(ausrichtung == Ausrichtung.KURVEUNTENLINKS) {
 			this.ausrichtung = Ausrichtung.KURVEOBENLINKS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else {
 			this.ausrichtung = Ausrichtung.KURVEUNTENLINKS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		}
 	}
 	
@@ -33,16 +33,16 @@ public class Kurve extends Spielplatte{
 	public void dreheSpielplatteNachLinks() {
 		if(ausrichtung == Ausrichtung.KURVEOBENLINKS) {
 			this.ausrichtung = Ausrichtung.KURVEUNTENLINKS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else if(ausrichtung == Ausrichtung.KURVEOBENRECHTS) {
 			this.ausrichtung = Ausrichtung.KURVEOBENLINKS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else if(ausrichtung == Ausrichtung.KURVEUNTENLINKS) {
 			this.ausrichtung = Ausrichtung.KURVEUNTENRECHTS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		} else {
 			this.ausrichtung = Ausrichtung.KURVEOBENRECHTS;
-			setzeOffeneSeiten(ausrichtung);
+			setzeOffeneSeiten();
 		}
 	}
 
@@ -55,7 +55,7 @@ public class Kurve extends Spielplatte{
 		this.ausrichtungsArray[3] = Ausrichtung.KURVEUNTENRECHTS;
 	}
 	
-	protected void setzeOffeneSeiten(Ausrichtung ausrichtung) {
+	public void setzeOffeneSeiten() {
 		if(ausrichtung == Ausrichtung.KURVEOBENLINKS) {
 			setObenOffen(true);
 			setUntenOffen(false);
