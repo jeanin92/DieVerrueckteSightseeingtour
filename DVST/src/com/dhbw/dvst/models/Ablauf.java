@@ -25,5 +25,16 @@ public class Ablauf {
 		this.figurZiehen = false;
 		this.karteZiehen = true;
 	}
-
+	
+	public boolean isFigurZiehen() {
+		return figurZiehen;
+	}
+	
+	public boolean isKarteZiehen() {
+		return karteZiehen;
+	}
+	
+	public boolean isPlatteEinschieben() {
+		return platteEinschieben;
+	}
 }

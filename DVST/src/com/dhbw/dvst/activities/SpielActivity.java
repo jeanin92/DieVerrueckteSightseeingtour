@@ -133,33 +133,36 @@ public class SpielActivity extends Activity{
 		@Override
 		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
 			angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
-			//TODO: unterscheiden, ob Platte eingeschoben wird oder Figur gesetzt werden soll
 			
-			
-			//Figur setzen
-			OnClickListener positiv_listener = new OnClickListener() {				
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					if(spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
-						new Fehlermeldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
-					} else if (spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
-						spiel.getSpielbrett().figurSetzen(angeklicktePlatte, aktiverSpieler,
-								aktiverSpieler.getSpielfigur().getSpielplatte());
+			if(spiel.getAblauf().isFigurZiehen()){
+				//Figur setzen
+				OnClickListener positiv_listener = new OnClickListener() {				
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						if(spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
+							new Fehlermeldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
+						} else if (spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
+							spiel.getSpielbrett().figurSetzen(angeklicktePlatte, aktiverSpieler,
+									aktiverSpieler.getSpielfigur().getSpielplatte());
+							spiel.getAblauf().spielzugFertig();
+							spiel.spielerWechseln();
+						}
 					}
-				}
-			};
-			new SpielDialog(SpielActivity.this, "Willst du wirklich hierhin?", positiv_listener);
-			
-			
-			//Platte einschieben
-			if(angeklicktePlatte.isSchiebbar()) {
-				spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
-				brettAdapter.notifyDataSetChanged();
-				spielbrett.invalidateViews();
-				setBildAktivePlatte();
-			} else {
-				new Fehlermeldung(SpielActivity.this, getString(R.string.err_platte_nicht_schiebbar));
+				};
+				new SpielDialog(SpielActivity.this, "Willst du wirklich hierhin?", positiv_listener);
 			}
+			else if(spiel.getAblauf().isPlatteEinschieben()){
+				//Platte einschieben
+				if(angeklicktePlatte.isSchiebbar()) {
+					spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
+					brettAdapter.notifyDataSetChanged();
+					spielbrett.invalidateViews();
+					setBildAktivePlatte();
+					spiel.getAblauf().platteEingeschoben();
+				} else {
+					new Fehlermeldung(SpielActivity.this, getString(R.string.err_platte_nicht_schiebbar));
+				}
+			}			
 		}
 	};
 }

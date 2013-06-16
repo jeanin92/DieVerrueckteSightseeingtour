@@ -125,5 +125,18 @@ public class Spiel{
 	public Ablauf getAblauf() {
 		return ablauf;
 	}
+	
+	public void spielerWechseln(){
+		Spieler aktuellerSpieler = getSpielerAnDerReihe();
+		aktuellerSpieler.setAnDerReihe(false);
+		int index = spiel.getAlleSpieler().indexOf(aktuellerSpieler);
+		if(index == spiel.getAlleSpieler().size()){
+			index = 0;
+		}
+		else{
+			index++;
+		}
+		spiel.getAlleSpieler().get(index).setAnDerReihe(true);
+	}
 
 }
