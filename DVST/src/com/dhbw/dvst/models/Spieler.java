@@ -6,11 +6,13 @@ public class Spieler {
 	private Spielfigur spielfigur;
 	private Sehenswuerdigkeit ziel;
 	private boolean anDerReihe;
+	private int fortschritt;
 
 	public Spieler(String name, Spielfigur spielfigur) {
 		this.name = name;
 		this.spielfigur = spielfigur;
 		this.anDerReihe = false;
+		this.fortschritt = 0;
 	}
 	
 	public String toString() {
@@ -39,5 +41,9 @@ public class Spieler {
 
 	public void setAnDerReihe(boolean anDerReihe) {
 		this.anDerReihe = anDerReihe;
+	}
+	
+	public int getFortschritt() {
+		return fortschritt;
 	}
 }

@@ -1,6 +1,7 @@
 package com.dhbw.dvst.models;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Stack;
 
 public class Spiel{
@@ -49,6 +50,7 @@ public class Spiel{
 		spielbrett.verteileSpielfiguren(alleSpieler);
 		spielbrett.mischeKartenstapel(kartenstapel);
 		spielbrett.verteileSehenswuerdigkeiten(kartenstapel);
+		auslosen();
 	}
 	
 	/**
@@ -64,9 +66,15 @@ public class Spiel{
 		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("grün", "green"), "motorbike_green"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("grün", "green"), "car_green"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("grün", "green"), "bus_green"));
-		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("blau", "blue"), "mototrbike_blue"));
+		this.alleSpielfiguren.add(new Spielfigur(new Form("motorrad", "motorbike"), new Farbe("blau", "blue"), "motorbike_blue"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("auto", "car"), new Farbe("blau", "blue"), "car_blue"));
 		this.alleSpielfiguren.add(new Spielfigur(new Form("bus", "bus"), new Farbe("blau", "blue"), "bus_blue"));
+	}
+	
+	public void auslosen(){
+		Random spielerRandomizer = new Random();
+		int indexErster = spielerRandomizer.nextInt(alleSpieler.size());
+		alleSpieler.get(indexErster).setAnDerReihe(true);
 	}
 	
 	public void spielZugAusfuehren() {

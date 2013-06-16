@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.adapters.FortschrittArrayAdapter;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
@@ -36,13 +38,21 @@ public class SpielActivity extends Activity{
 		setContentView(view);
 		setSpielbrettAdapter();
 		setBildAktivePlatte();
+		setFortschrittsAnzeigeAdapter();
 	}
 
 	protected void setSpielbrettAdapter() {
 		final GridView grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
-		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht, R.id.tv_gewaehlter_name, 
+		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht ,R.id.tv_gewaehlter_name, 
 				spiel.getSpielbrett().getAlleSpielplatten());
         grid_spielbrett.setAdapter(brettAdapter);
+	}
+	
+	protected void setFortschrittsAnzeigeAdapter(){
+		final ListView lv_fortschritt = (ListView)findViewById(R.id.lv_fortschritt);
+		FortschrittArrayAdapter fortschrittAdapter = new FortschrittArrayAdapter(this, R.id.tv_gewaehlter_name, 
+				spiel.getAlleSpieler());
+        lv_fortschritt.setAdapter(fortschrittAdapter);
 	}
 	
 	protected void setBildAktivePlatte(){

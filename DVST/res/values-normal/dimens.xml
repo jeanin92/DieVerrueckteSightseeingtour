@@ -17,7 +17,7 @@
     
     <!-- Spielbildschirm -->
     <dimen name="dim_platte">45dp</dimen>
-    <dimen name="dim_figur">20dp</dimen>
+    <dimen name="dim_figur">30dp</dimen>
     <dimen name="dim_sight">30dp</dimen>
 
 </resources>

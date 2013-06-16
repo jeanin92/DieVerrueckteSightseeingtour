@@ -26,8 +26,7 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
      * @param textViewId ID des Textviews in der Layout-Datei
      * @param spielbrett Listenobjekte
      */
-    public SpielbrettAdapter(Activity activity, int resourceId, int textViewId,
-        ArrayList<Spielplatte> spielbrett) {
+    public SpielbrettAdapter(Activity activity, int resourceId, int textViewId, ArrayList<Spielplatte> spielbrett) {
     	super(activity, resourceId, textViewId, spielbrett);
     	this.activity = activity;
     	DisplayMetrics metrics = activity.getResources().getDisplayMetrics(); 
@@ -90,8 +89,8 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		ImageView motiv = new ImageView(activity);
 		int resID = activity.getResources().getIdentifier(this.getItem(this.position).getZiel().getMotivURL(), "drawable", "com.dhbw.dvst");
 		motiv.setImageResource(resID);		
-		int dimens = activity.getResources().getDimensionPixelOffset(R.dimen.dim_sight);
-		motiv.setLayoutParams(new LayoutParams(dimens, dimens));
+		motiv.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		motiv.setPadding(5, 5, 5, 5);
 		return motiv;
 	}
 	
