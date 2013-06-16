@@ -18,6 +18,7 @@ public class Spiel{
 	private int spielmodus;
 	private Spielbrett spielbrett;
 	private Stack<Sehenswuerdigkeit> kartenstapel;
+	private Ablauf ablauf;
 	private static Spiel spiel = null;
 	
 	public static Spiel getInstance(){
@@ -40,6 +41,7 @@ public class Spiel{
 		initialisiereSpielfiguren();
 		alleSpieler = new ArrayList<Spieler>(6);
 		kartenstapel = new Stack<Sehenswuerdigkeit>();
+		ablauf = new Ablauf();
 	}
 
 	public void initialisiereSpielbrett() {
@@ -77,6 +79,11 @@ public class Spiel{
 		alleSpieler.get(indexErster).setAnDerReihe(true);
 	}
 	
+	public void karteZuweisen(){
+		Spieler spieler = getSpielerAnDerReihe();
+		spieler.setZiel(kartenstapel.pop());
+	}
+	
 	public void spielZugAusfuehren() {
 	}
 	
@@ -104,6 +111,19 @@ public class Spiel{
 
 	public void setSpielmodus(int spielmodus) {
 		this.spielmodus = spielmodus;
+	}
+	
+	public Spieler getSpielerAnDerReihe(){
+		for (Spieler spieler : alleSpieler) {
+			if(spieler.isAnDerReihe()){
+				return spieler;
+			}
+		}
+		return null;
+	}
+	
+	public Ablauf getAblauf() {
+		return ablauf;
 	}
 
 }

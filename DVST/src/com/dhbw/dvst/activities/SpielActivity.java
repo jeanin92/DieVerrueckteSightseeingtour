@@ -1,6 +1,7 @@
 package com.dhbw.dvst.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.utilities.Fehlermeldung;
+import com.dhbw.dvst.utilities.KarteZiehenDialog;
 import com.dhbw.dvst.utilities.SpielDialog;
 import com.dhbw.dvst.views.SpielView;
 
@@ -39,6 +41,8 @@ public class SpielActivity extends Activity{
 		setSpielbrettAdapter();
 		setBildAktivePlatte();
 		setFortschrittsAnzeigeAdapter();
+		
+		openKartenAnkuendigung();
 	}
 
 	protected void setSpielbrettAdapter() {
@@ -71,6 +75,26 @@ public class SpielActivity extends Activity{
 			sehenswuerdigkeit.setImageResource(android.R.color.transparent);
 		}
 		
+	}
+	
+	private void openKartenAnkuendigung(){
+		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+		dialog.setMessage(getString(R.string.anderReihe)+" "+spiel.getSpielerAnDerReihe()+"!");
+		dialog.setNeutralButton(R.string.karteZiehen, new OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				spiel.karteZuweisen();
+				dialog.cancel();
+				new KarteZiehenDialog(SpielActivity.this, new OnClickListener() {					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						spiel.getAblauf().karteGezogen();						
+					}
+				});
+			}
+		});
+		dialog.show();
 	}
 	
 	private SpielView.ViewListener viewListener = new SpielView.ViewListener() {

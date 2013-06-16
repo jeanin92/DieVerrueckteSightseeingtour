@@ -81,16 +81,14 @@
         	android:layout_height="wrap_content"
         	android:layout_below="@+id/aktive_platte"
         	android:layout_marginTop="@dimen/margin_top_main"
-        	android:textAppearance="@android:style/TextAppearance.Medium"
+        	android:textAppearance="@android:style/TextAppearance.Small"
         	android:text="@string/fortschritt"/>
         
         <ListView 
             android:id="@+id/lv_fortschritt"
         	android:layout_width="match_parent"
         	android:layout_height="wrap_content"
-        	android:layout_below="@+id/tv_fortschritt"
-        	android:layout_marginTop="@dimen/margin_top_main"
-        	/>
+        	android:layout_below="@+id/tv_fortschritt"/>
         
         <Button
             android:id="@+id/btn_beenden"

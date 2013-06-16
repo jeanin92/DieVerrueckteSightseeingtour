@@ -46,4 +46,12 @@ public class Spieler {
 	public int getFortschritt() {
 		return fortschritt;
 	}
+	
+	public Sehenswuerdigkeit getZiel() {
+		return ziel;
+	}
+	
+	public void setZiel(Sehenswuerdigkeit ziel) {
+		this.ziel = ziel;
+	}
 }

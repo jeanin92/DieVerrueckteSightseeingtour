@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.Space;
 import android.widget.TextView;
 
 import com.dhbw.dvst.R;
@@ -45,8 +44,7 @@ public class FortschrittArrayAdapter extends ArrayAdapter<Spieler> {
 
 	private View fillListViewItem() {
 		LinearLayout listItem = new LinearLayout(activity);
-	    listItem.addView(getSpielerName()); 
-	    listItem.addView(new Space(activity));
+	    listItem.addView(getSpielerName());
 	    listItem.addView(getFortschritt());
 	    return listItem;
 	}
@@ -60,13 +58,15 @@ public class FortschrittArrayAdapter extends ArrayAdapter<Spieler> {
 	    else{
 	    	content.setSpan(new StyleSpan(Typeface.NORMAL), 0, content.length(), 0);
 	    }		
-	    textView.setText(content);	   
+	    textView.setText(content);
+	    textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0.5f));
 	    return textView;
 	}
 	
 	private View getFortschritt(){
 		TextView textView = new TextView(activity);
 	    textView.setText(activity.getString(R.string.besucht)+": "+getItem(this.position).getFortschritt());
+	    textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0.5f));
 	    return textView;
 	}
 

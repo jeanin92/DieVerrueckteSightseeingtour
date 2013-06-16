@@ -52,6 +52,11 @@
     <string name="fortschritt">progress</string>
     <string name="besucht">visited</string>
     
+    <!-- karteziehenDialog -->
+    <string name="naechstesZiel">Your next target is:</string>
+    <string name="anderReihe">Now it is your turn</string>
+    <string name="karteZiehen">pick a sight</string>
+    
     <!-- SpielActivity -->
     <string name="err_platte_nicht_schiebbar">You cannot move this tile.</string>
     <string name="err_kein_gueltiger_weg">You cannot go there.</string>
