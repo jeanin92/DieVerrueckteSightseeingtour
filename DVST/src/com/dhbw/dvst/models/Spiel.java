@@ -130,7 +130,7 @@ public class Spiel{
 		Spieler aktuellerSpieler = getSpielerAnDerReihe();
 		aktuellerSpieler.setAnDerReihe(false);
 		int index = spiel.getAlleSpieler().indexOf(aktuellerSpieler);
-		if(index == spiel.getAlleSpieler().size()){
+		if(index == spiel.getAlleSpieler().size()-1){
 			index = 0;
 		}
 		else{
