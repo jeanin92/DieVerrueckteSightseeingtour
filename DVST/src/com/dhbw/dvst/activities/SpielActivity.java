@@ -21,6 +21,7 @@ import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.utilities.Fehlermeldung;
 import com.dhbw.dvst.utilities.KarteZiehenDialog;
 import com.dhbw.dvst.utilities.SpielDialog;
+import com.dhbw.dvst.utilities.SpielplattenEinschieber;
 import com.dhbw.dvst.views.SpielView;
 
 public class SpielActivity extends Activity{
@@ -52,13 +53,6 @@ public class SpielActivity extends Activity{
         grid_spielbrett.setAdapter(brettAdapter);
 	}
 	
-	protected void setFortschrittsAnzeigeAdapter(){
-		final ListView lv_fortschritt = (ListView)findViewById(R.id.lv_fortschritt);
-		FortschrittArrayAdapter fortschrittAdapter = new FortschrittArrayAdapter(this, R.id.tv_gewaehlter_name, 
-				spiel.getAlleSpieler());
-        lv_fortschritt.setAdapter(fortschrittAdapter);
-	}
-	
 	protected void setBildAktivePlatte(){
 		final ImageView platte = (ImageView)findViewById(R.id.img_aktive_platte);		
 		int resID = getResources().getIdentifier(spiel.getSpielbrett().getAktivePlatte().getMotivURL(), "drawable", "com.dhbw.dvst");
@@ -73,8 +67,14 @@ public class SpielActivity extends Activity{
 		}
 		else{
 			sehenswuerdigkeit.setImageResource(android.R.color.transparent);
-		}
-		
+		}	
+	}
+	
+	protected void setFortschrittsAnzeigeAdapter(){
+		final ListView lv_fortschritt = (ListView)findViewById(R.id.lv_fortschritt);
+		FortschrittArrayAdapter fortschrittAdapter = new FortschrittArrayAdapter(this, R.id.tv_gewaehlter_name, 
+				spiel.getAlleSpieler());
+        lv_fortschritt.setAdapter(fortschrittAdapter);
 	}
 	
 	private void openKartenAnkuendigung(){
@@ -154,10 +154,13 @@ public class SpielActivity extends Activity{
 			else if(spiel.getAblauf().isPlatteEinschieben()){
 				//Platte einschieben
 				if(angeklicktePlatte.isSchiebbar()) {
-					spiel.getSpielbrett().spielplatteEinschieben(angeklicktePlatte);
+					SpielplattenEinschieber schieber = new SpielplattenEinschieber();
+					schieber.spielplatteEinschieben(angeklicktePlatte);
+					
 					brettAdapter.notifyDataSetChanged();
 					spielbrett.invalidateViews();
 					setBildAktivePlatte();
+					
 					spiel.getAblauf().platteEingeschoben();
 				} else {
 					new Fehlermeldung(SpielActivity.this, getString(R.string.err_platte_nicht_schiebbar));
