@@ -13,6 +13,9 @@ public class SpielplattenEinschieber {
 	private Spielbrett spielbrett;
 	
 	public SpielplattenEinschieber() {
+	}
+
+	public void initSpielplattenEinschieber() {
 		spiel = Spiel.getInstance();
 		spielbrett = spiel.getSpielbrett();
 		alleSpielplatten = spielbrett.getAlleSpielplatten();

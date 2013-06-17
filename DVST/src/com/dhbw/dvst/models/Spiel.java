@@ -1,6 +1,8 @@
 package com.dhbw.dvst.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Stack;
 
@@ -15,7 +17,6 @@ public class Spiel{
 	
 	private ArrayList<Spielfigur> alleSpielfiguren;
 	private ArrayList<Spieler> alleSpieler;
-	private int spielmodus;
 	private Spielbrett spielbrett;
 	private Stack<Sehenswuerdigkeit> kartenstapel;
 	private Ablauf ablauf;
@@ -50,7 +51,7 @@ public class Spiel{
 		spielbrett.fuegeStatischePlattenEin();
 		spielbrett.setSchiebbarePlatten();
 		spielbrett.verteileSpielfiguren(alleSpieler);
-		spielbrett.mischeKartenstapel(kartenstapel);
+		mischeKartenstapel();
 		spielbrett.verteileSehenswuerdigkeiten(kartenstapel);
 		auslosen();
 	}
@@ -110,7 +111,11 @@ public class Spiel{
 	}
 
 	public void setSpielmodus(int spielmodus) {
-		this.spielmodus = spielmodus;
+	}
+	
+	public void mischeKartenstapel(){
+		kartenstapel.addAll(Arrays.asList(Sehenswuerdigkeit.values()));
+		Collections.shuffle(kartenstapel);
 	}
 	
 	public Spieler getSpielerAnDerReihe(){

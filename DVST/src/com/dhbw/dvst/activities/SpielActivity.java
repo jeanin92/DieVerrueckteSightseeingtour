@@ -21,6 +21,7 @@ import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.utilities.Fehlermeldung;
 import com.dhbw.dvst.utilities.KarteZiehenDialog;
 import com.dhbw.dvst.utilities.SpielDialog;
+import com.dhbw.dvst.utilities.SpielfigurSetzer;
 import com.dhbw.dvst.utilities.SpielplattenEinschieber;
 import com.dhbw.dvst.views.SpielView;
 
@@ -139,10 +140,12 @@ public class SpielActivity extends Activity{
 				OnClickListener positiv_listener = new OnClickListener() {				
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						if(spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
+						SpielfigurSetzer setzer = new SpielfigurSetzer();
+						setzer.initSpielfigurSetzer();
+						if(setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
 							new Fehlermeldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
-						} else if (spiel.getSpielbrett().figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
-							spiel.getSpielbrett().figurSetzen(angeklicktePlatte, aktiverSpieler,
+						} else if (setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
+							setzer.figurSetzen(angeklicktePlatte, aktiverSpieler,
 									aktiverSpieler.getSpielfigur().getSpielplatte());
 							spiel.getAblauf().spielzugFertig();
 							spiel.spielerWechseln();
@@ -155,6 +158,7 @@ public class SpielActivity extends Activity{
 				//Platte einschieben
 				if(angeklicktePlatte.isSchiebbar()) {
 					SpielplattenEinschieber schieber = new SpielplattenEinschieber();
+					schieber.initSpielplattenEinschieber();
 					schieber.spielplatteEinschieben(angeklicktePlatte);
 					
 					brettAdapter.notifyDataSetChanged();
