@@ -58,6 +58,10 @@ public class SpielfigurSetzer {
 	
 	private Spielplatte getPlatteOben(Spielplatte next) {
 		int indexOfNext = alleSpielplatten.indexOf(next);
+		//erste Reihe
+		if(indexOfNext < 7) {
+			return null;
+		}
 		Spielplatte platteOben = alleSpielplatten.get(indexOfNext-7);
 		if(platteOben.isUntenOffen()) {
 			return platteOben;
@@ -67,6 +71,10 @@ public class SpielfigurSetzer {
 	
 	private Spielplatte getPlatteUnten(Spielplatte next) {
 		int indexOfNext = alleSpielplatten.indexOf(next);
+		//letzte Reihe
+		if(indexOfNext > 41) {
+			return null;
+		}
 		Spielplatte platteUnten = alleSpielplatten.get(indexOfNext+7);
 		if(platteUnten.isObenOffen()) {
 			return platteUnten;
@@ -76,6 +84,10 @@ public class SpielfigurSetzer {
 	
 	private Spielplatte getPlatteRechts(Spielplatte next) {
 		int indexOfNext = alleSpielplatten.indexOf(next);
+		//rechte Reihe
+		if(indexOfNext % 7 == 1) {
+			return null;
+		}
 		Spielplatte platteRechts = alleSpielplatten.get(indexOfNext+1);
 		if(platteRechts.isLinksOffen()) {
 			return platteRechts;
@@ -85,6 +97,10 @@ public class SpielfigurSetzer {
 	
 	private Spielplatte getPlatteLinks(Spielplatte next) {
 		int indexOfNext = alleSpielplatten.indexOf(next);
+		//linke Reihe
+		if(indexOfNext % 7 == 0) {
+			return null;
+		}
 		Spielplatte platteLinks =  alleSpielplatten.get(indexOfNext-1);
 		if(platteLinks.isRechtsOffen()) {
 			return platteLinks;
