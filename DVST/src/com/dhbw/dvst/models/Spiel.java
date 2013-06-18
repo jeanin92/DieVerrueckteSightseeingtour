@@ -92,6 +92,7 @@ public class Spiel{
 			return false;
 		}
 		else if(zielPlatte.getZiel().equals(spiel.getSpielerAnDerReihe().getZiel())){
+			zielPlatte.setZiel(null);
 			spiel.getSpielerAnDerReihe().setZiel(null);
 			return true;
 		}

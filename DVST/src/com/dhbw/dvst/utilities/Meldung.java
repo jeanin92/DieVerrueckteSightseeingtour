@@ -5,6 +5,7 @@ import com.dhbw.dvst.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 
 public class Meldung {
 
@@ -20,6 +21,14 @@ public class Meldung {
 				dialog.cancel();											
 			}
 		});
+		AlertDialog alert = builder.create();
+		alert.show();
+	}
+	
+	public Meldung(Activity activity, String nachricht, OnClickListener listener) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		builder.setMessage(nachricht);
+		builder.setNegativeButton(R.string.close, listener);
 		AlertDialog alert = builder.create();
 		alert.show();
 	}
