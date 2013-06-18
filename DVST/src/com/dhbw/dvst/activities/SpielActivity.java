@@ -134,7 +134,8 @@ public class SpielActivity extends Activity{
 
 		@Override
 		public void onSpielplatteAnklicken(int position) {
-			angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
+			angeklicktePlatte = (Spielplatte) grid_spielbrett.getItemAtPosition(position);
+			//angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
 			
 			if(spiel.getAblauf().isFigurZiehen()){
 				
