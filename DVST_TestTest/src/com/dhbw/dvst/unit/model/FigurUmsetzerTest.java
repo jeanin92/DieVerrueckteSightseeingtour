@@ -31,21 +31,21 @@ public class FigurUmsetzerTest extends TestCase{
 		testBrett.fuelleLosesSpielplattenArray();
 	}
 	
-	public void testObFigurAufSpielbrettUmsetzenFigurKorrektSetzt() {
-		testBrett.fuegeStatischePlattenEin();
-		Spielfigur figur = new Spielfigur(new Form("auto", "car"), new Farbe("gelb", "yellow"), "car_yellow");
-		this.testBrett.getAktivePlatte().setFigur(figur);
-		this.testBrett.figurSetzen(1);
-		assertEquals(figur, this.testBrett.getAlleSpielplatten().get(1).getFigur());
-	}
-	
-	public void testObFigurUmsetzenFigurAufAktiverPlatteLoescht() {
-		testBrett.fuegeStatischePlattenEin();
-		this.testBrett.getAktivePlatte().setFigur(
-				new Spielfigur(new Form("auto", "car"), new Farbe("gelb", "yellow"), "car_yellow"));
-		this.testBrett.figurUmsetzen(1);
-		assertNull(this.testBrett.getAlleSpielplatten().get(48).getFigur());
-	}
+//	public void testObFigurAufSpielbrettUmsetzenFigurKorrektSetzt() {
+//		testBrett.fuegeStatischePlattenEin();
+//		Spielfigur figur = new Spielfigur(new Form("auto", "car"), new Farbe("gelb", "yellow"), "car_yellow");
+//		this.testBrett.getAktivePlatte().setFigur(figur);
+//		this.testBrett.figurSetzen(1);
+//		assertEquals(figur, this.testBrett.getAlleSpielplatten().get(1).getFigur());
+//	}
+//	
+//	public void testObFigurUmsetzenFigurAufAktiverPlatteLoescht() {
+//		testBrett.fuegeStatischePlattenEin();
+//		this.testBrett.getAktivePlatte().setFigur(
+//				new Spielfigur(new Form("auto", "car"), new Farbe("gelb", "yellow"), "car_yellow"));
+//		this.testBrett.figurUmsetzen(1);
+//		assertNull(this.testBrett.getAlleSpielplatten().get(48).getFigur());
+//	}
 	
 	protected void tearDown() throws Exception {
 		super.tearDown();
