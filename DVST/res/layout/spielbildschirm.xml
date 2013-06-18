@@ -39,7 +39,7 @@
         	android:layout_alignBaseline="@+id/aktive_platte" 
         	android:contentDescription="@string/links_drehen"
         	android:src="@drawable/pfeil"
-        	android:rotation="180"/>
+        	android:scaleX="-1"/>
         
         <RelativeLayout 
             android:id="@+id/aktive_platte"

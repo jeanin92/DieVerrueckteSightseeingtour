@@ -61,6 +61,7 @@ Es besteht kein Zugzwang. Klickt man direkt auf seine Spielfigur, bleibt die Fig
     <string name="fortschritt">Fortschritt</string>
     <string name="besucht">besucht</string>
     <string name="ziel_erreicht">Ziel erreicht</string>
+    <string name="gewonnen">hat gewonnen!</string>
     
     <!-- karteziehenDialog -->
     <string name="naechstesZiel">Dein Ziel ist:</string>

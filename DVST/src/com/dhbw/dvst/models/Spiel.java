@@ -21,6 +21,7 @@ public class Spiel{
 	private Stack<Sehenswuerdigkeit> kartenstapel;
 	private Ablauf ablauf;
 	private static Spiel spiel = null;
+	private int maxFortschritt;
 	
 	public static Spiel getInstance(){
 		if(spiel==null){
@@ -54,6 +55,7 @@ public class Spiel{
 		mischeKartenstapel();
 		spielbrett.verteileSehenswuerdigkeiten(kartenstapel);
 		auslosen();
+		maxFortschrittFestlegen();
 	}
 	
 	/**
@@ -78,6 +80,10 @@ public class Spiel{
 		Random spielerRandomizer = new Random();
 		int indexErster = spielerRandomizer.nextInt(alleSpieler.size());
 		alleSpieler.get(indexErster).setAnDerReihe(true);
+	}
+	
+	private void maxFortschrittFestlegen(){
+		maxFortschritt = (int)Math.floor(24/alleSpieler.size());
 	}
 	
 	public void karteZuweisen(){
@@ -141,6 +147,10 @@ public class Spiel{
 	
 	public Ablauf getAblauf() {
 		return ablauf;
+	}
+	
+	public int getMaxFortschritt() {
+		return maxFortschritt;
 	}
 	
 	public void spielerWechseln(){
