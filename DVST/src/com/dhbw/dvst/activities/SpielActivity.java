@@ -161,12 +161,23 @@ public class SpielActivity extends Activity{
 								aktiverSpieler.setZiel(null);
 								aktiverSpieler.inkrementFortschritt();
 								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht), new OnClickListener() {
-									
 									@Override
 									public void onClick(DialogInterface dialog, int which) {
 										dialog.cancel();
-										spiel.spielerWechseln();
-										openKartenAnkuendigung();																				
+										if(aktiverSpieler.getFortschritt()==spiel.getMaxFortschritt()){
+											new Meldung(SpielActivity.this, aktiverSpieler.toString()+" "+getString(R.string.gewonnen), new OnClickListener() {
+												@Override
+												public void onClick(DialogInterface dialog, int which) {
+													Spiel.resetInstance();
+													dialog.cancel();
+													kommunikation.navigieren(SpielActivity.this, ModusActivity.class);
+												}
+											});
+										}
+										else{
+											spiel.spielerWechseln();
+											openKartenAnkuendigung();
+										}																														
 									}
 								});
 							}
