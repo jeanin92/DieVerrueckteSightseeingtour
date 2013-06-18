@@ -1,8 +1,6 @@
 package com.dhbw.dvst.utilities;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spieler;
@@ -12,6 +10,7 @@ public class SpielfigurSetzer {
 
 	private ArrayList<Spielplatte> alleSpielplatten;
 	private Spiel spiel;
+	private ArrayList<Spielplatte> erreichbarePlatten;
 
 	public SpielfigurSetzer() {
 	}
@@ -21,18 +20,17 @@ public class SpielfigurSetzer {
 		alleSpielplatten = spiel.getSpielbrett().getAlleSpielplatten();
 	}
 	
-	public boolean figurKannGesetztWerden(Spielplatte zielPlatte, Spieler spieler) {
-		HashSet<Spielplatte> erreichbarePlatten = new HashSet<Spielplatte>();
+	public boolean figurKannGesetztWerden(Spielplatte zielPlatte, Spieler spieler) {		
 		Spielplatte startPlatte = spieler.getSpielfigur().getSpielplatte();
+		if(startPlatte.equals(zielPlatte)){
+			return true;
+		}
+		erreichbarePlatten = new ArrayList<Spielplatte>();
 		erreichbarePlatten.add(startPlatte);
 		
-		Iterator<Spielplatte> iterator = erreichbarePlatten.iterator();
-		Spielplatte next;
 		
-		while(iterator.hasNext()) {
-			next = iterator.next();
-			
-			holeNachbarPlatten(erreichbarePlatten, next);
+		for (int i = 0; i < erreichbarePlatten.size(); i++) {			
+			holeNachbarPlatten(erreichbarePlatten.get(i));
 			
 			if(erreichbarePlatten.contains(zielPlatte)) {
 				return true;
@@ -41,18 +39,24 @@ public class SpielfigurSetzer {
 		return false;
 	}
 	
-	protected void holeNachbarPlatten(HashSet<Spielplatte> erreichbarePlatten, Spielplatte next) {
-		if(next.isLinksOffen() && getPlatteLinks(next) != null) {
-				erreichbarePlatten.add(getPlatteLinks(next));
+	protected void holeNachbarPlatten(Spielplatte zuPruefendePlatte) {
+		if(zuPruefendePlatte.isLinksOffen() && (getPlatteLinks(zuPruefendePlatte) != null)) {
+			erreichbarePlatteEinfuegen(getPlatteLinks(zuPruefendePlatte));				
 		}
-		if (next.isObenOffen() && getPlatteOben(next) != null) {
-				erreichbarePlatten.add(getPlatteOben(next));
+		if (zuPruefendePlatte.isObenOffen() && (getPlatteOben(zuPruefendePlatte) != null)) {
+			erreichbarePlatteEinfuegen(getPlatteOben(zuPruefendePlatte));
 		}
-		if (next.isUntenOffen() && getPlatteUnten(next) != null) {
-				erreichbarePlatten.add(getPlatteUnten(next));
+		if (zuPruefendePlatte.isUntenOffen() && (getPlatteUnten(zuPruefendePlatte) != null)) {
+			erreichbarePlatteEinfuegen(getPlatteUnten(zuPruefendePlatte));
 		}
-		if (next.isRechtsOffen() && getPlatteRechts(next) != null) {
-				erreichbarePlatten.add(getPlatteRechts(next));
+		if (zuPruefendePlatte.isRechtsOffen() && (getPlatteRechts(zuPruefendePlatte) != null)) {
+			erreichbarePlatteEinfuegen(getPlatteRechts(zuPruefendePlatte));
+		}
+	}
+	
+	private void erreichbarePlatteEinfuegen(Spielplatte einzufuegendePlatte){
+		if(!erreichbarePlatten.contains(einzufuegendePlatte)){
+			erreichbarePlatten.add(einzufuegendePlatte);
 		}
 	}
 	
@@ -108,10 +112,9 @@ public class SpielfigurSetzer {
 		return null;
 	}
 	
-	public void figurSetzen(Spielplatte zielPlatte, Spieler spieler,
-			Spielplatte startPlatte) {
-		spieler.getSpielfigur().setSpielplatte(zielPlatte);
+	public void figurSetzen(Spielplatte zielPlatte, Spieler spieler) {
+		spieler.getSpielfigur().getSpielplatte().setFigur(null);
+		spieler.getSpielfigur().setSpielplatte(zielPlatte);		
 		zielPlatte.setFigur(spieler.getSpielfigur());
-		startPlatte.setFigur(null);
 	}
 }

@@ -51,11 +51,12 @@
     <string name="aktive_spielplatte">active</string>
     <string name="fortschritt">progress</string>
     <string name="besucht">visited</string>
+    <string name="ziel_erreicht">goal reached</string>
     
     <!-- karteziehenDialog -->
-    <string name="naechstesZiel">Your next target is:</string>
+    <string name="naechstesZiel">Your target is:</string>
     <string name="anderReihe">Now it is your turn</string>
-    <string name="karteZiehen">pick a sight</string>
+    <string name="karteZiehen">show sight</string>
     
     <!-- SpielActivity -->
     <string name="err_platte_nicht_schiebbar">You cannot move this tile.</string>

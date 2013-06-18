@@ -6,17 +6,17 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
-public class Fehlermeldung {
+public class Meldung {
 
 	protected boolean gedrueckterButton = false;
 
-	public Fehlermeldung(Activity activity, String fehler) {
+	public Meldung(Activity activity, String nachricht) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		builder.setMessage(fehler);
+		builder.setMessage(nachricht);
 		builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Fehlermeldung.this.gedrueckterButton  = false;
+				Meldung.this.gedrueckterButton  = false;
 				dialog.cancel();											
 			}
 		});

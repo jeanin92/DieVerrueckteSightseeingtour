@@ -19,6 +19,7 @@ public abstract class Spielplatte {
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
 		this.ausrichtung = randomizeAusrichtung();
+		setzeOffeneSeiten();
 		this.schiebbar = false;
 		this.figur = null;
 	}
@@ -26,6 +27,7 @@ public abstract class Spielplatte {
 	public Spielplatte(Ausrichtung ausrichtung) {
 		fuelleAusrichtungsArray();
 		this.ausrichtung = ausrichtung;
+		setzeOffeneSeiten();
 		this.schiebbar = false;
 		this.figur = null;
 	}
@@ -48,6 +50,7 @@ public abstract class Spielplatte {
 	
 	public abstract void dreheSpielplatteNachLinks();
 	public abstract void dreheSpielplatteNachRechts();
+	public abstract void setzeOffeneSeiten();
 
 	public String getMotivURL() {
 		return motivURL;

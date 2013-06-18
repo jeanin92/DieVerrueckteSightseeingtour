@@ -10,7 +10,7 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.adapters.PlayerListArrayAdapter;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.utilities.ActivityInteraction;
-import com.dhbw.dvst.utilities.Fehlermeldung;
+import com.dhbw.dvst.utilities.Meldung;
 import com.dhbw.dvst.views.SpielerUebersichtView;
 
 public class SpielerUebersichtActivity extends Activity {
@@ -51,7 +51,7 @@ public class SpielerUebersichtActivity extends Activity {
 		@Override
 		public void onNeuerSpieler() {
 			if(spiel.getAlleSpieler().size() == 6) {
-        		new Fehlermeldung(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
+        		new Meldung(SpielerUebersichtActivity.this, getString(R.string.err_max_spieleranzahl));
             	}
         	else {
         		kommunikation.navigieren(SpielerUebersichtActivity.this, SpielerAnlegenActivity.class);
@@ -67,7 +67,7 @@ public class SpielerUebersichtActivity extends Activity {
 		@Override
 		public void onSpielStarten() {
 			if(spiel.getAlleSpieler().size()<2){
-				new Fehlermeldung(SpielerUebersichtActivity.this, getString(R.string.err_falsche_Spieleranzahl));
+				new Meldung(SpielerUebersichtActivity.this, getString(R.string.err_falsche_Spieleranzahl));
 				return;
 			}
 			spiel.initialisiereSpielbrett();

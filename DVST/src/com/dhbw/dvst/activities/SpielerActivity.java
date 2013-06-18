@@ -12,7 +12,7 @@ import com.dhbw.dvst.R;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielfigur;
 import com.dhbw.dvst.utilities.ActivityInteraction;
-import com.dhbw.dvst.utilities.Fehlermeldung;
+import com.dhbw.dvst.utilities.Meldung;
 import com.dhbw.dvst.utilities.SpinnerBuilder;
 import com.dhbw.dvst.views.SpielerView;
 
@@ -62,7 +62,7 @@ public abstract class SpielerActivity extends Activity {
 				et_name.setError(getString(R.string.err_eingabe_leer));
         	} 
         	else if(selectedFarbe == null || selectedForm == null){
-        		new Fehlermeldung(SpielerActivity.this, getString(R.string.err_nichts_selektiert));
+        		new Meldung(SpielerActivity.this, getString(R.string.err_nichts_selektiert));
         	}
         	else{
         		checkInputAndSave(); 
@@ -77,7 +77,7 @@ public abstract class SpielerActivity extends Activity {
 			if(figur.getFarbe().compare(selectedFarbe.toString()) &
 					figur.getForm().compare(selectedForm.toString())){
 				if(figur.isVergeben()){
-					new Fehlermeldung(SpielerActivity.this, getString(R.string.err_vergeben));
+					new Meldung(SpielerActivity.this, getString(R.string.err_vergeben));
 				}
 				else{
 					savePlayerSettings(figur);
