@@ -46,15 +46,18 @@ public class SpielfigurSetzer {
 			if(getPlatteLinks(next) != null) {
 				erreichbarePlatten.add(getPlatteLinks(next));
 			}
-		} else if (next.isObenOffen()) {
+		}
+		if (next.isObenOffen()) {
 			if(getPlatteOben(next) != null) {
 				erreichbarePlatten.add(getPlatteOben(next));
 			}
-		} else if (next.isUntenOffen()) {
+		}
+		if (next.isUntenOffen()) {
 			if(getPlatteUnten(next) != null) {
 				erreichbarePlatten.add(getPlatteUnten(next));
 			}
-		} else if (next.isRechtsOffen()) {
+		}
+		if (next.isRechtsOffen()) {
 			if(getPlatteRechts(next) != null) {
 				erreichbarePlatten.add(getPlatteRechts(next));
 			}

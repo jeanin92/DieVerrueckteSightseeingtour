@@ -31,7 +31,6 @@ public class SpielActivity extends Activity{
 	private SpielbrettAdapter brettAdapter;
 	private Spiel spiel = Spiel.getInstance();
 	private Spielplatte angeklicktePlatte;
-	private Spieler aktiverSpieler;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -142,11 +141,11 @@ public class SpielActivity extends Activity{
 					public void onClick(DialogInterface dialog, int which) {
 						SpielfigurSetzer setzer = new SpielfigurSetzer();
 						setzer.initSpielfigurSetzer();
-						if(setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
+						if(setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == false) {
 							new Fehlermeldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
-						} else if (setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
-							setzer.figurSetzen(angeklicktePlatte, aktiverSpieler,
-									aktiverSpieler.getSpielfigur().getSpielplatte());
+						} else if (setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == true){
+							setzer.figurSetzen(angeklicktePlatte, spiel.getSpielerAnDerReihe(),
+									spiel.getSpielerAnDerReihe().getSpielfigur().getSpielplatte());
 							spiel.getAblauf().spielzugFertig();
 							spiel.spielerWechseln();
 						}
