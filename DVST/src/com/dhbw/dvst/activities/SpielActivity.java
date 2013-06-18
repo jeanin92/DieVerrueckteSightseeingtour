@@ -147,7 +147,8 @@ public class SpielActivity extends Activity{
 						setzer.initSpielfigurSetzer();
 						if(setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == false) {
 							new Meldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
-						} else if (setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == true){
+						} 
+						else {
 							setzer.figurSetzen(angeklicktePlatte, spiel.getSpielerAnDerReihe());
 							spiel.getAblauf().spielzugFertig();							
 							grid_spielbrett.invalidateViews();
