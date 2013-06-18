@@ -58,7 +58,6 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		platte.setLayoutParams(new LayoutParams(this.plattenHoehe, this.plattenHoehe));
 	    platte.setPadding(0, 0, 0, 0);
 	    centerChildren(platte);
-	    setzePlattenKlickbar();
 		return platte;
 	}
 	
@@ -96,19 +95,6 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		    LayoutParams layout = (LayoutParams)view.getLayoutParams();
 			layout.addRule(RelativeLayout.CENTER_IN_PARENT);
 			view.setLayoutParams(layout);
-		}
-	}
-	
-	private void setzePlattenKlickbar() {
-		if(Spiel.getInstance().getAblauf().isPlatteEinschieben()) {
-			if(this.getItem(this.position).isSchiebbar()==false){
-		    	platte.setClickable(true);
-		    }
-		    else{
-		    	platte.setClickable(false);
-		    }
-		} else if(Spiel.getInstance().getAblauf().isFigurZiehen()) {
-			platte.setClickable(false);
 		}
 	}
 }
