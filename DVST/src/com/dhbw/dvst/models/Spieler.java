@@ -54,4 +54,8 @@ public class Spieler {
 	public void setZiel(Sehenswuerdigkeit ziel) {
 		this.ziel = ziel;
 	}
+	
+	public void inkrementFortschritt(){
+		this.fortschritt++;
+	}
 }
