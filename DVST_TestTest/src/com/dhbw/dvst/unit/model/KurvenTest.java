@@ -69,12 +69,10 @@ public class KurvenTest extends TestCase {
 	}
 	
 	public void testObSetzeOffeneSeitebeiKurveUntenRechtsAusrichtungUntenOffenSetzt() {
-		kurve.setzeOffeneSeiten();
 		assertEquals(true, kurve.isUntenOffen());
 	}
 	
 	public void testObSetzeOffeneSeitebeiKurveUntenRechtsAusrichtungObenGeschlossenenSetzt() {
-		kurve.setzeOffeneSeiten();
 		assertEquals(false, kurve.isObenOffen());
 	}
 	

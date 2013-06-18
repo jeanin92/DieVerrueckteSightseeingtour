@@ -65,12 +65,10 @@ public class KreuzungsTest extends TestCase {
 	}
 	
 	public void testObSetzeOffeneSeitebeiKreuzungLinksAusrichtungLinksOffenSetzt() {
-		kreuzungL.setzeOffeneSeiten();
 		assertEquals(true, kreuzungL.isLinksOffen());
 	}
 	
 	public void testObSetzeOffeneSeitebeiKreuzungObenAusrichtungObenOffenSetzt() {
-		kreuzungO.setzeOffeneSeiten();
 		assertEquals(true, kreuzungO.isObenOffen());
 	}
 	
