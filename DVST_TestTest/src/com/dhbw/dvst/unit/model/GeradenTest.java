@@ -52,12 +52,10 @@ public class GeradenTest extends TestCase {
 	}
 	
 	public void testObSetzeOffeneSeitebeiWaagerechterAusrichtungLinksOffenSetzt() {
-		geradeW.setzeOffeneSeiten();
 		assertEquals(true, geradeW.isLinksOffen());
 	}
 	
 	public void testObSetzeOffeneSeitebeiWaagerechterAusrichtungObenGeschlossenSetzt() {
-		geradeW.setzeOffeneSeiten();
 		assertEquals(false, geradeW.isObenOffen());
 	}
 	
