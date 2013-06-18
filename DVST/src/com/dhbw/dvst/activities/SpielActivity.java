@@ -15,11 +15,10 @@ import com.dhbw.dvst.adapters.FortschrittArrayAdapter;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
-import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
-import com.dhbw.dvst.utilities.Meldung;
 import com.dhbw.dvst.utilities.KarteZiehenDialog;
+import com.dhbw.dvst.utilities.Meldung;
 import com.dhbw.dvst.utilities.SpielDialog;
 import com.dhbw.dvst.utilities.SpielfigurSetzer;
 import com.dhbw.dvst.utilities.SpielplattenEinschieber;
@@ -93,7 +92,6 @@ public class SpielActivity extends Activity{
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						spiel.getAblauf().karteGezogen();
-						grid_spielbrett.invalidateViews();
 					}
 				});
 			}
@@ -150,12 +148,19 @@ public class SpielActivity extends Activity{
 							new Meldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
 						} else if (setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == true){
 							setzer.figurSetzen(angeklicktePlatte, spiel.getSpielerAnDerReihe());
-							spiel.getAblauf().spielzugFertig();
-							spiel.spielerWechseln();
+							spiel.getAblauf().spielzugFertig();							
+							grid_spielbrett.invalidateViews();
 							if(spiel.pruefenObSehenwuerdigkeitErreicht(angeklicktePlatte)){
-								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht));
-							}
-							openKartenAnkuendigung();
+								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht, new OnClickListener() {
+									
+									@Override
+									public void onClick(DialogInterface dialog, int which) {
+										dialog.cancel();
+										spiel.spielerWechseln();
+										openKartenAnkuendigung();																				
+									}
+								}));
+							}							
 						}
 					}
 				};
