@@ -177,7 +177,7 @@ public class SpielActivity extends Activity{
 						}
 					}
 				};
-				new SpielDialog(SpielActivity.this, "Willst du wirklich hierhin?", positiv_listener);
+				new SpielDialog(SpielActivity.this, getString(R.string.figur_setzen_nachfrage), positiv_listener);
 			}
 			else if(spiel.getAblauf().isPlatteEinschieben()){
 				//Platte einschieben
