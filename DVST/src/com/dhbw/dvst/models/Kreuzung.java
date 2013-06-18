@@ -69,7 +69,7 @@ public class Kreuzung extends Spielplatte{
 			setRechtsOffen(true);
 			setObenOffen(true);
 			setUntenOffen(true);
-		} else {
+		} else if(ausrichtung == Ausrichtung.KREUZUNGUNTEN){
 			setLinksOffen(true);
 			setRechtsOffen(true);
 			setObenOffen(false);

@@ -28,7 +28,7 @@ public class Meldung {
 	public Meldung(Activity activity, String nachricht, OnClickListener listener) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 		builder.setMessage(nachricht);
-		builder.setNegativeButton(R.string.close, listener);
+		builder.setNeutralButton(R.string.close, listener);
 		AlertDialog alert = builder.create();
 		alert.show();
 	}

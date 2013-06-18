@@ -71,7 +71,7 @@ public class Kurve extends Spielplatte{
 			setRechtsOffen(false);
 			setObenOffen(false);
 			setUntenOffen(true);
-		} else {
+		} else if (ausrichtung == Ausrichtung.KURVEUNTENRECHTS){
 			setLinksOffen(false);
 			setRechtsOffen(true);
 			setObenOffen(false);

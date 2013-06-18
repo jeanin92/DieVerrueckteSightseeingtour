@@ -151,16 +151,22 @@ public class SpielActivity extends Activity{
 							spiel.getAblauf().spielzugFertig();							
 							grid_spielbrett.invalidateViews();
 							if(spiel.pruefenObSehenwuerdigkeitErreicht(angeklicktePlatte)){
-								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht, new OnClickListener() {
-									
-									@Override
-									public void onClick(DialogInterface dialog, int which) {
-										dialog.cancel();
+								angeklicktePlatte.setZiel(null);
+								spiel.getSpielerAnDerReihe().setZiel(null);
+//								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht), new OnClickListener() {
+//									
+//									@Override
+//									public void onClick(DialogInterface dialog, int which) {
+//										dialog.cancel();
 										spiel.spielerWechseln();
 										openKartenAnkuendigung();																				
-									}
-								}));
-							}							
+//									}
+//								});
+							}
+							else{
+								spiel.spielerWechseln();
+								openKartenAnkuendigung();
+							}
 						}
 					}
 				};

@@ -91,9 +91,7 @@ public class Spiel{
 		if(zielPlatte.getZiel()==null){
 			return false;
 		}
-		else if(zielPlatte.getZiel().equals(spiel.getSpielerAnDerReihe().getZiel())){
-			zielPlatte.setZiel(null);
-			spiel.getSpielerAnDerReihe().setZiel(null);
+		else if(zielPlatte.getZiel().equals(spiel.getSpielerAnDerReihe().getZiel())){			
 			return true;
 		}
 		return false;

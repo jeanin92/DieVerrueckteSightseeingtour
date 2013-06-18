@@ -107,7 +107,7 @@ public class SpielplattenEinschieber {
 //			Figur von der aktiven Platte holen und auf die eingeschobene Platte setzen
 			alleSpielplatten.get(index).setFigur(spielbrett.getAktivePlatte().getFigur());
 //			der Figur den neuen Platz mitteilen
-			spielbrett.getAktivePlatte().getFigur().setSpielplatte(spielbrett.getAktivePlatte());
+			spielbrett.getAktivePlatte().getFigur().setSpielplatte(alleSpielplatten.get(index));
 //			Figur von der aktiven Platte entfernen
 			spielbrett.getAktivePlatte().setFigur(null);
 			
