@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -66,6 +67,7 @@ public class FortschrittArrayAdapter extends ArrayAdapter<Spieler> {
 	private View getFortschritt(){
 		TextView textView = new TextView(activity);
 	    textView.setText(activity.getString(R.string.besucht)+": "+getItem(this.position).getFortschritt());
+	    textView.setGravity(Gravity.RIGHT);
 	    textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0.5f));
 	    return textView;
 	}
