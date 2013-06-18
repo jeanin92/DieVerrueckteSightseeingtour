@@ -15,11 +15,10 @@ import com.dhbw.dvst.adapters.FortschrittArrayAdapter;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
-import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
-import com.dhbw.dvst.utilities.Fehlermeldung;
 import com.dhbw.dvst.utilities.KarteZiehenDialog;
+import com.dhbw.dvst.utilities.Meldung;
 import com.dhbw.dvst.utilities.SpielDialog;
 import com.dhbw.dvst.utilities.SpielfigurSetzer;
 import com.dhbw.dvst.utilities.SpielplattenEinschieber;
@@ -31,7 +30,8 @@ public class SpielActivity extends Activity{
 	private SpielbrettAdapter brettAdapter;
 	private Spiel spiel = Spiel.getInstance();
 	private Spielplatte angeklicktePlatte;
-	private Spieler aktiverSpieler;
+	private GridView grid_spielbrett;
+	private ListView lv_fortschritt;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class SpielActivity extends Activity{
 	}
 
 	protected void setSpielbrettAdapter() {
-		final GridView grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
+		grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
 		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht ,R.id.tv_gewaehlter_name, 
 				spiel.getSpielbrett().getAlleSpielplatten());
         grid_spielbrett.setAdapter(brettAdapter);
@@ -72,7 +72,7 @@ public class SpielActivity extends Activity{
 	}
 	
 	protected void setFortschrittsAnzeigeAdapter(){
-		final ListView lv_fortschritt = (ListView)findViewById(R.id.lv_fortschritt);
+		lv_fortschritt = (ListView)findViewById(R.id.lv_fortschritt);
 		FortschrittArrayAdapter fortschrittAdapter = new FortschrittArrayAdapter(this, R.id.tv_gewaehlter_name, 
 				spiel.getAlleSpieler());
         lv_fortschritt.setAdapter(fortschrittAdapter);
@@ -86,11 +86,12 @@ public class SpielActivity extends Activity{
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				spiel.karteZuweisen();
+				lv_fortschritt.invalidateViews();
 				dialog.cancel();
 				new KarteZiehenDialog(SpielActivity.this, new OnClickListener() {					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						spiel.getAblauf().karteGezogen();						
+						spiel.getAblauf().karteGezogen();
 					}
 				});
 			}
@@ -132,23 +133,41 @@ public class SpielActivity extends Activity{
 		}
 
 		@Override
-		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
+		public void onSpielplatteAnklicken(int position) {
 			angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
 			
 			if(spiel.getAblauf().isFigurZiehen()){
+				
 				//Figur setzen
 				OnClickListener positiv_listener = new OnClickListener() {				
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						SpielfigurSetzer setzer = new SpielfigurSetzer();
 						setzer.initSpielfigurSetzer();
-						if(setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
-							new Fehlermeldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
-						} else if (setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == true){
-							setzer.figurSetzen(angeklicktePlatte, aktiverSpieler,
-									aktiverSpieler.getSpielfigur().getSpielplatte());
-							spiel.getAblauf().spielzugFertig();
-							spiel.spielerWechseln();
+						if(setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == false) {
+							new Meldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
+						} 
+						else {
+							setzer.figurSetzen(angeklicktePlatte, spiel.getSpielerAnDerReihe());
+							spiel.getAblauf().spielzugFertig();							
+							grid_spielbrett.invalidateViews();
+							if(spiel.pruefenObSehenwuerdigkeitErreicht(angeklicktePlatte)){
+								angeklicktePlatte.setZiel(null);
+								spiel.getSpielerAnDerReihe().setZiel(null);
+								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht), new OnClickListener() {
+									
+									@Override
+									public void onClick(DialogInterface dialog, int which) {
+										dialog.cancel();
+										spiel.spielerWechseln();
+										openKartenAnkuendigung();																				
+									}
+								});
+							}
+							else{
+								spiel.spielerWechseln();
+								openKartenAnkuendigung();
+							}
 						}
 					}
 				};
@@ -162,12 +181,12 @@ public class SpielActivity extends Activity{
 					schieber.spielplatteEinschieben(angeklicktePlatte);
 					
 					brettAdapter.notifyDataSetChanged();
-					spielbrett.invalidateViews();
+					grid_spielbrett.invalidateViews();
 					setBildAktivePlatte();
 					
 					spiel.getAblauf().platteEingeschoben();
 				} else {
-					new Fehlermeldung(SpielActivity.this, getString(R.string.err_platte_nicht_schiebbar));
+					new Meldung(SpielActivity.this, getString(R.string.err_platte_nicht_schiebbar));
 				}
 			}			
 		}

@@ -82,7 +82,19 @@ public class Spiel{
 	
 	public void karteZuweisen(){
 		Spieler spieler = getSpielerAnDerReihe();
-		spieler.setZiel(kartenstapel.pop());
+		if(spieler.getZiel()==null){
+			spieler.setZiel(kartenstapel.pop());
+		}		
+	}
+	
+	public boolean pruefenObSehenwuerdigkeitErreicht(Spielplatte zielPlatte){
+		if(zielPlatte.getZiel()==null){
+			return false;
+		}
+		else if(zielPlatte.getZiel().equals(spiel.getSpielerAnDerReihe().getZiel())){			
+			return true;
+		}
+		return false;
 	}
 	
 	public void spielZugAusfuehren() {

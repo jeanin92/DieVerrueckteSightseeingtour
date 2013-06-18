@@ -11,10 +11,6 @@ public abstract class Spielplatte {
 	protected Spielfigur figur;
 	protected Sehenswuerdigkeit ziel;
 	protected boolean schiebbar;
-	protected boolean obenOffen;
-	protected boolean rechtsOffen;
-	protected boolean untenOffen;
-	protected boolean linksOffen;
 
 	public Spielplatte() {
 		fuelleAusrichtungsArray();
@@ -76,36 +72,92 @@ public abstract class Spielplatte {
 	public boolean isSchiebbar() {
 		return schiebbar;
 	}
-
-	public boolean isObenOffen() {
-		return obenOffen;
-	}
-
-	public void setObenOffen(boolean obenOffen) {
-		this.obenOffen = obenOffen;
-	}
-
-	public boolean isRechtsOffen() {
-		return rechtsOffen;
-	}
-
-	public void setRechtsOffen(boolean rechtsOffen) {
-		this.rechtsOffen = rechtsOffen;
-	}
-
+	
 	public boolean isUntenOffen() {
-		return untenOffen;
+		if(getAusrichtung() == Ausrichtung.GERADESENKRECHT) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KURVEUNTENLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KURVEUNTENRECHTS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGRECHTS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGUNTEN) {
+			return true;
+		}
+		return false;
 	}
-
-	public void setUntenOffen(boolean untenOffen) {
-		this.untenOffen = untenOffen;
+	
+	public boolean isObenOffen() {
+		if(getAusrichtung() == Ausrichtung.GERADESENKRECHT) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KURVEOBENLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KURVEOBENRECHTS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGRECHTS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGOBEN) {
+			return true;
+		}
+		return false;
 	}
-
+	
 	public boolean isLinksOffen() {
-		return linksOffen;
+		if(getAusrichtung() == Ausrichtung.GERADEWAAGERECHT) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KURVEOBENLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KURVEUNTENLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGLINKS) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGUNTEN) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGOBEN) {
+			return true;
+		}
+		return false;
 	}
-
-	public void setLinksOffen(boolean linksOffen) {
-		this.linksOffen = linksOffen;
+	
+	public boolean isRechtsOffen() {
+		if(getAusrichtung() == Ausrichtung.GERADEWAAGERECHT) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KURVEOBENRECHTS) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KURVEUNTENRECHTS) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KREUZUNGRECHTS) {
+			return true;
+		}
+		if(getAusrichtung() == Ausrichtung.KREUZUNGUNTEN) {
+			return true;
+		}
+		if (getAusrichtung() == Ausrichtung.KREUZUNGOBEN) {
+			return true;
+		}
+		return false;
 	}
 }

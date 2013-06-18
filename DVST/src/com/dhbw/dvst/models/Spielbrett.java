@@ -114,6 +114,7 @@ public class Spielbrett {
 		alleSpielplatten.get(43).setSchiebbar(true);
 		alleSpielplatten.get(45).setSchiebbar(true);
 		alleSpielplatten.get(47).setSchiebbar(true);
+		this.aktivePlatte.setSchiebbar(true);
 	}
 
 	public Spielplatte getAktivePlatte() {

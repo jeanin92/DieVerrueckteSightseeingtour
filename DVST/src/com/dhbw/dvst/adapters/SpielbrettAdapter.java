@@ -12,12 +12,14 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
 import com.dhbw.dvst.R;
+import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 
 public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
     private Activity activity;
 	private int position;
 	private int plattenHoehe;
+	private RelativeLayout platte;
 
     /**
      * 
@@ -45,7 +47,7 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
     }
 
 	private View fillGridViewItem() {
-		RelativeLayout platte = new RelativeLayout(activity);		
+		platte = new RelativeLayout(activity);		
 		platte.addView(buildPlatte());
 		if(this.getItem(this.position).getZiel()!=null){
 			platte.addView(buildSehenswuerdigkeit());
@@ -56,13 +58,6 @@ public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {
 		platte.setLayoutParams(new LayoutParams(this.plattenHoehe, this.plattenHoehe));
 	    platte.setPadding(0, 0, 0, 0);
 	    centerChildren(platte);
-	    if(this.getItem(this.position).isSchiebbar()==false){
-	    	platte.setClickable(true);
-	    }
-	    else{
-	    	platte.setClickable(false);
-	    }
-	    
 		return platte;
 	}
 	
