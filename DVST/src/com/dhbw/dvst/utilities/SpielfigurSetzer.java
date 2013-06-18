@@ -42,25 +42,17 @@ public class SpielfigurSetzer {
 	}
 	
 	protected void holeNachbarPlatten(HashSet<Spielplatte> erreichbarePlatten, Spielplatte next) {
-		if(next.isLinksOffen()) {
-			if(getPlatteLinks(next) != null) {
+		if(next.isLinksOffen() && getPlatteLinks(next) != null) {
 				erreichbarePlatten.add(getPlatteLinks(next));
-			}
 		}
-		if (next.isObenOffen()) {
-			if(getPlatteOben(next) != null) {
+		if (next.isObenOffen() && getPlatteOben(next) != null) {
 				erreichbarePlatten.add(getPlatteOben(next));
-			}
 		}
-		if (next.isUntenOffen()) {
-			if(getPlatteUnten(next) != null) {
+		if (next.isUntenOffen() && getPlatteUnten(next) != null) {
 				erreichbarePlatten.add(getPlatteUnten(next));
-			}
 		}
-		if (next.isRechtsOffen()) {
-			if(getPlatteRechts(next) != null) {
+		if (next.isRechtsOffen() && getPlatteRechts(next) != null) {
 				erreichbarePlatten.add(getPlatteRechts(next));
-			}
 		}
 	}
 	
