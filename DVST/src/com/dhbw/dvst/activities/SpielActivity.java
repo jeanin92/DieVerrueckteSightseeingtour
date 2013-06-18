@@ -15,6 +15,7 @@ import com.dhbw.dvst.adapters.FortschrittArrayAdapter;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.models.Spielbrett;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
@@ -183,7 +184,7 @@ public class SpielActivity extends Activity{
 				//Platte einschieben
 				if(angeklicktePlatte.isSchiebbar()) {
 					SpielplattenEinschieber schieber = new SpielplattenEinschieber();
-					schieber.initSpielplattenEinschieber();
+					schieber.initSpielplattenEinschieber(Spiel.getInstance().getSpielbrett());
 					schieber.spielplatteEinschieben(angeklicktePlatte);
 					
 					brettAdapter.notifyDataSetChanged();

@@ -9,15 +9,13 @@ import com.dhbw.dvst.models.Spielplatte;
 public class SpielplattenEinschieber {
 
 	private ArrayList<Spielplatte> alleSpielplatten;
-	private Spiel spiel;
 	private Spielbrett spielbrett;
 	
 	public SpielplattenEinschieber() {
 	}
 
-	public void initSpielplattenEinschieber() {
-		spiel = Spiel.getInstance();
-		spielbrett = spiel.getSpielbrett();
+	public void initSpielplattenEinschieber(Spielbrett spielbrett) {
+		this.spielbrett = spielbrett;
 		alleSpielplatten = spielbrett.getAlleSpielplatten();
 	}
 	
