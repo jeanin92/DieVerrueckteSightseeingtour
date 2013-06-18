@@ -153,15 +153,15 @@ public class SpielActivity extends Activity{
 							if(spiel.pruefenObSehenwuerdigkeitErreicht(angeklicktePlatte)){
 								angeklicktePlatte.setZiel(null);
 								spiel.getSpielerAnDerReihe().setZiel(null);
-//								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht), new OnClickListener() {
-//									
-//									@Override
-//									public void onClick(DialogInterface dialog, int which) {
-//										dialog.cancel();
+								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht), new OnClickListener() {
+									
+									@Override
+									public void onClick(DialogInterface dialog, int which) {
+										dialog.cancel();
 										spiel.spielerWechseln();
 										openKartenAnkuendigung();																				
-//									}
-//								});
+									}
+								});
 							}
 							else{
 								spiel.spielerWechseln();
