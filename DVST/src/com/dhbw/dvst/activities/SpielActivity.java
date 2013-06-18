@@ -31,6 +31,7 @@ public class SpielActivity extends Activity{
 	private SpielbrettAdapter brettAdapter;
 	private Spiel spiel = Spiel.getInstance();
 	private Spielplatte angeklicktePlatte;
+	private GridView grid_spielbrett;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class SpielActivity extends Activity{
 	}
 
 	protected void setSpielbrettAdapter() {
-		final GridView grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
+		grid_spielbrett = (GridView)findViewById(R.id.grid_spielbrett);
 		brettAdapter = new SpielbrettAdapter(this, R.layout.zeilenansicht ,R.id.tv_gewaehlter_name, 
 				spiel.getSpielbrett().getAlleSpielplatten());
         grid_spielbrett.setAdapter(brettAdapter);
@@ -89,7 +90,8 @@ public class SpielActivity extends Activity{
 				new KarteZiehenDialog(SpielActivity.this, new OnClickListener() {					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						spiel.getAblauf().karteGezogen();						
+						spiel.getAblauf().karteGezogen();
+						grid_spielbrett.invalidateViews();
 					}
 				});
 			}
@@ -131,10 +133,11 @@ public class SpielActivity extends Activity{
 		}
 
 		@Override
-		public void onSpielplatteAnklicken(int position, GridView spielbrett) {
+		public void onSpielplatteAnklicken(int position) {
 			angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
 			
 			if(spiel.getAblauf().isFigurZiehen()){
+				
 				//Figur setzen
 				OnClickListener positiv_listener = new OnClickListener() {				
 					@Override
@@ -148,6 +151,7 @@ public class SpielActivity extends Activity{
 									spiel.getSpielerAnDerReihe().getSpielfigur().getSpielplatte());
 							spiel.getAblauf().spielzugFertig();
 							spiel.spielerWechseln();
+							openKartenAnkuendigung();
 						}
 					}
 				};
@@ -161,7 +165,7 @@ public class SpielActivity extends Activity{
 					schieber.spielplatteEinschieben(angeklicktePlatte);
 					
 					brettAdapter.notifyDataSetChanged();
-					spielbrett.invalidateViews();
+					grid_spielbrett.invalidateViews();
 					setBildAktivePlatte();
 					
 					spiel.getAblauf().platteEingeschoben();

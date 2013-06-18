@@ -23,7 +23,7 @@ public class SpielView extends LinearLayout {
 		public void onReadManual();
 		public void onNachLinksDrehen(ImageView img_aktive_platte);
 		public void onNachRechtsDrehen(ImageView img_aktive_platte);
-		public void onSpielplatteAnklicken(int position, GridView spielbrett);
+		public void onSpielplatteAnklicken(int position);
 	}
 
 	private ViewListener viewListener;
@@ -88,7 +88,7 @@ public class SpielView extends LinearLayout {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
-				viewListener.onSpielplatteAnklicken(position, spielbrett);
+				viewListener.onSpielplatteAnklicken(position);
 			}
 		});
 	}	
