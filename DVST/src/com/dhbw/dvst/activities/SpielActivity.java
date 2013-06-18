@@ -15,6 +15,7 @@ import com.dhbw.dvst.adapters.FortschrittArrayAdapter;
 import com.dhbw.dvst.adapters.SpielbrettAdapter;
 import com.dhbw.dvst.models.Sehenswuerdigkeit;
 import com.dhbw.dvst.models.Spiel;
+import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
 import com.dhbw.dvst.utilities.ActivityInteraction;
 import com.dhbw.dvst.utilities.KarteZiehenDialog;
@@ -30,6 +31,7 @@ public class SpielActivity extends Activity{
 	private SpielbrettAdapter brettAdapter;
 	private Spiel spiel = Spiel.getInstance();
 	private Spielplatte angeklicktePlatte;
+	private Spieler aktiverSpieler;
 	private GridView grid_spielbrett;
 	private ListView lv_fortschritt;
 
@@ -136,6 +138,8 @@ public class SpielActivity extends Activity{
 		public void onSpielplatteAnklicken(int position) {
 			angeklicktePlatte = (Spielplatte) grid_spielbrett.getItemAtPosition(position);
 			//angeklicktePlatte = spiel.getSpielbrett().getAlleSpielplatten().get(position);
+
+			aktiverSpieler = spiel.getSpielerAnDerReihe();
 			
 			if(spiel.getAblauf().isFigurZiehen()){
 				
@@ -145,16 +149,17 @@ public class SpielActivity extends Activity{
 					public void onClick(DialogInterface dialog, int which) {
 						SpielfigurSetzer setzer = new SpielfigurSetzer();
 						setzer.initSpielfigurSetzer();
-						if(setzer.figurKannGesetztWerden(angeklicktePlatte, spiel.getSpielerAnDerReihe()) == false) {
+						if(setzer.figurKannGesetztWerden(angeklicktePlatte, aktiverSpieler) == false) {
 							new Meldung(SpielActivity.this, getString(R.string.err_kein_gueltiger_weg));
 						} 
 						else {
-							setzer.figurSetzen(angeklicktePlatte, spiel.getSpielerAnDerReihe());
+							setzer.figurSetzen(angeklicktePlatte, aktiverSpieler);
 							spiel.getAblauf().spielzugFertig();							
 							grid_spielbrett.invalidateViews();
 							if(spiel.pruefenObSehenwuerdigkeitErreicht(angeklicktePlatte)){
 								angeklicktePlatte.setZiel(null);
-								spiel.getSpielerAnDerReihe().setZiel(null);
+								aktiverSpieler.setZiel(null);
+								aktiverSpieler.inkrementFortschritt();
 								new Meldung(SpielActivity.this, getString(R.string.ziel_erreicht), new OnClickListener() {
 									
 									@Override
