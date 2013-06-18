@@ -68,8 +68,11 @@ Es besteht kein Zugzwang. Klickt man direkt auf seine Spielfigur, bleibt die Fig
     <string name="anderReihe">Du bist an der Reihe</string>
     <string name="karteZiehen">Ziel anzeigen</string>
     
-        <!-- SpielActivity -->
+    <!-- SpielActivity -->
     <string name="err_platte_nicht_schiebbar">Hier darfst du nicht schieben.</string>
     <string name="err_kein_gueltiger_weg">Da kannst du nicht hin.</string>
-    <string name="figur_setzen_nachfrage">Willst du wirklich dort hin?</string>
+    <string name="figur_setzen_nachfrage">Willst du wirklich dorthin?</string>
+    
+    <!-- SpielerActivity -->
+    <string name="err_name_zu_lang">Nicht mehr als 10 Zeichen, bitte.</string>
 </resources>
