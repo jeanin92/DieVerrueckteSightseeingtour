@@ -26,6 +26,9 @@ public class SpielfigurSetzer {
 		if(startPlatte.equals(zielPlatte)){
 			return true;
 		}
+		if(zielPlatte.getFigur() != null) {
+			return false;
+		}
 		erreichbarePlatten = new ArrayList<Spielplatte>();
 		erreichbarePlatten.add(startPlatte);
 		
