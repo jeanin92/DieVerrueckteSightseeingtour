@@ -90,7 +90,7 @@ public class SpielfigurSetzer {
 	private Spielplatte getPlatteRechts(Spielplatte next) {
 		int indexOfNext = alleSpielplatten.indexOf(next);
 		//rechte Reihe
-		if(indexOfNext % 7 == 1) {
+		if(indexOfNext % 7 == 6) {
 			return null;
 		}
 		Spielplatte platteRechts = alleSpielplatten.get(indexOfNext+1);
