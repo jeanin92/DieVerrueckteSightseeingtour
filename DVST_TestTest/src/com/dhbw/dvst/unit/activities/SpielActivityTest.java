@@ -3,10 +3,7 @@ package com.dhbw.dvst.unit.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
-import android.widget.Button;
-
 import com.dhbw.dvst.activities.SpielActivity;
-import com.dhbw.dvst.models.Spiel;
 
 public class SpielActivityTest extends
 		ActivityUnitTestCase<SpielActivity> {

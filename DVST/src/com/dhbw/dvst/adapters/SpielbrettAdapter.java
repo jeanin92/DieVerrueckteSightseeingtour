@@ -12,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
 import com.dhbw.dvst.R;
-import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spielplatte;
 
 public class SpielbrettAdapter extends ArrayAdapter<Spielplatte> {

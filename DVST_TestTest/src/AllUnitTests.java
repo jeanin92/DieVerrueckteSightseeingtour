@@ -1,4 +1,3 @@
-import com.dhbw.dvst.unit.activities.SpielActivityTest;
 import com.dhbw.dvst.unit.activities.StartActivityTest;
 import com.dhbw.dvst.unit.model.FarbeTest;
 import com.dhbw.dvst.unit.model.FormTest;
@@ -9,8 +8,6 @@ import com.dhbw.dvst.unit.model.SpielTest;
 import com.dhbw.dvst.unit.model.SpielbrettTest;
 import com.dhbw.dvst.unit.model.SpielerTest;
 import com.dhbw.dvst.unit.utilities.SpielplattenEinschieberTest;
-import com.dhbw.dvst.utilities.SpielplattenEinschieber;
-
 import junit.framework.*;
 
 public class AllUnitTests {

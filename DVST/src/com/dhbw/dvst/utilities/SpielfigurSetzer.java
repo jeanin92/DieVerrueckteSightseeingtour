@@ -2,7 +2,6 @@ package com.dhbw.dvst.utilities;
 
 import java.util.ArrayList;
 
-import com.dhbw.dvst.models.Ausrichtung;
 import com.dhbw.dvst.models.Spiel;
 import com.dhbw.dvst.models.Spieler;
 import com.dhbw.dvst.models.Spielplatte;
