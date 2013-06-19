@@ -25,6 +25,7 @@ public abstract class SpielerActivity extends Activity {
 	protected Object selectedForm;
 	protected SpielerView view;
 	protected ActivityInteraction kommunikation = new ActivityInteraction();
+	public final int maximaleZeichenzahlImNamen = 10;
 
 	protected void makeSpinners() {
 		SpinnerBuilder spinbuilder = new SpinnerBuilder();
@@ -78,12 +79,15 @@ public abstract class SpielerActivity extends Activity {
 					figur.getForm().compare(selectedForm.toString())){
 				if(figur.isVergeben()){
 					new Meldung(SpielerActivity.this, getString(R.string.err_vergeben));
+				} else if(et_name.getText().length() > maximaleZeichenzahlImNamen) {
+					new Meldung(SpielerActivity.this, getString(R.string.err_name_zu_lang));
 				}
 				else{
 					savePlayerSettings(figur);
 				}
 			}
 		}
+
 	}
 
 	protected abstract void savePlayerSettings(Spielfigur figur);

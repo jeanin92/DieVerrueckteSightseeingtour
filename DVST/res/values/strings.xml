@@ -62,6 +62,9 @@
     <!-- SpielActivity -->
     <string name="err_platte_nicht_schiebbar">You cannot move this tile.</string>
     <string name="err_kein_gueltiger_weg">You cannot go there.</string>
-        <string name="figur_setzen_nachfrage">Do you really want to go there?</string>
+    <string name="figur_setzen_nachfrage">Do you really want to go there?</string>
     
+    <!-- SpielerActivity -->
+    <string name="err_name_zu_lang">No more than 10 characters, please.</string>
+        
 </resources>
