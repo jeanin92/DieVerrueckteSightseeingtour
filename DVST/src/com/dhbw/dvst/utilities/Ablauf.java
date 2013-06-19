@@ -1,4 +1,4 @@
-package com.dhbw.dvst.models;
+package com.dhbw.dvst.utilities;
 
 public class Ablauf {
 	private boolean karteZiehen;
