@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The crazy sightseeing-tour</string>
+    <string name="action_settings">Settings</string>
+    <string name="spiel_starten">Start game</string>
+    <string name="anleitung_lesen">Read instructions</string>
+    <string name="spielmodus_waehlen">Choose gamemode</string>
+    <string name="einspieler">Singleplayer</string>
+    <string name="mehrspieler">Multiplayer</string>
+    <string name="geraeteanzahl">Count of devices</string>
+    <string name="ein_geraet">one device for all players</string>
+    <string name="mehr_geraete">one device per player</string>
+    <string name="OK">Okay</string>
+    <string name="anleitung">Instructions</string>
+    <string name="spieler_uebersicht">Player overview</string>
+    <string name="neuer_spieler">New</string>
+    <string name="zum_spiel">Go!</string>
+    <string name="spielmodus_wechseln">Change gamemode</string>
+    <string name="anleitung_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </string>
+    <string name="spieler_erstellen">Create a player</string>
+    <string name="spieler_bearbeiten">Edit player</string>
+    <string name="name">Name:</string>
+    <string name="figur">Form:</string>
+    <string name="farbe">Color:</string>
+    <string name="zurueck">Back</string>
+    <string name="err_eingabe_leer">Input is required.</string>
+    <string name="err_nichts_selektiert">Please select an entry.</string>
+    <string name="err_vergeben">Pawn is already chosen.</string>
+    <string name="err_max_spieleranzahl">Maximum number of players reached.</string>
+    <string name="close">Close</string>
+    <string name="err_falsche_Spieleranzahl">Not enough players registered</string>
+    
+    <!-- Zeilenansicht.xml -->
+    <string name="gewaehlte_figur">Chosen pawn</string>
+    
+    <!-- SimpleArrayAdapter.java -->
+    <string name="wirklich_loeschen">Delete permanently</string>
+    
+    <!-- DeleteDialogue.java -->
+    <string name="ja">Yes</string>
+    <string name="nein">No</string>
+    <string name="beenden">Finish</string>
+    <string name="err_beenden">Do you really want to leave the game?</string>
+    
+    <!-- SpielBildschirm.xml -->
+    <string name="links_drehen">left</string>
+    <string name="rechts_drehen">right</string>
+    <string name="aktive_spielplatte">active</string>
+    <string name="fortschritt">progress</string>
+    <string name="besucht">visited</string>
+    <string name="ziel_erreicht">goal reached</string>
+    <string name="gewonnen">wins!</string>
+    
+    <!-- karteziehenDialog -->
+    <string name="naechstesZiel">Your target is:</string>
+    <string name="anderReihe">Now it is your turn</string>
+    <string name="karteZiehen">show sight</string>
+    
+    <!-- SpielActivity -->
+    <string name="err_platte_nicht_schiebbar">You cannot move this tile.</string>
+    <string name="err_kein_gueltiger_weg">You cannot go there.</string>
+    <string name="figur_setzen_nachfrage">Do you really want to go there?</string>
+    
+    <!-- SpielerActivity -->
+    <string name="err_name_zu_lang">No more than 10 characters, please.</string>
+        
+</resources>

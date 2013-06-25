@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_left_main">30dp</dimen>
+    <dimen name="margin_top_main">30dp</dimen>
+    <dimen name="margin_top_large">50dp</dimen>
+    <dimen name="height_list">300dp</dimen>
+    
+    <!-- Spielerübersicht -->
+    <dimen name="width_icon_figur">50dp</dimen>
+    <dimen name="height_icon_figur">50dp</dimen>
+    <dimen name="height_button_icon">40dp</dimen>
+    <dimen name="width_button_icon">40dp</dimen>
+    <dimen name="margin_left_icon">13dp</dimen>
+    
+    <!-- Spielbildschirm -->
+    <dimen name="dim_platte">100dp</dimen>
+    <dimen name="dim_figur">60dp</dimen>
+    <dimen name="dim_sight">800dp</dimen>
+
+</resources>

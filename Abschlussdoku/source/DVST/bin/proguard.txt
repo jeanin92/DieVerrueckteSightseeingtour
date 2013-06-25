@@ -1,0 +1,48 @@
+# view AndroidManifest.xml #generated:47
+-keep class com.dhbw.dvst.activities.AnleitungActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:35
+-keep class com.dhbw.dvst.activities.GeraeteActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+-keep class com.dhbw.dvst.activities.ModusActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:71
+-keep class com.dhbw.dvst.activities.SpielActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:65
+-keep class com.dhbw.dvst.activities.SpielerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:53
+-keep class com.dhbw.dvst.activities.SpielerAnlegenActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class com.dhbw.dvst.activities.SpielerBearbeitenActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:41
+-keep class com.dhbw.dvst.activities.SpielerUebersichtActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:19
+-keep class com.dhbw.dvst.activities.StartActivity { <init>(...); }
+
+# view res/layout/anleitung.xml #generated:1
+-keep class com.dhbw.dvst.views.AnleitungView { <init>(...); }
+
+# view res/layout/geraete.xml #generated:1
+-keep class com.dhbw.dvst.views.GeraeteView { <init>(...); }
+
+# view res/layout/modus.xml #generated:1
+-keep class com.dhbw.dvst.views.ModusView { <init>(...); }
+
+# view res/layout/spielbildschirm.xml #generated:1
+-keep class com.dhbw.dvst.views.SpielView { <init>(...); }
+
+# view res/layout/spieler_uebersicht.xml #generated:1
+-keep class com.dhbw.dvst.views.SpielerUebersichtView { <init>(...); }
+
+# view res/layout/spieler.xml #generated:1
+-keep class com.dhbw.dvst.views.SpielerView { <init>(...); }
+
+# view res/layout/start.xml #generated:1
+-keep class com.dhbw.dvst.views.StartView { <init>(...); }
+

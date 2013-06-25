@@ -1,0 +1,50 @@
+<com.dhbw.dvst.views.ModusView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/modus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ModusActivity" >
+    
+    <RelativeLayout
+        android:id="@+id/modus_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+    
+    <TextView
+        android:id="@+id/hd_modus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/spielmodus_waehlen"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <Button
+        android:id="@+id/btn_einspieler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_mehrspieler"
+        android:layout_below="@+id/hd_modus"
+        android:layout_marginTop="@dimen/margin_top_main"
+        android:enabled="false"
+        android:text="@string/einspieler"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+
+    <Button
+        android:id="@+id/btn_mehrspieler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hd_modus"
+        android:layout_below="@+id/btn_einspieler"
+        android:layout_marginTop="@dimen/margin_top_main"
+        android:text="@string/mehrspieler"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+    
+    </RelativeLayout>
+</com.dhbw.dvst.views.ModusView>

@@ -1,0 +1,63 @@
+<com.dhbw.dvst.views.GeraeteView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/geraete"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".GeraeteActivity" >
+    
+    <RelativeLayout
+        android:id="@+id/layout_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+    <TextView
+        android:id="@+id/hd_geraete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"      
+        android:text="@string/geraeteanzahl"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <RadioGroup
+        android:id="@+id/rg_geraete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hd_geraete"
+        android:layout_below="@+id/hd_geraete"
+        android:layout_marginTop="@dimen/margin_top_main" >
+
+        <RadioButton
+            android:id="@+id/rb_eins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/ein_geraet" />
+
+        <RadioButton
+            android:id="@+id/rb_mehrere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_main"
+            android:enabled="false"
+            android:text="@string/mehr_geraete" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rg_geraete"
+        android:layout_below="@+id/rg_geraete"
+        android:layout_marginTop="@dimen/margin_top_main"
+        android:text="@string/OK"
+        android:textAppearance="?android:attr/textAppearanceButton" />
+    </RelativeLayout>
+</com.dhbw.dvst.views.GeraeteView>

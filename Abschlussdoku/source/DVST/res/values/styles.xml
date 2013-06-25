@@ -1,0 +1,24 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:style/Theme.NoTitleBar.Fullscreen">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:background">@color/lightblue</item>
+        <item name="android:textColorPrimaryInverse">@color/black</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="lightblue">#85D3E5</color>
+</resources>
